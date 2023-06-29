@@ -9,9 +9,9 @@ Module MySQLConn
         '    Dim DBName = My.MySettings.Default.Databasename
         Dim Server = "ictserver"
         My.MySettings.Default.Servername = Server
-        Dim UID = "moises"
+        Dim UID = "ICTDEV"
         Dim PortAddress = "3306"
-        Dim DBPass = "Sl@yer203"
+        Dim DBPass = "CapizDevT3@m2023"
         Dim DBName = "centraldb"
         Return New MySqlConnection($"server={Server}; user id={UID}; port={PortAddress}; password={DBPass}; database={DBName}")
     End Function
