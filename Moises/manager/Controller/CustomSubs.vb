@@ -38,13 +38,18 @@
         Next
     End Sub
 
-    Public Sub Custom_ComboBoxDatasource(ByVal combo As ComboBox, ByVal dt As DataTable, ByVal DisplayMember As String, ByVal ValueMember As String)
+    Public Sub Custom_ComboBoxDatasource(ByVal combo As ComboBox, ByVal dt As DataTable, ByVal DisplayMember As String, ByVal ValueMember As String, Optional ByVal selectedindex As Integer = -1)
         With combo
             .DataSource = dt
             .DisplayMember = DisplayMember
             .ValueMember = ValueMember
-            .SelectedIndex = -1
+            .SelectedIndex = selectedindex
         End With
+    End Sub
+
+    Public Sub GotoMousePointer(targetControl As Control)
+        Dim targetLocation As Point = targetControl.PointToScreen(New Point(targetControl.Width / 2, targetControl.Height / 2))
+        Cursor.Position = targetLocation
     End Sub
 
     'This will create a button to datagridview
@@ -81,6 +86,16 @@
         For i = 0 To Controls.Count - 1
             datagrid.Columns.Add(Controls(i))
         Next
+    End Sub
+
+    Friend Sub Set_GridColWidth(column As Dictionary(Of String, Integer), datagrid As DataGridView)
+        If column IsNot Nothing Then
+            For i As Integer = 0 To column.Count - 1
+                Dim col = column.ElementAt(i).Key.ToString
+                Dim colwidth = column.ElementAt(i).Value
+                datagrid.Columns(col).Width = colwidth
+            Next
+        End If
     End Sub
 
     Friend Sub SetMousePointerToNextObject(targetControl As Control)

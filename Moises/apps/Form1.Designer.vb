@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.Decriptiontxt = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Subcategorytxt = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -31,7 +31,6 @@ Partial Class Form1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Decriptiontxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Accountnametxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -76,6 +75,7 @@ Partial Class Form1
         Me.BunifuMetroTextbox7 = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.AccountCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Panel1.SuspendLayout()
         Me.Panel9.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,14 +92,14 @@ Partial Class Form1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel1.Controls.Add(Me.ComboBox5)
+        Me.Panel1.Controls.Add(Me.AccountCodetxt)
+        Me.Panel1.Controls.Add(Me.Decriptiontxt)
         Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.Subcategorytxt)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.CategoryIDtxt)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Panel9)
-        Me.Panel1.Controls.Add(Me.Decriptiontxt)
         Me.Panel1.Controls.Add(Me.AccountIDtxt)
         Me.Panel1.Controls.Add(Me.Accountnametxt)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -111,33 +111,24 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.Label17)
-        Me.Panel1.Location = New System.Drawing.Point(27, 22)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(20, 18)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(997, 1007)
+        Me.Panel1.Size = New System.Drawing.Size(748, 818)
         Me.Panel1.TabIndex = 41
         '
-        'ComboBox5
+        'Decriptiontxt
         '
-        Me.ComboBox5.BackColor = System.Drawing.Color.White
-        Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox5.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.ComboBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(503, 853)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(4)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(426, 24)
-        Me.ComboBox5.TabIndex = 66
+        Me.Decriptiontxt.Location = New System.Drawing.Point(37, 675)
+        Me.Decriptiontxt.Name = "Decriptiontxt"
+        Me.Decriptiontxt.Size = New System.Drawing.Size(320, 20)
+        Me.Decriptiontxt.TabIndex = 67
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(502, 834)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Location = New System.Drawing.Point(376, 653)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 16)
         Me.Label15.TabIndex = 65
@@ -151,10 +142,9 @@ Partial Class Form1
         Me.Subcategorytxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Subcategorytxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Subcategorytxt.FormattingEnabled = True
-        Me.Subcategorytxt.Location = New System.Drawing.Point(49, 726)
-        Me.Subcategorytxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.Subcategorytxt.Location = New System.Drawing.Point(37, 603)
         Me.Subcategorytxt.Name = "Subcategorytxt"
-        Me.Subcategorytxt.Size = New System.Drawing.Size(426, 24)
+        Me.Subcategorytxt.Size = New System.Drawing.Size(320, 24)
         Me.Subcategorytxt.TabIndex = 64
         '
         'Label13
@@ -162,8 +152,7 @@ Partial Class Form1
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label13.Location = New System.Drawing.Point(45, 704)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(34, 584)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(85, 16)
         Me.Label13.TabIndex = 63
@@ -177,10 +166,9 @@ Partial Class Form1
         Me.CategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.CategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.CategoryIDtxt.FormattingEnabled = True
-        Me.CategoryIDtxt.Location = New System.Drawing.Point(504, 671)
-        Me.CategoryIDtxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.CategoryIDtxt.Location = New System.Drawing.Point(378, 550)
         Me.CategoryIDtxt.Name = "CategoryIDtxt"
-        Me.CategoryIDtxt.Size = New System.Drawing.Size(426, 24)
+        Me.CategoryIDtxt.Size = New System.Drawing.Size(320, 24)
         Me.CategoryIDtxt.TabIndex = 62
         '
         'Label12
@@ -188,8 +176,7 @@ Partial Class Form1
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label12.Location = New System.Drawing.Point(503, 652)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Location = New System.Drawing.Point(377, 532)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(75, 16)
         Me.Label12.TabIndex = 61
@@ -199,10 +186,9 @@ Partial Class Form1
         '
         Me.Panel9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel9.Controls.Add(Me.DataGridView1)
-        Me.Panel9.Location = New System.Drawing.Point(108, 69)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel9.Location = New System.Drawing.Point(81, 56)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(780, 502)
+        Me.Panel9.Size = New System.Drawing.Size(585, 408)
         Me.Panel9.TabIndex = 54
         '
         'DataGridView1
@@ -213,30 +199,9 @@ Partial Class Form1
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.GridColor = System.Drawing.Color.White
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(780, 502)
+        Me.DataGridView1.Size = New System.Drawing.Size(585, 408)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Decriptiontxt
-        '
-        Me.Decriptiontxt.BackColor = System.Drawing.Color.White
-        Me.Decriptiontxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Decriptiontxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Decriptiontxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.Decriptiontxt.BorderThickness = 1
-        Me.Decriptiontxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.Decriptiontxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Decriptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Decriptiontxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Decriptiontxt.isPassword = False
-        Me.Decriptiontxt.Location = New System.Drawing.Point(50, 838)
-        Me.Decriptiontxt.Margin = New System.Windows.Forms.Padding(5)
-        Me.Decriptiontxt.MaxLength = 32767
-        Me.Decriptiontxt.Name = "Decriptiontxt"
-        Me.Decriptiontxt.Size = New System.Drawing.Size(427, 107)
-        Me.Decriptiontxt.TabIndex = 60
-        Me.Decriptiontxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'AccountIDtxt
         '
@@ -250,11 +215,11 @@ Partial Class Form1
         Me.AccountIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccountIDtxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.AccountIDtxt.isPassword = False
-        Me.AccountIDtxt.Location = New System.Drawing.Point(504, 728)
-        Me.AccountIDtxt.Margin = New System.Windows.Forms.Padding(5)
+        Me.AccountIDtxt.Location = New System.Drawing.Point(378, 607)
+        Me.AccountIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountIDtxt.MaxLength = 32767
         Me.AccountIDtxt.Name = "AccountIDtxt"
-        Me.AccountIDtxt.Size = New System.Drawing.Size(427, 22)
+        Me.AccountIDtxt.Size = New System.Drawing.Size(320, 18)
         Me.AccountIDtxt.TabIndex = 57
         Me.AccountIDtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -270,11 +235,11 @@ Partial Class Form1
         Me.Accountnametxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Accountnametxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Accountnametxt.isPassword = False
-        Me.Accountnametxt.Location = New System.Drawing.Point(502, 603)
-        Me.Accountnametxt.Margin = New System.Windows.Forms.Padding(5)
+        Me.Accountnametxt.Location = New System.Drawing.Point(376, 491)
+        Me.Accountnametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Accountnametxt.MaxLength = 32767
         Me.Accountnametxt.Name = "Accountnametxt"
-        Me.Accountnametxt.Size = New System.Drawing.Size(427, 38)
+        Me.Accountnametxt.Size = New System.Drawing.Size(320, 31)
         Me.Accountnametxt.TabIndex = 56
         Me.Accountnametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -284,9 +249,8 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(997, 80)
+        Me.Panel2.Size = New System.Drawing.Size(748, 65)
         Me.Panel2.TabIndex = 53
         '
         'Label1
@@ -294,9 +258,8 @@ Partial Class Form1
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(997, 80)
+        Me.Label1.Size = New System.Drawing.Size(748, 65)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "REGULAR ACCOUNTS"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -307,10 +270,9 @@ Partial Class Form1
         Me.Addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Addbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Addbtn.ForeColor = System.Drawing.Color.White
-        Me.Addbtn.Location = New System.Drawing.Point(504, 896)
-        Me.Addbtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.Addbtn.Location = New System.Drawing.Point(378, 717)
         Me.Addbtn.Name = "Addbtn"
-        Me.Addbtn.Size = New System.Drawing.Size(336, 49)
+        Me.Addbtn.Size = New System.Drawing.Size(320, 40)
         Me.Addbtn.TabIndex = 42
         Me.Addbtn.Text = "Add"
         Me.Addbtn.UseVisualStyleBackColor = False
@@ -323,10 +285,9 @@ Partial Class Form1
         Me.AssetIDTxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetIDTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.AssetIDTxt.FormattingEnabled = True
-        Me.AssetIDTxt.Location = New System.Drawing.Point(51, 673)
-        Me.AssetIDTxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.AssetIDTxt.Location = New System.Drawing.Point(38, 549)
         Me.AssetIDTxt.Name = "AssetIDTxt"
-        Me.AssetIDTxt.Size = New System.Drawing.Size(426, 24)
+        Me.AssetIDTxt.Size = New System.Drawing.Size(320, 24)
         Me.AssetIDTxt.TabIndex = 47
         '
         'RegistrycodeTxt
@@ -337,10 +298,9 @@ Partial Class Form1
         Me.RegistrycodeTxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.RegistrycodeTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.RegistrycodeTxt.FormattingEnabled = True
-        Me.RegistrycodeTxt.Location = New System.Drawing.Point(51, 620)
-        Me.RegistrycodeTxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.RegistrycodeTxt.Location = New System.Drawing.Point(38, 497)
         Me.RegistrycodeTxt.Name = "RegistrycodeTxt"
-        Me.RegistrycodeTxt.Size = New System.Drawing.Size(426, 24)
+        Me.RegistrycodeTxt.Size = New System.Drawing.Size(320, 24)
         Me.RegistrycodeTxt.TabIndex = 43
         '
         'Label10
@@ -348,8 +308,7 @@ Partial Class Form1
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(48, 592)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(35, 475)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 16)
         Me.Label10.TabIndex = 39
@@ -360,8 +319,7 @@ Partial Class Form1
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(47, 650)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(35, 529)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(55, 16)
         Me.Label11.TabIndex = 40
@@ -372,8 +330,7 @@ Partial Class Form1
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(500, 703)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Location = New System.Drawing.Point(375, 585)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(69, 16)
         Me.Label14.TabIndex = 43
@@ -384,8 +341,7 @@ Partial Class Form1
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label16.Location = New System.Drawing.Point(501, 582)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Location = New System.Drawing.Point(376, 473)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(90, 16)
         Me.Label16.TabIndex = 45
@@ -396,8 +352,7 @@ Partial Class Form1
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(46, 818)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label17.Location = New System.Drawing.Point(35, 656)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(71, 16)
         Me.Label17.TabIndex = 46
@@ -416,10 +371,9 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.BunifuMetroTextbox5)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label18)
-        Me.Panel3.Location = New System.Drawing.Point(1068, 818)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel3.Location = New System.Drawing.Point(801, 665)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(805, 269)
+        Me.Panel3.Size = New System.Drawing.Size(604, 219)
         Me.Panel3.TabIndex = 54
         '
         'BunifuMetroTextbox4
@@ -434,11 +388,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox4.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox4.isPassword = False
-        Me.BunifuMetroTextbox4.Location = New System.Drawing.Point(52, 208)
-        Me.BunifuMetroTextbox4.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox4.Location = New System.Drawing.Point(39, 169)
+        Me.BunifuMetroTextbox4.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox4.MaxLength = 32767
         Me.BunifuMetroTextbox4.Name = "BunifuMetroTextbox4"
-        Me.BunifuMetroTextbox4.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox4.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox4.TabIndex = 55
         Me.BunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -447,8 +401,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(48, 182)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(36, 148)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 16)
         Me.Label4.TabIndex = 54
@@ -460,9 +413,8 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(803, 80)
+        Me.Panel4.Size = New System.Drawing.Size(602, 65)
         Me.Panel4.TabIndex = 53
         '
         'Label2
@@ -470,9 +422,8 @@ Partial Class Form1
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(803, 80)
+        Me.Label2.Size = New System.Drawing.Size(602, 65)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "FUNDS"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -489,11 +440,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox1.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox1.isPassword = False
-        Me.BunifuMetroTextbox1.Location = New System.Drawing.Point(49, 128)
-        Me.BunifuMetroTextbox1.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox1.Location = New System.Drawing.Point(37, 104)
+        Me.BunifuMetroTextbox1.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox1.MaxLength = 32767
         Me.BunifuMetroTextbox1.Name = "BunifuMetroTextbox1"
-        Me.BunifuMetroTextbox1.Size = New System.Drawing.Size(341, 37)
+        Me.BunifuMetroTextbox1.Size = New System.Drawing.Size(256, 30)
         Me.BunifuMetroTextbox1.TabIndex = 52
         Me.BunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -503,10 +454,9 @@ Partial Class Form1
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(428, 210)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(321, 171)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(336, 37)
+        Me.Button1.Size = New System.Drawing.Size(252, 30)
         Me.Button1.TabIndex = 42
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = False
@@ -523,11 +473,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox5.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox5.isPassword = False
-        Me.BunifuMetroTextbox5.Location = New System.Drawing.Point(431, 126)
-        Me.BunifuMetroTextbox5.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox5.Location = New System.Drawing.Point(323, 102)
+        Me.BunifuMetroTextbox5.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox5.MaxLength = 32767
         Me.BunifuMetroTextbox5.Name = "BunifuMetroTextbox5"
-        Me.BunifuMetroTextbox5.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox5.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox5.TabIndex = 49
         Me.BunifuMetroTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -536,8 +486,7 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(48, 100)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(36, 81)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 16)
         Me.Label5.TabIndex = 41
@@ -548,8 +497,7 @@ Partial Class Form1
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label18.Location = New System.Drawing.Point(427, 100)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label18.Location = New System.Drawing.Point(320, 81)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(69, 16)
         Me.Label18.TabIndex = 46
@@ -568,10 +516,9 @@ Partial Class Form1
         Me.Panel5.Controls.Add(Me.BunifuMetroTextbox13)
         Me.Panel5.Controls.Add(Me.Label20)
         Me.Panel5.Controls.Add(Me.Label26)
-        Me.Panel5.Location = New System.Drawing.Point(1072, 543)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel5.Location = New System.Drawing.Point(804, 441)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(805, 267)
+        Me.Panel5.Size = New System.Drawing.Size(604, 217)
         Me.Panel5.TabIndex = 55
         '
         'BunifuMetroTextbox2
@@ -586,11 +533,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox2.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox2.isPassword = False
-        Me.BunifuMetroTextbox2.Location = New System.Drawing.Point(48, 207)
-        Me.BunifuMetroTextbox2.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox2.Location = New System.Drawing.Point(36, 168)
+        Me.BunifuMetroTextbox2.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox2.MaxLength = 32767
         Me.BunifuMetroTextbox2.Name = "BunifuMetroTextbox2"
-        Me.BunifuMetroTextbox2.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox2.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox2.TabIndex = 55
         Me.BunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -599,8 +546,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(45, 181)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(34, 147)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(148, 16)
         Me.Label3.TabIndex = 54
@@ -612,9 +558,8 @@ Partial Class Form1
         Me.Panel6.Controls.Add(Me.Label19)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(803, 80)
+        Me.Panel6.Size = New System.Drawing.Size(602, 65)
         Me.Panel6.TabIndex = 53
         '
         'Label19
@@ -622,9 +567,8 @@ Partial Class Form1
         Me.Label19.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.Location = New System.Drawing.Point(0, 0)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(803, 80)
+        Me.Label19.Size = New System.Drawing.Size(602, 65)
         Me.Label19.TabIndex = 0
         Me.Label19.Text = "SPECIAL FUNDS"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -635,10 +579,9 @@ Partial Class Form1
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(419, 207)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Location = New System.Drawing.Point(314, 168)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(336, 37)
+        Me.Button2.Size = New System.Drawing.Size(252, 30)
         Me.Button2.TabIndex = 42
         Me.Button2.Text = "Add"
         Me.Button2.UseVisualStyleBackColor = False
@@ -651,10 +594,9 @@ Partial Class Form1
         Me.ComboBox4.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.ComboBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(48, 130)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.ComboBox4.Location = New System.Drawing.Point(36, 106)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(337, 24)
+        Me.ComboBox4.Size = New System.Drawing.Size(254, 24)
         Me.ComboBox4.TabIndex = 43
         '
         'BunifuMetroTextbox13
@@ -669,11 +611,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox13.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox13.isPassword = False
-        Me.BunifuMetroTextbox13.Location = New System.Drawing.Point(416, 127)
-        Me.BunifuMetroTextbox13.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox13.Location = New System.Drawing.Point(312, 103)
+        Me.BunifuMetroTextbox13.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox13.MaxLength = 32767
         Me.BunifuMetroTextbox13.Name = "BunifuMetroTextbox13"
-        Me.BunifuMetroTextbox13.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox13.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox13.TabIndex = 41
         Me.BunifuMetroTextbox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -682,8 +624,7 @@ Partial Class Form1
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label20.Location = New System.Drawing.Point(45, 102)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label20.Location = New System.Drawing.Point(34, 83)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(52, 16)
         Me.Label20.TabIndex = 39
@@ -694,8 +635,7 @@ Partial Class Form1
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label26.Location = New System.Drawing.Point(413, 100)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Location = New System.Drawing.Point(310, 81)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(97, 16)
         Me.Label26.TabIndex = 45
@@ -716,10 +656,9 @@ Partial Class Form1
         Me.Panel7.Controls.Add(Me.BunifuMetroTextbox7)
         Me.Panel7.Controls.Add(Me.Label8)
         Me.Panel7.Controls.Add(Me.Label9)
-        Me.Panel7.Location = New System.Drawing.Point(1082, 44)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel7.Location = New System.Drawing.Point(812, 36)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(805, 453)
+        Me.Panel7.Size = New System.Drawing.Size(604, 368)
         Me.Panel7.TabIndex = 56
         '
         'Label21
@@ -727,8 +666,7 @@ Partial Class Form1
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label21.Location = New System.Drawing.Point(419, 177)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Location = New System.Drawing.Point(314, 144)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(112, 16)
         Me.Label21.TabIndex = 58
@@ -746,11 +684,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox8.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox8.isPassword = False
-        Me.BunifuMetroTextbox8.Location = New System.Drawing.Point(423, 207)
-        Me.BunifuMetroTextbox8.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox8.Location = New System.Drawing.Point(317, 168)
+        Me.BunifuMetroTextbox8.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox8.MaxLength = 32767
         Me.BunifuMetroTextbox8.Name = "BunifuMetroTextbox8"
-        Me.BunifuMetroTextbox8.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox8.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox8.TabIndex = 57
         Me.BunifuMetroTextbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -759,8 +697,7 @@ Partial Class Form1
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label6.Location = New System.Drawing.Point(45, 182)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(34, 148)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 16)
         Me.Label6.TabIndex = 56
@@ -778,11 +715,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox6.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox6.isPassword = False
-        Me.BunifuMetroTextbox6.Location = New System.Drawing.Point(48, 207)
-        Me.BunifuMetroTextbox6.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox6.Location = New System.Drawing.Point(36, 168)
+        Me.BunifuMetroTextbox6.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox6.MaxLength = 32767
         Me.BunifuMetroTextbox6.Name = "BunifuMetroTextbox6"
-        Me.BunifuMetroTextbox6.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox6.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox6.TabIndex = 55
         Me.BunifuMetroTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -792,9 +729,8 @@ Partial Class Form1
         Me.Panel8.Controls.Add(Me.Label7)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(803, 80)
+        Me.Panel8.Size = New System.Drawing.Size(602, 65)
         Me.Panel8.TabIndex = 53
         '
         'Label7
@@ -802,9 +738,8 @@ Partial Class Form1
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(0, 0)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(803, 80)
+        Me.Label7.Size = New System.Drawing.Size(602, 65)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "REGISTRYkjasdgkjasgkdasjgh"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -815,10 +750,9 @@ Partial Class Form1
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(421, 261)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Location = New System.Drawing.Point(316, 212)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(336, 37)
+        Me.Button3.Size = New System.Drawing.Size(252, 30)
         Me.Button3.TabIndex = 42
         Me.Button3.Text = "Add"
         Me.Button3.UseVisualStyleBackColor = False
@@ -831,10 +765,9 @@ Partial Class Form1
         Me.ComboBox1.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.ComboBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(48, 130)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ComboBox1.Location = New System.Drawing.Point(36, 106)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(337, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(254, 24)
         Me.ComboBox1.TabIndex = 43
         '
         'BunifuMetroTextbox7
@@ -849,11 +782,11 @@ Partial Class Form1
         Me.BunifuMetroTextbox7.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.BunifuMetroTextbox7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BunifuMetroTextbox7.isPassword = False
-        Me.BunifuMetroTextbox7.Location = New System.Drawing.Point(416, 127)
-        Me.BunifuMetroTextbox7.Margin = New System.Windows.Forms.Padding(5)
+        Me.BunifuMetroTextbox7.Location = New System.Drawing.Point(312, 103)
+        Me.BunifuMetroTextbox7.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuMetroTextbox7.MaxLength = 32767
         Me.BunifuMetroTextbox7.Name = "BunifuMetroTextbox7"
-        Me.BunifuMetroTextbox7.Size = New System.Drawing.Size(339, 37)
+        Me.BunifuMetroTextbox7.Size = New System.Drawing.Size(254, 30)
         Me.BunifuMetroTextbox7.TabIndex = 41
         Me.BunifuMetroTextbox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -862,8 +795,7 @@ Partial Class Form1
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(412, 102)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(309, 83)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(87, 16)
         Me.Label8.TabIndex = 39
@@ -874,25 +806,43 @@ Partial Class Form1
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(45, 98)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(34, 80)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(70, 16)
         Me.Label9.TabIndex = 45
         Me.Label9.Text = "Registry ID"
         '
+        'AccountCodetxt
+        '
+        Me.AccountCodetxt.BackColor = System.Drawing.Color.White
+        Me.AccountCodetxt.BorderColorFocused = System.Drawing.Color.Black
+        Me.AccountCodetxt.BorderColorIdle = System.Drawing.Color.White
+        Me.AccountCodetxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.AccountCodetxt.BorderThickness = 1
+        Me.AccountCodetxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.AccountCodetxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.AccountCodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AccountCodetxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.AccountCodetxt.isPassword = False
+        Me.AccountCodetxt.Location = New System.Drawing.Point(376, 675)
+        Me.AccountCodetxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.AccountCodetxt.MaxLength = 32767
+        Me.AccountCodetxt.Name = "AccountCodetxt"
+        Me.AccountCodetxt.Size = New System.Drawing.Size(320, 18)
+        Me.AccountCodetxt.TabIndex = 68
+        Me.AccountCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1940, 1100)
+        Me.ClientSize = New System.Drawing.Size(1455, 894)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Account Code"
@@ -960,13 +910,13 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Accountnametxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents Decriptiontxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents AccountIDtxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents ComboBox5 As ComboBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Subcategorytxt As ComboBox
     Friend WithEvents Label13 As Label
     Friend WithEvents CategoryIDtxt As ComboBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents Decriptiontxt As TextBox
+    Friend WithEvents AccountCodetxt As Bunifu.Framework.UI.BunifuMetroTextbox
 End Class

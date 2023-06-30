@@ -249,48 +249,38 @@ Public Class MySQLCore
     End Function
 
     'SELECT MYSQL to Textbox
-    Public Function Mysql_to_Textbox(ByVal columns As String,
-                                       ByVal tablename As String,
-                                       ByVal ObjectName() As TextBox,
-                                       Optional jointbl As String = Nothing,
-                                       Optional whereclause As String = Nothing,
-                                       Optional orderby As String = Nothing,
-                                       Optional limit As String = Nothing,
-                                       Optional ByVal indexnumber As Integer = 0) As String
+    Public Function MySql_Select(ByVal SqlString As String,
+                                Optional ReturnColumn As String = Nothing,
+                                Optional ObjectName() As TextBox = Nothing,
+                                Optional ByVal indexnumber As Integer = 0) As String
         Try
             Dim da As New MySqlDataAdapter   'multiple result
             Dim dt As New DataTable          'table
             Dim dr As MySqlDataReader        'individual result
+            MsgBox(SqlString)
             Conn.Open()
 
-            Dim SQL As String
-
-            SQL = $"SELECT {columns}" & vbCrLf &
-                    $"FROM {tablename}" & vbCrLf &
-                    $"{jointbl}" & vbCrLf &
-                    $"{whereclause}" & vbCrLf &
-                    $"{orderby}" & vbCrLf &
-                    $"{limit};"
             Using cmd As New MySqlCommand
                 With cmd
                     .Connection = Conn
                     .CommandType = CommandType.Text
-                    .CommandText = SQL
-
-                    cmd.ExecuteNonQuery()
+                    .CommandText = SqlString
+                    .ExecuteNonQuery()
                 End With
-
                 dr = cmd.ExecuteReader()
 
                 While dr.Read
                     'By default, the indexNumber of Item is 0. You can skip the index by 
                     'providing IndexNumber inside the function to find your field name.
-
-                    For Index As Integer = 0 To dr.FieldCount - 1
-                        ObjectName(Index).Text = dr.Item(indexnumber).ToString
-                        If indexnumber = dr.FieldCount - 1 Then Exit For
-                        indexnumber += 1
-                    Next
+                    If ObjectName IsNot Nothing Then
+                        For Index As Integer = 0 To dr.FieldCount - 1
+                            ObjectName(Index).Text = dr.Item(indexnumber).ToString
+                            If indexnumber = dr.FieldCount - 1 Then Exit For
+                            indexnumber += 1
+                        Next
+                    Else
+                        Return dr.Item(ReturnColumn).ToString
+                    End If
                 End While
                 cmd.Dispose()
                 Conn.Close()
