@@ -1,181 +1,111 @@
 ﻿Public Class Form1
-    Public AccountDT As DataTable
-    Public RegistryDT As DataTable
-    Public AssetsDT As DataTable
-    Public Category As DataTable
-    Public Subcategory As DataTable
+    Friend menu_width As Integer            'Menu width when click
+    Friend colapsed_width As Integer
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
+#Region "MenuSize()"   'Set Form Size
+    Public Sub MenuSize(ByVal menuwidth As Integer, colapsedwidth As Integer, ByVal form As Form)
+        form.Bounds = Screen.GetWorkingArea(form.Bounds)
+        menu_width = menuwidth                 'Assign new menu, open based on container
+        colapsed_width = colapsedwidth              'Assign new menu colapse size
     End Sub
-
-    Private Sub RegistrycodeTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RegistrycodeTxt.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-
-        Dim inputText1 As String = RegistrycodeTxt.Text
-        Dim firstCharacter1 As String = ""
-
-        If Not String.IsNullOrEmpty(inputText1) Then
-            firstCharacter1 = inputText1.Substring(0, 3)
-        End If
-
-        Dim inputText As String = RegistrycodeTxt.Text
-        Dim firstCharacter As String = ""
-
-        If Not String.IsNullOrEmpty(inputText) Then
-            firstCharacter = inputText.Substring(0, 1)
-        End If
-
-        Dim inputText2 As String = AssetIDTxt.Text
-        Dim firstCharacter2 As String = ""
-
-        If Not String.IsNullOrEmpty(inputText2) Then
-            firstCharacter2 = inputText2.Substring(0, 1)
-        End If
-
-        Dim inputText3 As String = CategoryIDtxt.Text
-        Dim firstCharacter3 As String = ""
-
-        If Not String.IsNullOrEmpty(inputText3) Then
-            firstCharacter3 = inputText3.Substring(0, 3)
-        End If
-
-        Dim inputText4 As String = Subcategorytxt.Text
-        Dim firstCharacter4 As String = ""
-
-        If Not String.IsNullOrEmpty(inputText4) Then
-            firstCharacter4 = inputText4.Substring(0, 5)
-        End If
-        Try
-            Dim mySql As New MySQLCore
-            Dim columnValues As New Dictionary(Of String, String)
-            columnValues.Add("registryid", firstCharacter)
-            columnValues.Add("registrycode", firstCharacter1)
-            columnValues.Add("assetid", firstCharacter2)
-            columnValues.Add("categoryid", firstCharacter3)
-            columnValues.Add("subcategoryid", firstCharacter4)
-            columnValues.Add("accountname", Accountnametxt.Text)
-            columnValues.Add("accountid", AccountIDtxt.Text)
-            columnValues.Add("accountdescription", Decriptiontxt.Text)
-            columnValues.Add("accountcode", AccountCodetxt.Text)
-            mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
-        Catch ex As Exception
-            MsgBox("ERROR" & ex.Message)
-        End Try
-        Custom_Load()
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Custom_Load()
-        Custom_ComboBoxDatasource(RegistrycodeTxt, RegistryDT, "Registry1", "Registry1")
-        Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "Asset", "Asset")
-
-    End Sub
-    Sub Custom_Load()
-        Dim SqlLoad As New MySQLCore
-        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
-        RegistryDT = SqlLoad.MySql_SelectString("*", "vi_registry")
-        AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
-        Category = SqlLoad.MySql_SelectString("*", "vi_category")
-        AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
-
-        Dim columns = "id as ID,registryid 'Registry ID',assetid 'Asset ID',accountid 'Account ID',accountname 'Account Name',accountdescription 'Account Description'"
-        Dim table = "gl_accounts"
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString(columns, table)
-        Dim cols() = {"registrycode", "categoryid", "subcategoryid", "accountcode", "logdate"}
-        Datagrid_HideColumn(DataGridView1, cols)
-
-    End Sub
-
-    Private Sub AccountIDtxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AccountIDtxt.KeyPress
-        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
-            e.Handled = True
-        ElseIf AccountIDtxt.Text.Length >= 8 AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-
-    End Sub
-
-    Private Sub AssetIDTxt_TextChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.TextChanged
-        Dim inputText1 As String = AssetIDTxt.Text
-        Dim secondeCharacter As String = ""
-
-        If Not String.IsNullOrEmpty(inputText1) Then
-            secondeCharacter = inputText1.Substring(0, 1)
-        End If
-
-        Dim SqlLoad As New MySQLCore
-        Category = SqlLoad.MySql_SelectString("*", "vi_category", Nothing, $" where assetid = '{secondeCharacter}'")
-        Custom_ComboBoxDatasource(CategoryIDtxt, Category, "Category1", "Category1")
-    End Sub
-
-    Private Sub CategoryIDtxt_TextChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.TextChanged
-        Dim inputText1 As String = CategoryIDtxt.Text
-        Dim secondeCharacter As String = ""
-
-        If Not String.IsNullOrEmpty(inputText1) Then
-            secondeCharacter = inputText1.Substring(0, 3)
-        End If
-
-        Dim SqlLoad As New MySQLCore
-        Subcategory = SqlLoad.MySql_SelectString("*", "vi_subcategory", Nothing, $" where categoryid = '{secondeCharacter}'")
-        Custom_ComboBoxDatasource(Subcategorytxt, Subcategory, "Subcategory1", "subcategory1")
-    End Sub
-
-    Private Sub Subcategorytxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Subcategorytxt.SelectedIndexChanged
-
-
-    End Sub
-
-    Private Sub Subcategorytxt_TextChanged(sender As Object, e As EventArgs) Handles Subcategorytxt.TextChanged
-        If Subcategorytxt.Text = "" Then
-            AccountIDtxt.Text = ""
+#End Region
+#Region "MaximizeNormalForm()"  'Form Maximize and Restore
+    Sub MaximizeNormalForm(form As Form)
+        If form.WindowState = FormWindowState.Maximized Then
+            form.WindowState = FormWindowState.Normal
         Else
-            Dim inputText1 As String = Subcategorytxt.Text
-            Dim secondeCharacter As String = ""
-
-            If Not String.IsNullOrEmpty(inputText1) Then
-                secondeCharacter = inputText1.Substring(0, 5)
-            End If
-
-            Dim SqlLoad As New MySQLCore
-            AccountDT = SqlLoad.MySql_SelectString("MAX(accountid+1) AS NewAccountID", "gl_accounts", Nothing, $" where subcategoryid = '{inputText1}'")
-
-            If AccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("NewAccountID")) Then
-                Dim newAccountID As Integer = Convert.ToInt32(AccountDT.Rows(0)("NewAccountID"))
-                AccountIDtxt.Text = newAccountID.ToString()
-            End If
+            form.Bounds = Screen.GetWorkingArea(form.Bounds)    'Assign new bounds (size)
         End If
+    End Sub
+#End Region
 
-        Dim inputText As String = AccountIDtxt.Text
-        Dim outputText As String = ""
+#Region "ShowForm()"    'Show Form on click
 
-        For i As Integer = 0 To inputText.Length - 1
-            outputText &= inputText(i)
-            If i = 0 OrElse i = 2 OrElse i = 4 Then
-                outputText &= "-"
-            End If
-        Next
-        AccountCodetxt.Text = outputText
-
-
-
+    Public Sub ShowForm(ByVal form As Form)                      'Clear panel and add form projects/modules
+        MainPanel.Controls.Clear()
+        form.TopLevel = False
+        MainPanel.Controls.Add(form)
+        form.Size = MainPanel.Size
+        form.Show()
     End Sub
 
+    Public Sub ShowUserControl(ByVal uc As UserControl)                      'Clear panel and add form projects/modules
+        MainPanel.Controls.Clear()
+        MainPanel.Controls.Add(uc)
+        uc.Size = MainPanel.Size
+        uc.Show()
+    End Sub
+#End Region
+#Region "Menu_OnClick"  'Menu On Click change width and colapse width
+    Sub Menu_OnClick()
+        If MenuController.Width <> colapsed_width Then
+            MenuController.Width = colapsed_width
+            RegularBtn.TextAlign = ContentAlignment.MiddleCenter
+            Sectorbtn.TextAlign = ContentAlignment.MiddleCenter
+            Try
+                If userControl IsNot Nothing Then
+                    userControl.Size = New Size(MainPanel.Size)
+                    userControl.Refresh()
+                End If
+                If form IsNot Nothing Then
+                    form.Size = New Size(MainPanel.Size)                 'Assigns Dashboard form width based on container
+                    form.Refresh()
+                End If
+            Catch ex As Exception
+                Err.Clear()
+            End Try
+        ElseIf MenuController.Width = colapsed_width Then
+            MenuController.Width = menu_width
+            RegularBtn.TextAlign = ContentAlignment.MiddleLeft
+            Sectorbtn.TextAlign = ContentAlignment.MiddleLeft
 
+            Try
+                If userControl IsNot Nothing Then
+                    userControl.Size = New Size(MainPanel.Size)
+                    userControl.Refresh()
+                End If
+                If form IsNot Nothing Then
+                    form.Size = New Size(MainPanel.Size)                 'Assigns Dashboard form width based on container
+                    form.Refresh()
+                End If                                                  'Read comment above
+            Catch ex As Exception
+                Err.Clear()
+            End Try
+        End If
+    End Sub
+#End Region
 
-    Private Sub AccountIDtxt_TextChanged(sender As Object, e As EventArgs) Handles AccountIDtxt.TextChanged
-
+    Public userControl As UserControl
+    Public SubMenu As Integer = 0
+#Region "Sub SelectMenu"
+    Public form As Form
+    Public Shared budgetAppropriation As Integer = 0
+    Sub SelectMenu(ByVal sender As String)
+        Select Case sender     'Get BunifuFlatButton Text Property
+            Case "RegularBtn"
+                Dim uc = New RegularAccounts
+                ShowUserControl(uc)
+            Case "Categorybtn"
+                Dim uc = New CategorySubcategory
+                ShowUserControl(uc)
+            Case "Fundsbtn"
+                Dim uc = New FundsSpecialFunds
+                ShowUserControl(uc)
+            Case "Registrybtn"
+                Dim uc = New RegistryAsset
+                ShowUserControl(uc)
+            Case "Sectorbtn"
+                Dim uc = New SectorSubsector
+                ShowUserControl(uc)
+        End Select
     End Sub
 
-    Private Sub AccountIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles AccountIDtxt.OnValueChanged
-
+#End Region
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles RegularBtn.Click, Categorybtn.Click, Fundsbtn.Click, Registrybtn.Click, Sectorbtn.Click
+        SelectMenu(sender.Name)
     End Sub
 
-    Private Sub AccountCodetxt_OnValueChanged(sender As Object, e As EventArgs) Handles AccountCodetxt.OnValueChanged
+    Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
 
     End Sub
 End Class

@@ -167,6 +167,36 @@
     <Compile Include="views\Dialog\Msgform.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="views\UCForm\CategorySubcategory.Designer.vb">
+      <DependentUpon>CategorySubcategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\CategorySubcategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\FundsSpecialFunds.Designer.vb">
+      <DependentUpon>FundsSpecialFunds.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\FundsSpecialFunds.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\RegistryAsset.Designer.vb">
+      <DependentUpon>RegistryAsset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\RegistryAsset.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\RegularAccounts.Designer.vb">
+      <DependentUpon>RegularAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\RegularAccounts.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\SectorSubsector.Designer.vb">
+      <DependentUpon>SectorSubsector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\SectorSubsector.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="apps\Form1.resx">
@@ -180,6 +210,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\Dialog\Msgform.resx">
       <DependentUpon>Msgform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\CategorySubcategory.resx">
+      <DependentUpon>CategorySubcategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\FundsSpecialFunds.resx">
+      <DependentUpon>FundsSpecialFunds.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\RegistryAsset.resx">
+      <DependentUpon>RegistryAsset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\RegularAccounts.resx">
+      <DependentUpon>RegularAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\SectorSubsector.resx">
+      <DependentUpon>SectorSubsector.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -197,7 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\Form\" />
-    <Folder Include="views\UCForm\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\CAPIZ.jpg" />
