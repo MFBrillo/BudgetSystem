@@ -48,6 +48,7 @@ Partial Class RegularAccounts
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.TitleBar = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Editbtn = New System.Windows.Forms.Button()
         Me.Addbtn = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -238,7 +239,7 @@ Partial Class RegularAccounts
         Me.AssetIDTxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetIDTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.AssetIDTxt.FormattingEnabled = True
-        Me.AssetIDTxt.Location = New System.Drawing.Point(21, 101)
+        Me.AssetIDTxt.Location = New System.Drawing.Point(21, 59)
         Me.AssetIDTxt.Name = "AssetIDTxt"
         Me.AssetIDTxt.Size = New System.Drawing.Size(320, 24)
         Me.AssetIDTxt.TabIndex = 47
@@ -251,7 +252,7 @@ Partial Class RegularAccounts
         Me.RegistrycodeTxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.RegistrycodeTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.RegistrycodeTxt.FormattingEnabled = True
-        Me.RegistrycodeTxt.Location = New System.Drawing.Point(22, 45)
+        Me.RegistrycodeTxt.Location = New System.Drawing.Point(23, 105)
         Me.RegistrycodeTxt.Name = "RegistrycodeTxt"
         Me.RegistrycodeTxt.Size = New System.Drawing.Size(320, 24)
         Me.RegistrycodeTxt.TabIndex = 43
@@ -261,7 +262,7 @@ Partial Class RegularAccounts
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(19, 23)
+        Me.Label10.Location = New System.Drawing.Point(18, 86)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 16)
         Me.Label10.TabIndex = 39
@@ -272,7 +273,7 @@ Partial Class RegularAccounts
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(18, 81)
+        Me.Label11.Location = New System.Drawing.Point(18, 39)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(55, 16)
         Me.Label11.TabIndex = 40
@@ -364,6 +365,7 @@ Partial Class RegularAccounts
         '
         Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Editbtn)
         Me.Panel2.Controls.Add(Me.Addbtn)
         Me.Panel2.Controls.Add(Me.Savebtn)
@@ -387,6 +389,15 @@ Partial Class RegularAccounts
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(369, 727)
         Me.Panel2.TabIndex = 71
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(183, 427)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(68, 13)
+        Me.Label2.TabIndex = 74
+        Me.Label2.Text = "Label2asdad"
         '
         'Editbtn
         '
@@ -457,4 +468,5 @@ Partial Class RegularAccounts
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Addbtn As Button
     Friend WithEvents Editbtn As Button
+    Friend WithEvents Label2 As Label
 End Class

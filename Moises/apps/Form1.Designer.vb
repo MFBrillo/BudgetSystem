@@ -57,7 +57,7 @@ Partial Class Form1
         Me.Sectorbtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.Sectorbtn.IdleForecolor = System.Drawing.Color.White
         Me.Sectorbtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.Sectorbtn.Location = New System.Drawing.Point(802, 5)
+        Me.Sectorbtn.Location = New System.Drawing.Point(778, 5)
         Me.Sectorbtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Sectorbtn.Name = "Sectorbtn"
         Me.Sectorbtn.Size = New System.Drawing.Size(141, 50)
@@ -83,7 +83,7 @@ Partial Class Form1
         Me.Registrybtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.Registrybtn.IdleForecolor = System.Drawing.Color.White
         Me.Registrybtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.Registrybtn.Location = New System.Drawing.Point(647, 6)
+        Me.Registrybtn.Location = New System.Drawing.Point(480, 6)
         Me.Registrybtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Registrybtn.Name = "Registrybtn"
         Me.Registrybtn.Size = New System.Drawing.Size(141, 50)
@@ -109,7 +109,7 @@ Partial Class Form1
         Me.Fundsbtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.Fundsbtn.IdleForecolor = System.Drawing.Color.White
         Me.Fundsbtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.Fundsbtn.Location = New System.Drawing.Point(492, 6)
+        Me.Fundsbtn.Location = New System.Drawing.Point(331, 5)
         Me.Fundsbtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Fundsbtn.Name = "Fundsbtn"
         Me.Fundsbtn.Size = New System.Drawing.Size(141, 50)
@@ -135,7 +135,7 @@ Partial Class Form1
         Me.Categorybtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.Categorybtn.IdleForecolor = System.Drawing.Color.White
         Me.Categorybtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.Categorybtn.Location = New System.Drawing.Point(337, 6)
+        Me.Categorybtn.Location = New System.Drawing.Point(629, 5)
         Me.Categorybtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Categorybtn.Name = "Categorybtn"
         Me.Categorybtn.Size = New System.Drawing.Size(141, 50)

@@ -2,8 +2,9 @@
     Public AccountDT As DataTable
     Public RegistryDT As DataTable
     Public AssetsDT As DataTable
-    Public Category As DataTable
-    Public Subcategory As DataTable
+    Public CategoryDT As DataTable
+    Public CategoryDT1 As DataTable
+    Public SubcategoryDT As DataTable
 
 
     Private Sub RegularAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,13 +17,14 @@
         Dim SqlLoad As New MySQLCore
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
         RegistryDT = SqlLoad.MySql_SelectString("*", "vi_registry")
-        AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
-        Category = SqlLoad.MySql_SelectString("*", "vi_category")
+        'AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
+        CategoryDT = SqlLoad.MySql_SelectString("*", "vi_category")
         AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
 
         Dim columns = "id as ID,registryid 'Registry ID',assetid 'Asset ID',accountid 'Account ID',accountname 'Account Name',accountdescription 'Account Description'"
         Dim table = "gl_accounts"
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString(columns, table)
+
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString(columns, table, Nothing, "where length(registrycode)=3")
         Dim cols() = {"registrycode", "categoryid", "subcategoryid", "accountcode", "logdate"}
         Datagrid_HideColumn(DataGridView1, cols)
 
@@ -33,9 +35,9 @@
         DataGridView1.Columns("Registry ID").Width = 90
         DataGridView1.Columns("Asset ID").Width = 90
         DataGridView1.Columns("Account ID").Width = 90
-        'DataGridView1.Columns("Account Name").Width = 200
-        'DataGridView1.Columns("Account Description").Width = 200
     End Sub
+
+    Friend firstCharacter1 As String = ""
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         If Accountnametxt.Text = "" Then
             CustomMsg("Save Record Failed", "Insert Correct Data.", "OK")
@@ -115,10 +117,13 @@
         End If
 
         Dim SqlLoad As New MySQLCore
-        Category = SqlLoad.MySql_SelectString("*", "vi_category", Nothing, $" where assetid = '{secondeCharacter}'")
-        Custom_ComboBoxDatasource(CategoryIDtxt, Category, "Category1", "Category1")
-    End Sub
+        CategoryDT = SqlLoad.MySql_SelectString("*", "vi_category", Nothing, $" where assetid = '{secondeCharacter}'")
+        Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "Category1", "Category1")
 
+        RegistryDT = SqlLoad.MySql_SelectString("*", "vi_registry", Nothing, $" where assetid = '{secondeCharacter}'")
+        Custom_ComboBoxDatasource(RegistrycodeTxt, RegistryDT, "Registry1", "Registry1")
+
+    End Sub
     Private Sub CategoryIDtxt_TextChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.TextChanged
         Dim inputText1 As String = CategoryIDtxt.Text
         Dim secondeCharacter As String = ""
@@ -128,9 +133,10 @@
         End If
 
         Dim SqlLoad As New MySQLCore
-        Subcategory = SqlLoad.MySql_SelectString("*", "vi_subcategory", Nothing, $" where categoryid = '{secondeCharacter}'")
-        Custom_ComboBoxDatasource(Subcategorytxt, Subcategory, "Subcategory1", "subcategory1")
+        SubcategoryDT = SqlLoad.MySql_SelectString("*", "vi_subcategory", Nothing, $" where categoryid = '{secondeCharacter}'")
+        Custom_ComboBoxDatasource(Subcategorytxt, SubcategoryDT, "Subcategory1", "subcategory1")
     End Sub
+
 
     Private Sub Subcategorytxt_TextChanged(sender As Object, e As EventArgs) Handles Subcategorytxt.TextChanged
         If Subcategorytxt.Text = "" Then
@@ -190,5 +196,17 @@
         Savebtn.Enabled = False
         Addbtn.Enabled = True
         Editbtn.Enabled = True
+    End Sub
+
+    Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub RegistrycodeTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RegistrycodeTxt.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub RegistrycodeTxt_TextChanged(sender As Object, e As EventArgs) Handles RegistrycodeTxt.TextChanged
+
     End Sub
 End Class

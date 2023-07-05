@@ -22,9 +22,9 @@ Partial Class FundsSpecialFunds
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -66,9 +66,9 @@ Partial Class FundsSpecialFunds
         Me.Panel3.Controls.Add(Me.FundCodetxt)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label18)
-        Me.Panel3.Location = New System.Drawing.Point(66, 96)
+        Me.Panel3.Location = New System.Drawing.Point(37, 73)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1036, 415)
+        Me.Panel3.Size = New System.Drawing.Size(627, 874)
         Me.Panel3.TabIndex = 55
         '
         'Label2
@@ -79,7 +79,7 @@ Partial Class FundsSpecialFunds
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1034, 41)
+        Me.Label2.Size = New System.Drawing.Size(625, 41)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "FUNDS"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -88,8 +88,8 @@ Partial Class FundsSpecialFunds
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -97,21 +97,21 @@ Partial Class FundsSpecialFunds
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(350, 81)
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 223)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 35
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(646, 300)
+        Me.DataGridView1.Size = New System.Drawing.Size(606, 644)
         Me.DataGridView1.TabIndex = 56
         '
         'FundNametxt
@@ -126,11 +126,11 @@ Partial Class FundsSpecialFunds
         Me.FundNametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.FundNametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FundNametxt.isPassword = False
-        Me.FundNametxt.Location = New System.Drawing.Point(39, 250)
+        Me.FundNametxt.Location = New System.Drawing.Point(11, 150)
         Me.FundNametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.FundNametxt.MaxLength = 32767
         Me.FundNametxt.Name = "FundNametxt"
-        Me.FundNametxt.Size = New System.Drawing.Size(254, 30)
+        Me.FundNametxt.Size = New System.Drawing.Size(281, 30)
         Me.FundNametxt.TabIndex = 55
         Me.FundNametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -139,7 +139,7 @@ Partial Class FundsSpecialFunds
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(36, 229)
+        Me.Label4.Location = New System.Drawing.Point(8, 129)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 16)
         Me.Label4.TabIndex = 54
@@ -157,11 +157,11 @@ Partial Class FundsSpecialFunds
         Me.FundIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.FundIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FundIDtxt.isPassword = False
-        Me.FundIDtxt.Location = New System.Drawing.Point(37, 104)
+        Me.FundIDtxt.Location = New System.Drawing.Point(9, 83)
         Me.FundIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.FundIDtxt.MaxLength = 32767
         Me.FundIDtxt.Name = "FundIDtxt"
-        Me.FundIDtxt.Size = New System.Drawing.Size(256, 30)
+        Me.FundIDtxt.Size = New System.Drawing.Size(283, 30)
         Me.FundIDtxt.TabIndex = 52
         Me.FundIDtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -171,9 +171,9 @@ Partial Class FundsSpecialFunds
         Me.AddFundbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddFundbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AddFundbtn.ForeColor = System.Drawing.Color.White
-        Me.AddFundbtn.Location = New System.Drawing.Point(37, 321)
+        Me.AddFundbtn.Location = New System.Drawing.Point(325, 150)
         Me.AddFundbtn.Name = "AddFundbtn"
-        Me.AddFundbtn.Size = New System.Drawing.Size(252, 30)
+        Me.AddFundbtn.Size = New System.Drawing.Size(279, 30)
         Me.AddFundbtn.TabIndex = 42
         Me.AddFundbtn.Text = "Add"
         Me.AddFundbtn.UseVisualStyleBackColor = False
@@ -190,11 +190,11 @@ Partial Class FundsSpecialFunds
         Me.FundCodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.FundCodetxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FundCodetxt.isPassword = False
-        Me.FundCodetxt.Location = New System.Drawing.Point(39, 175)
+        Me.FundCodetxt.Location = New System.Drawing.Point(323, 83)
         Me.FundCodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.FundCodetxt.MaxLength = 32767
         Me.FundCodetxt.Name = "FundCodetxt"
-        Me.FundCodetxt.Size = New System.Drawing.Size(254, 30)
+        Me.FundCodetxt.Size = New System.Drawing.Size(281, 30)
         Me.FundCodetxt.TabIndex = 49
         Me.FundCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -203,7 +203,7 @@ Partial Class FundsSpecialFunds
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(36, 81)
+        Me.Label5.Location = New System.Drawing.Point(8, 60)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 16)
         Me.Label5.TabIndex = 41
@@ -214,7 +214,7 @@ Partial Class FundsSpecialFunds
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label18.Location = New System.Drawing.Point(36, 154)
+        Me.Label18.Location = New System.Drawing.Point(320, 62)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(69, 16)
         Me.Label18.TabIndex = 46
@@ -234,9 +234,9 @@ Partial Class FundsSpecialFunds
         Me.Decriptiontxt.Controls.Add(Me.SpecialFundIDtxt)
         Me.Decriptiontxt.Controls.Add(Me.Label20)
         Me.Decriptiontxt.Controls.Add(Me.Label26)
-        Me.Decriptiontxt.Location = New System.Drawing.Point(66, 517)
+        Me.Decriptiontxt.Location = New System.Drawing.Point(670, 73)
         Me.Decriptiontxt.Name = "Decriptiontxt"
-        Me.Decriptiontxt.Size = New System.Drawing.Size(1035, 485)
+        Me.Decriptiontxt.Size = New System.Drawing.Size(627, 874)
         Me.Decriptiontxt.TabIndex = 56
         '
         'Label19
@@ -247,7 +247,7 @@ Partial Class FundsSpecialFunds
         Me.Label19.ForeColor = System.Drawing.Color.White
         Me.Label19.Location = New System.Drawing.Point(0, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(1033, 37)
+        Me.Label19.Size = New System.Drawing.Size(625, 37)
         Me.Label19.TabIndex = 0
         Me.Label19.Text = "SPECIAL FUNDS"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -256,8 +256,8 @@ Partial Class FundsSpecialFunds
         '
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -266,12 +266,12 @@ Partial Class FundsSpecialFunds
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(350, 89)
+        Me.DataGridView2.Location = New System.Drawing.Point(10, 223)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowTemplate.Height = 35
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(646, 373)
+        Me.DataGridView2.Size = New System.Drawing.Size(606, 644)
         Me.DataGridView2.TabIndex = 57
         '
         'SpeicialFundtxt
@@ -286,11 +286,11 @@ Partial Class FundsSpecialFunds
         Me.SpeicialFundtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.SpeicialFundtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SpeicialFundtxt.isPassword = False
-        Me.SpeicialFundtxt.Location = New System.Drawing.Point(35, 249)
+        Me.SpeicialFundtxt.Location = New System.Drawing.Point(10, 150)
         Me.SpeicialFundtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.SpeicialFundtxt.MaxLength = 32767
         Me.SpeicialFundtxt.Name = "SpeicialFundtxt"
-        Me.SpeicialFundtxt.Size = New System.Drawing.Size(254, 30)
+        Me.SpeicialFundtxt.Size = New System.Drawing.Size(279, 30)
         Me.SpeicialFundtxt.TabIndex = 55
         Me.SpeicialFundtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -299,7 +299,7 @@ Partial Class FundsSpecialFunds
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(33, 228)
+        Me.Label3.Location = New System.Drawing.Point(8, 129)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(148, 16)
         Me.Label3.TabIndex = 54
@@ -311,9 +311,9 @@ Partial Class FundsSpecialFunds
         Me.AddSpcFund.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddSpcFund.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AddSpcFund.ForeColor = System.Drawing.Color.White
-        Me.AddSpcFund.Location = New System.Drawing.Point(35, 317)
+        Me.AddSpcFund.Location = New System.Drawing.Point(339, 150)
         Me.AddSpcFund.Name = "AddSpcFund"
-        Me.AddSpcFund.Size = New System.Drawing.Size(254, 30)
+        Me.AddSpcFund.Size = New System.Drawing.Size(277, 30)
         Me.AddSpcFund.TabIndex = 42
         Me.AddSpcFund.Text = "Add"
         Me.AddSpcFund.UseVisualStyleBackColor = False
@@ -326,9 +326,9 @@ Partial Class FundsSpecialFunds
         Me.FundIDCBB.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.FundIDCBB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FundIDCBB.FormattingEnabled = True
-        Me.FundIDCBB.Location = New System.Drawing.Point(36, 106)
+        Me.FundIDCBB.Location = New System.Drawing.Point(10, 89)
         Me.FundIDCBB.Name = "FundIDCBB"
-        Me.FundIDCBB.Size = New System.Drawing.Size(254, 24)
+        Me.FundIDCBB.Size = New System.Drawing.Size(279, 24)
         Me.FundIDCBB.TabIndex = 43
         '
         'SpecialFundIDtxt
@@ -343,11 +343,11 @@ Partial Class FundsSpecialFunds
         Me.SpecialFundIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.SpecialFundIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SpecialFundIDtxt.isPassword = False
-        Me.SpecialFundIDtxt.Location = New System.Drawing.Point(35, 176)
+        Me.SpecialFundIDtxt.Location = New System.Drawing.Point(339, 83)
         Me.SpecialFundIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.SpecialFundIDtxt.MaxLength = 32767
         Me.SpecialFundIDtxt.Name = "SpecialFundIDtxt"
-        Me.SpecialFundIDtxt.Size = New System.Drawing.Size(254, 30)
+        Me.SpecialFundIDtxt.Size = New System.Drawing.Size(277, 30)
         Me.SpecialFundIDtxt.TabIndex = 41
         Me.SpecialFundIDtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -356,7 +356,7 @@ Partial Class FundsSpecialFunds
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label20.Location = New System.Drawing.Point(34, 83)
+        Me.Label20.Location = New System.Drawing.Point(9, 66)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(52, 16)
         Me.Label20.TabIndex = 39
@@ -367,7 +367,7 @@ Partial Class FundsSpecialFunds
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label26.Location = New System.Drawing.Point(33, 154)
+        Me.Label26.Location = New System.Drawing.Point(336, 60)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(97, 16)
         Me.Label26.TabIndex = 45
@@ -381,7 +381,7 @@ Partial Class FundsSpecialFunds
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1149, 50)
+        Me.Label1.Size = New System.Drawing.Size(1323, 50)
         Me.Label1.TabIndex = 57
         Me.Label1.Text = "FUNDS AND SPECIAL FUNDS"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -395,7 +395,7 @@ Partial Class FundsSpecialFunds
         Me.Controls.Add(Me.Decriptiontxt)
         Me.Controls.Add(Me.Panel3)
         Me.Name = "FundsSpecialFunds"
-        Me.Size = New System.Drawing.Size(1149, 1037)
+        Me.Size = New System.Drawing.Size(1323, 1037)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
