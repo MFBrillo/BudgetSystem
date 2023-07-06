@@ -52,7 +52,7 @@
       <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.4">
-      <HintPath>..\..\Tools\Bunifu\Bunifu_UI_v1.5.4.dll</HintPath>
+      <HintPath>..\Bunifu\Bunifu_UI_v1.5.4.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
@@ -65,6 +65,9 @@
     </Reference>
     <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -161,40 +164,70 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="route\MySQLConn.vb" />
+    <Compile Include="views\Form\Asset.Designer.vb">
+      <DependentUpon>Asset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\Asset.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="views\Dialog\Msgform.Designer.vb">
       <DependentUpon>Msgform.vb</DependentUpon>
     </Compile>
     <Compile Include="views\Dialog\Msgform.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\UCForm\CategorySubcategory.Designer.vb">
+    <Compile Include="views\Form\Category.Designer.vb">
+      <DependentUpon>Category.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\Category.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Form\Cubcategory.Designer.vb">
+      <DependentUpon>Cubcategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\Cubcategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Form\Registry.Designer.vb">
+      <DependentUpon>Registry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\Registry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\Hide\CategorySubcategory.Designer.vb">
       <DependentUpon>CategorySubcategory.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\UCForm\CategorySubcategory.vb">
+    <Compile Include="views\UCForm\Hide\CategorySubcategory.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\UCForm\FundsSpecialFunds.Designer.vb">
+    <Compile Include="views\UCForm\ChartofAccounts.Designer.vb">
+      <DependentUpon>ChartofAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\ChartofAccounts.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\Hide\FundsSpecialFunds.Designer.vb">
       <DependentUpon>FundsSpecialFunds.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\UCForm\FundsSpecialFunds.vb">
+    <Compile Include="views\UCForm\Hide\FundsSpecialFunds.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\UCForm\RegistryAsset.Designer.vb">
+    <Compile Include="views\UCForm\Hide\RegistryAsset.Designer.vb">
       <DependentUpon>RegistryAsset.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\UCForm\RegistryAsset.vb">
+    <Compile Include="views\UCForm\Hide\RegistryAsset.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\UCForm\RegularAccounts.Designer.vb">
+    <Compile Include="views\UCForm\Hide\RegularAccounts.Designer.vb">
       <DependentUpon>RegularAccounts.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\UCForm\RegularAccounts.vb">
+    <Compile Include="views\UCForm\Hide\RegularAccounts.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\UCForm\SectorSubsector.Designer.vb">
+    <Compile Include="views\UCForm\Hide\SectorSubsector.Designer.vb">
       <DependentUpon>SectorSubsector.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\UCForm\SectorSubsector.vb">
+    <Compile Include="views\UCForm\Hide\SectorSubsector.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -211,19 +244,34 @@
     <EmbeddedResource Include="views\Dialog\Msgform.resx">
       <DependentUpon>Msgform.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\CategorySubcategory.resx">
+    <EmbeddedResource Include="views\Form\Asset.resx">
+      <DependentUpon>Asset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\Category.resx">
+      <DependentUpon>Category.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\Cubcategory.resx">
+      <DependentUpon>Cubcategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\Registry.resx">
+      <DependentUpon>Registry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\Hide\CategorySubcategory.resx">
       <DependentUpon>CategorySubcategory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\FundsSpecialFunds.resx">
+    <EmbeddedResource Include="views\UCForm\ChartofAccounts.resx">
+      <DependentUpon>ChartofAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\Hide\FundsSpecialFunds.resx">
       <DependentUpon>FundsSpecialFunds.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\RegistryAsset.resx">
+    <EmbeddedResource Include="views\UCForm\Hide\RegistryAsset.resx">
       <DependentUpon>RegistryAsset.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\RegularAccounts.resx">
+    <EmbeddedResource Include="views\UCForm\Hide\RegularAccounts.resx">
       <DependentUpon>RegularAccounts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\SectorSubsector.resx">
+    <EmbeddedResource Include="views\UCForm\Hide\SectorSubsector.resx">
       <DependentUpon>SectorSubsector.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -240,9 +288,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="views\Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="resources\CAPIZ.jpg" />
   </ItemGroup>

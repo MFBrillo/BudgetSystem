@@ -6,13 +6,25 @@
     Public CategoryDT1 As DataTable
     Public SubcategoryDT As DataTable
 
-
+    
     Private Sub RegularAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Custom_Load()
         Custom_ComboBoxDatasource(RegistrycodeTxt, RegistryDT, "Registry1", "Registry1")
-        Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "Asset", "Asset")
+        'Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "Asset", "Asset")
+
+        For i As Integer = 0 To AssetsDT.Rows.Count - 1
+            AssetIDTxt.Items.Add(AssetsDT.Rows(i).Item("Asset").ToString)
+        Next
+        addnew()
         Header_Accounts()
+
     End Sub
+
+    Sub addnew()
+        AssetIDTxt.Items.Add("<add new>")
+    End Sub
+
+
     Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
@@ -20,15 +32,11 @@
         'AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
         CategoryDT = SqlLoad.MySql_SelectString("*", "vi_category")
         AssetsDT = SqlLoad.MySql_SelectString("*", "vi_assets")
-
         Dim columns = "id as ID,registryid 'Registry ID',assetid 'Asset ID',accountid 'Account ID',accountname 'Account Name',accountdescription 'Account Description'"
         Dim table = "gl_accounts"
-
         DataGridView1.DataSource = SqlLoad.MySql_SelectString(columns, table, Nothing, "where length(registrycode)=3")
         Dim cols() = {"registrycode", "categoryid", "subcategoryid", "accountcode", "logdate"}
         Datagrid_HideColumn(DataGridView1, cols)
-
-
     End Sub
     Private Sub Header_Accounts()
         DataGridView1.Columns("ID").Width = 40
@@ -208,5 +216,28 @@
 
     Private Sub RegistrycodeTxt_TextChanged(sender As Object, e As EventArgs) Handles RegistrycodeTxt.TextChanged
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub AssetIDTxt_KeyDown(sender As Object, e As KeyEventArgs) Handles AssetIDTxt.KeyDown
+
+    End Sub
+
+    Private Sub AssetIDTxt_Click(sender As Object, e As EventArgs) Handles AssetIDTxt.Click
+
+    End Sub
+
+    Private Sub AssetIDTxt_SelectedValueChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedValueChanged
+        If AssetIDTxt.Text = "<add new>" Then
+            Asset.ShowDialog()
+            Asset.TopMost = True
+        End If
     End Sub
 End Class

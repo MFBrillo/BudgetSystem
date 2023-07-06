@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class RegularAccounts
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class RegularAccounts
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegularAccounts))
         Me.Decriptiontxt = New System.Windows.Forms.TextBox()
         Me.AccountCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -149,20 +149,19 @@ Partial Class RegularAccounts
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(4, 41)
+        Me.DataGridView1.Location = New System.Drawing.Point(4, 47)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 35
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(814, 688)
+        Me.DataGridView1.Size = New System.Drawing.Size(814, 677)
         Me.DataGridView1.TabIndex = 0
         '
         'AccountIDtxt
@@ -328,9 +327,9 @@ Partial Class RegularAccounts
         Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.BunifuGradientPanel1)
-        Me.Panel3.Location = New System.Drawing.Point(409, 42)
+        Me.Panel3.Location = New System.Drawing.Point(409, 44)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(821, 729)
+        Me.Panel3.Size = New System.Drawing.Size(821, 727)
         Me.Panel3.TabIndex = 73
         '
         'BunifuGradientPanel1

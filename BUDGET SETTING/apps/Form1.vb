@@ -40,7 +40,7 @@
     Sub Menu_OnClick()
         If MenuController.Width <> colapsed_width Then
             MenuController.Width = colapsed_width
-            RegularBtn.TextAlign = ContentAlignment.MiddleCenter
+            Chartbtn.TextAlign = ContentAlignment.MiddleCenter
             Sectorbtn.TextAlign = ContentAlignment.MiddleCenter
             Try
                 If userControl IsNot Nothing Then
@@ -56,7 +56,7 @@
             End Try
         ElseIf MenuController.Width = colapsed_width Then
             MenuController.Width = menu_width
-            RegularBtn.TextAlign = ContentAlignment.MiddleLeft
+            Chartbtn.TextAlign = ContentAlignment.MiddleLeft
             Sectorbtn.TextAlign = ContentAlignment.MiddleLeft
 
             Try
@@ -82,6 +82,9 @@
     Public Shared budgetAppropriation As Integer = 0
     Sub SelectMenu(ByVal sender As String)
         Select Case sender     'Get BunifuFlatButton Text Property
+            Case "Chartbtn"
+                Dim uc = New ChartofAccounts
+                ShowUserControl(uc)
             Case "RegularBtn"
                 Dim uc = New RegularAccounts
                 ShowUserControl(uc)
@@ -101,7 +104,7 @@
     End Sub
 
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles RegularBtn.Click, Categorybtn.Click, Fundsbtn.Click, Registrybtn.Click, Sectorbtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Fundsbtn.Click, Sectorbtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
 
