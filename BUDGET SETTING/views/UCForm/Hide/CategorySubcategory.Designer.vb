@@ -22,14 +22,16 @@ Partial Class CategorySubcategory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.AssetIDCBB = New System.Windows.Forms.ComboBox()
+        Me.RegistryIDcbb = New System.Windows.Forms.ComboBox()
         Me.CategoryDestxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Categorycodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -57,8 +59,6 @@ Partial Class CategorySubcategory
         Me.BunifuMetroTextbox8 = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.RegistryIDcbb = New System.Windows.Forms.ComboBox()
-        Me.AssetIDCBB = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -82,21 +82,21 @@ Partial Class CategorySubcategory
         '
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(592, 496)
         Me.DataGridView2.Name = "DataGridView2"
@@ -110,21 +110,21 @@ Partial Class CategorySubcategory
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(592, 67)
         Me.DataGridView1.Name = "DataGridView1"
@@ -156,6 +156,32 @@ Partial Class CategorySubcategory
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(580, 407)
         Me.Panel1.TabIndex = 62
+        '
+        'AssetIDCBB
+        '
+        Me.AssetIDCBB.BackColor = System.Drawing.Color.White
+        Me.AssetIDCBB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.AssetIDCBB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AssetIDCBB.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.AssetIDCBB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.AssetIDCBB.FormattingEnabled = True
+        Me.AssetIDCBB.Location = New System.Drawing.Point(299, 97)
+        Me.AssetIDCBB.Name = "AssetIDCBB"
+        Me.AssetIDCBB.Size = New System.Drawing.Size(257, 24)
+        Me.AssetIDCBB.TabIndex = 88
+        '
+        'RegistryIDcbb
+        '
+        Me.RegistryIDcbb.BackColor = System.Drawing.Color.White
+        Me.RegistryIDcbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.RegistryIDcbb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RegistryIDcbb.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.RegistryIDcbb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.RegistryIDcbb.FormattingEnabled = True
+        Me.RegistryIDcbb.Location = New System.Drawing.Point(23, 97)
+        Me.RegistryIDcbb.Name = "RegistryIDcbb"
+        Me.RegistryIDcbb.Size = New System.Drawing.Size(257, 24)
+        Me.RegistryIDcbb.TabIndex = 87
         '
         'CategoryDestxt
         '
@@ -557,32 +583,6 @@ Partial Class CategorySubcategory
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(580, 409)
         Me.Panel2.TabIndex = 65
-        '
-        'RegistryIDcbb
-        '
-        Me.RegistryIDcbb.BackColor = System.Drawing.Color.White
-        Me.RegistryIDcbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.RegistryIDcbb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RegistryIDcbb.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.RegistryIDcbb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.RegistryIDcbb.FormattingEnabled = True
-        Me.RegistryIDcbb.Location = New System.Drawing.Point(23, 97)
-        Me.RegistryIDcbb.Name = "RegistryIDcbb"
-        Me.RegistryIDcbb.Size = New System.Drawing.Size(257, 24)
-        Me.RegistryIDcbb.TabIndex = 87
-        '
-        'AssetIDCBB
-        '
-        Me.AssetIDCBB.BackColor = System.Drawing.Color.White
-        Me.AssetIDCBB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.AssetIDCBB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AssetIDCBB.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.AssetIDCBB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.AssetIDCBB.FormattingEnabled = True
-        Me.AssetIDCBB.Location = New System.Drawing.Point(299, 97)
-        Me.AssetIDCBB.Name = "AssetIDCBB"
-        Me.AssetIDCBB.Size = New System.Drawing.Size(257, 24)
-        Me.AssetIDCBB.TabIndex = 88
         '
         'CategorySubcategory
         '

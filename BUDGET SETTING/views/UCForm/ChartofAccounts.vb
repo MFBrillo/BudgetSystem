@@ -104,6 +104,8 @@
         End If
     End Sub
     Private Sub AssetIDTxt_TextChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.TextChanged
+
+
         Dim inputText1 As String = AssetIDTxt.Text
         Dim secondeCharacter As String = ""
 
@@ -114,10 +116,7 @@
         Dim SqlLoad As New MySQLCore
         CategoryDT = SqlLoad.MySql_SelectString("*", "vi_category", Nothing, $" where assetid = '{secondeCharacter}'")
         Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "Category1", "Category1")
-
         RegistryDT = SqlLoad.MySql_SelectString("*", "vi_registry", Nothing, $" where assetid = '{secondeCharacter}'")
-        'Custom_ComboBoxDatasource(RegistrycodeTxt, RegistryDT, "Registry1", "Registry1")
-        'Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "Asset", "Asset")
 
     End Sub
     Private Sub CategoryIDtxt_TextChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.TextChanged
@@ -195,11 +194,19 @@
         Asset.ShowDialog()
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Category.ShowDialog()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Subcategory.ShowDialog()
+    End Sub
+
     Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
 
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
+    Private Sub AssetIDTxt_DropDown(sender As Object, e As EventArgs) Handles AssetIDTxt.DropDown
+        ref()
     End Sub
 End Class

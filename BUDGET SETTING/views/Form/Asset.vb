@@ -1,11 +1,6 @@
 ﻿Public Class Asset
     Public AssetsDT As DataTable
-
     Public Asset As New ChartofAccounts
-    Private Sub Asset_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
         Me.Close()
     End Sub
@@ -37,8 +32,12 @@
             MsgBox("ERROR" & ex.Message)
         End Try
 
-
         Me.Close()
 
+    End Sub
+
+    Private Sub Asset_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Assettxt.Text = ""
+        AssetDescrptiontxt.Text = ""
     End Sub
 End Class

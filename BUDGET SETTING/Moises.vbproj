@@ -182,10 +182,10 @@
     <Compile Include="views\Form\Category.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Form\Cubcategory.Designer.vb">
-      <DependentUpon>Cubcategory.vb</DependentUpon>
+    <Compile Include="views\Form\Subcategory.Designer.vb">
+      <DependentUpon>Subcategory.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\Form\Cubcategory.vb">
+    <Compile Include="views\Form\Subcategory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\Form\Registry.Designer.vb">
@@ -250,8 +250,8 @@
     <EmbeddedResource Include="views\Form\Category.resx">
       <DependentUpon>Category.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Form\Cubcategory.resx">
-      <DependentUpon>Cubcategory.vb</DependentUpon>
+    <EmbeddedResource Include="views\Form\Subcategory.resx">
+      <DependentUpon>Subcategory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Registry.resx">
       <DependentUpon>Registry.vb</DependentUpon>

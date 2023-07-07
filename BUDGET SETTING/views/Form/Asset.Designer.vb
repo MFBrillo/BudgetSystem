@@ -44,9 +44,9 @@ Partial Class Asset
         Me.Panel1.Controls.Add(Me.AssetDescrptiontxt)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.AssetAddbtn)
-        Me.Panel1.Location = New System.Drawing.Point(8, 11)
+        Me.Panel1.Location = New System.Drawing.Point(13, 18)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(490, 398)
+        Me.Panel1.Size = New System.Drawing.Size(490, 323)
         Me.Panel1.TabIndex = 62
         '
         'Cancelbtn
@@ -55,7 +55,7 @@ Partial Class Asset
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White
-        Me.Cancelbtn.Location = New System.Drawing.Point(22, 227)
+        Me.Cancelbtn.Location = New System.Drawing.Point(22, 252)
         Me.Cancelbtn.Name = "Cancelbtn"
         Me.Cancelbtn.Size = New System.Drawing.Size(216, 30)
         Me.Cancelbtn.TabIndex = 79
@@ -66,7 +66,7 @@ Partial Class Asset
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(103, 23)
+        Me.Label8.Location = New System.Drawing.Point(198, 21)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(87, 24)
         Me.Label8.TabIndex = 78
@@ -140,7 +140,7 @@ Partial Class Asset
         Me.AssetAddbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AssetAddbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetAddbtn.ForeColor = System.Drawing.Color.White
-        Me.AssetAddbtn.Location = New System.Drawing.Point(244, 227)
+        Me.AssetAddbtn.Location = New System.Drawing.Point(244, 252)
         Me.AssetAddbtn.Name = "AssetAddbtn"
         Me.AssetAddbtn.Size = New System.Drawing.Size(216, 30)
         Me.AssetAddbtn.TabIndex = 70
@@ -151,7 +151,7 @@ Partial Class Asset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(508, 421)
+        Me.ClientSize = New System.Drawing.Size(518, 362)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Asset"
