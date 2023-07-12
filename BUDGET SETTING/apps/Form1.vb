@@ -85,21 +85,21 @@
             Case "Chartbtn"
                 Dim uc = New ChartofAccounts
                 ShowUserControl(uc)
-            Case "RegularBtn"
-                Dim uc = New RegularAccounts
-                ShowUserControl(uc)
-            Case "Categorybtn"
-                Dim uc = New CategorySubcategory
-                ShowUserControl(uc)
-            Case "Fundsbtn"
-                Dim uc = New FundsSpecialFunds
-                ShowUserControl(uc)
-            Case "Registrybtn"
-                Dim uc = New RegistryAsset
-                ShowUserControl(uc)
-            Case "Sectorbtn"
-                Dim uc = New SectorSubsector
-                ShowUserControl(uc)
+                'Case "RegularBtn"
+                '    Dim uc = New RegularAccounts
+                '    ShowUserControl(uc)
+                'Case "Categorybtn"
+                '    Dim uc = New CategorySubcategory
+                '    ShowUserControl(uc)
+                'Case "Fundsbtn"
+                '    Dim uc = New FundsSpecialFunds
+                '    ShowUserControl(uc)
+                'Case "Registrybtn"
+                '    Dim uc = New RegistryAsset
+                '    ShowUserControl(uc)
+                'Case "Sectorbtn"
+                '    Dim uc = New SectorSubsector
+                '    ShowUserControl(uc)
         End Select
     End Sub
 
@@ -110,5 +110,9 @@
 
     Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Dispose()
     End Sub
 End Class

@@ -99,9 +99,9 @@ Partial Class Asset
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label2.Location = New System.Drawing.Point(21, 74)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 16)
+        Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 69
-        Me.Label2.Text = "Asset"
+        Me.Label2.Text = "Asset Name"
         '
         'AssetDescrptiontxt
         '
@@ -130,9 +130,9 @@ Partial Class Asset
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label3.Location = New System.Drawing.Point(21, 144)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 16)
+        Me.Label3.Size = New System.Drawing.Size(106, 16)
         Me.Label3.TabIndex = 71
-        Me.Label3.Text = "Description"
+        Me.Label3.Text = "Asset Description"
         '
         'AssetAddbtn
         '

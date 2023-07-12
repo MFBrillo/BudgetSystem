@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ChartofAccounts
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ChartofAccounts
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChartofAccounts))
@@ -30,8 +30,10 @@ Partial Class ChartofAccounts
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.TitleBar = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.AddSubcategorybtn = New System.Windows.Forms.Button()
+        Me.AddCategorybtn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Editbtn = New System.Windows.Forms.Button()
@@ -49,7 +51,7 @@ Partial Class ChartofAccounts
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Subcategorytxt = New System.Windows.Forms.ComboBox()
+        Me.SubcategoryIDtxt = New System.Windows.Forms.ComboBox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,7 +99,7 @@ Partial Class ChartofAccounts
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 35
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(814, 671)
+        Me.DataGridView1.Size = New System.Drawing.Size(814, 685)
         Me.DataGridView1.TabIndex = 0
         '
         'BunifuGradientPanel1
@@ -132,8 +134,10 @@ Partial Class ChartofAccounts
         '
         Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.AddSubcategorybtn)
+        Me.Panel2.Controls.Add(Me.AddCategorybtn)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Editbtn)
@@ -151,34 +155,52 @@ Partial Class ChartofAccounts
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.Label17)
-        Me.Panel2.Controls.Add(Me.Subcategorytxt)
+        Me.Panel2.Controls.Add(Me.SubcategoryIDtxt)
         Me.Panel2.Controls.Add(Me.AccountIDtxt)
         Me.Panel2.Location = New System.Drawing.Point(22, 92)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(438, 727)
         Me.Panel2.TabIndex = 74
         '
-        'Button4
+        'Label4
         '
-        Me.Button4.Location = New System.Drawing.Point(351, 155)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(77, 23)
-        Me.Button4.TabIndex = 78
-        Me.Button4.Text = "Add"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(319, 438)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(68, 13)
+        Me.Label4.TabIndex = 80
+        Me.Label4.Text = "Label2asdad"
         '
-        'Button3
+        'Label3
         '
-        Me.Button3.Location = New System.Drawing.Point(351, 99)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(77, 23)
-        Me.Button3.TabIndex = 77
-        Me.Button3.Text = "Add"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(234, 438)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 13)
+        Me.Label3.TabIndex = 79
+        Me.Label3.Text = "Label2asdad"
+        '
+        'AddSubcategorybtn
+        '
+        Me.AddSubcategorybtn.Location = New System.Drawing.Point(347, 193)
+        Me.AddSubcategorybtn.Name = "AddSubcategorybtn"
+        Me.AddSubcategorybtn.Size = New System.Drawing.Size(77, 23)
+        Me.AddSubcategorybtn.TabIndex = 78
+        Me.AddSubcategorybtn.Text = "Add"
+        Me.AddSubcategorybtn.UseVisualStyleBackColor = True
+        '
+        'AddCategorybtn
+        '
+        Me.AddCategorybtn.Location = New System.Drawing.Point(347, 125)
+        Me.AddCategorybtn.Name = "AddCategorybtn"
+        Me.AddCategorybtn.Size = New System.Drawing.Size(77, 23)
+        Me.AddCategorybtn.TabIndex = 77
+        Me.AddCategorybtn.Text = "Add"
+        Me.AddCategorybtn.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(351, 49)
+        Me.Button1.Location = New System.Drawing.Point(347, 62)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(77, 23)
         Me.Button1.TabIndex = 75
@@ -188,7 +210,7 @@ Partial Class ChartofAccounts
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(183, 427)
+        Me.Label2.Location = New System.Drawing.Point(147, 441)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 13)
         Me.Label2.TabIndex = 74
@@ -200,7 +222,7 @@ Partial Class ChartofAccounts
         Me.Editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Editbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Editbtn.ForeColor = System.Drawing.Color.White
-        Me.Editbtn.Location = New System.Drawing.Point(21, 567)
+        Me.Editbtn.Location = New System.Drawing.Point(24, 578)
         Me.Editbtn.Name = "Editbtn"
         Me.Editbtn.Size = New System.Drawing.Size(320, 40)
         Me.Editbtn.TabIndex = 72
@@ -213,7 +235,7 @@ Partial Class ChartofAccounts
         Me.Addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Addbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Addbtn.ForeColor = System.Drawing.Color.White
-        Me.Addbtn.Location = New System.Drawing.Point(21, 613)
+        Me.Addbtn.Location = New System.Drawing.Point(24, 624)
         Me.Addbtn.Name = "Addbtn"
         Me.Addbtn.Size = New System.Drawing.Size(320, 40)
         Me.Addbtn.TabIndex = 71
@@ -226,7 +248,7 @@ Partial Class ChartofAccounts
         Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Savebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Savebtn.ForeColor = System.Drawing.Color.White
-        Me.Savebtn.Location = New System.Drawing.Point(21, 659)
+        Me.Savebtn.Location = New System.Drawing.Point(24, 670)
         Me.Savebtn.Name = "Savebtn"
         Me.Savebtn.Size = New System.Drawing.Size(320, 40)
         Me.Savebtn.TabIndex = 42
@@ -238,7 +260,7 @@ Partial Class ChartofAccounts
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(20, 200)
+        Me.Label14.Location = New System.Drawing.Point(20, 233)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(69, 16)
         Me.Label14.TabIndex = 43
@@ -246,7 +268,7 @@ Partial Class ChartofAccounts
         '
         'Decriptiontxt
         '
-        Me.Decriptiontxt.Location = New System.Drawing.Point(21, 456)
+        Me.Decriptiontxt.Location = New System.Drawing.Point(24, 467)
         Me.Decriptiontxt.Multiline = True
         Me.Decriptiontxt.Name = "Decriptiontxt"
         Me.Decriptiontxt.Size = New System.Drawing.Size(321, 91)
@@ -260,7 +282,7 @@ Partial Class ChartofAccounts
         Me.CategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.CategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.CategoryIDtxt.FormattingEnabled = True
-        Me.CategoryIDtxt.Location = New System.Drawing.Point(21, 99)
+        Me.CategoryIDtxt.Location = New System.Drawing.Point(21, 124)
         Me.CategoryIDtxt.Name = "CategoryIDtxt"
         Me.CategoryIDtxt.Size = New System.Drawing.Size(320, 24)
         Me.CategoryIDtxt.TabIndex = 62
@@ -270,7 +292,7 @@ Partial Class ChartofAccounts
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label12.Location = New System.Drawing.Point(20, 81)
+        Me.Label12.Location = New System.Drawing.Point(20, 106)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(75, 16)
         Me.Label12.TabIndex = 61
@@ -288,7 +310,7 @@ Partial Class ChartofAccounts
         Me.AccountCodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccountCodetxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.AccountCodetxt.isPassword = False
-        Me.AccountCodetxt.Location = New System.Drawing.Point(24, 274)
+        Me.AccountCodetxt.Location = New System.Drawing.Point(25, 323)
         Me.AccountCodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountCodetxt.MaxLength = 32767
         Me.AccountCodetxt.Name = "AccountCodetxt"
@@ -301,7 +323,7 @@ Partial Class ChartofAccounts
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label16.Location = New System.Drawing.Point(23, 306)
+        Me.Label16.Location = New System.Drawing.Point(26, 367)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(90, 16)
         Me.Label16.TabIndex = 45
@@ -315,7 +337,7 @@ Partial Class ChartofAccounts
         Me.AssetIDTxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetIDTxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.AssetIDTxt.FormattingEnabled = True
-        Me.AssetIDTxt.Location = New System.Drawing.Point(21, 48)
+        Me.AssetIDTxt.Location = New System.Drawing.Point(23, 61)
         Me.AssetIDTxt.Name = "AssetIDTxt"
         Me.AssetIDTxt.Size = New System.Drawing.Size(320, 24)
         Me.AssetIDTxt.TabIndex = 47
@@ -325,7 +347,7 @@ Partial Class ChartofAccounts
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(18, 28)
+        Me.Label11.Location = New System.Drawing.Point(20, 41)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(55, 16)
         Me.Label11.TabIndex = 40
@@ -343,7 +365,7 @@ Partial Class ChartofAccounts
         Me.Accountnametxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Accountnametxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Accountnametxt.isPassword = False
-        Me.Accountnametxt.Location = New System.Drawing.Point(23, 326)
+        Me.Accountnametxt.Location = New System.Drawing.Point(26, 387)
         Me.Accountnametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Accountnametxt.MaxLength = 32767
         Me.Accountnametxt.Name = "Accountnametxt"
@@ -356,7 +378,7 @@ Partial Class ChartofAccounts
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label13.Location = New System.Drawing.Point(19, 136)
+        Me.Label13.Location = New System.Drawing.Point(20, 173)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(85, 16)
         Me.Label13.TabIndex = 63
@@ -367,7 +389,7 @@ Partial Class ChartofAccounts
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(23, 254)
+        Me.Label15.Location = New System.Drawing.Point(24, 303)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 16)
         Me.Label15.TabIndex = 65
@@ -378,24 +400,24 @@ Partial Class ChartofAccounts
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(20, 427)
+        Me.Label17.Location = New System.Drawing.Point(23, 438)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(71, 16)
         Me.Label17.TabIndex = 46
         Me.Label17.Text = "Description"
         '
-        'Subcategorytxt
+        'SubcategoryIDtxt
         '
-        Me.Subcategorytxt.BackColor = System.Drawing.Color.White
-        Me.Subcategorytxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Subcategorytxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Subcategorytxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Subcategorytxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Subcategorytxt.FormattingEnabled = True
-        Me.Subcategorytxt.Location = New System.Drawing.Point(22, 155)
-        Me.Subcategorytxt.Name = "Subcategorytxt"
-        Me.Subcategorytxt.Size = New System.Drawing.Size(320, 24)
-        Me.Subcategorytxt.TabIndex = 64
+        Me.SubcategoryIDtxt.BackColor = System.Drawing.Color.White
+        Me.SubcategoryIDtxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.SubcategoryIDtxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SubcategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.SubcategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.SubcategoryIDtxt.FormattingEnabled = True
+        Me.SubcategoryIDtxt.Location = New System.Drawing.Point(23, 192)
+        Me.SubcategoryIDtxt.Name = "SubcategoryIDtxt"
+        Me.SubcategoryIDtxt.Size = New System.Drawing.Size(320, 24)
+        Me.SubcategoryIDtxt.TabIndex = 64
         '
         'AccountIDtxt
         '
@@ -409,7 +431,7 @@ Partial Class ChartofAccounts
         Me.AccountIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccountIDtxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.AccountIDtxt.isPassword = False
-        Me.AccountIDtxt.Location = New System.Drawing.Point(23, 219)
+        Me.AccountIDtxt.Location = New System.Drawing.Point(23, 252)
         Me.AccountIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountIDtxt.MaxLength = 32767
         Me.AccountIDtxt.Name = "AccountIDtxt"
@@ -457,9 +479,11 @@ Partial Class ChartofAccounts
     Friend WithEvents Label13 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents Subcategorytxt As ComboBox
+    Friend WithEvents SubcategoryIDtxt As ComboBox
     Friend WithEvents AccountIDtxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents AddSubcategorybtn As Button
+    Friend WithEvents AddCategorybtn As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

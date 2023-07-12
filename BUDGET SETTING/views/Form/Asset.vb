@@ -1,6 +1,6 @@
 ﻿Public Class Asset
     Public AssetsDT As DataTable
-    Public Asset As New ChartofAccounts
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
         Me.Close()
     End Sub
@@ -26,7 +26,6 @@
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets", columnValues, Nothing, 1)
-                'Asset.ref()
             End If
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
@@ -37,6 +36,10 @@
     End Sub
 
     Private Sub Asset_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cleartxt()
+    End Sub
+
+    Sub cleartxt()
         Assettxt.Text = ""
         AssetDescrptiontxt.Text = ""
     End Sub

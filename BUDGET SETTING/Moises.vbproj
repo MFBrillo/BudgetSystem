@@ -194,40 +194,10 @@
     <Compile Include="views\Form\Registry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\UCForm\Hide\CategorySubcategory.Designer.vb">
-      <DependentUpon>CategorySubcategory.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\CategorySubcategory.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="views\UCForm\ChartofAccounts.Designer.vb">
       <DependentUpon>ChartofAccounts.vb</DependentUpon>
     </Compile>
     <Compile Include="views\UCForm\ChartofAccounts.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\FundsSpecialFunds.Designer.vb">
-      <DependentUpon>FundsSpecialFunds.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\FundsSpecialFunds.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\RegistryAsset.Designer.vb">
-      <DependentUpon>RegistryAsset.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\RegistryAsset.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\RegularAccounts.Designer.vb">
-      <DependentUpon>RegularAccounts.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\RegularAccounts.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\SectorSubsector.Designer.vb">
-      <DependentUpon>SectorSubsector.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\Hide\SectorSubsector.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -256,23 +226,8 @@
     <EmbeddedResource Include="views\Form\Registry.resx">
       <DependentUpon>Registry.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\Hide\CategorySubcategory.resx">
-      <DependentUpon>CategorySubcategory.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\ChartofAccounts.resx">
       <DependentUpon>ChartofAccounts.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\Hide\FundsSpecialFunds.resx">
-      <DependentUpon>FundsSpecialFunds.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\Hide\RegistryAsset.resx">
-      <DependentUpon>RegistryAsset.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\Hide\RegularAccounts.resx">
-      <DependentUpon>RegularAccounts.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\Hide\SectorSubsector.resx">
-      <DependentUpon>SectorSubsector.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

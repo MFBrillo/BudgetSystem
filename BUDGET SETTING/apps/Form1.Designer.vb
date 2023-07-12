@@ -26,11 +26,12 @@ Partial Class Form1
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Sectorbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TitleBar = New System.Windows.Forms.Label()
         Me.MenuController = New System.Windows.Forms.Panel()
         Me.Chartbtn = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.MainPanel = New System.Windows.Forms.DataGridView()
         Me.Fundsbtn = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.MainPanel = New System.Windows.Forms.DataGridView()
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.MenuController.SuspendLayout()
         CType(Me.MainPanel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +67,7 @@ Partial Class Form1
         '
         Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuGradientPanel1.Controls.Add(Me.Button2)
         Me.BunifuGradientPanel1.Controls.Add(Me.TitleBar)
         Me.BunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -77,6 +79,15 @@ Partial Class Form1
         Me.BunifuGradientPanel1.Quality = 10
         Me.BunifuGradientPanel1.Size = New System.Drawing.Size(1166, 50)
         Me.BunifuGradientPanel1.TabIndex = 4
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(1074, 13)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 77
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'TitleBar
         '
@@ -128,28 +139,6 @@ Partial Class Form1
         Me.Chartbtn.TabIndex = 7
         Me.Chartbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'MainPanel
-        '
-        Me.MainPanel.AllowUserToAddRows = False
-        Me.MainPanel.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
-        Me.MainPanel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MainPanel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.MainPanel.BackgroundColor = System.Drawing.Color.White
-        Me.MainPanel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.MainPanel.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        Me.MainPanel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MainPanel.Location = New System.Drawing.Point(0, 115)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.ReadOnly = True
-        Me.MainPanel.RowTemplate.Height = 35
-        Me.MainPanel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MainPanel.Size = New System.Drawing.Size(1166, 560)
-        Me.MainPanel.TabIndex = 90
-        '
         'Fundsbtn
         '
         Me.Fundsbtn.ActiveBorderThickness = 1
@@ -175,6 +164,28 @@ Partial Class Form1
         Me.Fundsbtn.Size = New System.Drawing.Size(178, 50)
         Me.Fundsbtn.TabIndex = 3
         Me.Fundsbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MainPanel
+        '
+        Me.MainPanel.AllowUserToAddRows = False
+        Me.MainPanel.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        Me.MainPanel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MainPanel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.MainPanel.BackgroundColor = System.Drawing.Color.White
+        Me.MainPanel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.MainPanel.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        Me.MainPanel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.MainPanel.Location = New System.Drawing.Point(0, 115)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.ReadOnly = True
+        Me.MainPanel.RowTemplate.Height = 35
+        Me.MainPanel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.MainPanel.Size = New System.Drawing.Size(1166, 560)
+        Me.MainPanel.TabIndex = 90
         '
         'Form1
         '
@@ -203,4 +214,5 @@ Partial Class Form1
     Friend WithEvents MainPanel As DataGridView
     Friend WithEvents Chartbtn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents Fundsbtn As Bunifu.Framework.UI.BunifuThinButton2
+    Friend WithEvents Button2 As Button
 End Class
