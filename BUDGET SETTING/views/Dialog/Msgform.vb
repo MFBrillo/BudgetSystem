@@ -29,4 +29,8 @@
 
 
     End Sub
+
+    Private Sub MsgText_Click(sender As Object, e As EventArgs) Handles MsgText.Click
+
+    End Sub
 End Class

@@ -41,7 +41,7 @@
         If MenuController.Width <> colapsed_width Then
             MenuController.Width = colapsed_width
             Chartbtn.TextAlign = ContentAlignment.MiddleCenter
-            Sectorbtn.TextAlign = ContentAlignment.MiddleCenter
+            Settingbtn.TextAlign = ContentAlignment.MiddleCenter
             Try
                 If userControl IsNot Nothing Then
                     userControl.Size = New Size(MainPanel.Size)
@@ -57,7 +57,7 @@
         ElseIf MenuController.Width = colapsed_width Then
             MenuController.Width = menu_width
             Chartbtn.TextAlign = ContentAlignment.MiddleLeft
-            Sectorbtn.TextAlign = ContentAlignment.MiddleLeft
+            Settingbtn.TextAlign = ContentAlignment.MiddleLeft
 
             Try
                 If userControl IsNot Nothing Then
@@ -85,15 +85,15 @@
             Case "Chartbtn"
                 Dim uc = New ChartofAccounts
                 ShowUserControl(uc)
-                'Case "RegularBtn"
-                '    Dim uc = New RegularAccounts
-                '    ShowUserControl(uc)
+            Case "Settingbtn"
+                Dim uc = New ChartAccountSettingUC
+                ShowUserControl(uc)
                 'Case "Categorybtn"
-                '    Dim uc = New CategorySubcategory
-                '    ShowUserControl(uc)
-                'Case "Fundsbtn"
-                '    Dim uc = New FundsSpecialFunds
-                '    ShowUserControl(uc)
+                '    Dim form = New Category
+                '    ShowForm(form)
+                'Case "Subcategorybtn"
+                '    Dim form = New Subcategory
+                '    ShowForm(form)
                 'Case "Registrybtn"
                 '    Dim uc = New RegistryAsset
                 '    ShowUserControl(uc)
@@ -104,7 +104,7 @@
     End Sub
 
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Fundsbtn.Click, Sectorbtn.Click, Chartbtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
 
@@ -114,5 +114,9 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainPanel.CellContentClick
+
     End Sub
 End Class

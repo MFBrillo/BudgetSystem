@@ -22,6 +22,7 @@ Partial Class ChartofAccounts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChartofAccounts))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -30,12 +31,9 @@ Partial Class ChartofAccounts
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.TitleBar = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.AddSubcategorybtn = New System.Windows.Forms.Button()
         Me.AddCategorybtn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Editbtn = New System.Windows.Forms.Button()
         Me.Addbtn = New System.Windows.Forms.Button()
         Me.Savebtn = New System.Windows.Forms.Button()
@@ -53,6 +51,7 @@ Partial Class ChartofAccounts
         Me.Label17 = New System.Windows.Forms.Label()
         Me.SubcategoryIDtxt = New System.Windows.Forms.ComboBox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuGradientPanel1.SuspendLayout()
@@ -74,12 +73,12 @@ Partial Class ChartofAccounts
         '
         'Panel3
         '
-        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.BunifuGradientPanel1)
-        Me.Panel3.Location = New System.Drawing.Point(474, 92)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(457, 50)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(821, 729)
+        Me.Panel3.Size = New System.Drawing.Size(862, 810)
         Me.Panel3.TabIndex = 75
         '
         'DataGridView1
@@ -88,18 +87,21 @@ Partial Class ChartofAccounts
         Me.DataGridView1.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(4, 41)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 47)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 35
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(814, 685)
+        Me.DataGridView1.Size = New System.Drawing.Size(853, 763)
         Me.DataGridView1.TabIndex = 0
         '
         'BunifuGradientPanel1
@@ -107,39 +109,36 @@ Partial Class ChartofAccounts
         Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel1.Controls.Add(Me.TitleBar)
-        Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(110, Byte), Integer))
         Me.BunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.BunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(110, Byte), Integer))
         Me.BunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.BunifuGradientPanel1.Location = New System.Drawing.Point(0, 0)
         Me.BunifuGradientPanel1.Name = "BunifuGradientPanel1"
         Me.BunifuGradientPanel1.Quality = 10
-        Me.BunifuGradientPanel1.Size = New System.Drawing.Size(815, 38)
+        Me.BunifuGradientPanel1.Size = New System.Drawing.Size(862, 38)
         Me.BunifuGradientPanel1.TabIndex = 72
         '
         'TitleBar
         '
-        Me.TitleBar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TitleBar.BackColor = System.Drawing.Color.Transparent
+        Me.TitleBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitleBar.Font = New System.Drawing.Font("Tahoma", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TitleBar.ForeColor = System.Drawing.Color.White
-        Me.TitleBar.Location = New System.Drawing.Point(3, 2)
+        Me.TitleBar.Location = New System.Drawing.Point(0, 0)
         Me.TitleBar.Name = "TitleBar"
-        Me.TitleBar.Size = New System.Drawing.Size(809, 30)
+        Me.TitleBar.Size = New System.Drawing.Size(862, 38)
         Me.TitleBar.TabIndex = 1
         Me.TitleBar.Text = "Chart of Account"
         Me.TitleBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
-        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.AddSubcategorybtn)
         Me.Panel2.Controls.Add(Me.AddCategorybtn)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Editbtn)
         Me.Panel2.Controls.Add(Me.Addbtn)
         Me.Panel2.Controls.Add(Me.Savebtn)
@@ -157,28 +156,11 @@ Partial Class ChartofAccounts
         Me.Panel2.Controls.Add(Me.Label17)
         Me.Panel2.Controls.Add(Me.SubcategoryIDtxt)
         Me.Panel2.Controls.Add(Me.AccountIDtxt)
-        Me.Panel2.Location = New System.Drawing.Point(22, 92)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(438, 727)
+        Me.Panel2.Size = New System.Drawing.Size(457, 810)
         Me.Panel2.TabIndex = 74
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(319, 438)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 13)
-        Me.Label4.TabIndex = 80
-        Me.Label4.Text = "Label2asdad"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(234, 438)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 13)
-        Me.Label3.TabIndex = 79
-        Me.Label3.Text = "Label2asdad"
         '
         'AddSubcategorybtn
         '
@@ -207,15 +189,6 @@ Partial Class ChartofAccounts
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(147, 441)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
-        Me.Label2.TabIndex = 74
-        Me.Label2.Text = "Label2asdad"
-        '
         'Editbtn
         '
         Me.Editbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -224,7 +197,7 @@ Partial Class ChartofAccounts
         Me.Editbtn.ForeColor = System.Drawing.Color.White
         Me.Editbtn.Location = New System.Drawing.Point(24, 578)
         Me.Editbtn.Name = "Editbtn"
-        Me.Editbtn.Size = New System.Drawing.Size(320, 40)
+        Me.Editbtn.Size = New System.Drawing.Size(398, 40)
         Me.Editbtn.TabIndex = 72
         Me.Editbtn.Text = "EDIT"
         Me.Editbtn.UseVisualStyleBackColor = False
@@ -235,9 +208,9 @@ Partial Class ChartofAccounts
         Me.Addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Addbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Addbtn.ForeColor = System.Drawing.Color.White
-        Me.Addbtn.Location = New System.Drawing.Point(24, 624)
+        Me.Addbtn.Location = New System.Drawing.Point(24, 637)
         Me.Addbtn.Name = "Addbtn"
-        Me.Addbtn.Size = New System.Drawing.Size(320, 40)
+        Me.Addbtn.Size = New System.Drawing.Size(398, 40)
         Me.Addbtn.TabIndex = 71
         Me.Addbtn.Text = "ADD"
         Me.Addbtn.UseVisualStyleBackColor = False
@@ -248,9 +221,9 @@ Partial Class ChartofAccounts
         Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Savebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Savebtn.ForeColor = System.Drawing.Color.White
-        Me.Savebtn.Location = New System.Drawing.Point(24, 670)
+        Me.Savebtn.Location = New System.Drawing.Point(24, 697)
         Me.Savebtn.Name = "Savebtn"
-        Me.Savebtn.Size = New System.Drawing.Size(320, 40)
+        Me.Savebtn.Size = New System.Drawing.Size(398, 40)
         Me.Savebtn.TabIndex = 42
         Me.Savebtn.Text = "SAVE"
         Me.Savebtn.UseVisualStyleBackColor = False
@@ -271,7 +244,7 @@ Partial Class ChartofAccounts
         Me.Decriptiontxt.Location = New System.Drawing.Point(24, 467)
         Me.Decriptiontxt.Multiline = True
         Me.Decriptiontxt.Name = "Decriptiontxt"
-        Me.Decriptiontxt.Size = New System.Drawing.Size(321, 91)
+        Me.Decriptiontxt.Size = New System.Drawing.Size(399, 91)
         Me.Decriptiontxt.TabIndex = 70
         '
         'CategoryIDtxt
@@ -282,9 +255,9 @@ Partial Class ChartofAccounts
         Me.CategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.CategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.CategoryIDtxt.FormattingEnabled = True
-        Me.CategoryIDtxt.Location = New System.Drawing.Point(21, 124)
+        Me.CategoryIDtxt.Location = New System.Drawing.Point(23, 124)
         Me.CategoryIDtxt.Name = "CategoryIDtxt"
-        Me.CategoryIDtxt.Size = New System.Drawing.Size(320, 24)
+        Me.CategoryIDtxt.Size = New System.Drawing.Size(318, 24)
         Me.CategoryIDtxt.TabIndex = 62
         '
         'Label12
@@ -310,11 +283,11 @@ Partial Class ChartofAccounts
         Me.AccountCodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccountCodetxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.AccountCodetxt.isPassword = False
-        Me.AccountCodetxt.Location = New System.Drawing.Point(25, 323)
+        Me.AccountCodetxt.Location = New System.Drawing.Point(24, 323)
         Me.AccountCodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountCodetxt.MaxLength = 32767
         Me.AccountCodetxt.Name = "AccountCodetxt"
-        Me.AccountCodetxt.Size = New System.Drawing.Size(320, 28)
+        Me.AccountCodetxt.Size = New System.Drawing.Size(400, 28)
         Me.AccountCodetxt.TabIndex = 68
         Me.AccountCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -365,11 +338,11 @@ Partial Class ChartofAccounts
         Me.Accountnametxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Accountnametxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Accountnametxt.isPassword = False
-        Me.Accountnametxt.Location = New System.Drawing.Point(26, 387)
+        Me.Accountnametxt.Location = New System.Drawing.Point(21, 387)
         Me.Accountnametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Accountnametxt.MaxLength = 32767
         Me.Accountnametxt.Name = "Accountnametxt"
-        Me.Accountnametxt.Size = New System.Drawing.Size(320, 31)
+        Me.Accountnametxt.Size = New System.Drawing.Size(404, 31)
         Me.Accountnametxt.TabIndex = 56
         Me.Accountnametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -435,9 +408,14 @@ Partial Class ChartofAccounts
         Me.AccountIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountIDtxt.MaxLength = 32767
         Me.AccountIDtxt.Name = "AccountIDtxt"
-        Me.AccountIDtxt.Size = New System.Drawing.Size(320, 28)
+        Me.AccountIDtxt.Size = New System.Drawing.Size(399, 28)
         Me.AccountIDtxt.TabIndex = 57
         Me.AccountIDtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 10
         '
         'ChartofAccounts
         '
@@ -463,7 +441,6 @@ Partial Class ChartofAccounts
     Friend WithEvents BunifuGradientPanel1 As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents TitleBar As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents Editbtn As Button
     Friend WithEvents Addbtn As Button
     Friend WithEvents Savebtn As Button
@@ -484,6 +461,5 @@ Partial Class ChartofAccounts
     Friend WithEvents Button1 As Button
     Friend WithEvents AddSubcategorybtn As Button
     Friend WithEvents AddCategorybtn As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents Timer1 As Timer
 End Class

@@ -1,31 +1,19 @@
 ﻿Public Class ChartofAccounts
     Public AccountDT As DataTable
-    Public RegistryDT As DataTable
     Public AssetsDT As DataTable
     Public CategoryDT As DataTable
     Public SubcategoryDT As DataTable
-
     Private Sub RegularAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Custom_Load()
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
-        Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
-        Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
         Header_Accounts()
     End Sub
-    Public Shared assetcontrol As Boolean = False
-    Friend Sub combobox_Load()
-        If assetcontrol = True Then
-            Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
-        End If
-    End Sub
-
     Public Shared assetid
     Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
         Try
             Dim sql As New MySQLCore
-            Dim dt = sql.MySql_SelectString("id", "gl_assets", , $"where asset ='{AssetIDTxt.Text}'")
-            assetid = dt.Rows(0).Item("id").ToString
-            Label2.Text = assetid
+            Dim dt = sql.MySql_SelectString("assetid", "gl_assets", , $"where asset ='{AssetIDTxt.Text}'")
+            assetid = dt.Rows(0).Item("assetid").ToString
         Catch ex As Exception
         End Try
     End Sub
@@ -33,12 +21,10 @@
     Private Sub CategoryIDtxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.SelectedIndexChanged
         Try
             Dim sql As New MySQLCore
-
             Dim dt = sql.MySql_SelectString("categoryid", "gl_assets_category", , $"where category ='{CategoryIDtxt.Text}'")
             categoryid = dt.Rows(0).Item("categoryid").ToString
-            Label3.Text = categoryid
-
         Catch ex As Exception
+
         End Try
     End Sub
     Public Shared subcategoryid
@@ -47,38 +33,61 @@
             Dim sql As New MySQLCore
             Dim dt = sql.MySql_SelectString("subcategoryid", "gl_assets_subcategory", , $"where subcategory ='{SubcategoryIDtxt.Text}'")
             subcategoryid = dt.Rows(0).Item("subcategoryid").ToString
-            Label4.Text = subcategoryid
-
+            Accountnumber()
+            Accountcode1()
         Catch ex As Exception
         End Try
     End Sub
 
-    Sub autogenerateaccountid()
-        If SubcategoryIDtxt.Text = "" Then
-            AccountIDtxt.Text = ""
-
+    Sub Accountcode1()
+        Dim input As String = AccountIDtxt.Text
+        ' Assuming the input string contains only digits
+        If input.Length <= 1 Then
+            AccountCodetxt.Text = input ' Return as it is if it's a single digit
         Else
-            Dim SqlLoad As New MySQLCore
-            AccountDT = SqlLoad.MySql_SelectString("MAX(accountid+1) AS NewAccountID", "gl_accounts", Nothing, $" where subcategoryid = '{subcategoryid}'")
-
-            If AccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("NewAccountID")) Then
-                Dim newAccountID As Integer = Convert.ToInt32(AccountDT.Rows(0)("NewAccountID"))
-                AccountIDtxt.Text = newAccountID.ToString()
-            End If
-
-            Dim inputText As String = AccountIDtxt.Text
-            Dim outputText As String = ""
-
-            For i As Integer = 0 To inputText.Length - 1
-                outputText &= inputText(i)
-                If i = 0 OrElse i = 2 OrElse i = 4 Then
-                    outputText &= "-"
-                End If
-            Next
-            AccountCodetxt.Text = outputText
+            Dim firstPart As String = input.Substring(0, 1) ' Extract the first digit
+            Dim secondPart As String = input.Substring(1, 2) ' Extract the rest of the string
+            Dim thirdPart As String = input.Substring(3, 2) ' Extract the first digit
+            Dim fourthPart As String = input.Substring(5) ' Extract the rest of the string
+            AccountCodetxt.Text = $"{firstPart}-{secondPart}-{thirdPart}-{fourthPart}"
         End If
+    End Sub
 
+    Public LastAccountDT As DataTable
+    Public BeforLastAccountDT As DataTable
+    Public Shared accountid
+    Sub Accountnumber()
+        Dim SqlLoad As New MySQLCore
+        AccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'")
+        If AccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("accountid")) Then
+            LastAccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'", "order by id desc", "limit 1")
+            BeforLastAccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'", "order by id desc", "limit 1 offset 1")
+            If BeforLastAccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("accountid")) Then
+                Dim newcategoryID As Integer = Convert.ToInt32(AccountDT.Rows(0)("accountid"))
+                Dim newbeforelastcategoryID As Integer = Convert.ToInt32(BeforLastAccountDT.Rows(0)("accountid"))
+                If LastAccountDT.Rows.Count = 0 OrElse IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
+                    AccountIDtxt.Text = newcategoryID
+                Else
+                    If LastAccountDT.Rows.Count > 0 AndAlso Not IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
+                        Dim newlastcategoryID As Integer = Convert.ToInt32(LastAccountDT.Rows(0)("accountid"))
+                        If (newlastcategoryID - newbeforelastcategoryID) = 1 Then
+                            AccountIDtxt.Text = newlastcategoryID + 1
+                        Else
+                            AccountIDtxt.Text = newbeforelastcategoryID + 1
+                        End If
+                    End If
+                End If
+            Else
+                AccountIDtxt.Text = Convert.ToInt32(subcategoryid + "02")
+            End If
+        Else
+            Try
+                AccountIDtxt.Text = Convert.ToInt32(subcategoryid + "01")
+            Catch ex As Exception
 
+            End Try
+
+        End If
     End Sub
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
@@ -86,26 +95,20 @@
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
         SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
-
-        Dim columns = "id As ID,assetid 'Asset ID',accountid 'Account ID',accountname 'Account Name',accountdescription 'Account Description'"
+        Dim columns = "accountid 'ACCOUNT ID',accountname 'ACCOUNT NAME',accountdescription 'ACCOUNT DESCRIPTION'"
         Dim table = "gl_accounts"
         DataGridView1.DataSource = SqlLoad.MySql_SelectString(columns, table)
-        Dim cols() = {"registrycode", "categoryid", "subcategoryid", "accountcode", "logdate"}
+        Dim cols() = {"id", "registrycode", "categoryid", "subcategoryid", "accountcode", "logdate"}
         Datagrid_HideColumn(DataGridView1, cols)
     End Sub
-
     Private Sub Header_Accounts()
-        DataGridView1.Columns("ID").Width = 90
-        DataGridView1.Columns("Asset ID").Width = 90
-        DataGridView1.Columns("Account ID").Width = 90
+        DataGridView1.Columns("Account ID").Width = 120
     End Sub
-
     Friend firstCharacter1 As String = ""
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         If Accountnametxt.Text = "" Then
             CustomMsg("Save Record Failed", "Insert Correct Data.", "OK")
         Else
-
             Try
                 Dim mySql As New MySQLCore
                 Dim columnValues As New Dictionary(Of String, String)
@@ -122,44 +125,34 @@
             End Try
             Custom_Load()
         End If
-        disablesave()
-    End Sub
-    Private Sub AccountIDtxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AccountIDtxt.KeyPress
-        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
-            e.Handled = True
-        ElseIf AccountIDtxt.Text.Length >= 8 AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
+        Disablesave()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Editbtn.Click
-        enablesave()
+        Enablesave()
     End Sub
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-        enablesave()
+        Enablesave()
     End Sub
-    Sub enablesave()
+    Sub Enablesave()
         Savebtn.Enabled = True
         Addbtn.Enabled = False
         Editbtn.Enabled = False
     End Sub
-    Sub disablesave()
+    Sub Disablesave()
         Savebtn.Enabled = False
         Addbtn.Enabled = True
         Editbtn.Enabled = True
     End Sub
-
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Asset.ShowDialog()
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddCategorybtn.Click
         Category.AssetIDtxt.Text = assetid
-        Category.CategoryIDtxt.Text = categoryid
         Category.ShowDialog()
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles AddSubcategorybtn.Click
         Subcategory.Assetidtxt.Text = assetid
         Subcategory.CategoryIDtxt.Text = categoryid
-        Subcategory.SubcategoryIDtxt.Text = subcategoryid
         Subcategory.ShowDialog()
     End Sub
     Private Sub AssetIDTxt_DropDown(sender As Object, e As EventArgs) Handles AssetIDTxt.DropDown
@@ -168,26 +161,23 @@
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
     End Sub
     Private Sub CategoryIDtxt_DropDown(sender As Object, e As EventArgs) Handles CategoryIDtxt.DropDown
-
         Dim SqlLoad As New MySQLCore
-            CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
-            Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
-
+        CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
+        Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
+        'Custom_ComboBoxDatasource(CategoryIDtxt2, CategoryDT, "categoryid", "categoryid")
     End Sub
     Private Sub Subcategorytxt_DropDown(sender As Object, e As EventArgs) Handles SubcategoryIDtxt.DropDown
-
-
         Dim SqlLoad As New MySQLCore
-            SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
-            Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
-
-
-    End Sub
-    Private Sub AssetIDTxt_DropDownClosed(sender As Object, e As EventArgs) Handles AssetIDTxt.DropDownClosed
-
+        SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
+        Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
+        ' Custom_ComboBoxDatasource(SubcategoryIDtxt2, SubcategoryDT, "subcategoryid", "subcategoryid")
     End Sub
 
-    Private Sub SubcategoryIDtxt_DropDownClosed(sender As Object, e As EventArgs) Handles SubcategoryIDtxt.DropDownClosed
-        autogenerateaccountid()
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
     End Sub
 End Class

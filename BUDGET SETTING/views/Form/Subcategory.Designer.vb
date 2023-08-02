@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Subcategory
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,14 @@ Partial Class Subcategory
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Assetidtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SubcategoryCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Cancelbtn = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.AssetAddbtn = New System.Windows.Forms.Button()
@@ -34,10 +39,6 @@ Partial Class Subcategory
         Me.SubcategoryIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.CategoryIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.SubcategoryCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Assetidtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,6 +46,7 @@ Partial Class Subcategory
         '
         Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Assetidtxt)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
@@ -60,10 +62,85 @@ Partial Class Subcategory
         Me.Panel2.Controls.Add(Me.SubcategoryIDtxt)
         Me.Panel2.Controls.Add(Me.CategoryIDtxt)
         Me.Panel2.Controls.Add(Me.Label12)
-        Me.Panel2.Location = New System.Drawing.Point(12, 23)
+        Me.Panel2.Location = New System.Drawing.Point(16, 15)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(580, 441)
+        Me.Panel2.Size = New System.Drawing.Size(580, 397)
         Me.Panel2.TabIndex = 66
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(304, 287)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(254, 30)
+        Me.Button1.TabIndex = 82
+        Me.Button1.Text = "Edit"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Assetidtxt
+        '
+        Me.Assetidtxt.BackColor = System.Drawing.Color.White
+        Me.Assetidtxt.BorderColorFocused = System.Drawing.Color.Black
+        Me.Assetidtxt.BorderColorIdle = System.Drawing.Color.White
+        Me.Assetidtxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.Assetidtxt.BorderThickness = 1
+        Me.Assetidtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.Assetidtxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Assetidtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Assetidtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Assetidtxt.isPassword = False
+        Me.Assetidtxt.Location = New System.Drawing.Point(26, 148)
+        Me.Assetidtxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.Assetidtxt.MaxLength = 32767
+        Me.Assetidtxt.Name = "Assetidtxt"
+        Me.Assetidtxt.Size = New System.Drawing.Size(256, 30)
+        Me.Assetidtxt.TabIndex = 99
+        Me.Assetidtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(299, 123)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(75, 16)
+        Me.Label2.TabIndex = 98
+        Me.Label2.Text = "Category ID"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(297, 199)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(112, 16)
+        Me.Label1.TabIndex = 96
+        Me.Label1.Text = "Subcategory Code"
+        '
+        'SubcategoryCodetxt
+        '
+        Me.SubcategoryCodetxt.BackColor = System.Drawing.Color.White
+        Me.SubcategoryCodetxt.BorderColorFocused = System.Drawing.Color.Black
+        Me.SubcategoryCodetxt.BorderColorIdle = System.Drawing.Color.White
+        Me.SubcategoryCodetxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.SubcategoryCodetxt.BorderThickness = 1
+        Me.SubcategoryCodetxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.SubcategoryCodetxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.SubcategoryCodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.SubcategoryCodetxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.SubcategoryCodetxt.isPassword = False
+        Me.SubcategoryCodetxt.Location = New System.Drawing.Point(300, 223)
+        Me.SubcategoryCodetxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.SubcategoryCodetxt.MaxLength = 32767
+        Me.SubcategoryCodetxt.Name = "SubcategoryCodetxt"
+        Me.SubcategoryCodetxt.Size = New System.Drawing.Size(256, 30)
+        Me.SubcategoryCodetxt.TabIndex = 97
+        Me.SubcategoryCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Cancelbtn
         '
@@ -71,7 +148,7 @@ Partial Class Subcategory
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White
-        Me.Cancelbtn.Location = New System.Drawing.Point(24, 369)
+        Me.Cancelbtn.Location = New System.Drawing.Point(28, 340)
         Me.Cancelbtn.Name = "Cancelbtn"
         Me.Cancelbtn.Size = New System.Drawing.Size(256, 30)
         Me.Cancelbtn.TabIndex = 95
@@ -82,7 +159,7 @@ Partial Class Subcategory
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(213, 14)
+        Me.Label8.Location = New System.Drawing.Point(213, 9)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(161, 24)
         Me.Label8.TabIndex = 78
@@ -94,11 +171,11 @@ Partial Class Subcategory
         Me.AssetAddbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AssetAddbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetAddbtn.ForeColor = System.Drawing.Color.White
-        Me.AssetAddbtn.Location = New System.Drawing.Point(300, 369)
+        Me.AssetAddbtn.Location = New System.Drawing.Point(304, 339)
         Me.AssetAddbtn.Name = "AssetAddbtn"
         Me.AssetAddbtn.Size = New System.Drawing.Size(256, 30)
         Me.AssetAddbtn.TabIndex = 70
-        Me.AssetAddbtn.Text = "Add"
+        Me.AssetAddbtn.Text = "Save"
         Me.AssetAddbtn.UseVisualStyleBackColor = False
         '
         'SubcategoryDestxt
@@ -113,7 +190,7 @@ Partial Class Subcategory
         Me.SubcategoryDestxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.SubcategoryDestxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SubcategoryDestxt.isPassword = False
-        Me.SubcategoryDestxt.Location = New System.Drawing.Point(300, 90)
+        Me.SubcategoryDestxt.Location = New System.Drawing.Point(300, 79)
         Me.SubcategoryDestxt.Margin = New System.Windows.Forms.Padding(4)
         Me.SubcategoryDestxt.MaxLength = 32767
         Me.SubcategoryDestxt.Name = "SubcategoryDestxt"
@@ -126,7 +203,7 @@ Partial Class Subcategory
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(297, 65)
+        Me.Label14.Location = New System.Drawing.Point(297, 54)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(183, 16)
         Me.Label14.TabIndex = 91
@@ -144,7 +221,7 @@ Partial Class Subcategory
         Me.Subcategorynametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Subcategorynametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Subcategorynametxt.isPassword = False
-        Me.Subcategorynametxt.Location = New System.Drawing.Point(26, 90)
+        Me.Subcategorynametxt.Location = New System.Drawing.Point(26, 79)
         Me.Subcategorynametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Subcategorynametxt.MaxLength = 32767
         Me.Subcategorynametxt.Name = "Subcategorynametxt"
@@ -157,7 +234,7 @@ Partial Class Subcategory
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(25, 249)
+        Me.Label11.Location = New System.Drawing.Point(25, 199)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(95, 16)
         Me.Label11.TabIndex = 85
@@ -168,7 +245,7 @@ Partial Class Subcategory
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(25, 66)
+        Me.Label3.Location = New System.Drawing.Point(25, 55)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(116, 16)
         Me.Label3.TabIndex = 89
@@ -186,7 +263,7 @@ Partial Class Subcategory
         Me.SubcategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.SubcategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SubcategoryIDtxt.isPassword = False
-        Me.SubcategoryIDtxt.Location = New System.Drawing.Point(28, 273)
+        Me.SubcategoryIDtxt.Location = New System.Drawing.Point(28, 223)
         Me.SubcategoryIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.SubcategoryIDtxt.MaxLength = 32767
         Me.SubcategoryIDtxt.Name = "SubcategoryIDtxt"
@@ -206,7 +283,7 @@ Partial Class Subcategory
         Me.CategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.CategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.CategoryIDtxt.isPassword = False
-        Me.CategoryIDtxt.Location = New System.Drawing.Point(302, 191)
+        Me.CategoryIDtxt.Location = New System.Drawing.Point(302, 148)
         Me.CategoryIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.CategoryIDtxt.MaxLength = 32767
         Me.CategoryIDtxt.Name = "CategoryIDtxt"
@@ -219,79 +296,17 @@ Partial Class Subcategory
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label12.Location = New System.Drawing.Point(27, 155)
+        Me.Label12.Location = New System.Drawing.Point(27, 123)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(55, 16)
         Me.Label12.TabIndex = 87
         Me.Label12.Text = "Asset ID"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(297, 249)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 16)
-        Me.Label1.TabIndex = 96
-        Me.Label1.Text = "Subcategory Code"
-        '
-        'SubcategoryCodetxt
-        '
-        Me.SubcategoryCodetxt.BackColor = System.Drawing.Color.White
-        Me.SubcategoryCodetxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.SubcategoryCodetxt.BorderColorIdle = System.Drawing.Color.White
-        Me.SubcategoryCodetxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.SubcategoryCodetxt.BorderThickness = 1
-        Me.SubcategoryCodetxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.SubcategoryCodetxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.SubcategoryCodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.SubcategoryCodetxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.SubcategoryCodetxt.isPassword = False
-        Me.SubcategoryCodetxt.Location = New System.Drawing.Point(300, 273)
-        Me.SubcategoryCodetxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.SubcategoryCodetxt.MaxLength = 32767
-        Me.SubcategoryCodetxt.Name = "SubcategoryCodetxt"
-        Me.SubcategoryCodetxt.Size = New System.Drawing.Size(256, 30)
-        Me.SubcategoryCodetxt.TabIndex = 97
-        Me.SubcategoryCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Assetidtxt
-        '
-        Me.Assetidtxt.BackColor = System.Drawing.Color.White
-        Me.Assetidtxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Assetidtxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Assetidtxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.Assetidtxt.BorderThickness = 1
-        Me.Assetidtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.Assetidtxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Assetidtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Assetidtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Assetidtxt.isPassword = False
-        Me.Assetidtxt.Location = New System.Drawing.Point(26, 191)
-        Me.Assetidtxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.Assetidtxt.MaxLength = 32767
-        Me.Assetidtxt.Name = "Assetidtxt"
-        Me.Assetidtxt.Size = New System.Drawing.Size(256, 30)
-        Me.Assetidtxt.TabIndex = 99
-        Me.Assetidtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(299, 155)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 16)
-        Me.Label2.TabIndex = 98
-        Me.Label2.Text = "Category ID"
-        '
         'Subcategory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(620, 507)
+        Me.ClientSize = New System.Drawing.Size(620, 429)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -320,4 +335,5 @@ Partial Class Subcategory
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents SubcategoryCodetxt As Bunifu.Framework.UI.BunifuMetroTextbox
+    Friend WithEvents Button1 As Button
 End Class
