@@ -25,6 +25,7 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuController = New System.Windows.Forms.Panel()
+        Me.Officebtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Chartbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Settingbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.MainPanel = New System.Windows.Forms.DataGridView()
@@ -39,6 +40,7 @@ Partial Class Form1
         'MenuController
         '
         Me.MenuController.BackColor = System.Drawing.Color.White
+        Me.MenuController.Controls.Add(Me.Officebtn)
         Me.MenuController.Controls.Add(Me.Chartbtn)
         Me.MenuController.Controls.Add(Me.Settingbtn)
         Me.MenuController.Dock = System.Windows.Forms.DockStyle.Top
@@ -46,6 +48,32 @@ Partial Class Form1
         Me.MenuController.Name = "MenuController"
         Me.MenuController.Size = New System.Drawing.Size(1166, 66)
         Me.MenuController.TabIndex = 7
+        '
+        'Officebtn
+        '
+        Me.Officebtn.ActiveBorderThickness = 1
+        Me.Officebtn.ActiveCornerRadius = 20
+        Me.Officebtn.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Officebtn.ActiveForecolor = System.Drawing.Color.Black
+        Me.Officebtn.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Officebtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Officebtn.BackColor = System.Drawing.Color.White
+        Me.Officebtn.BackgroundImage = CType(resources.GetObject("Officebtn.BackgroundImage"), System.Drawing.Image)
+        Me.Officebtn.ButtonText = "Office"
+        Me.Officebtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Officebtn.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Officebtn.ForeColor = System.Drawing.Color.Black
+        Me.Officebtn.IdleBorderThickness = 1
+        Me.Officebtn.IdleCornerRadius = 20
+        Me.Officebtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.Officebtn.IdleForecolor = System.Drawing.Color.White
+        Me.Officebtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.Officebtn.Location = New System.Drawing.Point(909, 11)
+        Me.Officebtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Officebtn.Name = "Officebtn"
+        Me.Officebtn.Size = New System.Drawing.Size(206, 50)
+        Me.Officebtn.TabIndex = 8
+        Me.Officebtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Chartbtn
         '
@@ -186,4 +214,5 @@ Partial Class Form1
     Friend WithEvents Chartbtn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents Settingbtn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents Button2 As Button
+    Friend WithEvents Officebtn As Bunifu.Framework.UI.BunifuThinButton2
 End Class

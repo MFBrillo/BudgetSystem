@@ -14,6 +14,7 @@
             Dim sql As New MySQLCore
             Dim dt = sql.MySql_SelectString("assetid", "gl_assets", , $"where asset ='{AssetIDTxt.Text}'")
             assetid = dt.Rows(0).Item("assetid").ToString
+            cleartext1()
         Catch ex As Exception
         End Try
     End Sub
@@ -127,21 +128,23 @@
         End If
         Disablesave()
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Editbtn.Click
-        Enablesave()
-    End Sub
+
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
         Enablesave()
     End Sub
     Sub Enablesave()
         Savebtn.Enabled = True
         Addbtn.Enabled = False
-        Editbtn.Enabled = False
     End Sub
     Sub Disablesave()
         Savebtn.Enabled = False
         Addbtn.Enabled = True
-        Editbtn.Enabled = True
+    End Sub
+    Sub cleartext1()
+        AccountIDtxt.Text = ""
+        AccountCodetxt.Text = ""
+        Accountnametxt.Text = ""
+        Decriptiontxt.Text = ""
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Asset.ShowDialog()
@@ -159,12 +162,21 @@
         Dim SqlLoad As New MySQLCore
         AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
+        'Dim newcategoryID As Integer = Convert.ToInt32(CategoryDT.Rows(0)("categoryid"))
+        'CategoryIDtxt.Items.Add(newcategoryID)
+        CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
+        Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
+        SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
+        Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
+        cleartext1()
     End Sub
     Private Sub CategoryIDtxt_DropDown(sender As Object, e As EventArgs) Handles CategoryIDtxt.DropDown
         Dim SqlLoad As New MySQLCore
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
         Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
-        'Custom_ComboBoxDatasource(CategoryIDtxt2, CategoryDT, "categoryid", "categoryid")
+        SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
+        Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
+        cleartext1()
     End Sub
     Private Sub Subcategorytxt_DropDown(sender As Object, e As EventArgs) Handles SubcategoryIDtxt.DropDown
         Dim SqlLoad As New MySQLCore
@@ -173,11 +185,7 @@
         ' Custom_ComboBoxDatasource(SubcategoryIDtxt2, SubcategoryDT, "subcategoryid", "subcategoryid")
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
 
     End Sub
 End Class

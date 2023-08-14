@@ -88,9 +88,9 @@
             Case "Settingbtn"
                 Dim uc = New ChartAccountSettingUC
                 ShowUserControl(uc)
-                'Case "Categorybtn"
-                '    Dim form = New Category
-                '    ShowForm(form)
+            Case "Officebtn"
+                Dim form = New Office
+                ShowForm(form)
                 'Case "Subcategorybtn"
                 '    Dim form = New Subcategory
                 '    ShowForm(form)
@@ -104,19 +104,15 @@
     End Sub
 
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Chartbtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Chartbtn.Click, Officebtn.Click
         SelectMenu(sender.Name)
-    End Sub
-
-    Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Dispose()
     End Sub
 
-    Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainPanel.CellContentClick
+    Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
 
     End Sub
 End Class

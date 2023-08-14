@@ -164,6 +164,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="route\MySQLConn.vb" />
+    <Compile Include="views\Dialog\OpaquePrompt.Designer.vb">
+      <DependentUpon>OpaquePrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Dialog\OpaquePrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Dialog\YesNoPrompt.Designer.vb">
+      <DependentUpon>YesNoPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Dialog\YesNoPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="views\Form\Asset.Designer.vb">
       <DependentUpon>Asset.vb</DependentUpon>
     </Compile>
@@ -180,6 +192,12 @@
       <DependentUpon>Category.vb</DependentUpon>
     </Compile>
     <Compile Include="views\Form\Category.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Form\Office.Designer.vb">
+      <DependentUpon>Office.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\Office.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\Form\Subcategory.Designer.vb">
@@ -230,6 +248,12 @@
     <Compile Include="views\UCForm\Old\SubcategoryUC.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="views\UCForm\UC_Item.Designer.vb">
+      <DependentUpon>UC_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\UC_Item.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="apps\Form1.resx">
@@ -244,11 +268,20 @@
     <EmbeddedResource Include="views\Dialog\Msgform.resx">
       <DependentUpon>Msgform.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Dialog\OpaquePrompt.resx">
+      <DependentUpon>OpaquePrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Dialog\YesNoPrompt.resx">
+      <DependentUpon>YesNoPrompt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Asset.resx">
       <DependentUpon>Asset.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Category.resx">
       <DependentUpon>Category.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\Office.resx">
+      <DependentUpon>Office.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Subcategory.resx">
       <DependentUpon>Subcategory.vb</DependentUpon>
@@ -273,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\Old\SubcategoryUC.resx">
       <DependentUpon>SubcategoryUC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\UC_Item.resx">
+      <DependentUpon>UC_Item.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

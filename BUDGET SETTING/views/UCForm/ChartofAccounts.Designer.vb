@@ -23,7 +23,7 @@ Partial Class ChartofAccounts
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChartofAccounts))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -34,7 +34,6 @@ Partial Class ChartofAccounts
         Me.AddSubcategorybtn = New System.Windows.Forms.Button()
         Me.AddCategorybtn = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Editbtn = New System.Windows.Forms.Button()
         Me.Addbtn = New System.Windows.Forms.Button()
         Me.Savebtn = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -52,10 +51,13 @@ Partial Class ChartofAccounts
         Me.SubcategoryIDtxt = New System.Windows.Forms.ComboBox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Searchtxt = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -73,6 +75,7 @@ Partial Class ChartofAccounts
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Panel1)
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.BunifuGradientPanel1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -85,8 +88,8 @@ Partial Class ChartofAccounts
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -95,13 +98,13 @@ Partial Class ChartofAccounts
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 47)
+        Me.DataGridView1.Location = New System.Drawing.Point(5, 76)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 35
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(853, 763)
+        Me.DataGridView1.Size = New System.Drawing.Size(853, 709)
         Me.DataGridView1.TabIndex = 0
         '
         'BunifuGradientPanel1
@@ -139,7 +142,6 @@ Partial Class ChartofAccounts
         Me.Panel2.Controls.Add(Me.AddSubcategorybtn)
         Me.Panel2.Controls.Add(Me.AddCategorybtn)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Editbtn)
         Me.Panel2.Controls.Add(Me.Addbtn)
         Me.Panel2.Controls.Add(Me.Savebtn)
         Me.Panel2.Controls.Add(Me.Label14)
@@ -188,19 +190,6 @@ Partial Class ChartofAccounts
         Me.Button1.TabIndex = 75
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Editbtn
-        '
-        Me.Editbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Editbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Editbtn.ForeColor = System.Drawing.Color.White
-        Me.Editbtn.Location = New System.Drawing.Point(24, 578)
-        Me.Editbtn.Name = "Editbtn"
-        Me.Editbtn.Size = New System.Drawing.Size(398, 40)
-        Me.Editbtn.TabIndex = 72
-        Me.Editbtn.Text = "EDIT"
-        Me.Editbtn.UseVisualStyleBackColor = False
         '
         'Addbtn
         '
@@ -267,9 +256,9 @@ Partial Class ChartofAccounts
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label12.Location = New System.Drawing.Point(20, 106)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(75, 16)
+        Me.Label12.Size = New System.Drawing.Size(59, 16)
         Me.Label12.TabIndex = 61
-        Me.Label12.Text = "Category ID"
+        Me.Label12.Text = "Category"
         '
         'AccountCodetxt
         '
@@ -417,6 +406,25 @@ Partial Class ChartofAccounts
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 10
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Searchtxt)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 38)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(862, 37)
+        Me.Panel1.TabIndex = 73
+        '
+        'Searchtxt
+        '
+        Me.Searchtxt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Searchtxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Searchtxt.Location = New System.Drawing.Point(3, 5)
+        Me.Searchtxt.Name = "Searchtxt"
+        Me.Searchtxt.Size = New System.Drawing.Size(859, 27)
+        Me.Searchtxt.TabIndex = 0
+        '
         'ChartofAccounts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -431,6 +439,8 @@ Partial Class ChartofAccounts
         Me.BunifuGradientPanel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -441,7 +451,6 @@ Partial Class ChartofAccounts
     Friend WithEvents BunifuGradientPanel1 As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents TitleBar As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Editbtn As Button
     Friend WithEvents Addbtn As Button
     Friend WithEvents Savebtn As Button
     Friend WithEvents Label14 As Label
@@ -462,4 +471,6 @@ Partial Class ChartofAccounts
     Friend WithEvents AddSubcategorybtn As Button
     Friend WithEvents AddCategorybtn As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Searchtxt As TextBox
 End Class

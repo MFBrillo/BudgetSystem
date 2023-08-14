@@ -26,6 +26,12 @@
             End If
         Next
     End Sub
+    Public Sub CustomYesNoPrompt(ByVal Title As String, ByVal Message As String, Optional ByVal BtnText As String = "OK")
+        YesNoPrompt.MsgText.Text = Message
+        YesNoPrompt.TitleText.Text = Title
+        YesNoPrompt.ShowDialog()
+    End Sub
+
 
     Public Sub ClearDGV(ByVal grid As DataGridView)
         grid.DataSource = Nothing
@@ -35,6 +41,16 @@
     Public Sub Datagrid_HideColumn(ByVal grid As DataGridView, ByVal cols As String())
         For Each col In cols
             If grid.Columns.Contains(col) Then grid.Columns(col).Visible = False
+        Next
+    End Sub
+
+    Public Sub Datagrid_RenameColumn(ByVal grid As DataGridView, ByVal cols As String(), ByVal newcolumn As String())
+        Dim i = 0
+        For Each col In cols
+            If grid.Columns.Contains(col) Then
+                grid.Columns(col).HeaderText = newcolumn(i)
+            End If
+            i += 1
         Next
     End Sub
 

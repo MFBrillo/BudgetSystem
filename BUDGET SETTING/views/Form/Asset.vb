@@ -31,6 +31,7 @@
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets", ColumnValues, Nothing, 1)
+
             End If
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
