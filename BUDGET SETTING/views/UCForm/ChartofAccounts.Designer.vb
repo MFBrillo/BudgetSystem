@@ -23,10 +23,14 @@ Partial Class ChartofAccounts
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChartofAccounts))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbl1 = New System.Windows.Forms.Label()
+        Me.Descriptionbtn = New System.Windows.Forms.Button()
+        Me.Searchtxt = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.TitleBar = New System.Windows.Forms.Label()
@@ -51,13 +55,11 @@ Partial Class ChartofAccounts
         Me.SubcategoryIDtxt = New System.Windows.Forms.ComboBox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Searchtxt = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -84,12 +86,53 @@ Partial Class ChartofAccounts
         Me.Panel3.Size = New System.Drawing.Size(862, 810)
         Me.Panel3.TabIndex = 75
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.lbl1)
+        Me.Panel1.Controls.Add(Me.Descriptionbtn)
+        Me.Panel1.Controls.Add(Me.Searchtxt)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 38)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(862, 37)
+        Me.Panel1.TabIndex = 73
+        '
+        'lbl1
+        '
+        Me.lbl1.AutoSize = True
+        Me.lbl1.Location = New System.Drawing.Point(6, 13)
+        Me.lbl1.Name = "lbl1"
+        Me.lbl1.Size = New System.Drawing.Size(39, 13)
+        Me.lbl1.TabIndex = 2
+        Me.lbl1.Text = "Label2"
+        '
+        'Descriptionbtn
+        '
+        Me.Descriptionbtn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Descriptionbtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Descriptionbtn.Location = New System.Drawing.Point(708, 0)
+        Me.Descriptionbtn.Name = "Descriptionbtn"
+        Me.Descriptionbtn.Size = New System.Drawing.Size(154, 37)
+        Me.Descriptionbtn.TabIndex = 1
+        Me.Descriptionbtn.Text = "Add Description"
+        Me.Descriptionbtn.UseVisualStyleBackColor = True
+        '
+        'Searchtxt
+        '
+        Me.Searchtxt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Searchtxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Searchtxt.Location = New System.Drawing.Point(124, 5)
+        Me.Searchtxt.Name = "Searchtxt"
+        Me.Searchtxt.Size = New System.Drawing.Size(561, 27)
+        Me.Searchtxt.TabIndex = 0
+        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -406,25 +449,6 @@ Partial Class ChartofAccounts
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 10
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Searchtxt)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 38)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(862, 37)
-        Me.Panel1.TabIndex = 73
-        '
-        'Searchtxt
-        '
-        Me.Searchtxt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Searchtxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Searchtxt.Location = New System.Drawing.Point(3, 5)
-        Me.Searchtxt.Name = "Searchtxt"
-        Me.Searchtxt.Size = New System.Drawing.Size(859, 27)
-        Me.Searchtxt.TabIndex = 0
-        '
         'ChartofAccounts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -435,12 +459,12 @@ Partial Class ChartofAccounts
         Me.Name = "ChartofAccounts"
         Me.Size = New System.Drawing.Size(1319, 860)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BunifuGradientPanel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -473,4 +497,6 @@ Partial Class ChartofAccounts
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Searchtxt As TextBox
+    Friend WithEvents Descriptionbtn As Button
+    Friend WithEvents lbl1 As Label
 End Class

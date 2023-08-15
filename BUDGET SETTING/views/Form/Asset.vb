@@ -2,7 +2,9 @@
     Public AssetsDT As DataTable
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
+        OpaquePrompt.Close()
         Me.Close()
+        Form1.Activate()
     End Sub
     Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
@@ -36,7 +38,7 @@
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
         End Try
-
+        OpaquePrompt.Show()
         Me.Close()
 
     End Sub

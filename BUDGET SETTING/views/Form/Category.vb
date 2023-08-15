@@ -3,7 +3,9 @@
     Public LastCategoryDT As DataTable
     Public BeforLastCategoryDT As DataTable
     Private Sub Cancelbtn_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
+        OpaquePrompt.Close()
         Me.Close()
+        Form1.Activate()
     End Sub
     Private Sub Category_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cleartextbox()

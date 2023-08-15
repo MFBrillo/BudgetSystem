@@ -49,8 +49,6 @@
      }
         Dim category = Linq_Query(CategoryDT, conditions)
         DataGridView2.DataSource = category
-
-
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick

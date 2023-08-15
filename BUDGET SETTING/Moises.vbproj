@@ -176,6 +176,12 @@
     <Compile Include="views\Dialog\YesNoPrompt.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="views\Form\AccountDescription.Designer.vb">
+      <DependentUpon>AccountDescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\AccountDescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="views\Form\Asset.Designer.vb">
       <DependentUpon>Asset.vb</DependentUpon>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\Dialog\YesNoPrompt.resx">
       <DependentUpon>YesNoPrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\AccountDescription.resx">
+      <DependentUpon>AccountDescription.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Asset.resx">
       <DependentUpon>Asset.vb</DependentUpon>

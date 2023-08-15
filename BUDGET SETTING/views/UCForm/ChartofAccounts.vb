@@ -1,12 +1,14 @@
 ﻿Public Class ChartofAccounts
     Public AccountDT As DataTable
+    Public VIAccountDT As DataTable
     Public AssetsDT As DataTable
     Public CategoryDT As DataTable
     Public SubcategoryDT As DataTable
     Private Sub RegularAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim SqlLoad As New MySQLCore
         Custom_Load()
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
-        Header_Accounts()
+        'Custom_Accounts()
     End Sub
     Public Shared assetid
     Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
@@ -34,12 +36,11 @@
             Dim sql As New MySQLCore
             Dim dt = sql.MySql_SelectString("subcategoryid", "gl_assets_subcategory", , $"where subcategory ='{SubcategoryIDtxt.Text}'")
             subcategoryid = dt.Rows(0).Item("subcategoryid").ToString
-            Accountnumber()
+            Accountnumber1()
             Accountcode1()
         Catch ex As Exception
         End Try
     End Sub
-
     Sub Accountcode1()
         Dim input As String = AccountIDtxt.Text
         ' Assuming the input string contains only digits
@@ -53,7 +54,6 @@
             AccountCodetxt.Text = $"{firstPart}-{secondPart}-{thirdPart}-{fourthPart}"
         End If
     End Sub
-
     Public LastAccountDT As DataTable
     Public BeforLastAccountDT As DataTable
     Public Shared accountid
@@ -61,25 +61,16 @@
         Dim SqlLoad As New MySQLCore
         AccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'")
         If AccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("accountid")) Then
+
             LastAccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'", "order by id desc", "limit 1")
-            BeforLastAccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'", "order by id desc", "limit 1 offset 1")
-            If BeforLastAccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("accountid")) Then
-                Dim newcategoryID As Integer = Convert.ToInt32(AccountDT.Rows(0)("accountid"))
-                Dim newbeforelastcategoryID As Integer = Convert.ToInt32(BeforLastAccountDT.Rows(0)("accountid"))
-                If LastAccountDT.Rows.Count = 0 OrElse IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
-                    AccountIDtxt.Text = newcategoryID
-                Else
-                    If LastAccountDT.Rows.Count > 0 AndAlso Not IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
-                        Dim newlastcategoryID As Integer = Convert.ToInt32(LastAccountDT.Rows(0)("accountid"))
-                        If (newlastcategoryID - newbeforelastcategoryID) = 1 Then
-                            AccountIDtxt.Text = newlastcategoryID + 1
-                        Else
-                            AccountIDtxt.Text = newbeforelastcategoryID + 1
-                        End If
-                    End If
-                End If
+            Dim newcategoryID As Integer = Convert.ToInt32(AccountDT.Rows(0)("accountid"))
+            If LastAccountDT.Rows.Count = 0 OrElse IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
+                AccountIDtxt.Text = newcategoryID
             Else
-                AccountIDtxt.Text = Convert.ToInt32(subcategoryid + "02")
+                If LastAccountDT.Rows.Count > 0 AndAlso Not IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
+                    Dim newlastcategoryID As Integer = Convert.ToInt32(LastAccountDT.Rows(0)("accountid"))
+                    AccountIDtxt.Text = newlastcategoryID + 1
+                End If
             End If
         Else
             Try
@@ -87,47 +78,113 @@
             Catch ex As Exception
 
             End Try
+        End If
+    End Sub
+    Sub Accountnumber1()
 
+        Dim SqlLoad As New MySQLCore
+        AccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'")
+        If AccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("accountid")) Then
+            LastAccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'", "order by id desc", "limit 1")
+            Dim numbers() As Integer = (From row As DataRow In AccountDT.Rows Select Convert.ToInt32(row("accountid"))).ToArray()
+
+            Dim lowestNumber As Integer = numbers.Min()
+
+            If LastAccountDT.Rows.Count = 0 OrElse IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
+                AccountIDtxt.Text = lowestNumber + 1
+            Else
+                If LastAccountDT.Rows.Count > 0 AndAlso Not IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
+                    Dim newlastcategoryID As Integer = Convert.ToInt32(LastAccountDT.Rows(0)("accountid"))
+
+                    While Array.IndexOf(numbers, lowestNumber) >= 0
+                        lowestNumber += 1
+                    End While
+
+                    AccountIDtxt.Text = lowestNumber
+                End If
+            End If
+        Else
+            Try
+                AccountIDtxt.Text = Convert.ToInt32(subcategoryid + "01")
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
-        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
+        VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_accounts")
         SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
-        Dim columns = "accountid 'ACCOUNT ID',accountname 'ACCOUNT NAME',accountdescription 'ACCOUNT DESCRIPTION'"
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_accounts")
+    End Sub
+    Sub Custom_Accounts()
+        Dim SqlLoad As New MySQLCore
+        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
+        Dim columns = "accountcode 'ACCOUNT CODE',accountname 'ACCOUNT NAME',accountdescription 'ACCOUNT DESCRIPTION'"
         Dim table = "gl_accounts"
         DataGridView1.DataSource = SqlLoad.MySql_SelectString(columns, table)
-        Dim cols() = {"id", "registrycode", "categoryid", "subcategoryid", "accountcode", "logdate"}
+        Dim cols() = {"id", "registrycode", "categoryid", "subcategoryid", "accountid", "logdate"}
         Datagrid_HideColumn(DataGridView1, cols)
-    End Sub
-    Private Sub Header_Accounts()
-        DataGridView1.Columns("Account ID").Width = 120
+        DataGridView1.Columns("Account Code").Width = 150
     End Sub
     Friend firstCharacter1 As String = ""
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
-        If Accountnametxt.Text = "" Then
-            CustomMsg("Save Record Failed", "Insert Correct Data.", "OK")
-        Else
-            Try
-                Dim mySql As New MySQLCore
-                Dim columnValues As New Dictionary(Of String, String)
-                columnValues.Add("assetid", assetid)
-                columnValues.Add("categoryid", categoryid)
-                columnValues.Add("subcategoryid", subcategoryid)
-                columnValues.Add("accountname", Accountnametxt.Text)
-                columnValues.Add("accountid", AccountIDtxt.Text)
-                columnValues.Add("accountdescription", Decriptiontxt.Text)
-                columnValues.Add("accountcode", AccountCodetxt.Text)
-                mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
-            Catch ex As Exception
-                MsgBox("ERROR" & ex.Message)
-            End Try
+        Dim SqlLoad As New MySQLCore
+        OpaquePrompt.Show()
+        CustomYesNoPrompt("Save Entries", "Do you want to save changes")
+        If YesNoPrompt.YesOption = True Then
+
+            If Accountnametxt.Text = "" Then
+                CustomMsg("Save Record Failed", "Insert Correct Data.", "OK")
+            Else
+                Try
+                    Dim mySql As New MySQLCore
+                    Dim columnValues As New Dictionary(Of String, String)
+                    columnValues.Add("assetid", assetid)
+                    columnValues.Add("categoryid", categoryid)
+                    columnValues.Add("subcategoryid", subcategoryid)
+                    columnValues.Add("accountname", Accountnametxt.Text)
+                    columnValues.Add("accountid", AccountIDtxt.Text)
+                    columnValues.Add("accountdescription", Decriptiontxt.Text)
+                    columnValues.Add("accountcode", AccountCodetxt.Text)
+                    mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
+                Catch ex As Exception
+                    MsgBox("ERROR" & ex.Message)
+                End Try
+
+            End If
             Custom_Load()
+            Disablesave()
+            CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
+            Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
+            SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
+            Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
+            cleartext1()
+            Form1.Activate()
+            Custom_Load()
+            lastindex()
+
         End If
-        Disablesave()
     End Sub
+
+    Sub lastindex()
+        If DataGridView1.Rows.Count > 0 Then
+            ' Get the index of the last row
+            Dim lastIndex As Integer = DataGridView1.Rows.Count - 1
+
+            ' Select the last row
+            DataGridView1.Rows(lastIndex).Selected = True
+
+            ' Scroll to the selected row to make it visible
+            DataGridView1.FirstDisplayedScrollingRowIndex = lastIndex
+        End If
+    End Sub
+
+
+
+
 
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
         Enablesave()
@@ -147,13 +204,16 @@
         Decriptiontxt.Text = ""
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        OpaquePrompt.Show()
         Asset.ShowDialog()
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddCategorybtn.Click
+        OpaquePrompt.Show()
         Category.AssetIDtxt.Text = assetid
         Category.ShowDialog()
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles AddSubcategorybtn.Click
+        OpaquePrompt.Show()
         Subcategory.Assetidtxt.Text = assetid
         Subcategory.CategoryIDtxt.Text = categoryid
         Subcategory.ShowDialog()
@@ -184,8 +244,36 @@
         Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
         ' Custom_ComboBoxDatasource(SubcategoryIDtxt2, SubcategoryDT, "subcategoryid", "subcategoryid")
     End Sub
+    Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
+        Try
+            If VIAccountDT IsNot Nothing Then
 
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+                Dim conditions As New List(Of LinQCondition)()
+                conditions.Add(New LinQCondition With {
+                .Column = "Account",
+                .Value = Searchtxt.Text,
+                .ComparisonType = ComparisonTypeEnum.Like_enum
+            })
+
+                Dim filteredDataTable As DataTable = Linq_Query(VIAccountDT, conditions)
+
+                DataGridView1.DataSource = filteredDataTable
+
+                Custom_Load()
+                lbl1.Text = filteredDataTable.Rows(0).Item("Account").ToString
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Descriptionbtn_Click(sender As Object, e As EventArgs) Handles Descriptionbtn.Click
+        OpaquePrompt.Show()
+        AccountDescription.ShowDialog()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
 End Class

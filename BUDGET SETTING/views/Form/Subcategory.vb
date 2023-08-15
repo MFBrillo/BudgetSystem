@@ -3,7 +3,10 @@
     Public LastSubcategoryDT As DataTable
     Public BeforLastSubcategoryDT As DataTable
     Private Sub Cancelbtn_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
+        OpaquePrompt.Close()
         Me.Close()
+        Form1.Activate()
+
     End Sub
     Private Sub Subcategory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cleartextbox()
@@ -92,4 +95,7 @@
         End If
     End Sub
 
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
 End Class
