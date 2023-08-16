@@ -25,10 +25,11 @@ Partial Class AccountDescription
         Me.Cancelbtn = New System.Windows.Forms.Button()
         Me.Nametxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Descrptiontxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
+        Me.Descriptiontxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Savebtn = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Codetxt = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Cancelbtn
@@ -75,25 +76,25 @@ Partial Class AccountDescription
         Me.Label2.TabIndex = 81
         Me.Label2.Text = "Account Name"
         '
-        'Descrptiontxt
+        'Descriptiontxt
         '
-        Me.Descrptiontxt.BackColor = System.Drawing.Color.White
-        Me.Descrptiontxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Descrptiontxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Descrptiontxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.Descrptiontxt.BorderThickness = 1
-        Me.Descrptiontxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.Descrptiontxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Descrptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Descrptiontxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Descrptiontxt.isPassword = False
-        Me.Descrptiontxt.Location = New System.Drawing.Point(48, 182)
-        Me.Descrptiontxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.Descrptiontxt.MaxLength = 32767
-        Me.Descrptiontxt.Name = "Descrptiontxt"
-        Me.Descrptiontxt.Size = New System.Drawing.Size(436, 30)
-        Me.Descrptiontxt.TabIndex = 84
-        Me.Descrptiontxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Descriptiontxt.BackColor = System.Drawing.Color.White
+        Me.Descriptiontxt.BorderColorFocused = System.Drawing.Color.Black
+        Me.Descriptiontxt.BorderColorIdle = System.Drawing.Color.White
+        Me.Descriptiontxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.Descriptiontxt.BorderThickness = 1
+        Me.Descriptiontxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.Descriptiontxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Descriptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Descriptiontxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Descriptiontxt.isPassword = False
+        Me.Descriptiontxt.Location = New System.Drawing.Point(48, 182)
+        Me.Descriptiontxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.Descriptiontxt.MaxLength = 32767
+        Me.Descriptiontxt.Name = "Descriptiontxt"
+        Me.Descriptiontxt.Size = New System.Drawing.Size(436, 30)
+        Me.Descriptiontxt.TabIndex = 84
+        Me.Descriptiontxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Label3
         '
@@ -129,17 +130,27 @@ Partial Class AccountDescription
         Me.Label8.TabIndex = 88
         Me.Label8.Text = "Adding Description"
         '
+        'Codetxt
+        '
+        Me.Codetxt.AutoSize = True
+        Me.Codetxt.Location = New System.Drawing.Point(45, 216)
+        Me.Codetxt.Name = "Codetxt"
+        Me.Codetxt.Size = New System.Drawing.Size(39, 13)
+        Me.Codetxt.TabIndex = 89
+        Me.Codetxt.Text = "Label1"
+        '
         'AccountDescription
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(528, 360)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Codetxt)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Cancelbtn)
         Me.Controls.Add(Me.Nametxt)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Descrptiontxt)
+        Me.Controls.Add(Me.Descriptiontxt)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Savebtn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -153,8 +164,9 @@ Partial Class AccountDescription
     Friend WithEvents Cancelbtn As Button
     Friend WithEvents Nametxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Descrptiontxt As Bunifu.Framework.UI.BunifuMetroTextbox
+    Friend WithEvents Descriptiontxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label3 As Label
     Friend WithEvents Savebtn As Button
     Friend WithEvents Label8 As Label
+    Friend WithEvents Codetxt As Label
 End Class

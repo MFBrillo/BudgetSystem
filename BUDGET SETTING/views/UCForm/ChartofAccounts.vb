@@ -9,6 +9,7 @@
         Custom_Load()
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
         'Custom_Accounts()
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_accounts")
     End Sub
     Public Shared assetid
     Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
@@ -55,7 +56,6 @@
         End If
     End Sub
     Public LastAccountDT As DataTable
-    Public BeforLastAccountDT As DataTable
     Public Shared accountid
     Sub Accountnumber()
         Dim SqlLoad As New MySQLCore
@@ -81,15 +81,12 @@
         End If
     End Sub
     Sub Accountnumber1()
-
         Dim SqlLoad As New MySQLCore
         AccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'")
         If AccountDT.Rows.Count > 0 AndAlso Not IsDBNull(AccountDT.Rows(0)("accountid")) Then
             LastAccountDT = SqlLoad.MySql_SelectString("accountid", "gl_accounts", Nothing, $"where subcategoryid ='{subcategoryid}'", "order by id desc", "limit 1")
             Dim numbers() As Integer = (From row As DataRow In AccountDT.Rows Select Convert.ToInt32(row("accountid"))).ToArray()
-
             Dim lowestNumber As Integer = numbers.Min()
-
             If LastAccountDT.Rows.Count = 0 OrElse IsDBNull(LastAccountDT.Rows(0)("accountid")) Then
                 AccountIDtxt.Text = lowestNumber + 1
             Else
@@ -117,7 +114,7 @@
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
         VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_accounts")
         SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_accounts")
+
     End Sub
     Sub Custom_Accounts()
         Dim SqlLoad As New MySQLCore
@@ -168,7 +165,6 @@
 
         End If
     End Sub
-
     Sub lastindex()
         If DataGridView1.Rows.Count > 0 Then
             ' Get the index of the last row
@@ -181,11 +177,6 @@
             DataGridView1.FirstDisplayedScrollingRowIndex = lastIndex
         End If
     End Sub
-
-
-
-
-
     Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
         Enablesave()
     End Sub
@@ -244,36 +235,52 @@
         Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
         ' Custom_ComboBoxDatasource(SubcategoryIDtxt2, SubcategoryDT, "subcategoryid", "subcategoryid")
     End Sub
+    Friend Shared accountdescriptiontxt
+    Friend Shared accountcode
     Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
         Try
             If VIAccountDT IsNot Nothing Then
-
                 Dim conditions As New List(Of LinQCondition)()
                 conditions.Add(New LinQCondition With {
                 .Column = "Account",
                 .Value = Searchtxt.Text,
                 .ComparisonType = ComparisonTypeEnum.Like_enum
             })
-
                 Dim filteredDataTable As DataTable = Linq_Query(VIAccountDT, conditions)
-
                 DataGridView1.DataSource = filteredDataTable
-
                 Custom_Load()
-                lbl1.Text = filteredDataTable.Rows(0).Item("Account").ToString
+
+                accountdescriptiontxt = filteredDataTable.Rows(0).Item("Account").ToString
+                accountcode = filteredDataTable.Rows(0).Item("code").ToString
             End If
-
         Catch ex As Exception
-
         End Try
     End Sub
-
     Private Sub Descriptionbtn_Click(sender As Object, e As EventArgs) Handles Descriptionbtn.Click
         OpaquePrompt.Show()
+        'AccountDescription.Nametxt.Text = accountdescriptiontxt
         AccountDescription.ShowDialog()
     End Sub
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim searchrow As String
+        searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
+        Custom_Load()
+        Dim conditions As New List(Of LinQCondition) From {
+        New LinQCondition With {
+                             .Column = "Account",
+                             .Value = searchrow,
+                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
+     }
+        Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
+        accountdescriptiontxt = accountname.Rows(0).Item("Account").ToString
+        Searchtxt.Text = accountdescriptiontxt
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
 End Class
