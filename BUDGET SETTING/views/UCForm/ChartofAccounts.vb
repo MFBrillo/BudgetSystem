@@ -235,8 +235,14 @@
         Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
         ' Custom_ComboBoxDatasource(SubcategoryIDtxt2, SubcategoryDT, "subcategoryid", "subcategoryid")
     End Sub
-    Friend Shared accountdescriptiontxt
-    Friend Shared accountcode
+
+    Friend Shared assetid2
+    Friend Shared categoryid2
+    Friend Shared subcategoryid2
+    Friend Shared accountid2
+    Friend Shared accountcode2
+    Friend Shared accountname2
+    Friend Shared accountdescription2
     Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
         Try
             If VIAccountDT IsNot Nothing Then
@@ -250,8 +256,8 @@
                 DataGridView1.DataSource = filteredDataTable
                 Custom_Load()
 
-                accountdescriptiontxt = filteredDataTable.Rows(0).Item("Account").ToString
-                accountcode = filteredDataTable.Rows(0).Item("code").ToString
+                accountdescription2 = filteredDataTable.Rows(0).Item("Account").ToString
+                accountcode2 = filteredDataTable.Rows(0).Item("code").ToString
             End If
         Catch ex As Exception
         End Try
@@ -276,11 +282,19 @@
                              .ComparisonType = ComparisonTypeEnum.Equal_enum}
      }
         Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
-        accountdescriptiontxt = accountname.Rows(0).Item("Account").ToString
-        Searchtxt.Text = accountdescriptiontxt
+        accountdescription2 = accountname.Rows(0).Item("Account").ToString
+        Searchtxt.Text = accountdescription2
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub TitleBar_Click(sender As Object, e As EventArgs) Handles TitleBar.Click
 
     End Sub
 End Class

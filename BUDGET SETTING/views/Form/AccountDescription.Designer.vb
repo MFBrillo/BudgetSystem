@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AccountDescription
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AccountDescription
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Cancelbtn = New System.Windows.Forms.Button()
         Me.Nametxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -29,7 +29,6 @@ Partial Class AccountDescription
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Savebtn = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Codetxt = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Cancelbtn
@@ -54,6 +53,7 @@ Partial Class AccountDescription
         Me.Nametxt.BorderThickness = 1
         Me.Nametxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Nametxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Nametxt.Enabled = False
         Me.Nametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Nametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Nametxt.isPassword = False
@@ -130,22 +130,12 @@ Partial Class AccountDescription
         Me.Label8.TabIndex = 88
         Me.Label8.Text = "Adding Description"
         '
-        'Codetxt
-        '
-        Me.Codetxt.AutoSize = True
-        Me.Codetxt.Location = New System.Drawing.Point(45, 216)
-        Me.Codetxt.Name = "Codetxt"
-        Me.Codetxt.Size = New System.Drawing.Size(39, 13)
-        Me.Codetxt.TabIndex = 89
-        Me.Codetxt.Text = "Label1"
-        '
         'AccountDescription
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(528, 360)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Codetxt)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Cancelbtn)
         Me.Controls.Add(Me.Nametxt)
@@ -168,5 +158,4 @@ Partial Class AccountDescription
     Friend WithEvents Label3 As Label
     Friend WithEvents Savebtn As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents Codetxt As Label
 End Class
