@@ -22,88 +22,47 @@ Partial Class Asset
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Cancelbtn = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Assettxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.AssetDescrptiontxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.AssetSavebtn = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.AssetDescrptiontxt = New System.Windows.Forms.TextBox()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Cancelbtn)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Assettxt)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.AssetDescrptiontxt)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.AssetSavebtn)
-        Me.Panel1.Location = New System.Drawing.Point(13, 18)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(490, 323)
-        Me.Panel1.TabIndex = 62
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(244, 211)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(216, 30)
-        Me.Button1.TabIndex = 80
-        Me.Button1.Text = "Edit"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Cancelbtn
         '
-        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White
-        Me.Cancelbtn.Location = New System.Drawing.Point(22, 260)
+        Me.Cancelbtn.Location = New System.Drawing.Point(57, 302)
         Me.Cancelbtn.Name = "Cancelbtn"
-        Me.Cancelbtn.Size = New System.Drawing.Size(216, 30)
+        Me.Cancelbtn.Size = New System.Drawing.Size(216, 29)
         Me.Cancelbtn.TabIndex = 79
         Me.Cancelbtn.Text = "Cancel"
         Me.Cancelbtn.UseVisualStyleBackColor = False
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(198, 21)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 24)
-        Me.Label8.TabIndex = 78
-        Me.Label8.Text = "ASSETS"
-        '
         'Assettxt
         '
-        Me.Assettxt.BackColor = System.Drawing.Color.White
-        Me.Assettxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Assettxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Assettxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.Assettxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Assettxt.BorderColorFocused = System.Drawing.Color.White
+        Me.Assettxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Assettxt.BorderColorMouseHover = System.Drawing.Color.White
         Me.Assettxt.BorderThickness = 1
         Me.Assettxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Assettxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Assettxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Assettxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Assettxt.ForeColor = System.Drawing.Color.White
         Me.Assettxt.isPassword = False
-        Me.Assettxt.Location = New System.Drawing.Point(22, 85)
+        Me.Assettxt.Location = New System.Drawing.Point(205, 75)
         Me.Assettxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Assettxt.MaxLength = 32767
         Me.Assettxt.Name = "Assettxt"
-        Me.Assettxt.Size = New System.Drawing.Size(438, 30)
+        Me.Assettxt.Size = New System.Drawing.Size(313, 30)
         Me.Assettxt.TabIndex = 73
         Me.Assettxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -111,39 +70,19 @@ Partial Class Asset
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(21, 65)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(56, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 69
         Me.Label2.Text = "Asset Name"
         '
-        'AssetDescrptiontxt
-        '
-        Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.White
-        Me.AssetDescrptiontxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.AssetDescrptiontxt.BorderColorIdle = System.Drawing.Color.White
-        Me.AssetDescrptiontxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.AssetDescrptiontxt.BorderThickness = 1
-        Me.AssetDescrptiontxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.AssetDescrptiontxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.AssetDescrptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.AssetDescrptiontxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.AssetDescrptiontxt.isPassword = False
-        Me.AssetDescrptiontxt.Location = New System.Drawing.Point(24, 156)
-        Me.AssetDescrptiontxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.AssetDescrptiontxt.MaxLength = 32767
-        Me.AssetDescrptiontxt.Name = "AssetDescrptiontxt"
-        Me.AssetDescrptiontxt.Size = New System.Drawing.Size(436, 30)
-        Me.AssetDescrptiontxt.TabIndex = 72
-        Me.AssetDescrptiontxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(21, 135)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(56, 156)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 16)
         Me.Label3.TabIndex = 71
@@ -151,40 +90,79 @@ Partial Class Asset
         '
         'AssetSavebtn
         '
-        Me.AssetSavebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.AssetSavebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
         Me.AssetSavebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AssetSavebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetSavebtn.ForeColor = System.Drawing.Color.White
-        Me.AssetSavebtn.Location = New System.Drawing.Point(244, 260)
+        Me.AssetSavebtn.Location = New System.Drawing.Point(302, 302)
         Me.AssetSavebtn.Name = "AssetSavebtn"
-        Me.AssetSavebtn.Size = New System.Drawing.Size(216, 30)
+        Me.AssetSavebtn.Size = New System.Drawing.Size(216, 29)
         Me.AssetSavebtn.TabIndex = 70
         Me.AssetSavebtn.Text = "Save"
         Me.AssetSavebtn.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(580, 41)
+        Me.Panel2.TabIndex = 119
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(113, 19)
+        Me.Label1.TabIndex = 125
+        Me.Label1.Text = "ADD ASSETS"
+        '
+        'AssetDescrptiontxt
+        '
+        Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AssetDescrptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AssetDescrptiontxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AssetDescrptiontxt.ForeColor = System.Drawing.Color.White
+        Me.AssetDescrptiontxt.Location = New System.Drawing.Point(205, 153)
+        Me.AssetDescrptiontxt.Multiline = True
+        Me.AssetDescrptiontxt.Name = "AssetDescrptiontxt"
+        Me.AssetDescrptiontxt.Size = New System.Drawing.Size(313, 91)
+        Me.AssetDescrptiontxt.TabIndex = 120
         '
         'Asset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(518, 362)
-        Me.Controls.Add(Me.Panel1)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(580, 362)
+        Me.Controls.Add(Me.AssetDescrptiontxt)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Cancelbtn)
+        Me.Controls.Add(Me.AssetSavebtn)
+        Me.Controls.Add(Me.Assettxt)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Asset"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asset"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Cancelbtn As Button
-    Friend WithEvents Label8 As Label
     Friend WithEvents Assettxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label2 As Label
-    Friend WithEvents AssetDescrptiontxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label3 As Label
     Friend WithEvents AssetSavebtn As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents AssetDescrptiontxt As TextBox
 End Class

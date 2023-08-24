@@ -40,7 +40,7 @@
 
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         Dim SqlLoad As New MySQLCore
-        OpaquePrompt.Show()
+
         CustomYesNoPrompt("Save Entries", "Do you want to save changes")
         If YesNoPrompt.YesOption = True Then
 
@@ -59,7 +59,7 @@
                     columnValues.Add("subcategoryid", subcategoryid)
                 columnValues.Add("accountid", accountid)
                 columnValues.Add("accountcode", accountcode)
-                    columnValues.Add("accountname", Nametxt.Text)
+                columnValues.Add("accountname", Nametxt.Text)
                     columnValues.Add("accountdescription", Descriptiontxt.Text)
 
                     mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)

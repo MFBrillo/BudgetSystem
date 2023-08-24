@@ -22,270 +22,113 @@ Partial Class Office
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.OfficePBOtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.OfficeAccountingtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Officenametxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.OfficeAccrotxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.AIPtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Officetypetxt = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Searchtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.OfficeDesctxt = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'OfficePBOtxt
-        '
-        Me.OfficePBOtxt.BackColor = System.Drawing.Color.White
-        Me.OfficePBOtxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.OfficePBOtxt.BorderColorIdle = System.Drawing.Color.White
-        Me.OfficePBOtxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.OfficePBOtxt.BorderThickness = 1
-        Me.OfficePBOtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.OfficePBOtxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.OfficePBOtxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OfficePBOtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.OfficePBOtxt.isPassword = False
-        Me.OfficePBOtxt.Location = New System.Drawing.Point(22, 203)
-        Me.OfficePBOtxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.OfficePBOtxt.MaxLength = 32767
-        Me.OfficePBOtxt.Name = "OfficePBOtxt"
-        Me.OfficePBOtxt.Size = New System.Drawing.Size(313, 30)
-        Me.OfficePBOtxt.TabIndex = 97
-        Me.OfficePBOtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'OfficeAccountingtxt
-        '
-        Me.OfficeAccountingtxt.BackColor = System.Drawing.Color.White
-        Me.OfficeAccountingtxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.OfficeAccountingtxt.BorderColorIdle = System.Drawing.Color.White
-        Me.OfficeAccountingtxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.OfficeAccountingtxt.BorderThickness = 1
-        Me.OfficeAccountingtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.OfficeAccountingtxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.OfficeAccountingtxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OfficeAccountingtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.OfficeAccountingtxt.isPassword = False
-        Me.OfficeAccountingtxt.Location = New System.Drawing.Point(22, 281)
-        Me.OfficeAccountingtxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.OfficeAccountingtxt.MaxLength = 32767
-        Me.OfficeAccountingtxt.Name = "OfficeAccountingtxt"
-        Me.OfficeAccountingtxt.Size = New System.Drawing.Size(313, 30)
-        Me.OfficeAccountingtxt.TabIndex = 98
-        Me.OfficeAccountingtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1199, 50)
+        Me.Label1.Size = New System.Drawing.Size(1199, 45)
         Me.Label1.TabIndex = 101
         Me.Label1.Text = "OFFICE"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label2
+        'Panel2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(18, 22)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 19)
-        Me.Label2.TabIndex = 102
-        Me.Label2.Text = "Office Type"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(18, 97)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(155, 19)
-        Me.Label3.TabIndex = 103
-        Me.Label3.Text = "Mandatory AIP Code"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(18, 176)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(126, 19)
-        Me.Label4.TabIndex = 104
-        Me.Label4.Text = "Office Code PBO"
-        '
-        'Officenametxt
-        '
-        Me.Officenametxt.BackColor = System.Drawing.Color.White
-        Me.Officenametxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Officenametxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Officenametxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.Officenametxt.BorderThickness = 1
-        Me.Officenametxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.Officenametxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Officenametxt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Officenametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Officenametxt.isPassword = False
-        Me.Officenametxt.Location = New System.Drawing.Point(22, 426)
-        Me.Officenametxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.Officenametxt.MaxLength = 32767
-        Me.Officenametxt.Name = "Officenametxt"
-        Me.Officenametxt.Size = New System.Drawing.Size(313, 30)
-        Me.Officenametxt.TabIndex = 106
-        Me.Officenametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'OfficeAccrotxt
-        '
-        Me.OfficeAccrotxt.BackColor = System.Drawing.Color.White
-        Me.OfficeAccrotxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.OfficeAccrotxt.BorderColorIdle = System.Drawing.Color.White
-        Me.OfficeAccrotxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.OfficeAccrotxt.BorderThickness = 1
-        Me.OfficeAccrotxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.OfficeAccrotxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.OfficeAccrotxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OfficeAccrotxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.OfficeAccrotxt.isPassword = False
-        Me.OfficeAccrotxt.Location = New System.Drawing.Point(22, 354)
-        Me.OfficeAccrotxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.OfficeAccrotxt.MaxLength = 32767
-        Me.OfficeAccrotxt.Name = "OfficeAccrotxt"
-        Me.OfficeAccrotxt.Size = New System.Drawing.Size(313, 30)
-        Me.OfficeAccrotxt.TabIndex = 108
-        Me.OfficeAccrotxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(18, 403)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 19)
-        Me.Label6.TabIndex = 109
-        Me.Label6.Text = "Office Name"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(18, 484)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(134, 19)
-        Me.Label7.TabIndex = 110
-        Me.Label7.Text = "Office Description"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(18, 331)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(126, 19)
-        Me.Label8.TabIndex = 111
-        Me.Label8.Text = "Office Accronym"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(18, 254)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(175, 19)
-        Me.Label9.TabIndex = 112
-        Me.Label9.Text = "Office Code Accounting"
-        '
-        'AIPtxt
-        '
-        Me.AIPtxt.BackColor = System.Drawing.Color.White
-        Me.AIPtxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.AIPtxt.BorderColorIdle = System.Drawing.Color.White
-        Me.AIPtxt.BorderColorMouseHover = System.Drawing.Color.Black
-        Me.AIPtxt.BorderThickness = 1
-        Me.AIPtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.AIPtxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.AIPtxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AIPtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.AIPtxt.isPassword = False
-        Me.AIPtxt.Location = New System.Drawing.Point(22, 124)
-        Me.AIPtxt.Margin = New System.Windows.Forms.Padding(4)
-        Me.AIPtxt.MaxLength = 32767
-        Me.AIPtxt.Name = "AIPtxt"
-        Me.AIPtxt.Size = New System.Drawing.Size(313, 30)
-        Me.AIPtxt.TabIndex = 113
-        Me.AIPtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(22, 692)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(313, 44)
-        Me.Button1.TabIndex = 115
-        Me.Button1.Text = "SAVE"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Controls.Add(Me.DataGridView1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 45)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1199, 798)
+        Me.Panel2.TabIndex = 117
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.OfficeDesctxt)
-        Me.Panel1.Controls.Add(Me.Officetypetxt)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.OfficeAccrotxt)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Officenametxt)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.OfficeAccountingtxt)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.AIPtxt)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.OfficePBOtxt)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 50)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Searchtxt)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(366, 793)
-        Me.Panel1.TabIndex = 116
+        Me.Panel1.Size = New System.Drawing.Size(1199, 50)
+        Me.Panel1.TabIndex = 124
         '
-        'Officetypetxt
+        'PictureBox1
         '
-        Me.Officetypetxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Officetypetxt.FormattingEnabled = True
-        Me.Officetypetxt.Location = New System.Drawing.Point(22, 55)
-        Me.Officetypetxt.Name = "Officetypetxt"
-        Me.Officetypetxt.Size = New System.Drawing.Size(313, 22)
-        Me.Officetypetxt.TabIndex = 116
+        Me.PictureBox1.Image = Global.Moises.My.Resources.Resources.search__1_
+        Me.PictureBox1.Location = New System.Drawing.Point(329, 10)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 30)
+        Me.PictureBox1.TabIndex = 124
+        Me.PictureBox1.TabStop = False
         '
-        'Panel2
+        'Button2
         '
-        Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(366, 50)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(833, 793)
-        Me.Panel2.TabIndex = 117
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(435, 10)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(54, 30)
+        Me.Button2.TabIndex = 122
+        Me.Button2.Text = "Add"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Image = Global.Moises.My.Resources.Resources.edit
+        Me.Button3.Location = New System.Drawing.Point(375, 10)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(54, 30)
+        Me.Button3.TabIndex = 123
+        Me.Button3.Text = "Edit"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Searchtxt
+        '
+        Me.Searchtxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Searchtxt.BorderColorFocused = System.Drawing.Color.White
+        Me.Searchtxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Searchtxt.BorderColorMouseHover = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Searchtxt.BorderThickness = 1
+        Me.Searchtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.Searchtxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Searchtxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Searchtxt.ForeColor = System.Drawing.Color.White
+        Me.Searchtxt.isPassword = False
+        Me.Searchtxt.Location = New System.Drawing.Point(8, 10)
+        Me.Searchtxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.Searchtxt.MaxLength = 32767
+        Me.Searchtxt.Name = "Searchtxt"
+        Me.Searchtxt.Size = New System.Drawing.Size(313, 30)
+        Me.Searchtxt.TabIndex = 120
+        Me.Searchtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'DataGridView1
         '
@@ -297,24 +140,46 @@ Partial Class Office
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 58)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(827, 756)
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(1179, 731)
         Me.DataGridView1.TabIndex = 0
-        '
-        'OfficeDesctxt
-        '
-        Me.OfficeDesctxt.BorderColor = System.Drawing.Color.SeaGreen
-        Me.OfficeDesctxt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.OfficeDesctxt.Location = New System.Drawing.Point(22, 518)
-        Me.OfficeDesctxt.Multiline = True
-        Me.OfficeDesctxt.Name = "OfficeDesctxt"
-        Me.OfficeDesctxt.Size = New System.Drawing.Size(313, 100)
-        Me.OfficeDesctxt.TabIndex = 117
         '
         'Office
         '
@@ -324,35 +189,23 @@ Partial Class Office
         Me.ClientSize = New System.Drawing.Size(1199, 843)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Office"
         Me.Text = "Office"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents OfficePBOtxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents OfficeAccountingtxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Officenametxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents OfficeAccrotxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents AIPtxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Officetypetxt As ComboBox
-    Friend WithEvents OfficeDesctxt As WindowsFormsControlLibrary1.BunifuCustomTextbox
+    Friend WithEvents Searchtxt As Bunifu.Framework.UI.BunifuMetroTextbox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

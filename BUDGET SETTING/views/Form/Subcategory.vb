@@ -78,10 +78,16 @@
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
         End Try
-
+        lastindex()
+        OpaquePrompt.Close()
         Me.Close()
+        Form1.Activate()
     End Sub
-
+    Sub lastindex()
+        Custom_Load()
+        Custom_ComboBoxDatasource(ChartofAccounts.subcategoryCBB, SubcategoryDT, "subcategory", "subcategory")
+        ChartofAccounts.subcategoryCBB.SelectedIndex = ChartofAccounts.categoryCBB.Items.Count - 1
+    End Sub
     Private Sub SubcategoryIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles SubcategoryIDtxt.OnValueChanged
         Dim input As String = SubcategoryIDtxt.Text
         ' Assuming the input string contains only digits
@@ -96,6 +102,10 @@
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
     End Sub
 End Class

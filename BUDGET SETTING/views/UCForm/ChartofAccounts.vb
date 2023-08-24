@@ -4,6 +4,9 @@
     Public AssetsDT As DataTable
     Public CategoryDT As DataTable
     Public SubcategoryDT As DataTable
+    Public Shared assetCBB As ComboBox
+    Public Shared categoryCBB As ComboBox
+    Public Shared subcategoryCBB As ComboBox
     Private Sub RegularAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
         Custom_Load()
@@ -108,7 +111,7 @@
             End Try
         End If
     End Sub
-    Friend Sub Custom_Load()
+    Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
@@ -169,10 +172,8 @@
         If DataGridView1.Rows.Count > 0 Then
             ' Get the index of the last row
             Dim lastIndex As Integer = DataGridView1.Rows.Count - 1
-
             ' Select the last row
             DataGridView1.Rows(lastIndex).Selected = True
-
             ' Scroll to the selected row to make it visible
             DataGridView1.FirstDisplayedScrollingRowIndex = lastIndex
         End If
@@ -195,15 +196,18 @@
         Decriptiontxt.Text = ""
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        assetCBB = AssetIDTxt
         OpaquePrompt.Show()
         Asset.ShowDialog()
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddCategorybtn.Click
+        categoryCBB = CategoryIDtxt
         OpaquePrompt.Show()
         Category.AssetIDtxt.Text = assetid
         Category.ShowDialog()
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles AddSubcategorybtn.Click
+        subcategoryCBB = SubcategoryIDtxt
         OpaquePrompt.Show()
         Subcategory.Assetidtxt.Text = assetid
         Subcategory.CategoryIDtxt.Text = categoryid
@@ -244,6 +248,16 @@
     Friend Shared accountname2
     Friend Shared accountdescription2
     Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
+
+    End Sub
+    Private Sub Descriptionbtn_Click(sender As Object, e As EventArgs) Handles Descriptionbtn.Click
+        OpaquePrompt.Show()
+        'AccountDescription.Nametxt.Text = accountdescriptiontxt
+        AccountDescription.ShowDialog()
+    End Sub
+
+
+    Private Sub Searchtxt_OnValueChanged(sender As Object, e As EventArgs) Handles Searchtxt.OnValueChanged
         Try
             If VIAccountDT IsNot Nothing Then
                 Dim conditions As New List(Of LinQCondition)()
@@ -262,16 +276,8 @@
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub Descriptionbtn_Click(sender As Object, e As EventArgs) Handles Descriptionbtn.Click
-        OpaquePrompt.Show()
-        'AccountDescription.Nametxt.Text = accountdescriptiontxt
-        AccountDescription.ShowDialog()
-    End Sub
-    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
 
-    End Sub
-
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
         Dim searchrow As String
         searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
         Custom_Load()
@@ -287,14 +293,6 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub TitleBar_Click(sender As Object, e As EventArgs) Handles TitleBar.Click
 
     End Sub
 End Class

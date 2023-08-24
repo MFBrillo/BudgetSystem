@@ -2,17 +2,19 @@
     Public AssetsDT As DataTable
     Public CategoryDT As DataTable
     Public SubcategoryDT As DataTable
+    Public assetheader As Boolean
+    Public categoryheader As Boolean
     Private Sub ChartAccountSettingUC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Custom_LoadSubcategory()
         Custom_LoadCategory()
         Custom_LoadAsset()
+        DataGridView1.AllowUserToOrderColumns = False
     End Sub
     Sub Custom_LoadAsset()
         Dim SqlLoad As New MySQLCore
         AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
         DataGridView1.DataSource = AssetsDT
         Dim oldcolumns() = {"asset", "description"}
-        Dim columns() = {"Asset Name", "Asset description"}
+        Dim columns() = {"Asset Name", "Asset Description"}
         Dim cols() = {"id", "assetid", "logdate"}
         Datagrid_HideColumn(DataGridView1, cols)
         Datagrid_RenameColumn(DataGridView1, oldcolumns, columns)
@@ -38,20 +40,13 @@
         Datagrid_RenameColumn(DataGridView3, oldcolumns, newcolumns)
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim assetid As String
-        assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
-        Custom_LoadCategory()
-        Dim conditions As New List(Of LinQCondition) From {
-        New LinQCondition With {
-                             .Column = "assetid",
-                             .Value = assetid,
-                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
-     }
-        Dim category = Linq_Query(CategoryDT, conditions)
-        DataGridView2.DataSource = category
-    End Sub
 
+
+
+
+    End Sub
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+
         Dim categoryid As String
         categoryid = DataGridView2.Rows(e.RowIndex).Cells("categoryid").Value.ToString()
         Custom_LoadSubcategory()
@@ -64,7 +59,6 @@
         Dim subcategory = Linq_Query(SubcategoryDT, conditions)
         DataGridView3.DataSource = subcategory
     End Sub
-
     Sub assetupdate()
         Dim SqlLoad As New MySQLCore
         For Each row As DataRow In AssetsDT.Rows
@@ -72,10 +66,7 @@
             cols("id") = $"'{row.Item("id").ToString}'"
             cols("assetid") = $"'{row.Item("assetid").ToString}'"
             cols("asset") = $"'{row.Item("asset").ToString}'"
-
-
             SqlLoad.MySql_ExecuteNonQueryString("gl_assets", cols, $"id={cols("id")}", 2)
-
         Next
     End Sub
     Sub categoryupdate()
@@ -137,19 +128,46 @@
         End If
     End Sub
 
+
+
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
+        If assetheader = False Then
+            Dim assetid As String
+            assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
+            Custom_LoadCategory()
+            'Custom_LoadSubcategory()
+            Dim conditions As New List(Of LinQCondition) From {
+        New LinQCondition With {
+                .Column = "assetid",
+                .Value = assetid,
+                .ComparisonType = ComparisonTypeEnum.Equal_enum}
+     }
+            Dim category = Linq_Query(CategoryDT, conditions)
+            DataGridView2.DataSource = category
+
+            Try
+                Dim categoryid As String
+                categoryid = DataGridView2.Rows(e.RowIndex).Cells("categoryid").Value.ToString()
+                Custom_LoadSubcategory()
+                Dim conditions1 As New List(Of LinQCondition) From {
+            New LinQCondition With {
+                                 .Column = "categoryid",
+                                 .Value = categoryid,
+                                 .ComparisonType = ComparisonTypeEnum.Equal_enum}
+         }
+                Dim subcategory = Linq_Query(SubcategoryDT, conditions1)
+                DataGridView3.DataSource = subcategory
+
+            Catch ex As Exception
+                ClearDGV(DataGridView3)
+            End Try
+
+        End If
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
-
-    End Sub
-
-    Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentClick
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
+    Private Sub DataGridView1_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.ColumnHeaderMouseClick
+        ' Prevent sorting when header is clicked
+        assetheader = True
     End Sub
 End Class

@@ -40,7 +40,7 @@
     Sub Menu_OnClick()
         If MenuController.Width <> colapsed_width Then
             MenuController.Width = colapsed_width
-            Chartbtn.TextAlign = ContentAlignment.MiddleCenter
+            Officebtn.TextAlign = ContentAlignment.MiddleCenter
             Settingbtn.TextAlign = ContentAlignment.MiddleCenter
             Try
                 If userControl IsNot Nothing Then
@@ -56,7 +56,7 @@
             End Try
         ElseIf MenuController.Width = colapsed_width Then
             MenuController.Width = menu_width
-            Chartbtn.TextAlign = ContentAlignment.MiddleLeft
+            Officebtn.TextAlign = ContentAlignment.MiddleLeft
             Settingbtn.TextAlign = ContentAlignment.MiddleLeft
 
             Try
@@ -104,7 +104,7 @@
     End Sub
 
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Chartbtn.Click, Officebtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
 

@@ -52,6 +52,8 @@
             End Try
         End If
     End Sub
+
+
     Private Sub AddCategorybtn_Click(sender As Object, e As EventArgs) Handles AddCategorybtn.Click
         Dim mySql As New MySQLCore
         Try
@@ -64,26 +66,27 @@
             Dim dt = mySql.MySql_SelectString("categoryid", "gl_assets_category", $"WHERE category = '{Categorynametxt.Text}'")
             If dt.Rows.Count > 0 Then
                 ' Data already exists
-                mySql.MySql_ExecuteNonQueryString("gl_assets_category", columnValues, Nothing, 2)
+                'mySql.MySql_ExecuteNonQueryString("gl_assets_category", columnValues, Nothing, 2)
                 MsgBox("Already exists")
             Else
                 ' Data does not exist, insert the new row
-                mySql.MySql_ExecuteNonQueryString("gl_assets_category", columnValues, Nothing, 1)
+                mySql.MySql_ExecuteNonQueryString("gl_assets_category", ColumnValues, Nothing, 1)
+
+
                 'Asset.ref()
             End If
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
         End Try
-
+        lastindex()
+        OpaquePrompt.Close()
         Me.Close()
+        Form1.Activate()
     End Sub
-    Private Sub AssetIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles AssetIDtxt.OnValueChanged
-    End Sub
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-    Private Sub Categorycodetxt_OnValueChanged_1(sender As Object, e As EventArgs) Handles Categorycodetxt.OnValueChanged
-
+    Sub lastindex()
+        Custom_Load()
+        Custom_ComboBoxDatasource(ChartofAccounts.categoryCBB, CategoryDT, "category", "category")
+        ChartofAccounts.categoryCBB.SelectedIndex = ChartofAccounts.categoryCBB.Items.Count - 1
     End Sub
 
     Private Sub CategoryIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.OnValueChanged
@@ -106,5 +109,9 @@
         AssetIDtxt.Text = assetID
         CategoryIDtxt.Text = categoryID
         Categorycodetxt.Text = categorycode
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class

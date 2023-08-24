@@ -16,12 +16,10 @@
         Try
             Dim lastid = mySql.MySql_SelectString("MAX(id+1) as lastidd", "gl_assets")
             Dim code = lastid.Rows(0).Item("lastidd").ToString
-
             Dim ColumnValues As New Dictionary(Of String, String)
             ColumnValues.Add("assetid", code)
             ColumnValues.Add("asset", Assettxt.Text)
             ColumnValues.Add("description", AssetDescrptiontxt.Text)
-
             If exists = False Then
                 Dim dt = mySql.MySql_SelectString("assetid", "gl_assets", $"WHERE asset = '{Assettxt.Text}'")
                 dt1 = dt
@@ -33,16 +31,23 @@
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets", ColumnValues, Nothing, 1)
-
+                '
             End If
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
         End Try
-        OpaquePrompt.Show()
+        lastindex()
+        OpaquePrompt.Close()
         Me.Close()
+        Form1.Activate()
 
     End Sub
 
+    Sub lastindex()
+        Custom_Load()
+        Custom_ComboBoxDatasource(ChartofAccounts.assetCBB, AssetsDT, "asset", "asset")
+        ChartofAccounts.assetCBB.SelectedIndex = ChartofAccounts.assetCBB.Items.Count - 1
+    End Sub
     Private Sub Asset_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cleartxt()
     End Sub
@@ -57,10 +62,11 @@
         'AssetDescrptiontxt.Text = description
     End Sub
     Public exists As Boolean = False
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         exists = True
     End Sub
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
+
 End Class

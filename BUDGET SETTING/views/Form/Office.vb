@@ -1,43 +1,78 @@
-﻿Public Class Office
+﻿
+Public Class Office
     Public OfficeDT As DataTable
+    Public VIOfficeDT As DataTable
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
-        DataGridView1.DataSource = OfficeDT
-        Dim oldcolumns() = {"officetypeid", "officecode_pbo", "officecode_acctg", "officename", "officedescription", "officeaccronym"}
-        Dim newcolumns() = {"Office Type", "Office Code PBO", "Office Code Accounting", "Office Name", "Office Description", "Office Accronym"}
-        Dim cols() = {"id", "officeid", "mandatory_aipcode", "logdate", "open_office"}
-        Datagrid_HideColumn(DataGridView1, cols)
-        Datagrid_RenameColumn(DataGridView1, oldcolumns, newcolumns)
+        VIOfficeDT = SqlLoad.MySql_SelectString("*", "vi_offices")
+    End Sub
+    Private Sub Office_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim SqlLoad As New MySQLCore
+        Custom_Load()
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_offices")
         Header_Accounts()
     End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub Office_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Custom_Load()
-    End Sub
     Private Sub Header_Accounts()
-        DataGridView1.Columns("officetypeid").Width = 100
-        DataGridView1.Columns("officecode_pbo").Width = 100
-        DataGridView1.Columns("officecode_acctg").Width = 100
-        DataGridView1.Columns("officeaccronym").Width = 120
+        DataGridView1.Columns("TYPE").Width = 80
+        DataGridView1.Columns("AIP CODE").Width = 120
+        DataGridView1.Columns("ACCT. CODE").Width = 150
+        DataGridView1.Columns("ACCRONYM").Width = 120
+    End Sub
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        AddOffice.Saveupdate = 1
+        OpaquePrompt.Show()
+        AddOffice.ShowDialog()
+    End Sub
+
+    Private Sub Searchtxt_OnValueChanged(sender As Object, e As EventArgs) Handles Searchtxt.OnValueChanged
+        Try
+            If VIOfficeDT IsNot Nothing Then
+                Dim conditions As New List(Of LinQCondition) From {
+            New LinQCondition With {
+                            .Column = "NAME",
+                            .Value = Searchtxt.Text,
+                            .ComparisonType = ComparisonTypeEnum.Like_enum}
+        }
+                Dim filterdata = Linq_Query(VIOfficeDT, conditions)
+                DataGridView1.DataSource = filterdata
+                Header_Accounts()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
 
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-        Officetypetxt.Text = DataGridView1.Rows(e.RowIndex).Cells("officetypeid").Value.ToString()
-        AIPtxt.Text = DataGridView1.Rows(e.RowIndex).Cells("mandatory_aipcode").Value.ToString()
-        OfficePBOtxt.Text = DataGridView1.Rows(e.RowIndex).Cells("officecode_pbo").Value.ToString()
-        OfficeAccountingtxt.Text = DataGridView1.Rows(e.RowIndex).Cells("officecode_acctg").Value.ToString()
-        OfficeAccrotxt.Text = DataGridView1.Rows(e.RowIndex).Cells("officeaccronym").Value.ToString()
-        Officenametxt.Text = DataGridView1.Rows(e.RowIndex).Cells("officename").Value.ToString()
-        OfficeDesctxt.Text = DataGridView1.Rows(e.RowIndex).Cells("officedescription").Value.ToString()
+    End Sub
+    Public officename
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        Dim searchrow As String
+        searchrow = DataGridView1.Rows(e.RowIndex).Cells("NAME").Value.ToString()
+        Custom_Load()
+        Dim conditions As New List(Of LinQCondition) From {
+        New LinQCondition With {
+                             .Column = "NAME",
+                             .Value = searchrow,
+                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
+     }
+        Dim accountname As DataTable = Linq_Query(VIOfficeDT, conditions)
+        officename = accountname.Rows(0).Item("NAME").ToString
+        Searchtxt.Text = officename
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        AddOffice.Saveupdate = 2
+        OpaquePrompt.Show()
+        AddOffice.ShowDialog()
     End Sub
 End Class
