@@ -6,11 +6,13 @@ Public Class Office
         Dim SqlLoad As New MySQLCore
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
         VIOfficeDT = SqlLoad.MySql_SelectString("*", "vi_offices")
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_offices")
+        Dim cols() = {"ID"}
+        Datagrid_HideColumn(DataGridView1, cols)
     End Sub
     Private Sub Office_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
         Custom_Load()
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_offices")
         Header_Accounts()
     End Sub
     Private Sub Header_Accounts()
@@ -19,13 +21,16 @@ Public Class Office
         DataGridView1.Columns("ACCT. CODE").Width = 150
         DataGridView1.Columns("ACCRONYM").Width = 120
     End Sub
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Addbtn.Click
         AddOffice.Saveupdate = 1
+        AddOffice.title = "Add Office"
         OpaquePrompt.Show()
         AddOffice.ShowDialog()
     End Sub
 
     Private Sub Searchtxt_OnValueChanged(sender As Object, e As EventArgs) Handles Searchtxt.OnValueChanged
+        ClearDGV(DataGridView1)
+
         Try
             If VIOfficeDT IsNot Nothing Then
                 Dim conditions As New List(Of LinQCondition) From {
@@ -37,7 +42,10 @@ Public Class Office
                 Dim filterdata = Linq_Query(VIOfficeDT, conditions)
                 DataGridView1.DataSource = filterdata
                 Header_Accounts()
+
             End If
+            Dim cols() = {"ID"}
+            Datagrid_HideColumn(DataGridView1, cols)
         Catch ex As Exception
 
         End Try
@@ -55,6 +63,7 @@ Public Class Office
 
     End Sub
     Public officename
+    Public officeid
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         Dim searchrow As String
         searchrow = DataGridView1.Rows(e.RowIndex).Cells("NAME").Value.ToString()
@@ -66,13 +75,19 @@ Public Class Office
                              .ComparisonType = ComparisonTypeEnum.Equal_enum}
      }
         Dim accountname As DataTable = Linq_Query(VIOfficeDT, conditions)
+
         officename = accountname.Rows(0).Item("NAME").ToString
+        officeid = accountname.Rows(0).Item("ID").ToString
         Searchtxt.Text = officename
+        AddOffice.officeid = officeid
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Editbtn.Click
         AddOffice.Saveupdate = 2
+        AddOffice.title = "Update Office"
         OpaquePrompt.Show()
         AddOffice.ShowDialog()
+
+
     End Sub
 End Class

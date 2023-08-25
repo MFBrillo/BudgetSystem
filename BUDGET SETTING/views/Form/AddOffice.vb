@@ -3,6 +3,8 @@ Public Class AddOffice
     Public OfficeTypeDT As DataTable
     Public OfficeDT As DataTable
     Public Saveupdate As Integer
+    Public officeid
+    Public title As String
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
         OpaquePrompt.Close()
         Me.Close()
@@ -39,27 +41,27 @@ Public Class AddOffice
             OpaquePrompt.Close()
             Form1.Activate()
         ElseIf Saveupdate = 2 Then
-            OfficeDT = SqlLoad.MySql_SelectString("officeid", "gl_offices",, "where")
+            'OfficeDT = SqlLoad.MySql_SelectString("officeid", "gl_offices",, "where")
             OpaquePrompt.Show()
             CustomYesNoPrompt("Update Data", "Do you want to save changes")
-            'If YesNoPrompt.YesOption = True Then
-            '    Try
-            '        Dim mySql As New MySQLCore
-            '        Dim columnValues As New Dictionary(Of String, String)
-            '        columnValues.Add("officeid", lastofficeid)
-            '        columnValues.Add("officetypeid", officetypeid)
-            '        columnValues.Add("officecode_pbo", PBOCodetxt.Text)
-            '        columnValues.Add("mandatory_aipcode", AIPCodetxt.Text)
-            '        columnValues.Add("officecode_acctg", AccountingCodeTxt.Text)
-            '        columnValues.Add("officeaccronym", Accronymtxt.Text)
-            '        columnValues.Add("officename", Nametxt.Text)
-            '        columnValues.Add("officedescription", Descriptiontxt.Text)
-            '        mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 2)
-            '    Catch ex As Exception
-            '        MsgBox("ERROR" & ex.Message)
-            '    End Try
-
-            'End If
+            If YesNoPrompt.YesOption = True Then
+                Try
+                    Dim mySql As New MySQLCore
+                    Dim columnValues As New Dictionary(Of String, String)
+                    columnValues.Add("id", officeid)
+                    columnValues.Add("officeid", officeid)
+                    columnValues.Add("officetypeid", officetypeid)
+                    columnValues.Add("officecode_pbo", PBOCodetxt.Text)
+                    columnValues.Add("mandatory_aipcode", AIPCodetxt.Text)
+                    columnValues.Add("officecode_acctg", AccountingCodeTxt.Text)
+                    columnValues.Add("officeaccronym", Accronymtxt.Text)
+                    columnValues.Add("officename", Nametxt.Text)
+                    columnValues.Add("officedescription", Descriptiontxt.Text)
+                    mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, $"id={officeid}", 2)
+                Catch ex As Exception
+                    MsgBox("ERROR" & ex.Message)
+                End Try
+            End If
         End If
     End Sub
     Sub Custom_Load()
@@ -67,11 +69,37 @@ Public Class AddOffice
         OfficeTypeDT = SqlLoad.MySql_SelectString("*", "vi_office_type")
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
     End Sub
-
     Public Shared assetidOfficeTypeid
+    Public numbertoletter
     Private Sub AddOffice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Custom_Load()
+        Titletxt.Text = title
         Custom_ComboBoxDatasource(Officetypetxt, OfficeTypeDT, "officetype", "officetype")
+
+        If Saveupdate = 2 Then
+            Dim conditions As New List(Of LinQCondition) From {
+            New LinQCondition With {
+                             .Column = "officeid",
+                             .Value = officeid,
+                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
+            }
+            Dim officeDT1 As DataTable = Linq_Query(OfficeDT, conditions)
+            officetypeid = officeDT1.Rows(0).Item("officetypeid").ToString
+
+            Dim SqlLoad As New MySQLCore
+
+            Dim dt = SqlLoad.MySql_SelectString("officetype", "gl_officetype", , $"where officetypeid ='{officetypeid}'")
+
+            numbertoletter = dt.Rows(0).Item("officetype").ToString
+            Officetypetxt.Text = numbertoletter
+            PBOCodetxt.Text = officeDT1.Rows(0).Item("officecode_pbo").ToString
+            AIPCodetxt.Text = officeDT1.Rows(0).Item("mandatory_aipcode").ToString
+            AccountingCodeTxt.Text = officeDT1.Rows(0).Item("officecode_acctg").ToString
+            Accronymtxt.Text = officeDT1.Rows(0).Item("officeaccronym").ToString
+            Nametxt.Text = officeDT1.Rows(0).Item("officename").ToString
+            Descriptiontxt.Text = officeDT1.Rows(0).Item("officedescription").ToString
+        End If
+
     End Sub
 
     Private Function GetInitials(inputText As String) As String
@@ -88,14 +116,17 @@ Public Class AddOffice
 
     End Sub
     Private Sub Nametxt_OnValueChanged(sender As Object, e As EventArgs) Handles Nametxt.OnValueChanged
-        Dim inputText As String = Nametxt.Text.Trim()
-        Dim initials As String = GetInitials(inputText)
-        Accronymtxt.Text = initials
+        If Saveupdate = 1 Then
+            Dim inputText As String = Nametxt.Text.Trim()
+            Dim initials As String = GetInitials(inputText)
+            Accronymtxt.Text = initials
+        End If
+
+
     End Sub
     Dim officetypeid
     Private Sub Officetypetxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Officetypetxt.SelectedIndexChanged
         Try
-
             Dim SqlLoad As New MySQLCore
             Dim dt = SqlLoad.MySql_SelectString("officetypeid", "gl_officetype", , $"where officetype ='{Officetypetxt.Text}'")
             officetypeid = dt.Rows(0).Item("officetypeid").ToString

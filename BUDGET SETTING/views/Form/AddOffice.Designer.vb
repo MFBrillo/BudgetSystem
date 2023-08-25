@@ -33,7 +33,7 @@ Partial Class AddOffice
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Titletxt = New System.Windows.Forms.Label()
         Me.AIPCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.PBOCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.AccountingCodeTxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -51,7 +51,7 @@ Partial Class AddOffice
         Me.Officetypetxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Officetypetxt.ForeColor = System.Drawing.Color.White
         Me.Officetypetxt.FormattingEnabled = True
-        Me.Officetypetxt.Location = New System.Drawing.Point(220, 83)
+        Me.Officetypetxt.Location = New System.Drawing.Point(231, 83)
         Me.Officetypetxt.Name = "Officetypetxt"
         Me.Officetypetxt.Size = New System.Drawing.Size(313, 22)
         Me.Officetypetxt.TabIndex = 116
@@ -62,7 +62,7 @@ Partial Class AddOffice
         Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Savebtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Savebtn.ForeColor = System.Drawing.Color.White
-        Me.Savebtn.Location = New System.Drawing.Point(353, 739)
+        Me.Savebtn.Location = New System.Drawing.Point(364, 739)
         Me.Savebtn.Name = "Savebtn"
         Me.Savebtn.Size = New System.Drawing.Size(177, 35)
         Me.Savebtn.TabIndex = 115
@@ -74,7 +74,7 @@ Partial Class AddOffice
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(22, 476)
+        Me.Label8.Location = New System.Drawing.Point(33, 476)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(64, 16)
         Me.Label8.TabIndex = 111
@@ -85,7 +85,7 @@ Partial Class AddOffice
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(26, 89)
+        Me.Label2.Location = New System.Drawing.Point(37, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 16)
         Me.Label2.TabIndex = 102
@@ -96,7 +96,7 @@ Partial Class AddOffice
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(25, 166)
+        Me.Label4.Location = New System.Drawing.Point(36, 166)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(64, 16)
         Me.Label4.TabIndex = 104
@@ -107,7 +107,7 @@ Partial Class AddOffice
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(24, 554)
+        Me.Label7.Location = New System.Drawing.Point(35, 554)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(71, 16)
         Me.Label7.TabIndex = 110
@@ -118,7 +118,7 @@ Partial Class AddOffice
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(26, 319)
+        Me.Label9.Location = New System.Drawing.Point(37, 319)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(103, 16)
         Me.Label9.TabIndex = 112
@@ -129,7 +129,7 @@ Partial Class AddOffice
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(26, 403)
+        Me.Label6.Location = New System.Drawing.Point(37, 403)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 16)
         Me.Label6.TabIndex = 109
@@ -140,7 +140,7 @@ Partial Class AddOffice
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(25, 243)
+        Me.Label3.Location = New System.Drawing.Point(36, 243)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 16)
         Me.Label3.TabIndex = 103
@@ -150,7 +150,7 @@ Partial Class AddOffice
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Titletxt)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
@@ -167,16 +167,16 @@ Partial Class AddOffice
         Me.Label5.TabIndex = 125
         Me.Label5.Text = "X"
         '
-        'Label1
+        'Titletxt
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(108, 19)
-        Me.Label1.TabIndex = 125
-        Me.Label1.Text = "ADD OFFICE"
+        Me.Titletxt.AutoSize = True
+        Me.Titletxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Titletxt.ForeColor = System.Drawing.Color.White
+        Me.Titletxt.Location = New System.Drawing.Point(12, 11)
+        Me.Titletxt.Name = "Titletxt"
+        Me.Titletxt.Size = New System.Drawing.Size(108, 19)
+        Me.Titletxt.TabIndex = 125
+        Me.Titletxt.Text = "ADD OFFICE"
         '
         'AIPCodetxt
         '
@@ -190,7 +190,7 @@ Partial Class AddOffice
         Me.AIPCodetxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AIPCodetxt.ForeColor = System.Drawing.Color.White
         Me.AIPCodetxt.isPassword = False
-        Me.AIPCodetxt.Location = New System.Drawing.Point(219, 229)
+        Me.AIPCodetxt.Location = New System.Drawing.Point(230, 229)
         Me.AIPCodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AIPCodetxt.MaxLength = 32767
         Me.AIPCodetxt.Name = "AIPCodetxt"
@@ -210,7 +210,7 @@ Partial Class AddOffice
         Me.PBOCodetxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PBOCodetxt.ForeColor = System.Drawing.Color.White
         Me.PBOCodetxt.isPassword = False
-        Me.PBOCodetxt.Location = New System.Drawing.Point(219, 152)
+        Me.PBOCodetxt.Location = New System.Drawing.Point(230, 152)
         Me.PBOCodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.PBOCodetxt.MaxLength = 32767
         Me.PBOCodetxt.Name = "PBOCodetxt"
@@ -230,7 +230,7 @@ Partial Class AddOffice
         Me.AccountingCodeTxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccountingCodeTxt.ForeColor = System.Drawing.Color.White
         Me.AccountingCodeTxt.isPassword = False
-        Me.AccountingCodeTxt.Location = New System.Drawing.Point(220, 305)
+        Me.AccountingCodeTxt.Location = New System.Drawing.Point(231, 305)
         Me.AccountingCodeTxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AccountingCodeTxt.MaxLength = 32767
         Me.AccountingCodeTxt.Name = "AccountingCodeTxt"
@@ -250,7 +250,7 @@ Partial Class AddOffice
         Me.Accronymtxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Accronymtxt.ForeColor = System.Drawing.Color.White
         Me.Accronymtxt.isPassword = False
-        Me.Accronymtxt.Location = New System.Drawing.Point(219, 476)
+        Me.Accronymtxt.Location = New System.Drawing.Point(230, 476)
         Me.Accronymtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Accronymtxt.MaxLength = 32767
         Me.Accronymtxt.Name = "Accronymtxt"
@@ -270,7 +270,7 @@ Partial Class AddOffice
         Me.Nametxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Nametxt.ForeColor = System.Drawing.Color.White
         Me.Nametxt.isPassword = False
-        Me.Nametxt.Location = New System.Drawing.Point(218, 389)
+        Me.Nametxt.Location = New System.Drawing.Point(229, 389)
         Me.Nametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Nametxt.MaxLength = 32767
         Me.Nametxt.Name = "Nametxt"
@@ -283,7 +283,8 @@ Partial Class AddOffice
         Me.Descriptiontxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Descriptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Descriptiontxt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Descriptiontxt.Location = New System.Drawing.Point(218, 555)
+        Me.Descriptiontxt.ForeColor = System.Drawing.Color.White
+        Me.Descriptiontxt.Location = New System.Drawing.Point(229, 555)
         Me.Descriptiontxt.Multiline = True
         Me.Descriptiontxt.Name = "Descriptiontxt"
         Me.Descriptiontxt.Size = New System.Drawing.Size(312, 131)
@@ -337,6 +338,6 @@ Partial Class AddOffice
     Friend WithEvents Accronymtxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Nametxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Descriptiontxt As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Titletxt As Label
     Friend WithEvents Label5 As Label
 End Class

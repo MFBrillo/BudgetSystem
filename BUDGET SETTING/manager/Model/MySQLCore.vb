@@ -342,7 +342,6 @@ Public Class MySQLCore
 
                 End While
 
-
                 cmd.Dispose()
                 Conn.Close()
                 dr.Close()
