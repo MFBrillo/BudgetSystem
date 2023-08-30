@@ -26,6 +26,7 @@ Partial Class Form1
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuController = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Verifybtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Officebtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Settingbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Chartbtn = New Bunifu.Framework.UI.BunifuThinButton2()
@@ -53,14 +54,41 @@ Partial Class Form1
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Verifybtn)
         Me.Panel2.Controls.Add(Me.Officebtn)
         Me.Panel2.Controls.Add(Me.Settingbtn)
         Me.Panel2.Controls.Add(Me.Chartbtn)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 169)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(134, 172)
+        Me.Panel2.Size = New System.Drawing.Size(134, 204)
         Me.Panel2.TabIndex = 79
+        '
+        'Verifybtn
+        '
+        Me.Verifybtn.ActiveBorderThickness = 1
+        Me.Verifybtn.ActiveCornerRadius = 5
+        Me.Verifybtn.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Verifybtn.ActiveForecolor = System.Drawing.Color.Black
+        Me.Verifybtn.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Verifybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Verifybtn.BackgroundImage = CType(resources.GetObject("Verifybtn.BackgroundImage"), System.Drawing.Image)
+        Me.Verifybtn.ButtonText = "Verify"
+        Me.Verifybtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Verifybtn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Verifybtn.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Verifybtn.ForeColor = System.Drawing.Color.Black
+        Me.Verifybtn.IdleBorderThickness = 1
+        Me.Verifybtn.IdleCornerRadius = 1
+        Me.Verifybtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Verifybtn.IdleForecolor = System.Drawing.Color.White
+        Me.Verifybtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Verifybtn.Location = New System.Drawing.Point(0, 150)
+        Me.Verifybtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Verifybtn.Name = "Verifybtn"
+        Me.Verifybtn.Size = New System.Drawing.Size(134, 50)
+        Me.Verifybtn.TabIndex = 9
+        Me.Verifybtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Officebtn
         '
@@ -150,7 +178,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(13, 706)
+        Me.Button2.Location = New System.Drawing.Point(12, 815)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(112, 23)
         Me.Button2.TabIndex = 77
@@ -204,7 +232,6 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Account Code"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuController.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         CType(Me.MainPanel, System.ComponentModel.ISupportInitialize).EndInit()
@@ -221,4 +248,5 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Verifybtn As Bunifu.Framework.UI.BunifuThinButton2
 End Class

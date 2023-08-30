@@ -149,14 +149,14 @@
                     columnValues.Add("accountid", AccountIDtxt.Text)
                     columnValues.Add("accountdescription", Decriptiontxt.Text)
                     columnValues.Add("accountcode", AccountCodetxt.Text)
-                    mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("gl_accounts_temp", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
 
             End If
             Custom_Load()
-            Disablesave()
+
             CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
             Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
             SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
@@ -178,17 +178,7 @@
             DataGridView1.FirstDisplayedScrollingRowIndex = lastIndex
         End If
     End Sub
-    Private Sub Addbtn_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-        Enablesave()
-    End Sub
-    Sub Enablesave()
-        Savebtn.Enabled = True
-        Addbtn.Enabled = False
-    End Sub
-    Sub Disablesave()
-        Savebtn.Enabled = False
-        Addbtn.Enabled = True
-    End Sub
+
     Sub cleartext1()
         AccountIDtxt.Text = ""
         AccountCodetxt.Text = ""
@@ -290,9 +280,16 @@
         Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
         accountdescription2 = accountname.Rows(0).Item("Account").ToString
         Searchtxt.Text = accountdescription2
+        Searchtxt.Select()
+        Searchtxt.Focus()
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub AccountIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles AccountIDtxt.OnValueChanged
 
     End Sub
 End Class

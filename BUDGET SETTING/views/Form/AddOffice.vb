@@ -51,16 +51,18 @@ Public Class AddOffice
                     columnValues.Add("id", officeid)
                     columnValues.Add("officeid", officeid)
                     columnValues.Add("officetypeid", officetypeid)
-                    columnValues.Add("officecode_pbo", PBOCodetxt.Text)
-                    columnValues.Add("mandatory_aipcode", AIPCodetxt.Text)
-                    columnValues.Add("officecode_acctg", AccountingCodeTxt.Text)
-                    columnValues.Add("officeaccronym", Accronymtxt.Text)
-                    columnValues.Add("officename", Nametxt.Text)
-                    columnValues.Add("officedescription", Descriptiontxt.Text)
+                    columnValues.Add("officecode_pbo", $"'{PBOCodetxt.Text}'")
+                    columnValues.Add("mandatory_aipcode", $"'{AIPCodetxt.Text}'")
+                    columnValues.Add("officecode_acctg", $"' {AccountingCodeTxt.Text}'")
+                    columnValues.Add("officeaccronym", $"'{Accronymtxt.Text}'")
+                    columnValues.Add("officename", $"'{Nametxt.Text}'")
+                    columnValues.Add("officedescription", $"'{Descriptiontxt.Text}'")
                     mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, $"id={officeid}", 2)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
+                OpaquePrompt.Close()
+                Form1.Activate()
             End If
         End If
     End Sub
@@ -90,7 +92,7 @@ Public Class AddOffice
 
             Dim dt = SqlLoad.MySql_SelectString("officetype", "gl_officetype", , $"where officetypeid ='{officetypeid}'")
 
-            numbertoletter = dt.Rows(0).Item("officetype").ToString
+                    numbertoletter = dt.Rows(0).Item("officetype").ToString
             Officetypetxt.Text = numbertoletter
             PBOCodetxt.Text = officeDT1.Rows(0).Item("officecode_pbo").ToString
             AIPCodetxt.Text = officeDT1.Rows(0).Item("mandatory_aipcode").ToString

@@ -91,15 +91,7 @@
             Case "Officebtn"
                 Dim form = New Office
                 ShowForm(form)
-                'Case "Subcategorybtn"
-                '    Dim form = New Subcategory
-                '    ShowForm(form)
-                'Case "Registrybtn"
-                '    Dim uc = New RegistryAsset
-                '    ShowUserControl(uc)
-                'Case "Sectorbtn"
-                '    Dim uc = New SectorSubsector
-                '    ShowUserControl(uc)
+
         End Select
     End Sub
 
@@ -112,7 +104,8 @@
         Me.Dispose()
     End Sub
 
-    Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
-
+    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles Verifybtn.Click
+        OpaquePrompt.Show()
+        Verify.ShowDialog()
     End Sub
 End Class

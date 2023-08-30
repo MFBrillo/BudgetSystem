@@ -126,7 +126,7 @@ Partial Class Asset
         '
         Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.AssetDescrptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.AssetDescrptiontxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AssetDescrptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetDescrptiontxt.ForeColor = System.Drawing.Color.White
         Me.AssetDescrptiontxt.Location = New System.Drawing.Point(205, 153)
         Me.AssetDescrptiontxt.Multiline = True

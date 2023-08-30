@@ -224,6 +224,24 @@
     <Compile Include="views\Form\Registry.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="views\Form\Verify.Designer.vb">
+      <DependentUpon>Verify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\Verify.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\AssetTable.Designer.vb">
+      <DependentUpon>AssetTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\AssetTable.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\ButtonCheck.Designer.vb">
+      <DependentUpon>ButtonCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\ButtonCheck.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="views\UCForm\ChartAccountSettingUC.Designer.vb">
       <DependentUpon>ChartAccountSettingUC.vb</DependentUpon>
     </Compile>
@@ -234,12 +252,6 @@
       <DependentUpon>ChartofAccounts.vb</DependentUpon>
     </Compile>
     <Compile Include="views\UCForm\ChartofAccounts.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\UC_Item.Designer.vb">
-      <DependentUpon>UC_Item.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\UC_Item.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -283,14 +295,20 @@
     <EmbeddedResource Include="views\Form\Registry.resx">
       <DependentUpon>Registry.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\Verify.resx">
+      <DependentUpon>Verify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\AssetTable.resx">
+      <DependentUpon>AssetTable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\ButtonCheck.resx">
+      <DependentUpon>ButtonCheck.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\ChartAccountSettingUC.resx">
       <DependentUpon>ChartAccountSettingUC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\ChartofAccounts.resx">
       <DependentUpon>ChartofAccounts.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\UC_Item.resx">
-      <DependentUpon>UC_Item.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

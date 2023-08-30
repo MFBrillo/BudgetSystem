@@ -41,10 +41,10 @@ Partial Class Category
         '
         'AssetIDtxt
         '
-        Me.AssetIDtxt.BackColor = System.Drawing.Color.White
-        Me.AssetIDtxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.AssetIDtxt.BorderColorIdle = System.Drawing.Color.White
-        Me.AssetIDtxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.AssetIDtxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AssetIDtxt.BorderColorFocused = System.Drawing.Color.White
+        Me.AssetIDtxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AssetIDtxt.BorderColorMouseHover = System.Drawing.Color.White
         Me.AssetIDtxt.BorderThickness = 1
         Me.AssetIDtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.AssetIDtxt.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -62,7 +62,7 @@ Partial Class Category
         '
         'Cancelbtn
         '
-        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White
@@ -86,10 +86,10 @@ Partial Class Category
         '
         'Categorycodetxt
         '
-        Me.Categorycodetxt.BackColor = System.Drawing.Color.White
-        Me.Categorycodetxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Categorycodetxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Categorycodetxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.Categorycodetxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Categorycodetxt.BorderColorFocused = System.Drawing.Color.White
+        Me.Categorycodetxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Categorycodetxt.BorderColorMouseHover = System.Drawing.Color.White
         Me.Categorycodetxt.BorderThickness = 1
         Me.Categorycodetxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Categorycodetxt.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -129,15 +129,15 @@ Partial Class Category
         '
         'Categorynametxt
         '
-        Me.Categorynametxt.BackColor = System.Drawing.Color.White
-        Me.Categorynametxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.Categorynametxt.BorderColorIdle = System.Drawing.Color.White
-        Me.Categorynametxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.Categorynametxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Categorynametxt.BorderColorFocused = System.Drawing.Color.White
+        Me.Categorynametxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Categorynametxt.BorderColorMouseHover = System.Drawing.Color.White
         Me.Categorynametxt.BorderThickness = 1
         Me.Categorynametxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Categorynametxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Categorynametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Categorynametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Categorynametxt.ForeColor = System.Drawing.Color.White
         Me.Categorynametxt.isPassword = False
         Me.Categorynametxt.Location = New System.Drawing.Point(220, 79)
         Me.Categorynametxt.Margin = New System.Windows.Forms.Padding(4)
@@ -149,10 +149,10 @@ Partial Class Category
         '
         'CategoryIDtxt
         '
-        Me.CategoryIDtxt.BackColor = System.Drawing.Color.White
-        Me.CategoryIDtxt.BorderColorFocused = System.Drawing.Color.Black
-        Me.CategoryIDtxt.BorderColorIdle = System.Drawing.Color.White
-        Me.CategoryIDtxt.BorderColorMouseHover = System.Drawing.Color.Black
+        Me.CategoryIDtxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.CategoryIDtxt.BorderColorFocused = System.Drawing.Color.White
+        Me.CategoryIDtxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.CategoryIDtxt.BorderColorMouseHover = System.Drawing.Color.White
         Me.CategoryIDtxt.BorderThickness = 1
         Me.CategoryIDtxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.CategoryIDtxt.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -192,7 +192,7 @@ Partial Class Category
         '
         'AddCategorybtn
         '
-        Me.AddCategorybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.AddCategorybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
         Me.AddCategorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddCategorybtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AddCategorybtn.ForeColor = System.Drawing.Color.White

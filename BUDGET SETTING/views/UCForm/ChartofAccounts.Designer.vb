@@ -36,6 +36,8 @@ Partial Class ChartofAccounts
         Me.Searchtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Savebtn = New System.Windows.Forms.Button()
         Me.Decriptiontxt = New System.Windows.Forms.TextBox()
         Me.AddSubcategorybtn = New System.Windows.Forms.Button()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -51,12 +53,9 @@ Partial Class ChartofAccounts
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.AccountCodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Addbtn = New System.Windows.Forms.Button()
-        Me.Savebtn = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.AssetIDTxt = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -103,10 +102,11 @@ Partial Class ChartofAccounts
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
@@ -210,7 +210,6 @@ Partial Class ChartofAccounts
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label2)
-        Me.Panel5.Controls.Add(Me.Addbtn)
         Me.Panel5.Controls.Add(Me.Savebtn)
         Me.Panel5.Controls.Add(Me.Decriptiontxt)
         Me.Panel5.Controls.Add(Me.AddSubcategorybtn)
@@ -233,6 +232,30 @@ Partial Class ChartofAccounts
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(420, 786)
         Me.Panel5.TabIndex = 74
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(146, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(131, 19)
+        Me.Label2.TabIndex = 126
+        Me.Label2.Text = "ADD ACCOUNT"
+        '
+        'Savebtn
+        '
+        Me.Savebtn.BackColor = System.Drawing.Color.Crimson
+        Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Savebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Savebtn.ForeColor = System.Drawing.Color.White
+        Me.Savebtn.Location = New System.Drawing.Point(23, 663)
+        Me.Savebtn.Name = "Savebtn"
+        Me.Savebtn.Size = New System.Drawing.Size(364, 40)
+        Me.Savebtn.TabIndex = 42
+        Me.Savebtn.Text = "SAVE"
+        Me.Savebtn.UseVisualStyleBackColor = False
         '
         'Decriptiontxt
         '
@@ -439,48 +462,6 @@ Partial Class ChartofAccounts
         Me.AccountCodetxt.TabIndex = 68
         Me.AccountCodetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(27, 406)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(90, 16)
-        Me.Label16.TabIndex = 45
-        Me.Label16.Text = "Account Name"
-        '
-        'Addbtn
-        '
-        Me.Addbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.Addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Addbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Addbtn.ForeColor = System.Drawing.Color.White
-        Me.Addbtn.Location = New System.Drawing.Point(27, 648)
-        Me.Addbtn.Name = "Addbtn"
-        Me.Addbtn.Size = New System.Drawing.Size(364, 40)
-        Me.Addbtn.TabIndex = 71
-        Me.Addbtn.Text = "ADD"
-        Me.Addbtn.UseVisualStyleBackColor = False
-        '
-        'Savebtn
-        '
-        Me.Savebtn.BackColor = System.Drawing.Color.Crimson
-        Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Savebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Savebtn.ForeColor = System.Drawing.Color.White
-        Me.Savebtn.Location = New System.Drawing.Point(27, 709)
-        Me.Savebtn.Name = "Savebtn"
-        Me.Savebtn.Size = New System.Drawing.Size(364, 40)
-        Me.Savebtn.TabIndex = 42
-        Me.Savebtn.Text = "SAVE"
-        Me.Savebtn.UseVisualStyleBackColor = False
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 10
-        '
         'AssetIDTxt
         '
         Me.AssetIDTxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
@@ -494,16 +475,21 @@ Partial Class ChartofAccounts
         Me.AssetIDTxt.Size = New System.Drawing.Size(281, 24)
         Me.AssetIDTxt.TabIndex = 47
         '
-        'Label2
+        'Label16
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(146, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 19)
-        Me.Label2.TabIndex = 126
-        Me.Label2.Text = "ADD ACCOUNT"
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Label16.ForeColor = System.Drawing.Color.White
+        Me.Label16.Location = New System.Drawing.Point(27, 406)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(90, 16)
+        Me.Label16.TabIndex = 45
+        Me.Label16.Text = "Account Name"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 10
         '
         'ChartofAccounts
         '
@@ -528,7 +514,6 @@ Partial Class ChartofAccounts
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Addbtn As Button
     Friend WithEvents Savebtn As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents Decriptiontxt As TextBox

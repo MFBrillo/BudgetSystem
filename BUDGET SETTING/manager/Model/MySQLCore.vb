@@ -356,4 +356,40 @@ Public Class MySQLCore
         Return 0
     End Function
 
+    Friend Function MySql_Delete(ByVal tablename As String,
+                             ByVal whereclause As String,
+                             Optional reviewsql As Integer = 0) As Boolean
+        Using cmd As New MySqlCommand
+            Try
+                Dim SQL As String
+
+                SQL = $"DELETE FROM {tablename}" & vbCrLf &
+                      $"WHERE {whereclause};"
+
+                If reviewsql = 1 Then MsgBox(SQL)
+                Conn.Open()
+
+                With cmd
+                    .Connection = Conn
+                    .CommandType = CommandType.Text
+                    .CommandText = SQL
+                End With
+
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                cmd.Dispose()
+                Conn.Close()
+
+                Return rowsAffected > 0
+
+            Catch ex As Exception
+                CustomMsg(Err.Description, "Server not found")
+                'Err.Clear()
+                cmd.Dispose()
+                Conn.Close()
+                Return False
+            End Try
+        End Using
+    End Function
+
 End Class
