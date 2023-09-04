@@ -30,7 +30,6 @@ Partial Class Category
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Categorynametxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.CategoryIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.AddCategorybtn = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -52,7 +51,7 @@ Partial Class Category
         Me.AssetIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.AssetIDtxt.isPassword = False
-        Me.AssetIDtxt.Location = New System.Drawing.Point(220, 274)
+        Me.AssetIDtxt.Location = New System.Drawing.Point(218, 76)
         Me.AssetIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.AssetIDtxt.MaxLength = 32767
         Me.AssetIDtxt.Name = "AssetIDtxt"
@@ -66,7 +65,7 @@ Partial Class Category
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White
-        Me.Cancelbtn.Location = New System.Drawing.Point(50, 534)
+        Me.Cancelbtn.Location = New System.Drawing.Point(49, 436)
         Me.Cancelbtn.Name = "Cancelbtn"
         Me.Cancelbtn.Size = New System.Drawing.Size(216, 30)
         Me.Cancelbtn.TabIndex = 89
@@ -77,12 +76,12 @@ Partial Class Category
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(43, 277)
+        Me.Label6.ForeColor = System.Drawing.Color.Gray
+        Me.Label6.Location = New System.Drawing.Point(41, 79)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 16)
+        Me.Label6.Size = New System.Drawing.Size(85, 16)
         Me.Label6.TabIndex = 79
-        Me.Label6.Text = "Asset ID"
+        Me.Label6.Text = "Account Type"
         '
         'Categorycodetxt
         '
@@ -97,7 +96,7 @@ Partial Class Category
         Me.Categorycodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Categorycodetxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Categorycodetxt.isPassword = False
-        Me.Categorycodetxt.Location = New System.Drawing.Point(219, 433)
+        Me.Categorycodetxt.Location = New System.Drawing.Point(218, 137)
         Me.Categorycodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Categorycodetxt.MaxLength = 32767
         Me.Categorycodetxt.Name = "Categorycodetxt"
@@ -109,8 +108,8 @@ Partial Class Category
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(47, 437)
+        Me.Label9.ForeColor = System.Drawing.Color.Gray
+        Me.Label9.Location = New System.Drawing.Point(41, 137)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(92, 16)
         Me.Label9.TabIndex = 80
@@ -121,7 +120,7 @@ Partial Class Category
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(43, 162)
+        Me.Label10.Location = New System.Drawing.Point(41, 292)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(126, 16)
         Me.Label10.TabIndex = 83
@@ -139,7 +138,7 @@ Partial Class Category
         Me.Categorynametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Categorynametxt.ForeColor = System.Drawing.Color.White
         Me.Categorynametxt.isPassword = False
-        Me.Categorynametxt.Location = New System.Drawing.Point(220, 79)
+        Me.Categorynametxt.Location = New System.Drawing.Point(218, 209)
         Me.Categorynametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Categorynametxt.MaxLength = 32767
         Me.Categorynametxt.Name = "Categorynametxt"
@@ -160,7 +159,7 @@ Partial Class Category
         Me.CategoryIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.CategoryIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.CategoryIDtxt.isPassword = False
-        Me.CategoryIDtxt.Location = New System.Drawing.Point(220, 347)
+        Me.CategoryIDtxt.Location = New System.Drawing.Point(218, 305)
         Me.CategoryIDtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.CategoryIDtxt.MaxLength = 32767
         Me.CategoryIDtxt.Name = "CategoryIDtxt"
@@ -168,23 +167,12 @@ Partial Class Category
         Me.CategoryIDtxt.TabIndex = 65
         Me.CategoryIDtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(43, 352)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(75, 16)
-        Me.Label18.TabIndex = 64
-        Me.Label18.Text = "Category ID"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(43, 93)
+        Me.Label4.Location = New System.Drawing.Point(41, 223)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(96, 16)
         Me.Label4.TabIndex = 67
@@ -196,7 +184,7 @@ Partial Class Category
         Me.AddCategorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddCategorybtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AddCategorybtn.ForeColor = System.Drawing.Color.White
-        Me.AddCategorybtn.Location = New System.Drawing.Point(314, 534)
+        Me.AddCategorybtn.Location = New System.Drawing.Point(313, 436)
         Me.AddCategorybtn.Name = "AddCategorybtn"
         Me.AddCategorybtn.Size = New System.Drawing.Size(218, 30)
         Me.AddCategorybtn.TabIndex = 63
@@ -230,7 +218,7 @@ Partial Class Category
         Me.CategoryDestxt.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CategoryDestxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CategoryDestxt.ForeColor = System.Drawing.Color.White
-        Me.CategoryDestxt.Location = New System.Drawing.Point(220, 147)
+        Me.CategoryDestxt.Location = New System.Drawing.Point(218, 277)
         Me.CategoryDestxt.Multiline = True
         Me.CategoryDestxt.Name = "CategoryDestxt"
         Me.CategoryDestxt.Size = New System.Drawing.Size(313, 91)
@@ -241,7 +229,7 @@ Partial Class Category
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(580, 630)
+        Me.ClientSize = New System.Drawing.Size(580, 501)
         Me.ControlBox = False
         Me.Controls.Add(Me.CategoryDestxt)
         Me.Controls.Add(Me.Panel2)
@@ -249,13 +237,12 @@ Partial Class Category
         Me.Controls.Add(Me.AddCategorybtn)
         Me.Controls.Add(Me.Cancelbtn)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.CategoryIDtxt)
         Me.Controls.Add(Me.Categorycodetxt)
         Me.Controls.Add(Me.Categorynametxt)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.CategoryIDtxt)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Category"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -272,7 +259,6 @@ Partial Class Category
     Friend WithEvents Label10 As Label
     Friend WithEvents Categorynametxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents CategoryIDtxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents Label18 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents AddCategorybtn As Button
     Friend WithEvents Cancelbtn As Button

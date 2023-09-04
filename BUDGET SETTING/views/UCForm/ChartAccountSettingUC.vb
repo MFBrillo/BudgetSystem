@@ -126,6 +126,7 @@
             categoryupdate()
             subcategoryupdate()
         End If
+        Form1.Activate()
     End Sub
 
 

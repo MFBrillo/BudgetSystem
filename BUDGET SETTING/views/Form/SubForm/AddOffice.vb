@@ -92,7 +92,7 @@ Public Class AddOffice
 
             Dim dt = SqlLoad.MySql_SelectString("officetype", "gl_officetype", , $"where officetypeid ='{officetypeid}'")
 
-                    numbertoletter = dt.Rows(0).Item("officetype").ToString
+            numbertoletter = dt.Rows(0).Item("officetype").ToString
             Officetypetxt.Text = numbertoletter
             PBOCodetxt.Text = officeDT1.Rows(0).Item("officecode_pbo").ToString
             AIPCodetxt.Text = officeDT1.Rows(0).Item("mandatory_aipcode").ToString

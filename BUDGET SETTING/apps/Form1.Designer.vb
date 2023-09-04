@@ -22,18 +22,18 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuController = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Verifybtn = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.Officebtn = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.Settingbtn = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.Chartbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.MainPanel = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Verifybtn = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.Officebtn = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.Settingbtn = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.Chartbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.MenuController.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.MainPanel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +63,57 @@ Partial Class Form1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(134, 204)
         Me.Panel2.TabIndex = 79
+        '
+        'Panel1
+        '
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(134, 169)
+        Me.Panel1.TabIndex = 78
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(12, 815)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(112, 23)
+        Me.Button2.TabIndex = 77
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'MainPanel
+        '
+        Me.MainPanel.AllowUserToAddRows = False
+        Me.MainPanel.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        Me.MainPanel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MainPanel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.MainPanel.BackgroundColor = System.Drawing.Color.White
+        Me.MainPanel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.MainPanel.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        Me.MainPanel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.MainPanel.Location = New System.Drawing.Point(135, -1)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.ReadOnly = True
+        Me.MainPanel.RowTemplate.Height = 35
+        Me.MainPanel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.MainPanel.Size = New System.Drawing.Size(1207, 850)
+        Me.MainPanel.TabIndex = 90
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(113, 19)
+        Me.Label1.TabIndex = 91
+        Me.Label1.Text = "Maintenance"
         '
         'Verifybtn
         '
@@ -168,57 +219,6 @@ Partial Class Form1
         Me.Chartbtn.TabIndex = 8
         Me.Chartbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel1
-        '
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(134, 169)
-        Me.Panel1.TabIndex = 78
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(12, 815)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(112, 23)
-        Me.Button2.TabIndex = 77
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'MainPanel
-        '
-        Me.MainPanel.AllowUserToAddRows = False
-        Me.MainPanel.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray
-        Me.MainPanel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MainPanel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.MainPanel.BackgroundColor = System.Drawing.Color.White
-        Me.MainPanel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.MainPanel.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
-        Me.MainPanel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MainPanel.Location = New System.Drawing.Point(135, -1)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.ReadOnly = True
-        Me.MainPanel.RowTemplate.Height = 35
-        Me.MainPanel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MainPanel.Size = New System.Drawing.Size(1207, 850)
-        Me.MainPanel.TabIndex = 90
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 19)
-        Me.Label1.TabIndex = 91
-        Me.Label1.Text = "Maintenance"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,6 +232,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Account Code"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuController.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         CType(Me.MainPanel, System.ComponentModel.ISupportInitialize).EndInit()

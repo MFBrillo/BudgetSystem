@@ -178,7 +178,6 @@
             DataGridView1.FirstDisplayedScrollingRowIndex = lastIndex
         End If
     End Sub
-
     Sub cleartext1()
         AccountIDtxt.Text = ""
         AccountCodetxt.Text = ""
@@ -229,7 +228,6 @@
         Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
         ' Custom_ComboBoxDatasource(SubcategoryIDtxt2, SubcategoryDT, "subcategoryid", "subcategoryid")
     End Sub
-
     Friend Shared assetid2
     Friend Shared categoryid2
     Friend Shared subcategoryid2
@@ -237,16 +235,11 @@
     Friend Shared accountcode2
     Friend Shared accountname2
     Friend Shared accountdescription2
-    Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
-
-    End Sub
     Private Sub Descriptionbtn_Click(sender As Object, e As EventArgs) Handles Descriptionbtn.Click
         OpaquePrompt.Show()
         'AccountDescription.Nametxt.Text = accountdescriptiontxt
         AccountDescription.ShowDialog()
     End Sub
-
-
     Private Sub Searchtxt_OnValueChanged(sender As Object, e As EventArgs) Handles Searchtxt.OnValueChanged
         Try
             If VIAccountDT IsNot Nothing Then
@@ -266,7 +259,6 @@
         Catch ex As Exception
         End Try
     End Sub
-
     Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
         Dim searchrow As String
         searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
@@ -279,17 +271,29 @@
      }
         Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
         accountdescription2 = accountname.Rows(0).Item("Account").ToString
-        Searchtxt.Text = accountdescription2
-        Searchtxt.Select()
-        Searchtxt.Focus()
+        OpaquePrompt.Show()
+        AccountDescription.ShowDialog()
+    End Sub
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim searchrow As String
+        searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
+        Custom_Load()
+        Dim conditions As New List(Of LinQCondition) From {
+        New LinQCondition With {
+                             .Column = "Account",
+                             .Value = searchrow,
+                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
+     }
+        Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
+        accountdescription2 = accountname.Rows(0).Item("Account").ToString
+        accountcode2 = accountname.Rows(0).Item("code").ToString
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
 
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub AccountIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles AccountIDtxt.OnValueChanged
 
     End Sub
 End Class
