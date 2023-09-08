@@ -1,5 +1,7 @@
 ﻿Public Class YesNoPrompt
+    Public Shared YesOption As Boolean = False, NoOption As Boolean = False
     Private Sub Msgform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         AppName.Text = My.MySettings.Default.AppName
         YesBtn.Focus()
     End Sub
@@ -13,7 +15,6 @@
             TitleText.Visible = False
             Me.Dispose()
         End If
-
     End Sub
 
     Dim i As Integer = 0
@@ -25,25 +26,17 @@
             Me.Dispose()
         End If
     End Sub
-    Public Shared YesOption As Boolean = 0, NoOption As Boolean = 0
+
     Private Sub YesBtn_Click(sender As Object, e As EventArgs) Handles YesBtn.Click
         YesOption = True
         NoOption = False
+        'OpaquePrompt.Dispose()
         Me.Dispose()
     End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
     Private Sub NoBtn_Click(sender As Object, e As EventArgs) Handles NoBtn.Click
         NoOption = True
         YesOption = False
         Me.Dispose()
-    End Sub
-
-    Private Sub BunifuGradientPanel2_Paint(sender As Object, e As PaintEventArgs) Handles BunifuGradientPanel2.Paint
-
     End Sub
 
     Private Sub MsgText_Click(sender As Object, e As EventArgs) Handles MsgText.Click
@@ -52,5 +45,6 @@
 
     Private Sub YesNoPrompt_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         OpaquePrompt.Dispose()
+        Form1.Activate()
     End Sub
 End Class

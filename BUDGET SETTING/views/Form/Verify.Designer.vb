@@ -26,8 +26,8 @@ Partial Class Verify
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Titletxt = New System.Windows.Forms.Label()
         Me.Submain = New System.Windows.Forms.Panel()
+        Me.Accountbtn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Officebtn = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton2 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton3 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -78,6 +78,41 @@ Partial Class Verify
         Me.Submain.Size = New System.Drawing.Size(950, 622)
         Me.Submain.TabIndex = 126
         '
+        'Accountbtn
+        '
+        Me.Accountbtn.Active = False
+        Me.Accountbtn.Activecolor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Accountbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Accountbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Accountbtn.BorderRadius = 0
+        Me.Accountbtn.ButtonText = "Account"
+        Me.Accountbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Accountbtn.DisabledColor = System.Drawing.Color.Gray
+        Me.Accountbtn.Iconcolor = System.Drawing.Color.Transparent
+        Me.Accountbtn.Iconimage = Nothing
+        Me.Accountbtn.Iconimage_right = Nothing
+        Me.Accountbtn.Iconimage_right_Selected = Nothing
+        Me.Accountbtn.Iconimage_Selected = Nothing
+        Me.Accountbtn.IconMarginLeft = 0
+        Me.Accountbtn.IconMarginRight = 0
+        Me.Accountbtn.IconRightVisible = True
+        Me.Accountbtn.IconRightZoom = 0R
+        Me.Accountbtn.IconVisible = True
+        Me.Accountbtn.IconZoom = 90.0R
+        Me.Accountbtn.IsTab = False
+        Me.Accountbtn.Location = New System.Drawing.Point(344, 205)
+        Me.Accountbtn.Name = "Accountbtn"
+        Me.Accountbtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Accountbtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Accountbtn.OnHoverTextColor = System.Drawing.Color.White
+        Me.Accountbtn.selected = False
+        Me.Accountbtn.Size = New System.Drawing.Size(289, 34)
+        Me.Accountbtn.TabIndex = 128
+        Me.Accountbtn.Text = "Account"
+        Me.Accountbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Accountbtn.Textcolor = System.Drawing.Color.White
+        Me.Accountbtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'Officebtn
         '
         Me.Officebtn.Active = False
@@ -100,53 +135,18 @@ Partial Class Verify
         Me.Officebtn.IconVisible = True
         Me.Officebtn.IconZoom = 90.0R
         Me.Officebtn.IsTab = False
-        Me.Officebtn.Location = New System.Drawing.Point(344, 205)
+        Me.Officebtn.Location = New System.Drawing.Point(673, 205)
         Me.Officebtn.Name = "Officebtn"
         Me.Officebtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Officebtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.Officebtn.OnHoverTextColor = System.Drawing.Color.White
         Me.Officebtn.selected = False
         Me.Officebtn.Size = New System.Drawing.Size(289, 34)
-        Me.Officebtn.TabIndex = 128
+        Me.Officebtn.TabIndex = 129
         Me.Officebtn.Text = "Office"
         Me.Officebtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Officebtn.Textcolor = System.Drawing.Color.White
         Me.Officebtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'BunifuFlatButton2
-        '
-        Me.BunifuFlatButton2.Active = False
-        Me.BunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.BunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.BunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton2.BorderRadius = 0
-        Me.BunifuFlatButton2.ButtonText = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.Iconimage = Nothing
-        Me.BunifuFlatButton2.Iconimage_right = Nothing
-        Me.BunifuFlatButton2.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton2.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton2.IconMarginLeft = 0
-        Me.BunifuFlatButton2.IconMarginRight = 0
-        Me.BunifuFlatButton2.IconRightVisible = True
-        Me.BunifuFlatButton2.IconRightZoom = 0R
-        Me.BunifuFlatButton2.IconVisible = True
-        Me.BunifuFlatButton2.IconZoom = 90.0R
-        Me.BunifuFlatButton2.IsTab = False
-        Me.BunifuFlatButton2.Location = New System.Drawing.Point(673, 205)
-        Me.BunifuFlatButton2.Name = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.BunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.BunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.selected = False
-        Me.BunifuFlatButton2.Size = New System.Drawing.Size(289, 34)
-        Me.BunifuFlatButton2.TabIndex = 129
-        Me.BunifuFlatButton2.Text = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BunifuFlatButton2.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'BunifuFlatButton3
         '
@@ -221,11 +221,11 @@ Partial Class Verify
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1310, 907)
-        Me.Controls.Add(Me.Officebtn)
+        Me.Controls.Add(Me.Accountbtn)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BunifuFlatButton3)
-        Me.Controls.Add(Me.BunifuFlatButton2)
+        Me.Controls.Add(Me.Officebtn)
         Me.Controls.Add(Me.Submain)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox2)
@@ -247,8 +247,8 @@ Partial Class Verify
     Friend WithEvents Titletxt As Label
     Friend WithEvents Submain As Panel
     Friend WithEvents Label5 As Label
+    Friend WithEvents Accountbtn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Officebtn As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton2 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton3 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox

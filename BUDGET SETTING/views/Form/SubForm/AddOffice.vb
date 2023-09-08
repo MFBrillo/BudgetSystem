@@ -2,6 +2,7 @@
 Public Class AddOffice
     Public OfficeTypeDT As DataTable
     Public OfficeDT As DataTable
+
     Public Saveupdate As Integer
     Public officeid
     Public title As String
@@ -32,7 +33,7 @@ Public Class AddOffice
                     columnValues.Add("officeaccronym", Accronymtxt.Text)
                     columnValues.Add("officename", Nametxt.Text)
                     columnValues.Add("officedescription", Descriptiontxt.Text)
-                    mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("gl_offices_temp", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
@@ -87,11 +88,8 @@ Public Class AddOffice
             }
             Dim officeDT1 As DataTable = Linq_Query(OfficeDT, conditions)
             officetypeid = officeDT1.Rows(0).Item("officetypeid").ToString
-
             Dim SqlLoad As New MySQLCore
-
             Dim dt = SqlLoad.MySql_SelectString("officetype", "gl_officetype", , $"where officetypeid ='{officetypeid}'")
-
             numbertoletter = dt.Rows(0).Item("officetype").ToString
             Officetypetxt.Text = numbertoletter
             PBOCodetxt.Text = officeDT1.Rows(0).Item("officecode_pbo").ToString
@@ -101,7 +99,6 @@ Public Class AddOffice
             Nametxt.Text = officeDT1.Rows(0).Item("officename").ToString
             Descriptiontxt.Text = officeDT1.Rows(0).Item("officedescription").ToString
         End If
-
     End Sub
 
     Private Function GetInitials(inputText As String) As String
@@ -115,7 +112,6 @@ Public Class AddOffice
         Dim lastofficeid As Integer = Convert.ToInt32(OfficeDT.Rows(0)("officeid"))
         Dim newofficeid As Integer
         newofficeid = lastofficeid + 1
-
     End Sub
     Private Sub Nametxt_OnValueChanged(sender As Object, e As EventArgs) Handles Nametxt.OnValueChanged
         If Saveupdate = 1 Then
@@ -123,8 +119,6 @@ Public Class AddOffice
             Dim initials As String = GetInitials(inputText)
             Accronymtxt.Text = initials
         End If
-
-
     End Sub
     Dim officetypeid
     Private Sub Officetypetxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Officetypetxt.SelectedIndexChanged

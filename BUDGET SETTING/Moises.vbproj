@@ -254,6 +254,12 @@
     <Compile Include="views\UCForm\ChartofAccounts.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="views\UCForm\SubUCForm\AccountUC.Designer.vb">
+      <DependentUpon>AccountUC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\SubUCForm\AccountUC.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="views\UCForm\SubUCForm\OfficeUC.Designer.vb">
       <DependentUpon>OfficeUC.vb</DependentUpon>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\ChartofAccounts.resx">
       <DependentUpon>ChartofAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\SubUCForm\AccountUC.resx">
+      <DependentUpon>AccountUC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\SubUCForm\OfficeUC.resx">
       <DependentUpon>OfficeUC.vb</DependentUpon>

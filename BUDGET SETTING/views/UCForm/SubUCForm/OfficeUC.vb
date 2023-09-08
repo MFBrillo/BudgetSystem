@@ -1,62 +1,62 @@
 ﻿Public Class OfficeUC
-    Public AccountDT As DataTable
+    Public OfficeDT As DataTable
     Private Sub OfficeUC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Custom_Load()
     End Sub
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
-        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts_temp")
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_accounts_temp", Nothing,)
-        Add_GridButton(DataGridView1, "Pending", "Approve", "ApproveDGBtn", 4, 100)
-        Dim cols() = {"Verify"}
+        OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices_temp")
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_offices_temp", Nothing,)
+        Add_GridButton(DataGridView1, "Pending", "Approve", "ApproveDGBtn", 7, 100)
+        Dim cols() = {"ID"}
         Datagrid_HideColumn(DataGridView1, cols)
         AddHandler DataGridView1.CellClick, AddressOf DataGridView1_CellClick
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
-            If TypeOf DataGridView1.Columns(e.ColumnIndex) Is DataGridViewButtonColumn Then
-                'Handle button click here
-                'MessageBox.Show("Button clicked in row " & e.RowIndex)
-                CustomYesNoPrompt("Verify Entries", "Do you want to Approve changes")
-
+            If TypeOf (DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex)) Is DataGridViewButtonCell Then
+                OpaquePrompt.Show()
+                CustomYesNoPrompt("Adding Office", "Do you want to Approve?")
                 If YesNoPrompt.YesOption = True Then
                     Dim SqlLoad As New MySQLCore
-                    AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts_temp")
-                    Dim row As DataRow = AccountDT.Rows(e.RowIndex)
-                    Dim assetid As Integer = row.Item("assetid").ToString
-                    Dim categoryid As Integer = row.Item("categoryid").ToString
-                    Dim subcategoryid As Integer = row.Item("subcategoryid").ToString
-                    Dim accountid As Integer = row.Item("accountid").ToString
-                    Dim accounctcode As String = row.Item("accountcode").ToString
-                    Dim accountname As String = row.Item("accountname").ToString
-                    Dim accountdescription As String = row.Item("accountdescription").ToString
+                    OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices_temp")
+                    Dim row As DataRow = OfficeDT.Rows(e.RowIndex)
+                    Dim officeid As Integer = row.Item("officeid").ToString
+                    Dim officetypeid As Integer = row.Item("officetypeid").ToString
+                    Dim mandatory_aipcode As Integer = row.Item("mandatory_aipcode").ToString
+                    Dim officecode_pbo As Integer = row.Item("officecode_pbo").ToString
+                    Dim officecode_acctg As String = row.Item("officecode_acctg").ToString
+                    Dim officename As String = row.Item("officename").ToString
+                    Dim officedescription As String = row.Item("officedescription").ToString
+                    Dim officeaccronym As String = row.Item("officeaccronym").ToString
                     Try
                         Dim mySql As New MySQLCore
                         Dim columnValues As New Dictionary(Of String, String)
-                        columnValues.Add("assetid", assetid)
-                        columnValues.Add("categoryid", categoryid)
-                        columnValues.Add("subcategoryid", subcategoryid)
-                        columnValues.Add("accountname", accountname)
-                        columnValues.Add("accountid", accountid)
-                        columnValues.Add("accountdescription", accountdescription)
-                        columnValues.Add("accountcode", accounctcode)
-                        mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
-                        mySql.MySql_Delete("gl_accounts_temp", $"accountid= {accountid}")
+                        columnValues.Add("officeid", officeid)
+                        columnValues.Add("officetypeid", officetypeid)
+                        columnValues.Add("mandatory_aipcode", mandatory_aipcode)
+                        columnValues.Add("officecode_pbo", officecode_pbo)
+                        columnValues.Add("officecode_acctg", officecode_acctg)
+                        columnValues.Add("officename", officename)
+                        columnValues.Add("officedescription", officedescription)
+                        columnValues.Add("officeaccronym", officeaccronym)
+                        mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
+                        mySql.MySql_Delete("gl_offices_temp", $"officeid= {officeid}")
                     Catch ex As Exception
                         MsgBox("ERROR" & ex.Message)
                     End Try
-                    Verify.Activate()
-                ElseIf YesNoPrompt.NoOption = True Then
-                    Verify.ShowDialog()
+                    Custom_Load()
 
                 End If
-
-
-
+                OpaquePrompt.Dispose()
+                'Form1.Activate()
+                Verify.Refresh()
+                Verify.Activate()
+                'MsgBox(sender.name)
             End If
         End If
-
     End Sub
+
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub

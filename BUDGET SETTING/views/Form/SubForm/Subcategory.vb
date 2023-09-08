@@ -6,7 +6,6 @@
         OpaquePrompt.Close()
         Me.Close()
         Form1.Activate()
-
     End Sub
     Private Sub Subcategory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cleartextbox()
@@ -21,7 +20,6 @@
         Subcategorynametxt.Text = ""
         SubcategoryDestxt.Text = ""
     End Sub
-
     Sub Autosubcategoryid()
         Dim SqlLoad As New MySQLCore
         SubcategoryDT = SqlLoad.MySql_SelectString("subcategoryid", "gl_assets_subcategory", Nothing, $"where categoryid ='{CategoryIDtxt.Text}' and assetid = '{Assetidtxt.Text} '")
@@ -55,7 +53,6 @@
 
         End If
     End Sub
-
     Private Sub AssetAddbtn_Click(sender As Object, e As EventArgs) Handles AssetAddbtn.Click
         Dim mySql As New MySQLCore
         Try

@@ -25,17 +25,17 @@ Partial Class YesNoPrompt
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(YesNoPrompt))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.AppName = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.BunifuGradientPanel2 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.TitleText = New System.Windows.Forms.Label()
         Me.NoBtn = New System.Windows.Forms.Button()
         Me.YesBtn = New System.Windows.Forms.Button()
         Me.MsgText = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TitleText = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
-        Me.BunifuGradientPanel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BunifuGradientPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -48,6 +48,17 @@ Partial Class YesNoPrompt
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(206, 378)
         Me.Panel2.TabIndex = 13
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Moises.My.Resources.Resources.CAPIZ
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 24)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(188, 169)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'AppName
         '
@@ -84,6 +95,18 @@ Partial Class YesNoPrompt
         Me.BunifuGradientPanel2.Quality = 10
         Me.BunifuGradientPanel2.Size = New System.Drawing.Size(459, 378)
         Me.BunifuGradientPanel2.TabIndex = 14
+        '
+        'TitleText
+        '
+        Me.TitleText.BackColor = System.Drawing.Color.Transparent
+        Me.TitleText.Font = New System.Drawing.Font("Tahoma", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TitleText.ForeColor = System.Drawing.Color.White
+        Me.TitleText.Location = New System.Drawing.Point(0, 9)
+        Me.TitleText.Name = "TitleText"
+        Me.TitleText.Size = New System.Drawing.Size(459, 77)
+        Me.TitleText.TabIndex = 16
+        Me.TitleText.Text = "TITLE TEXT"
+        Me.TitleText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'NoBtn
         '
@@ -123,29 +146,6 @@ Partial Class YesNoPrompt
         Me.MsgText.Text = "MESSAGE"
         Me.MsgText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Moises.My.Resources.Resources.CAPIZ
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 24)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(188, 169)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'TitleText
-        '
-        Me.TitleText.BackColor = System.Drawing.Color.Transparent
-        Me.TitleText.Font = New System.Drawing.Font("Tahoma", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TitleText.ForeColor = System.Drawing.Color.White
-        Me.TitleText.Location = New System.Drawing.Point(0, 9)
-        Me.TitleText.Name = "TitleText"
-        Me.TitleText.Size = New System.Drawing.Size(459, 77)
-        Me.TitleText.TabIndex = 16
-        Me.TitleText.Text = "TITLE TEXT"
-        Me.TitleText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'YesNoPrompt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -159,8 +159,8 @@ Partial Class YesNoPrompt
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "YesNoPromt"
         Me.Panel2.ResumeLayout(False)
-        Me.BunifuGradientPanel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BunifuGradientPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

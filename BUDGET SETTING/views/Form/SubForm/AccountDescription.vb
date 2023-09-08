@@ -40,10 +40,8 @@
 
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         Dim SqlLoad As New MySQLCore
-
         CustomYesNoPrompt("Save Entries", "Do you want to save changes")
         If YesNoPrompt.YesOption = True Then
-
             If Descriptiontxt.Text = "" And Nametxt.Text = "" Then
                 CustomMsg("Save Record Failed", "Account Name and Account Description are Empty.", "OK")
             ElseIf Descriptiontxt.Text = "" Then
@@ -51,20 +49,16 @@
             ElseIf Nametxt.Text = "" Then
                 CustomMsg("Save Record Failed", "Account Description is Empty.", "OK")
             Else
-
                 Dim mySql As New MySQLCore
-                    Dim columnValues As New Dictionary(Of String, String)
-                    columnValues.Add("assetid", assetid)
-                    columnValues.Add("categoryid", categoryid)
-                    columnValues.Add("subcategoryid", subcategoryid)
+                Dim columnValues As New Dictionary(Of String, String)
+                columnValues.Add("assetid", assetid)
+                columnValues.Add("categoryid", categoryid)
+                columnValues.Add("subcategoryid", subcategoryid)
                 columnValues.Add("accountid", accountid)
                 columnValues.Add("accountcode", accountcode)
                 columnValues.Add("accountname", Nametxt.Text)
-                    columnValues.Add("accountdescription", Descriptiontxt.Text)
-
-                    mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
-
-
+                columnValues.Add("accountdescription", Descriptiontxt.Text)
+                mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
             End If
             Form1.Activate()
             Me.Close()

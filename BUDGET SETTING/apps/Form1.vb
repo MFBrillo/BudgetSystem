@@ -1,7 +1,6 @@
 ﻿Public Class Form1
     Friend menu_width As Integer            'Menu width when click
     Friend colapsed_width As Integer
-
 #Region "MenuSize()"   'Set Form Size
     Public Sub MenuSize(ByVal menuwidth As Integer, colapsedwidth As Integer, ByVal form As Form)
         form.Bounds = Screen.GetWorkingArea(form.Bounds)
@@ -18,9 +17,7 @@
         End If
     End Sub
 #End Region
-
 #Region "ShowForm()"    'Show Form on click
-
     Public Sub ShowForm(ByVal form As Form)                      'Clear panel and add form projects/modules
         MainPanel.Controls.Clear()
         form.TopLevel = False
@@ -28,7 +25,6 @@
         form.Size = MainPanel.Size
         form.Show()
     End Sub
-
     Public Sub ShowUserControl(ByVal uc As UserControl)                      'Clear panel and add form projects/modules
         MainPanel.Controls.Clear()
         MainPanel.Controls.Add(uc)
@@ -58,7 +54,6 @@
             MenuController.Width = menu_width
             Officebtn.TextAlign = ContentAlignment.MiddleLeft
             Settingbtn.TextAlign = ContentAlignment.MiddleLeft
-
             Try
                 If userControl IsNot Nothing Then
                     userControl.Size = New Size(MainPanel.Size)
@@ -74,7 +69,6 @@
         End If
     End Sub
 #End Region
-
     Public userControl As UserControl
     Public SubMenu As Integer = 0
 #Region "Sub SelectMenu"
@@ -91,7 +85,6 @@
             Case "Officebtn"
                 Dim form = New Office
                 ShowForm(form)
-
         End Select
     End Sub
 
@@ -104,12 +97,10 @@
         Me.Dispose()
     End Sub
 
-    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles Verifybtn.Click
-        OpaquePrompt.Show()
+    Private Sub Verifybtn_Click(sender As Object, e As EventArgs) Handles Verifybtn.Click
+        'Me.Enabled = False
+        'OpaquePrompt.Show()
         Verify.ShowDialog()
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
+        Verify.Focus()
     End Sub
 End Class
