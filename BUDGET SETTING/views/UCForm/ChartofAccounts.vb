@@ -12,7 +12,7 @@
         Custom_Load()
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
         'Custom_Accounts()
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_accounts")
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
     End Sub
     Public Shared assetid
     Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
@@ -115,7 +115,7 @@
         Dim SqlLoad As New MySQLCore
         AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
-        VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_accounts")
+        VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
         SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
 
     End Sub
@@ -294,6 +294,10 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
 End Class

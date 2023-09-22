@@ -2,7 +2,6 @@
 Public Class AddOffice
     Public OfficeTypeDT As DataTable
     Public OfficeDT As DataTable
-
     Public Saveupdate As Integer
     Public officeid
     Public title As String
@@ -11,7 +10,6 @@ Public Class AddOffice
         Me.Close()
         Form1.Activate()
     End Sub
-
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         Dim SqlLoad As New MySQLCore
         If Saveupdate = 1 Then
@@ -69,7 +67,7 @@ Public Class AddOffice
     End Sub
     Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
-        OfficeTypeDT = SqlLoad.MySql_SelectString("*", "vi_office_type")
+        OfficeTypeDT = SqlLoad.MySql_SelectString("*", "vi_moises_office_type")
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
     End Sub
     Public Shared assetidOfficeTypeid

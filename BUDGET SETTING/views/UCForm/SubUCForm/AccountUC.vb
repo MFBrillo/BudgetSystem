@@ -6,7 +6,7 @@
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts_temp")
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_accounts_temp", Nothing,)
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_accounts_temp", Nothing,)
         Add_GridButton(DataGridView1, "Pending", "Approve", "ApproveDGBtn", 4, 100)
         Dim cols() = {"ID"}
         Datagrid_HideColumn(DataGridView1, cols)

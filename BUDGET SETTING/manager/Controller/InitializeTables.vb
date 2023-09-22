@@ -1,28 +1,65 @@
 ﻿Module InitializeTables
-    Public gl_offices As DataTable
-    Public gl_sectors As DataTable
-    Public gl_registry As DataTable
-    Public gl_subsectors As DataTable
-    Public gl_spcfunds As DataTable
-    Public gl_funds As DataTable
     Public gl_accounts As DataTable
-    Public gl_lgulevel As DataTable
+    Public gl_accounts_temp As DataTable
+    Public gl_assets As DataTable
+    Public gl_assets_temp As DataTable
+    Public gl_assets_category As DataTable
+    Public gl_assets_category_temp As DataTable
+    Public gl_assets_sub_category As DataTable
+    Public gl_assets_subcategory_temp As DataTable
+    Public gl_offices As DataTable
+    Public gl_offices_temp As DataTable
+
+    Public vi_accounts As DataTable
+    Public vi_accounts_temp As DataTable
+    Public vi_assets As DataTable
+    Public vi_assets_temp As DataTable
+    Public vi_assets_category As DataTable
+    Public vi_assets_category_temp As DataTable
+    Public vi_assets_sub_category As DataTable
+    Public vi_assets_subcategory_temp As DataTable
+    Public vi_offices As DataTable
+    Public vi_offices_temp As DataTable
+    Public islogin
+    Public username
     Public isInitialized As Integer = 0
     Sub Main()
         Dim core = New MySQLCore
-        gl_offices = core.MySQL_Datatable("gl_offices")
-        gl_registry = core.MySQL_Datatable("gl_registry")
-        gl_sectors = core.MySQL_Datatable("gl_sectors")
-        gl_subsectors = core.MySQL_Datatable("gl_subsectors")
-        gl_spcfunds = core.MySQL_Datatable("gl_spcfunds")
-        gl_funds = core.MySQL_Datatable("gl_funds")
         gl_accounts = core.MySQL_Datatable("gl_accounts")
-        gl_lgulevel = core.MySQL_Datatable("gl_lgulevel")
+        'gl_accounts_temp = core.MySQL_Datatable("gl_accounts_temp")
+        gl_assets = core.MySQL_Datatable("gl_assets")
+        'gl_assets_temp = core.MySQL_Datatable("gl_assets_temp")
+        gl_assets_category = core.MySQL_Datatable("gl_assets_category")
+        'gl_assets_category_temp = core.MySQL_Datatable("gl_assets_category_temp")
+        gl_assets_sub_category = core.MySQL_Datatable("gl_assets_subcategory")
+        'gl_assets_subcategory_temp = core.MySQL_Datatable("gl_assets_subcategory_temp")
+        'gl_offices = core.MySQL_Datatable("gl_offices")
+        'gl_offices_temp = core.MySQL_Datatable("gl_offices_temp")
+
+        'vi_accounts = core.MySQL_Datatable("vi_accounts")
+        'vi_accounts_temp = core.MySQL_Datatable("vi_accounts_temp")
+        'vi_assets = core.MySQL_Datatable("vi_assets")
+        'vi_assets_temp = core.MySQL_Datatable("vi_assets_temp")
+        'vi_assets_category = core.MySQL_Datatable("vi_assets_category")
+        'vi_assets_category_temp = core.MySQL_Datatable("vi_assets_category_temp")
+        'vi_assets_sub_category = core.MySQL_Datatable("vi_assets_sub_category")
+        'vi_assets_subcategory_temp = core.MySQL_Datatable("vi_assets_subcategory_temp")
+        'vi_offices = core.MySQL_Datatable("vi_offices")
+        'vi_offices_temp = core.MySQL_Datatable("vi_offices_temp")
         isInitialized = 1
     End Sub
-
-    Sub Test2()
-        'this is another test
+    Sub Is_Login()
+        Dim sql As New MySQLCore
+        Dim dt = sql.MySql_SelectString("is_login, username", "gl_users", , $"where pcname ='{my_pcName}'")
+        islogin = dt.Rows(0).Item("is_login").ToString
+        username = dt.Rows(0).Item("username").ToString
+        If islogin = 1 Then
+            ' MsgBox(username)
+            Form1.Statuslbl.Text = "Online"
+            Form1.Userlbl.Text = username
+        ElseIf islogin = 0 Then
+            Form1.Statuslbl.Text = "Offline"
+            Form1.Userlbl.Text = "No User"
+        End If
     End Sub
-
 End Module

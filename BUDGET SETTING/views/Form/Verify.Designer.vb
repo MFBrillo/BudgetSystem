@@ -22,21 +22,39 @@ Partial Class Verify
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Titletxt = New System.Windows.Forms.Label()
         Me.Submain = New System.Windows.Forms.Panel()
         Me.Accountbtn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Officebtn = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton3 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.Officelbl = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Accountlbl = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Grouplbl = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Sublbl = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Majorlbl = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -73,9 +91,9 @@ Partial Class Verify
         '
         'Submain
         '
-        Me.Submain.Location = New System.Drawing.Point(344, 254)
+        Me.Submain.Location = New System.Drawing.Point(364, 256)
         Me.Submain.Name = "Submain"
-        Me.Submain.Size = New System.Drawing.Size(950, 622)
+        Me.Submain.Size = New System.Drawing.Size(930, 630)
         Me.Submain.TabIndex = 126
         '
         'Accountbtn
@@ -100,13 +118,13 @@ Partial Class Verify
         Me.Accountbtn.IconVisible = True
         Me.Accountbtn.IconZoom = 90.0R
         Me.Accountbtn.IsTab = False
-        Me.Accountbtn.Location = New System.Drawing.Point(344, 205)
+        Me.Accountbtn.Location = New System.Drawing.Point(3, 101)
         Me.Accountbtn.Name = "Accountbtn"
         Me.Accountbtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Accountbtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.Accountbtn.OnHoverTextColor = System.Drawing.Color.White
         Me.Accountbtn.selected = False
-        Me.Accountbtn.Size = New System.Drawing.Size(289, 34)
+        Me.Accountbtn.Size = New System.Drawing.Size(151, 34)
         Me.Accountbtn.TabIndex = 128
         Me.Accountbtn.Text = "Account"
         Me.Accountbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -135,85 +153,219 @@ Partial Class Verify
         Me.Officebtn.IconVisible = True
         Me.Officebtn.IconZoom = 90.0R
         Me.Officebtn.IsTab = False
-        Me.Officebtn.Location = New System.Drawing.Point(673, 205)
+        Me.Officebtn.Location = New System.Drawing.Point(2, 102)
         Me.Officebtn.Name = "Officebtn"
         Me.Officebtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Officebtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.Officebtn.OnHoverTextColor = System.Drawing.Color.White
         Me.Officebtn.selected = False
-        Me.Officebtn.Size = New System.Drawing.Size(289, 34)
+        Me.Officebtn.Size = New System.Drawing.Size(331, 34)
         Me.Officebtn.TabIndex = 129
         Me.Officebtn.Text = "Office"
         Me.Officebtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Officebtn.Textcolor = System.Drawing.Color.White
         Me.Officebtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'BunifuFlatButton3
+        'Officelbl
         '
-        Me.BunifuFlatButton3.Active = False
-        Me.BunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.BunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.BunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton3.BorderRadius = 0
-        Me.BunifuFlatButton3.ButtonText = "BunifuFlatButton3"
-        Me.BunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton3.Iconimage = Nothing
-        Me.BunifuFlatButton3.Iconimage_right = Nothing
-        Me.BunifuFlatButton3.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton3.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton3.IconMarginLeft = 0
-        Me.BunifuFlatButton3.IconMarginRight = 0
-        Me.BunifuFlatButton3.IconRightVisible = True
-        Me.BunifuFlatButton3.IconRightZoom = 0R
-        Me.BunifuFlatButton3.IconVisible = True
-        Me.BunifuFlatButton3.IconZoom = 90.0R
-        Me.BunifuFlatButton3.IsTab = False
-        Me.BunifuFlatButton3.Location = New System.Drawing.Point(1006, 205)
-        Me.BunifuFlatButton3.Name = "BunifuFlatButton3"
-        Me.BunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.BunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.BunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton3.selected = False
-        Me.BunifuFlatButton3.Size = New System.Drawing.Size(289, 34)
-        Me.BunifuFlatButton3.TabIndex = 130
-        Me.BunifuFlatButton3.Text = "BunifuFlatButton3"
-        Me.BunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BunifuFlatButton3.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton3.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Officelbl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Officelbl.AutoSize = True
+        Me.Officelbl.Font = New System.Drawing.Font("Tahoma", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Officelbl.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Officelbl.Location = New System.Drawing.Point(134, 22)
+        Me.Officelbl.Name = "Officelbl"
+        Me.Officelbl.Size = New System.Drawing.Size(74, 77)
+        Me.Officelbl.TabIndex = 137
+        Me.Officelbl.Text = "0"
+        Me.Officelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Panel1.Location = New System.Drawing.Point(12, 59)
+        Me.Panel1.Controls.Add(Me.Officelbl)
+        Me.Panel1.Controls.Add(Me.Officebtn)
+        Me.Panel1.Location = New System.Drawing.Point(12, 60)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(313, 835)
-        Me.Panel1.TabIndex = 132
+        Me.Panel1.Size = New System.Drawing.Size(333, 136)
+        Me.Panel1.TabIndex = 138
         '
-        'PictureBox1
+        'Panel3
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(344, 59)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(289, 179)
-        Me.PictureBox1.TabIndex = 133
-        Me.PictureBox1.TabStop = False
+        Me.Panel3.Controls.Add(Me.Accountbtn)
+        Me.Panel3.Controls.Add(Me.Accountlbl)
+        Me.Panel3.Location = New System.Drawing.Point(12, 218)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(157, 136)
+        Me.Panel3.TabIndex = 139
         '
-        'PictureBox2
+        'Accountlbl
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(672, 59)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(289, 179)
-        Me.PictureBox2.TabIndex = 134
-        Me.PictureBox2.TabStop = False
+        Me.Accountlbl.AutoSize = True
+        Me.Accountlbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Accountlbl.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Accountlbl.Location = New System.Drawing.Point(19, 31)
+        Me.Accountlbl.Name = "Accountlbl"
+        Me.Accountlbl.Size = New System.Drawing.Size(118, 58)
+        Me.Accountlbl.TabIndex = 138
+        Me.Accountlbl.Text = "579"
+        Me.Accountlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox3
+        'Panel4
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(1005, 59)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(289, 179)
-        Me.PictureBox3.TabIndex = 135
-        Me.PictureBox3.TabStop = False
+        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.Grouplbl)
+        Me.Panel4.Location = New System.Drawing.Point(188, 218)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(157, 136)
+        Me.Panel4.TabIndex = 140
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(40, 110)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(91, 16)
+        Me.Label8.TabIndex = 140
+        Me.Label8.Text = "Account Group"
+        '
+        'Grouplbl
+        '
+        Me.Grouplbl.AutoSize = True
+        Me.Grouplbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grouplbl.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Grouplbl.Location = New System.Drawing.Point(53, 38)
+        Me.Grouplbl.Name = "Grouplbl"
+        Me.Grouplbl.Size = New System.Drawing.Size(56, 58)
+        Me.Grouplbl.TabIndex = 139
+        Me.Grouplbl.Text = "4"
+        Me.Grouplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Controls.Add(Me.Sublbl)
+        Me.Panel5.Location = New System.Drawing.Point(188, 376)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(157, 136)
+        Me.Panel5.TabIndex = 142
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(26, 110)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(105, 16)
+        Me.Label10.TabIndex = 142
+        Me.Label10.Text = "Sub Major Group"
+        '
+        'Sublbl
+        '
+        Me.Sublbl.AutoSize = True
+        Me.Sublbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sublbl.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Sublbl.Location = New System.Drawing.Point(33, 39)
+        Me.Sublbl.Name = "Sublbl"
+        Me.Sublbl.Size = New System.Drawing.Size(87, 58)
+        Me.Sublbl.TabIndex = 141
+        Me.Sublbl.Text = "94"
+        Me.Sublbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Controls.Add(Me.Majorlbl)
+        Me.Panel6.Location = New System.Drawing.Point(12, 376)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(157, 136)
+        Me.Panel6.TabIndex = 141
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(40, 110)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(79, 16)
+        Me.Label9.TabIndex = 141
+        Me.Label9.Text = "Major Group"
+        '
+        'Majorlbl
+        '
+        Me.Majorlbl.AutoSize = True
+        Me.Majorlbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Majorlbl.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Majorlbl.Location = New System.Drawing.Point(33, 39)
+        Me.Majorlbl.Name = "Majorlbl"
+        Me.Majorlbl.Size = New System.Drawing.Size(87, 58)
+        Me.Majorlbl.TabIndex = 140
+        Me.Majorlbl.Text = "32"
+        Me.Majorlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.DataGridView1)
+        Me.Panel7.Location = New System.Drawing.Point(12, 526)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(333, 360)
+        Me.Panel7.TabIndex = 139
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle29.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle30
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle32.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle32
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(333, 360)
+        Me.DataGridView1.TabIndex = 76
         '
         'Verify
         '
@@ -221,24 +373,32 @@ Partial Class Verify
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1310, 907)
-        Me.Controls.Add(Me.Accountbtn)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.BunifuFlatButton3)
-        Me.Controls.Add(Me.Officebtn)
         Me.Controls.Add(Me.Submain)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Verify"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Verify"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -249,9 +409,19 @@ Partial Class Verify
     Friend WithEvents Label5 As Label
     Friend WithEvents Accountbtn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Officebtn As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton3 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents Officelbl As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Accountlbl As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Grouplbl As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Sublbl As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Majorlbl As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

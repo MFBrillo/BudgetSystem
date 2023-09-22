@@ -6,7 +6,7 @@
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices_temp")
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_offices_temp", Nothing,)
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_offices_temp", Nothing,)
         Add_GridButton(DataGridView1, "Pending", "Approve", "ApproveDGBtn", 7, 100)
         Dim cols() = {"ID"}
         Datagrid_HideColumn(DataGridView1, cols)
@@ -46,7 +46,6 @@
                         MsgBox("ERROR" & ex.Message)
                     End Try
                     Custom_Load()
-
                 End If
                 OpaquePrompt.Dispose()
                 'Form1.Activate()

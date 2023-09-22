@@ -79,6 +79,7 @@
             Case "Chartbtn"
                 Dim uc = New ChartofAccounts
                 ShowUserControl(uc)
+
             Case "Settingbtn"
                 Dim uc = New ChartAccountSettingUC
                 ShowUserControl(uc)
@@ -87,20 +88,43 @@
                 ShowForm(form)
         End Select
     End Sub
-
 #End Region
     Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Dispose()
     End Sub
-
     Private Sub Verifybtn_Click(sender As Object, e As EventArgs) Handles Verifybtn.Click
         'Me.Enabled = False
         'OpaquePrompt.Show()
         Verify.ShowDialog()
         Verify.Focus()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PCNamelbl.Text = my_pcName
+        InitializeTables.Main()
+        InitializeTables.Is_Login()
+    End Sub
+    Private Sub Statuslbl_TextChanged(sender As Object, e As EventArgs) Handles Statuslbl.TextChanged
+        If Statuslbl.Text = "Online" Then
+            Statuslbl.ForeColor = Color.Green
+        Else
+            Statuslbl.ForeColor = Color.Red
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        InitializeTables.Main()
+        InitializeTables.Is_Login()
+    End Sub
+
+    Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
+
+    End Sub
+
+    Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainPanel.CellContentClick
+
     End Sub
 End Class

@@ -5,12 +5,12 @@ Public Class Office
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
-        VIOfficeDT = SqlLoad.MySql_SelectString("*", "vi_offices")
+        VIOfficeDT = SqlLoad.MySql_SelectString("*", "vi_moises_offices")
 
     End Sub
     Private Sub Office_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_offices")
+        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_offices")
         Dim cols() = {"ID"}
         Datagrid_HideColumn(DataGridView1, cols)
         Custom_Load()

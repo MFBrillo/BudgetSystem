@@ -83,7 +83,7 @@
     Sub lastindex()
         Custom_Load()
         Custom_ComboBoxDatasource(ChartofAccounts.subcategoryCBB, SubcategoryDT, "subcategory", "subcategory")
-        ChartofAccounts.subcategoryCBB.SelectedIndex = ChartofAccounts.categoryCBB.Items.Count - 1
+        ChartofAccounts.subcategoryCBB.SelectedIndex = ChartofAccounts.subcategoryCBB.Items.Count - 1
     End Sub
     Private Sub SubcategoryIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles SubcategoryIDtxt.OnValueChanged
         Dim input As String = SubcategoryIDtxt.Text

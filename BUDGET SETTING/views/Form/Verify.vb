@@ -1,4 +1,6 @@
 ﻿Public Class Verify
+
+
     Public Sub ShowForm(ByVal form As Form)                      'Clear panel and add form projects/modules
         Submain.Controls.Clear()
         form.TopLevel = False
@@ -42,4 +44,26 @@
     Private Sub Submain_Paint(sender As Object, e As PaintEventArgs) Handles Submain.Paint
 
     End Sub
+
+    Private Sub Verify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dashboard()
+    End Sub
+
+    Public Sub Dashboard()
+        Dim SqlLoad As New MySQLCore
+        Dim officetxt = SqlLoad.MySql_SelectString("COUNT(*) rowcount", "gl_accounts")
+        Dim officet As String
+        officet = officetxt.Rows(0).Item("rowcount").ToString
+
+        Dim accounttxt As String
+        Dim grouptxt As String
+        Dim majortxt As String
+        Dim subtxt As String
+
+        Officelbl.Text = officet
+
+        'Dim dt = SqlLoad.MySql_SelectString("assetid", "gl_assets", , $"where asset ='{AssetIDTxt.Text}'")
+        'assetid = dt.Rows(0).Item("assetid").ToString
+    End Sub
+
 End Class

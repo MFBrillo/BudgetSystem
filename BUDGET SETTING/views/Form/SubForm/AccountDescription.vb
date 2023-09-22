@@ -5,7 +5,6 @@
     Dim subcategoryid
     Dim accountid
     Dim accountcode = ChartofAccounts.accountcode2
-
     Public findaccountDT As DataTable
 
     Private Sub Cancelbtn_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
@@ -15,30 +14,39 @@
     End Sub
     Private Sub AccountDescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
-        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
-        Nametxt.Text = ChartofAccounts.accountdescription2
-        'Codetxt.Text = ChartofAccounts.accountcode
-        Dim input As String = ChartofAccounts.accountcode2
-        ' Remove hyphens from the input
-        Dim result As String = input.Replace("-", "")
-        accountid = result
 
-        Dim conditions As New List(Of LinQCondition) From {
+        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
+            'AccountDT = gl_accounts
+            Nametxt.Text = ChartofAccounts.accountdescription2
+        'Codetxt.Text = ChartofAccounts.accountcode
+        If ChartofAccounts.accountcode2 IsNot Nothing Then
+            Dim input As String = ChartofAccounts.accountcode2
+            ' Remove hyphens from the input
+
+            Dim result As String = input.Replace("-", "")
+            accountid = result
+
+            Dim conditions As New List(Of LinQCondition) From {
         New LinQCondition With {
                             .Column = "accountid",
                             .Value = result,
                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
         }
-        Dim accountname As DataTable = Linq_Query(AccountDT, conditions)
-        assetid = accountname.Rows(0).Item("assetid").ToString
-        subcategoryid = accountname.Rows(0).Item("subcategoryid").ToString
-        categoryid = accountname.Rows(0).Item("categoryid").ToString
-        accountid = accountname.Rows(0).Item("accountid").ToString
+            Dim accountname As DataTable = Linq_Query(AccountDT, conditions)
+            assetid = accountname.Rows(0).Item("assetid").ToString
+            subcategoryid = accountname.Rows(0).Item("subcategoryid").ToString
+            categoryid = accountname.Rows(0).Item("categoryid").ToString
+            accountid = accountname.Rows(0).Item("accountid").ToString
 
-
+        Else
+            MsgBox("Please Choose Account to Edit")
+            OpaquePrompt.Close()
+            Me.Close()
+            Form1.Activate()
+        End If
     End Sub
-
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
+
         Dim SqlLoad As New MySQLCore
         CustomYesNoPrompt("Save Entries", "Do you want to save changes")
         If YesNoPrompt.YesOption = True Then
