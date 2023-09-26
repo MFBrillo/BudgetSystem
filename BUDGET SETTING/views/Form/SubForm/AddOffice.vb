@@ -31,11 +31,10 @@ Public Class AddOffice
                     columnValues.Add("officeaccronym", Accronymtxt.Text)
                     columnValues.Add("officename", Nametxt.Text)
                     columnValues.Add("officedescription", Descriptiontxt.Text)
-                    mySql.MySql_ExecuteNonQueryString("gl_offices_temp", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
-
             End If
             OpaquePrompt.Close()
             Form1.Activate()
@@ -50,13 +49,15 @@ Public Class AddOffice
                     columnValues.Add("id", officeid)
                     columnValues.Add("officeid", officeid)
                     columnValues.Add("officetypeid", officetypeid)
-                    columnValues.Add("officecode_pbo", $"'{PBOCodetxt.Text}'")
-                    columnValues.Add("mandatory_aipcode", $"'{AIPCodetxt.Text}'")
-                    columnValues.Add("officecode_acctg", $"' {AccountingCodeTxt.Text}'")
-                    columnValues.Add("officeaccronym", $"'{Accronymtxt.Text}'")
-                    columnValues.Add("officename", $"'{Nametxt.Text}'")
-                    columnValues.Add("officedescription", $"'{Descriptiontxt.Text}'")
-                    mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, $"id={officeid}", 2)
+                    columnValues.Add("officecode_pbo", PBOCodetxt.Text)
+                    columnValues.Add("mandatory_aipcode", AIPCodetxt.Text)
+                    columnValues.Add("officecode_acctg", AccountingCodeTxt.Text)
+                    columnValues.Add("officeaccronym", Accronymtxt.Text)
+                    columnValues.Add("officename", Nametxt.Text)
+                    columnValues.Add("officedescription", Descriptiontxt.Text)
+                    mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, Nothing, 1)
+                    'mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, $"id={officeid}", 1)
+
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
@@ -69,6 +70,7 @@ Public Class AddOffice
         Dim SqlLoad As New MySQLCore
         OfficeTypeDT = SqlLoad.MySql_SelectString("*", "vi_moises_office_type")
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
+        Label1.Text = officeid
     End Sub
     Public Shared assetidOfficeTypeid
     Public numbertoletter

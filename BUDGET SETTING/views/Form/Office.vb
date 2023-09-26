@@ -6,7 +6,6 @@ Public Class Office
         Dim SqlLoad As New MySQLCore
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
         VIOfficeDT = SqlLoad.MySql_SelectString("*", "vi_moises_offices")
-
     End Sub
     Private Sub Office_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
@@ -29,10 +28,8 @@ Public Class Office
         OpaquePrompt.Show()
         AddOffice.ShowDialog()
     End Sub
-
     Private Sub Searchtxt_OnValueChanged(sender As Object, e As EventArgs) Handles Searchtxt.OnValueChanged
         ClearDGV(DataGridView1)
-
         Try
             If VIOfficeDT IsNot Nothing Then
                 Dim conditions As New List(Of LinQCondition) From {
@@ -55,17 +52,6 @@ Public Class Office
         End Try
     End Sub
 
-    Private Sub Searchtxt_TextChanged(sender As Object, e As EventArgs) Handles Searchtxt.TextChanged
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
     Public officename
     Public officeid
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
@@ -86,15 +72,18 @@ Public Class Office
         AddOffice.title = "Update Office"
         OpaquePrompt.Show()
         AddOffice.ShowDialog()
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Editbtn.Click
-
-        AddOffice.Saveupdate = 2
-        AddOffice.title = "Update Office"
-        OpaquePrompt.Show()
-        AddOffice.ShowDialog()
+        If officeid IsNot Nothing Then
+            AddOffice.Saveupdate = 2
+            AddOffice.title = "Update Office"
+            OpaquePrompt.Show()
+            AddOffice.ShowDialog()
+        Else
+            MsgBox("Please Choose Account to Edit")
+            Form1.Activate()
+        End If
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -111,6 +100,5 @@ Public Class Office
         officename = accountname.Rows(0).Item("NAME").ToString
         officeid = accountname.Rows(0).Item("ID").ToString
         AddOffice.officeid = officeid
-
     End Sub
 End Class

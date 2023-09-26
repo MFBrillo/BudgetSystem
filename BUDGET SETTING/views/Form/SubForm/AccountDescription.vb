@@ -66,7 +66,7 @@
                 columnValues.Add("accountcode", accountcode)
                 columnValues.Add("accountname", Nametxt.Text)
                 columnValues.Add("accountdescription", Descriptiontxt.Text)
-                mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
+                mySql.MySql_ExecuteNonQueryString("wap_accounts_temp", columnValues, Nothing, 1)
             End If
             Form1.Activate()
             Me.Close()

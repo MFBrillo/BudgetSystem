@@ -1,6 +1,8 @@
 ﻿Public Class Form1
     Friend menu_width As Integer            'Menu width when click
     Friend colapsed_width As Integer
+    Public formattedDate As String = currentDate.ToString("MMMM d, yyyy")
+    Dim formattedTime As String = currentDate.ToString("hh:mm:ss tt")
 #Region "MenuSize()"   'Set Form Size
     Public Sub MenuSize(ByVal menuwidth As Integer, colapsedwidth As Integer, ByVal form As Form)
         form.Bounds = Screen.GetWorkingArea(form.Bounds)
@@ -92,9 +94,7 @@
     Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Dispose()
-    End Sub
+
     Private Sub Verifybtn_Click(sender As Object, e As EventArgs) Handles Verifybtn.Click
         'Me.Enabled = False
         'OpaquePrompt.Show()
@@ -106,6 +106,9 @@
         PCNamelbl.Text = my_pcName
         InitializeTables.Main()
         InitializeTables.Is_Login()
+        Datelbl.Text = formattedDate
+        UpdateTime()
+        Timer1.Start()
     End Sub
     Private Sub Statuslbl_TextChanged(sender As Object, e As EventArgs) Handles Statuslbl.TextChanged
         If Statuslbl.Text = "Online" Then
@@ -115,10 +118,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        InitializeTables.Main()
-        InitializeTables.Is_Login()
-    End Sub
+
 
     Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
 
@@ -126,5 +126,29 @@
 
     Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainPanel.CellContentClick
 
+    End Sub
+
+
+    Private Sub BunifuThinButton21_Click_1(sender As Object, e As EventArgs) Handles Closebtn.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        UpdateTime()
+    End Sub
+
+
+
+    Private Sub UpdateTime()
+        ' Get the current time and format it
+        Dim currentTime As DateTime = DateTime.Now
+        Dim formattedTime As String = currentTime.ToString("hh:mm:ss tt")
+
+        ' Update the label text with the formatted time
+        Timelbl.Text = formattedTime
     End Sub
 End Class

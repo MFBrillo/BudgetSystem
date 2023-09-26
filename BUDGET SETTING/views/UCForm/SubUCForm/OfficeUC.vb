@@ -5,7 +5,7 @@
     End Sub
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
-        OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices_temp")
+        OfficeDT = SqlLoad.MySql_SelectString("*", "wap_offices_temp")
         DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_offices_temp", Nothing,)
         Add_GridButton(DataGridView1, "Pending", "Approve", "ApproveDGBtn", 7, 100)
         Dim cols() = {"ID"}
@@ -19,7 +19,7 @@
                 CustomYesNoPrompt("Adding Office", "Do you want to Approve?")
                 If YesNoPrompt.YesOption = True Then
                     Dim SqlLoad As New MySQLCore
-                    OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices_temp")
+                    OfficeDT = SqlLoad.MySql_SelectString("*", "wap_offices_temp")
                     Dim row As DataRow = OfficeDT.Rows(e.RowIndex)
                     Dim officeid As Integer = row.Item("officeid").ToString
                     Dim officetypeid As Integer = row.Item("officetypeid").ToString
@@ -41,7 +41,7 @@
                         columnValues.Add("officedescription", officedescription)
                         columnValues.Add("officeaccronym", officeaccronym)
                         mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
-                        mySql.MySql_Delete("gl_offices_temp", $"officeid= {officeid}")
+                        mySql.MySql_Delete("wap_offices_temp", $"officeid= {officeid}")
                     Catch ex As Exception
                         MsgBox("ERROR" & ex.Message)
                     End Try

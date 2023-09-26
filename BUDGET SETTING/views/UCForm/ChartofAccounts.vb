@@ -149,7 +149,7 @@
                     columnValues.Add("accountid", AccountIDtxt.Text)
                     columnValues.Add("accountdescription", Decriptiontxt.Text)
                     columnValues.Add("accountcode", AccountCodetxt.Text)
-                    mySql.MySql_ExecuteNonQueryString("gl_accounts_temp", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("wap_accounts_temp", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
@@ -298,6 +298,10 @@
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

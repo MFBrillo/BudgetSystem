@@ -5,7 +5,7 @@
     End Sub
     Friend Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
-        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts_temp")
+        AccountDT = SqlLoad.MySql_SelectString("*", "wap_accounts_temp")
         DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_accounts_temp", Nothing,)
         Add_GridButton(DataGridView1, "Pending", "Approve", "ApproveDGBtn", 4, 100)
         Dim cols() = {"ID"}
@@ -19,7 +19,7 @@
                 CustomYesNoPrompt("Verify Entries", "Do you want to Approve changes")
                 If YesNoPrompt.YesOption = True Then
                     Dim SqlLoad As New MySQLCore
-                    AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts_temp")
+                    AccountDT = SqlLoad.MySql_SelectString("*", "wap_accounts_temp")
                     Dim row As DataRow = AccountDT.Rows(e.RowIndex)
                     Dim assetid As Integer = row.Item("assetid").ToString
                     Dim categoryid As Integer = row.Item("categoryid").ToString
@@ -39,7 +39,8 @@
                         columnValues.Add("accountdescription", accountdescription)
                         columnValues.Add("accountcode", accounctcode)
                         mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
-                        mySql.MySql_Delete("gl_accounts_temp", $"accountid= {accountid}")
+                        mySql.MySql_Delete("wap_accounts_temp", $"accountid= {accountid}")
+
                     Catch ex As Exception
                         MsgBox("ERROR" & ex.Message)
                     End Try

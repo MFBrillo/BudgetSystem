@@ -1,14 +1,14 @@
 ﻿Module InitializeTables
     Public gl_accounts As DataTable
-    Public gl_accounts_temp As DataTable
+    Public wap_accounts_temp As DataTable
     Public gl_assets As DataTable
-    Public gl_assets_temp As DataTable
+    Public wap_assets_temp As DataTable
     Public gl_assets_category As DataTable
-    Public gl_assets_category_temp As DataTable
+    Public wap_assets_category_temp As DataTable
     Public gl_assets_sub_category As DataTable
-    Public gl_assets_subcategory_temp As DataTable
+    Public wap_assets_subcategory_temp As DataTable
     Public gl_offices As DataTable
-    Public gl_offices_temp As DataTable
+    Public wap_offices_temp As DataTable
 
     Public vi_accounts As DataTable
     Public vi_accounts_temp As DataTable
@@ -22,6 +22,9 @@
     Public vi_offices_temp As DataTable
     Public islogin
     Public username
+    Public accesslevel
+
+    Public tbl_gl_accounts As String = "gl_accounts"
     Public isInitialized As Integer = 0
     Sub Main()
         Dim core = New MySQLCore
@@ -50,13 +53,19 @@
     End Sub
     Sub Is_Login()
         Dim sql As New MySQLCore
-        Dim dt = sql.MySql_SelectString("is_login, username", "gl_users", , $"where pcname ='{my_pcName}'")
+        Dim dt = sql.MySql_SelectString("is_login, username,accesslevel", "gl_users", , $"where pcname ='{my_pcName}'")
         islogin = dt.Rows(0).Item("is_login").ToString
         username = dt.Rows(0).Item("username").ToString
+        accesslevel = dt.Rows(0).Item("accesslevel").ToString
         If islogin = 1 Then
-            ' MsgBox(username)
+            'MsgBox(accesslevel)
             Form1.Statuslbl.Text = "Online"
             Form1.Userlbl.Text = username
+            If accesslevel = 1 Then
+                Form1.Verifybtn.Visible = True
+            Else
+                Form1.Verifybtn.Visible = False
+            End If
         ElseIf islogin = 0 Then
             Form1.Statuslbl.Text = "Offline"
             Form1.Userlbl.Text = "No User"

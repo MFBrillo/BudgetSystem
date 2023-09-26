@@ -22,10 +22,10 @@ Partial Class Verify
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Titletxt = New System.Windows.Forms.Label()
@@ -47,6 +47,7 @@ Partial Class Verify
         Me.Majorlbl = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.namelbl = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -91,9 +92,12 @@ Partial Class Verify
         '
         'Submain
         '
-        Me.Submain.Location = New System.Drawing.Point(364, 256)
+        Me.Submain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Submain.Location = New System.Drawing.Point(364, 60)
         Me.Submain.Name = "Submain"
-        Me.Submain.Size = New System.Drawing.Size(930, 630)
+        Me.Submain.Size = New System.Drawing.Size(930, 826)
         Me.Submain.TabIndex = 126
         '
         'Accountbtn
@@ -153,7 +157,7 @@ Partial Class Verify
         Me.Officebtn.IconVisible = True
         Me.Officebtn.IconZoom = 90.0R
         Me.Officebtn.IsTab = False
-        Me.Officebtn.Location = New System.Drawing.Point(2, 102)
+        Me.Officebtn.Location = New System.Drawing.Point(0, 102)
         Me.Officebtn.Name = "Officebtn"
         Me.Officebtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Officebtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
@@ -168,13 +172,11 @@ Partial Class Verify
         '
         'Officelbl
         '
-        Me.Officelbl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Officelbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.Officelbl.AutoSize = True
         Me.Officelbl.Font = New System.Drawing.Font("Tahoma", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Officelbl.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Officelbl.Location = New System.Drawing.Point(134, 22)
+        Me.Officelbl.Location = New System.Drawing.Point(105, 14)
         Me.Officelbl.Name = "Officelbl"
         Me.Officelbl.Size = New System.Drawing.Size(74, 77)
         Me.Officelbl.TabIndex = 137
@@ -204,11 +206,11 @@ Partial Class Verify
         Me.Accountlbl.AutoSize = True
         Me.Accountlbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Accountlbl.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Accountlbl.Location = New System.Drawing.Point(19, 31)
+        Me.Accountlbl.Location = New System.Drawing.Point(33, 31)
         Me.Accountlbl.Name = "Accountlbl"
-        Me.Accountlbl.Size = New System.Drawing.Size(118, 58)
+        Me.Accountlbl.Size = New System.Drawing.Size(56, 58)
         Me.Accountlbl.TabIndex = 138
-        Me.Accountlbl.Text = "579"
+        Me.Accountlbl.Text = "0"
         Me.Accountlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel4
@@ -236,11 +238,11 @@ Partial Class Verify
         Me.Grouplbl.AutoSize = True
         Me.Grouplbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grouplbl.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Grouplbl.Location = New System.Drawing.Point(53, 38)
+        Me.Grouplbl.Location = New System.Drawing.Point(50, 31)
         Me.Grouplbl.Name = "Grouplbl"
         Me.Grouplbl.Size = New System.Drawing.Size(56, 58)
         Me.Grouplbl.TabIndex = 139
-        Me.Grouplbl.Text = "4"
+        Me.Grouplbl.Text = "0"
         Me.Grouplbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel5
@@ -268,11 +270,11 @@ Partial Class Verify
         Me.Sublbl.AutoSize = True
         Me.Sublbl.Font = New System.Drawing.Font("Tahoma", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Sublbl.ForeColor = System.Drawing.Color.Gainsboro
-        Me.Sublbl.Location = New System.Drawing.Point(33, 39)
+        Me.Sublbl.Location = New System.Drawing.Point(19, 39)
         Me.Sublbl.Name = "Sublbl"
-        Me.Sublbl.Size = New System.Drawing.Size(87, 58)
+        Me.Sublbl.Size = New System.Drawing.Size(56, 58)
         Me.Sublbl.TabIndex = 141
-        Me.Sublbl.Text = "94"
+        Me.Sublbl.Text = "0"
         Me.Sublbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel6
@@ -302,13 +304,14 @@ Partial Class Verify
         Me.Majorlbl.ForeColor = System.Drawing.Color.Gainsboro
         Me.Majorlbl.Location = New System.Drawing.Point(33, 39)
         Me.Majorlbl.Name = "Majorlbl"
-        Me.Majorlbl.Size = New System.Drawing.Size(87, 58)
+        Me.Majorlbl.Size = New System.Drawing.Size(56, 58)
         Me.Majorlbl.TabIndex = 140
-        Me.Majorlbl.Text = "32"
+        Me.Majorlbl.Text = "0"
         Me.Majorlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.namelbl)
         Me.Panel7.Controls.Add(Me.DataGridView1)
         Me.Panel7.Location = New System.Drawing.Point(12, 526)
         Me.Panel7.Name = "Panel7"
@@ -326,46 +329,56 @@ Partial Class Verify
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(333, 360)
         Me.DataGridView1.TabIndex = 76
+        '
+        'namelbl
+        '
+        Me.namelbl.AutoSize = True
+        Me.namelbl.ForeColor = System.Drawing.Color.White
+        Me.namelbl.Location = New System.Drawing.Point(85, 55)
+        Me.namelbl.Name = "namelbl"
+        Me.namelbl.Size = New System.Drawing.Size(39, 13)
+        Me.namelbl.TabIndex = 77
+        Me.namelbl.Text = "Label1"
         '
         'Verify
         '
@@ -398,6 +411,7 @@ Partial Class Verify
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -424,4 +438,5 @@ Partial Class Verify
     Friend WithEvents Majorlbl As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents namelbl As Label
 End Class
