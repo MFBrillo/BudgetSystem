@@ -41,11 +41,9 @@ Public Class Verify
         SelectMenu(sender.Name)
     End Sub
     Private Sub Submain_Paint(sender As Object, e As PaintEventArgs) Handles Submain.Paint
-
     End Sub
     Private Sub Verify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dashboard()
-
     End Sub
 
     Public Sub Dashboard()

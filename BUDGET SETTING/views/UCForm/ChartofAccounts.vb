@@ -145,10 +145,10 @@
                     columnValues.Add("assetid", assetid)
                     columnValues.Add("categoryid", categoryid)
                     columnValues.Add("subcategoryid", subcategoryid)
-                    columnValues.Add("accountname", Accountnametxt.Text)
-                    columnValues.Add("accountid", AccountIDtxt.Text)
-                    columnValues.Add("accountdescription", Decriptiontxt.Text)
-                    columnValues.Add("accountcode", AccountCodetxt.Text)
+                    columnValues.Add("accountname", $"'{Accountnametxt.Text}'")
+                    columnValues.Add("accountid", $"'{AccountIDtxt.Text}'")
+                    columnValues.Add("accountdescription", $"'{Decriptiontxt.Text}'")
+                    columnValues.Add("accountcode", $"'{AccountCodetxt.Text}'")
                     mySql.MySql_ExecuteNonQueryString("wap_accounts_temp", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
@@ -287,21 +287,5 @@
         Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
         accountdescription2 = accountname.Rows(0).Item("Account").ToString
         accountcode2 = accountname.Rows(0).Item("code").ToString
-    End Sub
-
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
     End Sub
 End Class

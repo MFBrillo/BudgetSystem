@@ -64,8 +64,8 @@
                 columnValues.Add("subcategoryid", subcategoryid)
                 columnValues.Add("accountid", accountid)
                 columnValues.Add("accountcode", accountcode)
-                columnValues.Add("accountname", Nametxt.Text)
-                columnValues.Add("accountdescription", Descriptiontxt.Text)
+                columnValues.Add("accountname", $"'{Nametxt.Text}'")
+                columnValues.Add("accountdescription", $"'{Descriptiontxt.Text}'")
                 mySql.MySql_ExecuteNonQueryString("wap_accounts_temp", columnValues, Nothing, 1)
             End If
             Form1.Activate()

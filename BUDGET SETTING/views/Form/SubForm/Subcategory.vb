@@ -57,12 +57,12 @@
         Dim mySql As New MySQLCore
         Try
             Dim ColumnValues As New Dictionary(Of String, String)
-            ColumnValues.Add("assetid", Assetidtxt.Text)
-            ColumnValues.Add("categoryid", CategoryIDtxt.Text)
-            ColumnValues.Add("subcategoryid", SubcategoryIDtxt.Text)
-            ColumnValues.Add("code", SubcategoryCodetxt.Text)
-            ColumnValues.Add("subcategory", Subcategorynametxt.Text)
-            ColumnValues.Add("description", SubcategoryDestxt.Text)
+            ColumnValues.Add("assetid", $"'{Assetidtxt.Text}'")
+            ColumnValues.Add("categoryid", $"'{CategoryIDtxt.Text}'")
+            ColumnValues.Add("subcategoryid", $"'{SubcategoryIDtxt.Text}'")
+            ColumnValues.Add("code", $"'{SubcategoryCodetxt.Text}'")
+            ColumnValues.Add("subcategory", $"'{Subcategorynametxt.Text}'")
+            ColumnValues.Add("description", $"'{SubcategoryDestxt.Text}'")
             Dim dt = mySql.MySql_SelectString("subcategoryid", "gl_assets_subcategory", $"WHERE subcategory = '{Subcategorynametxt.Text}'")
             If dt.Rows.Count > 0 Then
                 ' Data already exists

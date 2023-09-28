@@ -160,7 +160,7 @@ Public Class MySQLCore
 
                     If usersqltype = 1 Then
                         Dim columns As String = String.Join(",", columnvalues.Select(Function(cols) $"{cols.Key}").ToArray())
-                        Dim values As String = String.Join(",", columnvalues.Select(Function(cols) $"'{cols.Value}'").ToArray())
+                        Dim values As String = String.Join(",", columnvalues.Select(Function(cols) $"{cols.Value}").ToArray())
                         SqlNonQuery = $"INSERT INTO {tablename}({columns}) VALUES({values});"
 
                     ElseIf usersqltype = 2 Then

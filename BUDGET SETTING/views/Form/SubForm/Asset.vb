@@ -18,8 +18,8 @@
             Dim code = lastid.Rows(0).Item("lastidd").ToString
             Dim ColumnValues As New Dictionary(Of String, String)
             ColumnValues.Add("assetid", code)
-            ColumnValues.Add("asset", Assettxt.Text)
-            ColumnValues.Add("description", AssetDescrptiontxt.Text)
+            ColumnValues.Add("asset", $"'{Assettxt.Text}'")
+            ColumnValues.Add("description", $"'{AssetDescrptiontxt.Text}'")
             If exists = False Then
                 Dim dt = mySql.MySql_SelectString("assetid", "gl_assets", $"WHERE asset = '{Assettxt.Text}'")
                 dt1 = dt

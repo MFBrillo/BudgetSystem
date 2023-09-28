@@ -64,11 +64,12 @@ Public Class Office
                              .Value = searchrow,
                              .ComparisonType = ComparisonTypeEnum.Equal_enum}
      }
-        Dim accountname As DataTable = Linq_Query(VIOfficeDT, conditions)
-        officename = accountname.Rows(0).Item("NAME").ToString
-        officeid = accountname.Rows(0).Item("ID").ToString
+        Dim office As DataTable = Linq_Query(VIOfficeDT, conditions)
+        officename = office.Rows(0).Item("NAME").ToString
+        officeid = office.Rows(0).Item("ID").ToString
         AddOffice.officeid = officeid
         AddOffice.Saveupdate = 2
+        AddOffice.update1 = 1
         AddOffice.title = "Update Office"
         OpaquePrompt.Show()
         AddOffice.ShowDialog()
@@ -77,6 +78,7 @@ Public Class Office
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Editbtn.Click
         If officeid IsNot Nothing Then
             AddOffice.Saveupdate = 2
+            AddOffice.update1 = 1
             AddOffice.title = "Update Office"
             OpaquePrompt.Show()
             AddOffice.ShowDialog()
@@ -100,5 +102,13 @@ Public Class Office
         officename = accountname.Rows(0).Item("NAME").ToString
         officeid = accountname.Rows(0).Item("ID").ToString
         AddOffice.officeid = officeid
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class

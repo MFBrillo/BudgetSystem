@@ -58,11 +58,11 @@
         Dim mySql As New MySQLCore
         Try
             Dim ColumnValues As New Dictionary(Of String, String)
-            ColumnValues.Add("assetid", AssetIDtxt.Text)
-            columnValues.Add("categoryid", CategoryIDtxt.Text)
-            columnValues.Add("category", Categorynametxt.Text)
-            columnValues.Add("description", CategoryDestxt.Text)
-            columnValues.Add("code", Categorycodetxt.Text)
+            ColumnValues.Add("assetid", $"'{AssetIDtxt.Text}'")
+            ColumnValues.Add("categoryid", $"'{CategoryIDtxt.Text}'")
+            ColumnValues.Add("category", $"'{Categorynametxt.Text}'")
+            ColumnValues.Add("description", $"'{CategoryDestxt.Text}'")
+            ColumnValues.Add("code", $"'{Categorycodetxt.Text}'")
             Dim dt = mySql.MySql_SelectString("categoryid", "gl_assets_category", $"WHERE category = '{Categorynametxt.Text}'")
             If dt.Rows.Count > 0 Then
                 ' Data already exists
