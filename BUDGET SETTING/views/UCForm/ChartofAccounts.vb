@@ -254,7 +254,8 @@
                 Custom_Load()
 
                 accountdescription2 = filteredDataTable.Rows(0).Item("Account").ToString
-                accountcode2 = filteredDataTable.Rows(0).Item("code").ToString
+                accountcode2 = filteredDataTable.Rows(0).Item("code").
+                msgbox(accountcode2)
             End If
         Catch ex As Exception
         End Try
@@ -287,5 +288,6 @@
         Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
         accountdescription2 = accountname.Rows(0).Item("Account").ToString
         accountcode2 = accountname.Rows(0).Item("code").ToString
+        MsgBox(accountcode2)
     End Sub
 End Class

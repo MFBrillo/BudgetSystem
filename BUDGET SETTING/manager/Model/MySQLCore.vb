@@ -169,7 +169,7 @@ Public Class MySQLCore
                             fields(i) = $"{columnvalues.Keys.ElementAt(i)} = {columnvalues.Values.ElementAt(i)}"
                         Next
                         SqlNonQuery = $"UPDATE {tablename} SET {String.Join(", ", fields)} WHERE {whereClause}"
-
+                        MsgBox(SqlNonQuery)
                     Else
                         MsgBox(SqlNonQuery & vbCrLf & vbCrLf & " INVALID usersql:: " & usersqltype)
                         cmd.Dispose()
