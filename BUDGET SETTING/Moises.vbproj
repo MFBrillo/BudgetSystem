@@ -137,6 +137,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="views\UCForm\Programs.Designer.vb">
+      <DependentUpon>Programs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\Programs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\UCForm\SubUCForm\AccountGroup.Designer.vb">
+      <DependentUpon>AccountGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\SubUCForm\AccountGroup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="apps\Form1.vb">
       <SubType>Form</SubType>
@@ -260,14 +272,32 @@
     <Compile Include="views\UCForm\SubUCForm\AccountUC.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="views\UCForm\SubUCForm\MajorGroup.Designer.vb">
+      <DependentUpon>MajorGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\SubUCForm\MajorGroup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="views\UCForm\SubUCForm\OfficeUC.Designer.vb">
       <DependentUpon>OfficeUC.vb</DependentUpon>
     </Compile>
     <Compile Include="views\UCForm\SubUCForm\OfficeUC.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="views\UCForm\SubUCForm\SubMajorGroup.Designer.vb">
+      <DependentUpon>SubMajorGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\UCForm\SubUCForm\SubMajorGroup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="views\UCForm\Programs.resx">
+      <DependentUpon>Programs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\SubUCForm\AccountGroup.resx">
+      <DependentUpon>AccountGroup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="apps\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -322,8 +352,14 @@
     <EmbeddedResource Include="views\UCForm\SubUCForm\AccountUC.resx">
       <DependentUpon>AccountUC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\SubUCForm\MajorGroup.resx">
+      <DependentUpon>MajorGroup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\SubUCForm\OfficeUC.resx">
       <DependentUpon>OfficeUC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UCForm\SubUCForm\SubMajorGroup.resx">
+      <DependentUpon>SubMajorGroup.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

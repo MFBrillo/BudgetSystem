@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class OfficeUC
+Partial Class SubMajorGroup
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -26,14 +26,35 @@ Partial Class OfficeUC
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.Titletxt = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Titletxt = New System.Windows.Forms.Label()
+        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Titletxt
+        '
+        Me.Titletxt.AutoSize = True
+        Me.Titletxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Titletxt.ForeColor = System.Drawing.Color.White
+        Me.Titletxt.Location = New System.Drawing.Point(9, 11)
+        Me.Titletxt.Name = "Titletxt"
+        Me.Titletxt.Size = New System.Drawing.Size(145, 19)
+        Me.Titletxt.TabIndex = 125
+        Me.Titletxt.Text = "Sub Major Group"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Titletxt)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(950, 41)
+        Me.Panel2.TabIndex = 126
         '
         'Panel1
         '
@@ -41,10 +62,10 @@ Partial Class OfficeUC
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Location = New System.Drawing.Point(3, 68)
+        Me.Panel1.Location = New System.Drawing.Point(3, 67)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1075, 728)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.Size = New System.Drawing.Size(944, 551)
+        Me.Panel1.TabIndex = 127
         '
         'DataGridView1
         '
@@ -95,49 +116,28 @@ Partial Class OfficeUC
         DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1075, 728)
+        Me.DataGridView1.Size = New System.Drawing.Size(944, 551)
         Me.DataGridView1.TabIndex = 75
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Titletxt)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1078, 41)
-        Me.Panel2.TabIndex = 121
-        '
-        'Titletxt
-        '
-        Me.Titletxt.AutoSize = True
-        Me.Titletxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Titletxt.ForeColor = System.Drawing.Color.White
-        Me.Titletxt.Location = New System.Drawing.Point(9, 11)
-        Me.Titletxt.Name = "Titletxt"
-        Me.Titletxt.Size = New System.Drawing.Size(67, 19)
-        Me.Titletxt.TabIndex = 125
-        Me.Titletxt.Text = "OFFICE"
-        '
-        'OfficeUC
+        'SubMajorGroup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "OfficeUC"
-        Me.Size = New System.Drawing.Size(1078, 796)
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Controls.Add(Me.Panel2)
+        Me.Name = "SubMajorGroup"
+        Me.Size = New System.Drawing.Size(950, 622)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Titletxt As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView1 As DataGridView
 End Class

@@ -290,4 +290,8 @@
         accountcode2 = accountname.Rows(0).Item("code").ToString
         MsgBox(accountcode2)
     End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
 End Class

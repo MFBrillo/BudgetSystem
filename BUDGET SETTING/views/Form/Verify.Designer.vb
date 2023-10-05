@@ -37,17 +37,16 @@ Partial Class Verify
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Accountlbl = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Grouplbl = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Sublbl = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Majorlbl = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.namelbl = New System.Windows.Forms.Label()
+        Me.AccountGroupbtn = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.Majorbtn = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.SubMajorbtn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -215,23 +214,12 @@ Partial Class Verify
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.AccountGroupbtn)
         Me.Panel4.Controls.Add(Me.Grouplbl)
         Me.Panel4.Location = New System.Drawing.Point(188, 218)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(157, 136)
         Me.Panel4.TabIndex = 140
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(40, 110)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(91, 16)
-        Me.Label8.TabIndex = 140
-        Me.Label8.Text = "Account Group"
         '
         'Grouplbl
         '
@@ -247,23 +235,12 @@ Partial Class Verify
         '
         'Panel5
         '
-        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Controls.Add(Me.SubMajorbtn)
         Me.Panel5.Controls.Add(Me.Sublbl)
         Me.Panel5.Location = New System.Drawing.Point(188, 376)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(157, 136)
         Me.Panel5.TabIndex = 142
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(26, 110)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(105, 16)
-        Me.Label10.TabIndex = 142
-        Me.Label10.Text = "Sub Major Group"
         '
         'Sublbl
         '
@@ -279,23 +256,12 @@ Partial Class Verify
         '
         'Panel6
         '
-        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Controls.Add(Me.Majorbtn)
         Me.Panel6.Controls.Add(Me.Majorlbl)
         Me.Panel6.Location = New System.Drawing.Point(12, 376)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(157, 136)
         Me.Panel6.TabIndex = 141
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(40, 110)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(79, 16)
-        Me.Label9.TabIndex = 141
-        Me.Label9.Text = "Major Group"
         '
         'Majorlbl
         '
@@ -311,7 +277,6 @@ Partial Class Verify
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.namelbl)
         Me.Panel7.Controls.Add(Me.DataGridView1)
         Me.Panel7.Location = New System.Drawing.Point(12, 526)
         Me.Panel7.Name = "Panel7"
@@ -370,15 +335,110 @@ Partial Class Verify
         Me.DataGridView1.Size = New System.Drawing.Size(333, 360)
         Me.DataGridView1.TabIndex = 76
         '
-        'namelbl
+        'AccountGroupbtn
         '
-        Me.namelbl.AutoSize = True
-        Me.namelbl.ForeColor = System.Drawing.Color.White
-        Me.namelbl.Location = New System.Drawing.Point(85, 55)
-        Me.namelbl.Name = "namelbl"
-        Me.namelbl.Size = New System.Drawing.Size(39, 13)
-        Me.namelbl.TabIndex = 77
-        Me.namelbl.Text = "Label1"
+        Me.AccountGroupbtn.Active = False
+        Me.AccountGroupbtn.Activecolor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.AccountGroupbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AccountGroupbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AccountGroupbtn.BorderRadius = 0
+        Me.AccountGroupbtn.ButtonText = "Account Group"
+        Me.AccountGroupbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AccountGroupbtn.DisabledColor = System.Drawing.Color.Gray
+        Me.AccountGroupbtn.Iconcolor = System.Drawing.Color.Transparent
+        Me.AccountGroupbtn.Iconimage = Nothing
+        Me.AccountGroupbtn.Iconimage_right = Nothing
+        Me.AccountGroupbtn.Iconimage_right_Selected = Nothing
+        Me.AccountGroupbtn.Iconimage_Selected = Nothing
+        Me.AccountGroupbtn.IconMarginLeft = 0
+        Me.AccountGroupbtn.IconMarginRight = 0
+        Me.AccountGroupbtn.IconRightVisible = True
+        Me.AccountGroupbtn.IconRightZoom = 0R
+        Me.AccountGroupbtn.IconVisible = True
+        Me.AccountGroupbtn.IconZoom = 90.0R
+        Me.AccountGroupbtn.IsTab = False
+        Me.AccountGroupbtn.Location = New System.Drawing.Point(4, 102)
+        Me.AccountGroupbtn.Name = "AccountGroupbtn"
+        Me.AccountGroupbtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AccountGroupbtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.AccountGroupbtn.OnHoverTextColor = System.Drawing.Color.White
+        Me.AccountGroupbtn.selected = False
+        Me.AccountGroupbtn.Size = New System.Drawing.Size(151, 34)
+        Me.AccountGroupbtn.TabIndex = 139
+        Me.AccountGroupbtn.Text = "Account Group"
+        Me.AccountGroupbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.AccountGroupbtn.Textcolor = System.Drawing.Color.White
+        Me.AccountGroupbtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'Majorbtn
+        '
+        Me.Majorbtn.Active = False
+        Me.Majorbtn.Activecolor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Majorbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Majorbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Majorbtn.BorderRadius = 0
+        Me.Majorbtn.ButtonText = "Major Group"
+        Me.Majorbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Majorbtn.DisabledColor = System.Drawing.Color.Gray
+        Me.Majorbtn.Iconcolor = System.Drawing.Color.Transparent
+        Me.Majorbtn.Iconimage = Nothing
+        Me.Majorbtn.Iconimage_right = Nothing
+        Me.Majorbtn.Iconimage_right_Selected = Nothing
+        Me.Majorbtn.Iconimage_Selected = Nothing
+        Me.Majorbtn.IconMarginLeft = 0
+        Me.Majorbtn.IconMarginRight = 0
+        Me.Majorbtn.IconRightVisible = True
+        Me.Majorbtn.IconRightZoom = 0R
+        Me.Majorbtn.IconVisible = True
+        Me.Majorbtn.IconZoom = 90.0R
+        Me.Majorbtn.IsTab = False
+        Me.Majorbtn.Location = New System.Drawing.Point(1, 101)
+        Me.Majorbtn.Name = "Majorbtn"
+        Me.Majorbtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Majorbtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Majorbtn.OnHoverTextColor = System.Drawing.Color.White
+        Me.Majorbtn.selected = False
+        Me.Majorbtn.Size = New System.Drawing.Size(156, 34)
+        Me.Majorbtn.TabIndex = 140
+        Me.Majorbtn.Text = "Major Group"
+        Me.Majorbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Majorbtn.Textcolor = System.Drawing.Color.White
+        Me.Majorbtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'SubMajorbtn
+        '
+        Me.SubMajorbtn.Active = False
+        Me.SubMajorbtn.Activecolor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.SubMajorbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.SubMajorbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SubMajorbtn.BorderRadius = 0
+        Me.SubMajorbtn.ButtonText = "Sub Major Group"
+        Me.SubMajorbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SubMajorbtn.DisabledColor = System.Drawing.Color.Gray
+        Me.SubMajorbtn.Iconcolor = System.Drawing.Color.Transparent
+        Me.SubMajorbtn.Iconimage = Nothing
+        Me.SubMajorbtn.Iconimage_right = Nothing
+        Me.SubMajorbtn.Iconimage_right_Selected = Nothing
+        Me.SubMajorbtn.Iconimage_Selected = Nothing
+        Me.SubMajorbtn.IconMarginLeft = 0
+        Me.SubMajorbtn.IconMarginRight = 0
+        Me.SubMajorbtn.IconRightVisible = True
+        Me.SubMajorbtn.IconRightZoom = 0R
+        Me.SubMajorbtn.IconVisible = True
+        Me.SubMajorbtn.IconZoom = 90.0R
+        Me.SubMajorbtn.IsTab = False
+        Me.SubMajorbtn.Location = New System.Drawing.Point(2, 100)
+        Me.SubMajorbtn.Name = "SubMajorbtn"
+        Me.SubMajorbtn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.SubMajorbtn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.SubMajorbtn.OnHoverTextColor = System.Drawing.Color.White
+        Me.SubMajorbtn.selected = False
+        Me.SubMajorbtn.Size = New System.Drawing.Size(155, 34)
+        Me.SubMajorbtn.TabIndex = 141
+        Me.SubMajorbtn.Text = "Sub Major Group"
+        Me.SubMajorbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.SubMajorbtn.Textcolor = System.Drawing.Color.White
+        Me.SubMajorbtn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Verify
         '
@@ -411,7 +471,6 @@ Partial Class Verify
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -428,15 +487,14 @@ Partial Class Verify
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Accountlbl As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label8 As Label
     Friend WithEvents Grouplbl As Label
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Label10 As Label
     Friend WithEvents Sublbl As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label9 As Label
     Friend WithEvents Majorlbl As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents namelbl As Label
+    Friend WithEvents AccountGroupbtn As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents SubMajorbtn As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents Majorbtn As Bunifu.Framework.UI.BunifuFlatButton
 End Class

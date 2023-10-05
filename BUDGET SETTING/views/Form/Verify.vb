@@ -34,10 +34,19 @@ Public Class Verify
             Case "Officebtn"
                 Dim uc = New OfficeUC
                 ShowUserControl(uc)
+            Case "AccountGroupbtn"
+                Dim uc = New AccountGroup
+                ShowUserControl(uc)
+            Case "Majorbtn"
+                Dim uc = New MajorGroup
+                ShowUserControl(uc)
+            Case "SubMajorbtn"
+                Dim uc = New SubMajorGroup
+                ShowUserControl(uc)
         End Select
     End Sub
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Accountbtn.Click, Officebtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Accountbtn.Click, Officebtn.Click, AccountGroupbtn.Click, Majorbtn.Click, SubMajorbtn.Click
         SelectMenu(sender.Name)
     End Sub
     Private Sub Submain_Paint(sender As Object, e As PaintEventArgs) Handles Submain.Paint
@@ -92,4 +101,11 @@ Public Class Verify
         Return MyBase.ProcessCmdKey(msg, keyData)
     End Function
 
+    Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles AccountGroupbtn.Click
+
+    End Sub
+
+    Private Sub BunifuFlatButton2_Click(sender As Object, e As EventArgs) Handles Majorbtn.Click
+
+    End Sub
 End Class

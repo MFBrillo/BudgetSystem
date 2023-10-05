@@ -22,7 +22,6 @@ Public Class Office
         DataGridView1.Columns("ACCRONYM").Width = 120
     End Sub
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Addbtn.Click
-
         AddOffice.Saveupdate = 1
         AddOffice.title = "Add Office"
         OpaquePrompt.Show()
