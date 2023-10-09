@@ -14,7 +14,7 @@
     End Sub
     Private Sub AccountDescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
-        MsgBox(accountcode)
+        'MsgBox(accountcode)
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
         'AccountDT = gl_accounts
         Nametxt.Text = ChartofAccounts.accountdescription2

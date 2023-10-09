@@ -31,7 +31,6 @@
             Dim dt = sql.MySql_SelectString("categoryid", "gl_assets_category", , $"where category ='{CategoryIDtxt.Text}'")
             categoryid = dt.Rows(0).Item("categoryid").ToString
         Catch ex As Exception
-
         End Try
     End Sub
     Public Shared subcategoryid
@@ -107,7 +106,6 @@
             Try
                 AccountIDtxt.Text = Convert.ToInt32(subcategoryid + "01")
             Catch ex As Exception
-
             End Try
         End If
     End Sub
@@ -117,7 +115,6 @@
         CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
         VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
         SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
-
     End Sub
     Sub Custom_Accounts()
         Dim SqlLoad As New MySQLCore
@@ -135,7 +132,6 @@
         OpaquePrompt.Show()
         CustomYesNoPrompt("Save Entries", "Do you want to save changes")
         If YesNoPrompt.YesOption = True Then
-
             If Accountnametxt.Text = "" Then
                 CustomMsg("Save Record Failed", "Insert Correct Data.", "OK")
             Else
@@ -156,7 +152,6 @@
 
             End If
             Custom_Load()
-
             CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category",, $"where assetid ='{assetid}'")
             Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
             SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
@@ -165,7 +160,6 @@
             Form1.Activate()
             Custom_Load()
             lastindex()
-
         End If
     End Sub
     Sub lastindex()
@@ -254,8 +248,8 @@
                 Custom_Load()
 
                 accountdescription2 = filteredDataTable.Rows(0).Item("Account").ToString
-                accountcode2 = filteredDataTable.Rows(0).Item("code").
-                msgbox(accountcode2)
+                accountcode2 = filteredDataTable.Rows(0).Item("code").ToString
+                'msgbox(accountcode2)
             End If
         Catch ex As Exception
         End Try
@@ -288,10 +282,6 @@
         Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
         accountdescription2 = accountname.Rows(0).Item("Account").ToString
         accountcode2 = accountname.Rows(0).Item("code").ToString
-        MsgBox(accountcode2)
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
+        'MsgBox(accountcode2)
     End Sub
 End Class

@@ -9,6 +9,7 @@
     Public wap_assets_subcategory_temp As DataTable
     Public gl_offices As DataTable
     Public wap_offices_temp As DataTable
+    Public gl_config As DataTable
 
     Public vi_accounts As DataTable
     Public vi_accounts_temp As DataTable
@@ -23,7 +24,7 @@
     Public islogin
     Public username
     Public accesslevel
-
+    Public sectorguideid
     Public tbl_gl_accounts As String = "gl_accounts"
     Public isInitialized As Integer = 0
     Sub Main()
@@ -38,6 +39,9 @@
         'gl_assets_subcategory_temp = core.MySQL_Datatable("gl_assets_subcategory_temp")
         'gl_offices = core.MySQL_Datatable("gl_offices")
         'gl_offices_temp = core.MySQL_Datatable("gl_offices_temp")
+
+        'gl_config = core.MySQL_Datatable("gl_config")
+
 
         'vi_accounts = core.MySQL_Datatable("vi_accounts")
         'vi_accounts_temp = core.MySQL_Datatable("vi_accounts_temp")
@@ -70,5 +74,12 @@
             Form1.Statuslbl.Text = "Offline"
             Form1.Userlbl.Text = "No User"
         End If
+    End Sub
+
+    Sub sectorguide()
+        Dim sql As New MySQLCore
+        Dim dt = sql.MySql_SelectString("*", "gl_config")
+        sectorguideid = dt.Rows(0).Item("sectorguideid").ToString
+        'MsgBox(sectorguideid)
     End Sub
 End Module

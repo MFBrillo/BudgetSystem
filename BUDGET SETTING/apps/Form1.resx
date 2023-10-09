@@ -127,6 +127,16 @@
         ByLzQGQeiMwD0ZjnfXtMIzC3PzPmAY4zD0Tmgcg8EJkHkmX7Aj0EO/e5qqKxAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Programbtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAM8AAAAyCAYAAAD7jY+YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADISURBVHhe7dMxEcJAAABBFKAABdQUqajiBRN4wAiasBIm
+        X/8w5Oottrr6TufLsgHHmQci80BkHojMA5F5IBrzrNfn9rp/gD/tz4x5ZhH4zTwQmQci80BkHojMA5F5
+        IDIPROaByDwQmQci80BkHojMA5F5IDIPROaByDwQmQci80BkHojMA5F5IDIPROaByDwQmQci80BkHojM
+        A5F5IDIPROaByDwQmQci80BkHojGPI/bexqBuf2ZMQ9wnHkgMg9E5oHIPJAs2xcpQxf3uO4u3wAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="Verifybtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAM8AAAAyCAYAAAD7jY+YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

@@ -24,16 +24,17 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuController = New System.Windows.Forms.Panel()
-        Me.Timelbl = New System.Windows.Forms.Label()
         Me.Closebtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Programbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Verifybtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Officebtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Settingbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Chartbtn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Timelbl = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Datelbl = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -64,17 +65,6 @@ Partial Class Form1
         Me.MenuController.Size = New System.Drawing.Size(207, 850)
         Me.MenuController.TabIndex = 7
         '
-        'Timelbl
-        '
-        Me.Timelbl.AutoSize = True
-        Me.Timelbl.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Timelbl.ForeColor = System.Drawing.Color.White
-        Me.Timelbl.Location = New System.Drawing.Point(18, 277)
-        Me.Timelbl.Name = "Timelbl"
-        Me.Timelbl.Size = New System.Drawing.Size(92, 33)
-        Me.Timelbl.TabIndex = 94
-        Me.Timelbl.Text = "Label5"
-        '
         'Closebtn
         '
         Me.Closebtn.ActiveBorderThickness = 1
@@ -103,6 +93,7 @@ Partial Class Form1
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Programbtn)
         Me.Panel2.Controls.Add(Me.Verifybtn)
         Me.Panel2.Controls.Add(Me.Officebtn)
         Me.Panel2.Controls.Add(Me.Settingbtn)
@@ -110,8 +101,34 @@ Partial Class Form1
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 342)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(207, 204)
+        Me.Panel2.Size = New System.Drawing.Size(207, 257)
         Me.Panel2.TabIndex = 79
+        '
+        'Programbtn
+        '
+        Me.Programbtn.ActiveBorderThickness = 1
+        Me.Programbtn.ActiveCornerRadius = 5
+        Me.Programbtn.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Programbtn.ActiveForecolor = System.Drawing.Color.Black
+        Me.Programbtn.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.Programbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Programbtn.BackgroundImage = CType(resources.GetObject("Programbtn.BackgroundImage"), System.Drawing.Image)
+        Me.Programbtn.ButtonText = "Program"
+        Me.Programbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Programbtn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Programbtn.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Programbtn.ForeColor = System.Drawing.Color.Black
+        Me.Programbtn.IdleBorderThickness = 1
+        Me.Programbtn.IdleCornerRadius = 1
+        Me.Programbtn.IdleFillColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Programbtn.IdleForecolor = System.Drawing.Color.White
+        Me.Programbtn.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Programbtn.Location = New System.Drawing.Point(0, 200)
+        Me.Programbtn.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Programbtn.Name = "Programbtn"
+        Me.Programbtn.Size = New System.Drawing.Size(207, 50)
+        Me.Programbtn.TabIndex = 10
+        Me.Programbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Verifybtn
         '
@@ -235,6 +252,17 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(207, 342)
         Me.Panel1.TabIndex = 78
         '
+        'Timelbl
+        '
+        Me.Timelbl.AutoSize = True
+        Me.Timelbl.Font = New System.Drawing.Font("Tahoma", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Timelbl.ForeColor = System.Drawing.Color.White
+        Me.Timelbl.Location = New System.Drawing.Point(18, 277)
+        Me.Timelbl.Name = "Timelbl"
+        Me.Timelbl.Size = New System.Drawing.Size(92, 33)
+        Me.Timelbl.TabIndex = 94
+        Me.Timelbl.Text = "Label5"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -347,8 +375,8 @@ Partial Class Form1
         '
         Me.MainPanel.AllowUserToAddRows = False
         Me.MainPanel.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        Me.MainPanel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        Me.MainPanel.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -409,4 +437,5 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Timelbl As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Programbtn As Bunifu.Framework.UI.BunifuThinButton2
 End Class

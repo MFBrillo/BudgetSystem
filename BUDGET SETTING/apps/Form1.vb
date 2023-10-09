@@ -88,10 +88,13 @@
             Case "Officebtn"
                 Dim form = New Office
                 ShowForm(form)
+            Case "Programbtn"
+                Dim uc = New Programs
+                ShowUserControl(uc)
         End Select
     End Sub
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click, Programbtn.Click
         SelectMenu(sender.Name)
     End Sub
 
@@ -106,6 +109,7 @@
         PCNamelbl.Text = my_pcName
         InitializeTables.Main()
         InitializeTables.Is_Login()
+        InitializeTables.sectorguide()
         Datelbl.Text = formattedDate
         UpdateTime()
         Timer1.Start()
@@ -150,5 +154,9 @@
 
         ' Update the label text with the formatted time
         Timelbl.Text = formattedTime
+    End Sub
+
+    Private Sub Programbtn_Click(sender As Object, e As EventArgs) Handles Programbtn.Click
+
     End Sub
 End Class
