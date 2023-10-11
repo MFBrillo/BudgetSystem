@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Programs
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Programs
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -33,14 +33,12 @@ Partial Class Programs
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.sectoridtxt = New System.Windows.Forms.Label()
-        Me.officeidtxt = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Officetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Subsectoridcbb = New System.Windows.Forms.ComboBox()
         Me.Sectoridcbb = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Savebtn = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Programdescriptiontxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -49,11 +47,16 @@ Partial Class Programs
         Me.Programcodetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Subsectoridtxt = New System.Windows.Forms.Label()
+        Me.sectoridtxt = New System.Windows.Forms.Label()
+        Me.officeidtxt = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Progidtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Programidtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
+        Me.progidlbl = New System.Windows.Forms.Label()
+        Me.Programlbl = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -62,7 +65,6 @@ Partial Class Programs
         Me.Searchtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Subsectoridtxt = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,15 +102,12 @@ Partial Class Programs
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Panel5.Controls.Add(Me.Subsectoridtxt)
-        Me.Panel5.Controls.Add(Me.sectoridtxt)
-        Me.Panel5.Controls.Add(Me.officeidtxt)
         Me.Panel5.Controls.Add(Me.DataGridView2)
         Me.Panel5.Controls.Add(Me.Officetxt)
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.Subsectoridcbb)
         Me.Panel5.Controls.Add(Me.Sectoridcbb)
-        Me.Panel5.Controls.Add(Me.Button1)
+        Me.Panel5.Controls.Add(Me.Savebtn)
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.Programdescriptiontxt)
         Me.Panel5.Controls.Add(Me.Label8)
@@ -117,33 +116,20 @@ Partial Class Programs
         Me.Panel5.Controls.Add(Me.Programcodetxt)
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.Label4)
+        Me.Panel5.Controls.Add(Me.Label2)
+        Me.Panel5.Controls.Add(Me.Subsectoridtxt)
+        Me.Panel5.Controls.Add(Me.sectoridtxt)
+        Me.Panel5.Controls.Add(Me.officeidtxt)
         Me.Panel5.Controls.Add(Me.Label3)
         Me.Panel5.Controls.Add(Me.Progidtxt)
-        Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Controls.Add(Me.Label15)
         Me.Panel5.Controls.Add(Me.Programidtxt)
+        Me.Panel5.Controls.Add(Me.progidlbl)
+        Me.Panel5.Controls.Add(Me.Programlbl)
         Me.Panel5.Location = New System.Drawing.Point(18, 14)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(420, 770)
+        Me.Panel5.Size = New System.Drawing.Size(420, 793)
         Me.Panel5.TabIndex = 74
-        '
-        'sectoridtxt
-        '
-        Me.sectoridtxt.AutoSize = True
-        Me.sectoridtxt.Location = New System.Drawing.Point(40, 626)
-        Me.sectoridtxt.Name = "sectoridtxt"
-        Me.sectoridtxt.Size = New System.Drawing.Size(46, 13)
-        Me.sectoridtxt.TabIndex = 153
-        Me.sectoridtxt.Text = "Sectorid"
-        '
-        'officeidtxt
-        '
-        Me.officeidtxt.AutoSize = True
-        Me.officeidtxt.Location = New System.Drawing.Point(40, 602)
-        Me.officeidtxt.Name = "officeidtxt"
-        Me.officeidtxt.Size = New System.Drawing.Size(43, 13)
-        Me.officeidtxt.TabIndex = 152
-        Me.officeidtxt.Text = "Officeid"
         '
         'DataGridView2
         '
@@ -151,11 +137,8 @@ Partial Class Programs
         Me.DataGridView2.AllowUserToDeleteRows = False
         Me.DataGridView2.AllowUserToResizeColumns = False
         Me.DataGridView2.AllowUserToResizeRows = False
-        Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -179,11 +162,11 @@ Partial Class Programs
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.EnableHeadersVisualStyles = False
-        Me.DataGridView2.Location = New System.Drawing.Point(110, 74)
+        Me.DataGridView2.Location = New System.Drawing.Point(163, 62)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
@@ -192,12 +175,13 @@ Partial Class Programs
         Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.RowHeadersVisible = False
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(359, 351)
+        Me.DataGridView2.Size = New System.Drawing.Size(368, 351)
         Me.DataGridView2.TabIndex = 75
         Me.DataGridView2.Visible = False
         '
@@ -213,7 +197,7 @@ Partial Class Programs
         Me.Officetxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Officetxt.ForeColor = System.Drawing.Color.Gainsboro
         Me.Officetxt.isPassword = False
-        Me.Officetxt.Location = New System.Drawing.Point(33, 39)
+        Me.Officetxt.Location = New System.Drawing.Point(32, 39)
         Me.Officetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Officetxt.MaxLength = 32767
         Me.Officetxt.Name = "Officetxt"
@@ -226,7 +210,7 @@ Partial Class Programs
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(31, 19)
+        Me.Label6.Location = New System.Drawing.Point(30, 19)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 16)
         Me.Label6.TabIndex = 150
@@ -240,7 +224,7 @@ Partial Class Programs
         Me.Subsectoridcbb.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Subsectoridcbb.ForeColor = System.Drawing.Color.White
         Me.Subsectoridcbb.FormattingEnabled = True
-        Me.Subsectoridcbb.Location = New System.Drawing.Point(33, 297)
+        Me.Subsectoridcbb.Location = New System.Drawing.Point(34, 169)
         Me.Subsectoridcbb.Name = "Subsectoridcbb"
         Me.Subsectoridcbb.Size = New System.Drawing.Size(359, 22)
         Me.Subsectoridcbb.TabIndex = 148
@@ -253,33 +237,33 @@ Partial Class Programs
         Me.Sectoridcbb.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Sectoridcbb.ForeColor = System.Drawing.Color.White
         Me.Sectoridcbb.FormattingEnabled = True
-        Me.Sectoridcbb.Location = New System.Drawing.Point(34, 237)
+        Me.Sectoridcbb.Location = New System.Drawing.Point(35, 109)
         Me.Sectoridcbb.Name = "Sectoridcbb"
         Me.Sectoridcbb.Size = New System.Drawing.Size(359, 22)
         Me.Sectoridcbb.TabIndex = 117
         '
-        'Button1
+        'Savebtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(31, 525)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(357, 30)
-        Me.Button1.TabIndex = 147
-        Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Savebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Savebtn.ForeColor = System.Drawing.Color.White
+        Me.Savebtn.Location = New System.Drawing.Point(32, 397)
+        Me.Savebtn.Name = "Savebtn"
+        Me.Savebtn.Size = New System.Drawing.Size(357, 30)
+        Me.Savebtn.TabIndex = 147
+        Me.Savebtn.Text = "Save"
+        Me.Savebtn.UseVisualStyleBackColor = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(32, 457)
+        Me.Label7.Location = New System.Drawing.Point(33, 329)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(119, 16)
+        Me.Label7.Size = New System.Drawing.Size(124, 16)
         Me.Label7.TabIndex = 143
-        Me.Label7.Text = "programdescription"
+        Me.Label7.Text = "Program Description"
         '
         'Programdescriptiontxt
         '
@@ -290,11 +274,10 @@ Partial Class Programs
         Me.Programdescriptiontxt.BorderThickness = 1
         Me.Programdescriptiontxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Programdescriptiontxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Programdescriptiontxt.Enabled = False
         Me.Programdescriptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Programdescriptiontxt.ForeColor = System.Drawing.Color.Gainsboro
         Me.Programdescriptiontxt.isPassword = False
-        Me.Programdescriptiontxt.Location = New System.Drawing.Point(33, 479)
+        Me.Programdescriptiontxt.Location = New System.Drawing.Point(34, 351)
         Me.Programdescriptiontxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Programdescriptiontxt.MaxLength = 32767
         Me.Programdescriptiontxt.Name = "Programdescriptiontxt"
@@ -307,11 +290,11 @@ Partial Class Programs
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(30, 395)
+        Me.Label8.Location = New System.Drawing.Point(31, 267)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(89, 16)
+        Me.Label8.Size = New System.Drawing.Size(94, 16)
         Me.Label8.TabIndex = 141
-        Me.Label8.Text = "programname"
+        Me.Label8.Text = "Program Name"
         '
         'Programnametxt
         '
@@ -322,11 +305,10 @@ Partial Class Programs
         Me.Programnametxt.BorderThickness = 1
         Me.Programnametxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Programnametxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Programnametxt.Enabled = False
         Me.Programnametxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Programnametxt.ForeColor = System.Drawing.Color.Gainsboro
         Me.Programnametxt.isPassword = False
-        Me.Programnametxt.Location = New System.Drawing.Point(32, 417)
+        Me.Programnametxt.Location = New System.Drawing.Point(33, 289)
         Me.Programnametxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Programnametxt.MaxLength = 32767
         Me.Programnametxt.Name = "Programnametxt"
@@ -339,11 +321,11 @@ Partial Class Programs
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(29, 334)
+        Me.Label10.Location = New System.Drawing.Point(30, 206)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(84, 16)
         Me.Label10.TabIndex = 137
-        Me.Label10.Text = "programcode"
+        Me.Label10.Text = "Programcode"
         '
         'Programcodetxt
         '
@@ -354,11 +336,10 @@ Partial Class Programs
         Me.Programcodetxt.BorderThickness = 1
         Me.Programcodetxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Programcodetxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Programcodetxt.Enabled = False
         Me.Programcodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Programcodetxt.ForeColor = System.Drawing.Color.Gainsboro
         Me.Programcodetxt.isPassword = False
-        Me.Programcodetxt.Location = New System.Drawing.Point(34, 354)
+        Me.Programcodetxt.Location = New System.Drawing.Point(35, 226)
         Me.Programcodetxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Programcodetxt.MaxLength = 32767
         Me.Programcodetxt.Name = "Programcodetxt"
@@ -371,29 +352,67 @@ Partial Class Programs
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(31, 270)
+        Me.Label5.Location = New System.Drawing.Point(32, 142)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(73, 16)
+        Me.Label5.Size = New System.Drawing.Size(65, 16)
         Me.Label5.TabIndex = 131
-        Me.Label5.Text = "subsectorid"
+        Me.Label5.Text = "Subsector"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(33, 209)
+        Me.Label4.Location = New System.Drawing.Point(34, 87)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 16)
+        Me.Label4.Size = New System.Drawing.Size(45, 16)
         Me.Label4.TabIndex = 129
-        Me.Label4.Text = "sectorid"
+        Me.Label4.Text = "Sector"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(189, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 19)
+        Me.Label2.TabIndex = 126
+        Me.Label2.Text = "ADD"
+        '
+        'Subsectoridtxt
+        '
+        Me.Subsectoridtxt.AutoSize = True
+        Me.Subsectoridtxt.Location = New System.Drawing.Point(134, 570)
+        Me.Subsectoridtxt.Name = "Subsectoridtxt"
+        Me.Subsectoridtxt.Size = New System.Drawing.Size(63, 13)
+        Me.Subsectoridtxt.TabIndex = 154
+        Me.Subsectoridtxt.Text = "Subsectorid"
+        '
+        'sectoridtxt
+        '
+        Me.sectoridtxt.AutoSize = True
+        Me.sectoridtxt.Location = New System.Drawing.Point(82, 570)
+        Me.sectoridtxt.Name = "sectoridtxt"
+        Me.sectoridtxt.Size = New System.Drawing.Size(46, 13)
+        Me.sectoridtxt.TabIndex = 153
+        Me.sectoridtxt.Text = "Sectorid"
+        '
+        'officeidtxt
+        '
+        Me.officeidtxt.AutoSize = True
+        Me.officeidtxt.Location = New System.Drawing.Point(33, 570)
+        Me.officeidtxt.Name = "officeidtxt"
+        Me.officeidtxt.Size = New System.Drawing.Size(43, 13)
+        Me.officeidtxt.TabIndex = 152
+        Me.officeidtxt.Text = "Officeid"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label3.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label3.Location = New System.Drawing.Point(32, 149)
+        Me.Label3.Location = New System.Drawing.Point(33, 503)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(44, 16)
         Me.Label3.TabIndex = 127
@@ -412,7 +431,7 @@ Partial Class Programs
         Me.Progidtxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Progidtxt.ForeColor = System.Drawing.Color.Gainsboro
         Me.Progidtxt.isPassword = False
-        Me.Progidtxt.Location = New System.Drawing.Point(33, 172)
+        Me.Progidtxt.Location = New System.Drawing.Point(34, 526)
         Me.Progidtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Progidtxt.MaxLength = 32767
         Me.Progidtxt.Name = "Progidtxt"
@@ -420,23 +439,12 @@ Partial Class Programs
         Me.Progidtxt.TabIndex = 128
         Me.Progidtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(189, 15)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 19)
-        Me.Label2.TabIndex = 126
-        Me.Label2.Text = "ADD"
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Label15.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label15.Location = New System.Drawing.Point(32, 79)
+        Me.Label15.Location = New System.Drawing.Point(33, 448)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(67, 16)
         Me.Label15.TabIndex = 65
@@ -455,13 +463,31 @@ Partial Class Programs
         Me.Programidtxt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Programidtxt.ForeColor = System.Drawing.Color.Gainsboro
         Me.Programidtxt.isPassword = False
-        Me.Programidtxt.Location = New System.Drawing.Point(33, 103)
+        Me.Programidtxt.Location = New System.Drawing.Point(34, 472)
         Me.Programidtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Programidtxt.MaxLength = 32767
         Me.Programidtxt.Name = "Programidtxt"
         Me.Programidtxt.Size = New System.Drawing.Size(361, 28)
         Me.Programidtxt.TabIndex = 68
         Me.Programidtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'progidlbl
+        '
+        Me.progidlbl.AutoSize = True
+        Me.progidlbl.Location = New System.Drawing.Point(212, 570)
+        Me.progidlbl.Name = "progidlbl"
+        Me.progidlbl.Size = New System.Drawing.Size(37, 13)
+        Me.progidlbl.TabIndex = 156
+        Me.progidlbl.Text = "Progid"
+        '
+        'Programlbl
+        '
+        Me.Programlbl.AutoSize = True
+        Me.Programlbl.Location = New System.Drawing.Point(212, 532)
+        Me.Programlbl.Name = "Programlbl"
+        Me.Programlbl.Size = New System.Drawing.Size(54, 13)
+        Me.Programlbl.TabIndex = 155
+        Me.Programlbl.Text = "Programid"
         '
         'Panel3
         '
@@ -614,15 +640,6 @@ Partial Class Programs
         Me.Label14.TabIndex = 43
         Me.Label14.Text = "Account ID"
         '
-        'Subsectoridtxt
-        '
-        Me.Subsectoridtxt.AutoSize = True
-        Me.Subsectoridtxt.Location = New System.Drawing.Point(40, 652)
-        Me.Subsectoridtxt.Name = "Subsectoridtxt"
-        Me.Subsectoridtxt.Size = New System.Drawing.Size(63, 13)
-        Me.Subsectoridtxt.TabIndex = 154
-        Me.Subsectoridtxt.Text = "Subsectorid"
-        '
         'Programs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -670,7 +687,7 @@ Partial Class Programs
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Progidtxt As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Savebtn As Button
     Friend WithEvents Descriptionbtn As Button
     Friend WithEvents Subsectoridcbb As ComboBox
     Friend WithEvents Sectoridcbb As ComboBox
@@ -680,4 +697,6 @@ Partial Class Programs
     Friend WithEvents officeidtxt As Label
     Friend WithEvents sectoridtxt As Label
     Friend WithEvents Subsectoridtxt As Label
+    Friend WithEvents progidlbl As Label
+    Friend WithEvents Programlbl As Label
 End Class

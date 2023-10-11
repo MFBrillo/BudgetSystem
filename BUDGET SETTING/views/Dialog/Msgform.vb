@@ -3,10 +3,6 @@
         TitleText.Visible = False
         Me.Dispose()
     End Sub
-
-    Private Sub BunifuGradientPanel2_Paint(sender As Object, e As PaintEventArgs) Handles BunifuGradientPanel2.Paint
-
-    End Sub
     Private Sub Msgform_Load(sender As Object, e As EventArgs) Handles Me.Load
         AppName.Text = My.MySettings.Default.AppName
         CloseNow.Focus()
@@ -26,11 +22,5 @@
             Timer1.Enabled = False
             Me.Dispose()
         End If
-
-
-    End Sub
-
-    Private Sub MsgText_Click(sender As Object, e As EventArgs) Handles MsgText.Click
-
     End Sub
 End Class
