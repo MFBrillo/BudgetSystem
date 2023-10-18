@@ -6,7 +6,6 @@
     Dim accountid
     Dim accountcode = ChartofAccounts.accountcode2
     Public findaccountDT As DataTable
-
     Private Sub Cancelbtn_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
         OpaquePrompt.Close()
         Me.Close()

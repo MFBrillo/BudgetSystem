@@ -32,6 +32,7 @@ Partial Class Programs
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Officetxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -60,18 +61,30 @@ Partial Class Programs
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Descriptionbtn = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Searchtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.AccountIDtxt = New Bunifu.Framework.UI.BunifuMetroTextbox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.BunifuMetroTextbox2 = New Bunifu.Framework.UI.BunifuMetroTextbox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ActionCbb = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -90,12 +103,25 @@ Partial Class Programs
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Panel5)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Controls.Add(Me.Panel6)
+        Me.Panel2.Controls.Add(Me.Panel4)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 50)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(457, 810)
+        Me.Panel2.Size = New System.Drawing.Size(1319, 810)
         Me.Panel2.TabIndex = 75
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.Panel5)
+        Me.Panel6.Controls.Add(Me.Panel3)
+        Me.Panel6.Controls.Add(Me.Panel7)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(0, 76)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1319, 734)
+        Me.Panel6.TabIndex = 76
         '
         'Panel5
         '
@@ -126,9 +152,9 @@ Partial Class Programs
         Me.Panel5.Controls.Add(Me.Programidtxt)
         Me.Panel5.Controls.Add(Me.progidlbl)
         Me.Panel5.Controls.Add(Me.Programlbl)
-        Me.Panel5.Location = New System.Drawing.Point(18, 14)
+        Me.Panel5.Location = New System.Drawing.Point(16, 17)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(420, 793)
+        Me.Panel5.Size = New System.Drawing.Size(420, 694)
         Me.Panel5.TabIndex = 74
         '
         'DataGridView2
@@ -162,7 +188,7 @@ Partial Class Programs
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.EnableHeadersVisualStyles = False
-        Me.DataGridView2.Location = New System.Drawing.Point(163, 62)
+        Me.DataGridView2.Location = New System.Drawing.Point(33, 73)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -491,15 +517,17 @@ Partial Class Programs
         '
         'Panel3
         '
+        Me.Panel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.Panel1)
         Me.Panel3.Controls.Add(Me.AccountIDtxt)
         Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(457, 50)
+        Me.Panel3.Location = New System.Drawing.Point(449, 8)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(862, 810)
+        Me.Panel3.Size = New System.Drawing.Size(865, 713)
         Me.Panel3.TabIndex = 76
         '
         'DataGridView1
@@ -535,7 +563,7 @@ Partial Class Programs
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.Location = New System.Drawing.Point(11, 66)
+        Me.DataGridView1.Location = New System.Drawing.Point(11, 82)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -553,40 +581,91 @@ Partial Class Programs
         DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(840, 744)
+        Me.DataGridView1.Size = New System.Drawing.Size(843, 621)
         Me.DataGridView1.TabIndex = 74
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.ComboBox2)
+        Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.Descriptionbtn)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Searchtxt)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(862, 46)
+        Me.Panel1.Size = New System.Drawing.Size(865, 68)
         Me.Panel1.TabIndex = 73
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(476, 9)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(74, 16)
+        Me.Label16.TabIndex = 131
+        Me.Label16.Text = "Sub Sector"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(244, 9)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(47, 16)
+        Me.Label13.TabIndex = 130
+        Me.Label13.Text = "Sector"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(479, 32)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(217, 22)
+        Me.ComboBox2.TabIndex = 129
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(247, 32)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(217, 22)
+        Me.ComboBox1.TabIndex = 128
         '
         'Descriptionbtn
         '
         Me.Descriptionbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
         Me.Descriptionbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Descriptionbtn.ForeColor = System.Drawing.Color.White
-        Me.Descriptionbtn.Location = New System.Drawing.Point(524, 10)
+        Me.Descriptionbtn.Location = New System.Drawing.Point(729, 24)
         Me.Descriptionbtn.Name = "Descriptionbtn"
         Me.Descriptionbtn.Size = New System.Drawing.Size(113, 30)
         Me.Descriptionbtn.TabIndex = 126
         Me.Descriptionbtn.Text = "Add Description"
         Me.Descriptionbtn.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'Label12
         '
-        Me.PictureBox1.Image = Global.Moises.My.Resources.Resources.search__1_
-        Me.PictureBox1.Location = New System.Drawing.Point(469, 10)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 30)
-        Me.PictureBox1.TabIndex = 125
-        Me.PictureBox1.TabStop = False
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(8, 8)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(100, 16)
+        Me.Label12.TabIndex = 127
+        Me.Label12.Text = "Program Name"
         '
         'Searchtxt
         '
@@ -600,11 +679,11 @@ Partial Class Programs
         Me.Searchtxt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Searchtxt.ForeColor = System.Drawing.Color.White
         Me.Searchtxt.isPassword = False
-        Me.Searchtxt.Location = New System.Drawing.Point(11, 10)
+        Me.Searchtxt.Location = New System.Drawing.Point(11, 29)
         Me.Searchtxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Searchtxt.MaxLength = 32767
         Me.Searchtxt.Name = "Searchtxt"
-        Me.Searchtxt.Size = New System.Drawing.Size(451, 30)
+        Me.Searchtxt.Size = New System.Drawing.Size(225, 30)
         Me.Searchtxt.TabIndex = 121
         Me.Searchtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
@@ -640,18 +719,96 @@ Partial Class Programs
         Me.Label14.TabIndex = 43
         Me.Label14.Text = "Account ID"
         '
+        'Panel7
+        '
+        Me.Panel7.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Panel7.Controls.Add(Me.BunifuMetroTextbox2)
+        Me.Panel7.Controls.Add(Me.Label11)
+        Me.Panel7.Location = New System.Drawing.Point(7, 8)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(437, 713)
+        Me.Panel7.TabIndex = 77
+        '
+        'BunifuMetroTextbox2
+        '
+        Me.BunifuMetroTextbox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.BunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.White
+        Me.BunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.BunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.White
+        Me.BunifuMetroTextbox2.BorderThickness = 1
+        Me.BunifuMetroTextbox2.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.BunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuMetroTextbox2.Enabled = False
+        Me.BunifuMetroTextbox2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuMetroTextbox2.ForeColor = System.Drawing.Color.Gainsboro
+        Me.BunifuMetroTextbox2.isPassword = False
+        Me.BunifuMetroTextbox2.Location = New System.Drawing.Point(-410, 342)
+        Me.BunifuMetroTextbox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.BunifuMetroTextbox2.MaxLength = 32767
+        Me.BunifuMetroTextbox2.Name = "BunifuMetroTextbox2"
+        Me.BunifuMetroTextbox2.Size = New System.Drawing.Size(360, 28)
+        Me.BunifuMetroTextbox2.TabIndex = 57
+        Me.BunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(-412, 319)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(69, 16)
+        Me.Label11.TabIndex = 43
+        Me.Label11.Text = "Account ID"
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label9)
+        Me.Panel4.Controls.Add(Me.ActionCbb)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1319, 76)
+        Me.Panel4.TabIndex = 75
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(24, 10)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(95, 16)
+        Me.Label9.TabIndex = 119
+        Me.Label9.Text = "Choose Action"
+        '
+        'ActionCbb
+        '
+        Me.ActionCbb.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.ActionCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ActionCbb.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ActionCbb.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ActionCbb.ForeColor = System.Drawing.Color.White
+        Me.ActionCbb.FormattingEnabled = True
+        Me.ActionCbb.Location = New System.Drawing.Point(23, 33)
+        Me.ActionCbb.Name = "ActionCbb"
+        Me.ActionCbb.Size = New System.Drawing.Size(359, 27)
+        Me.ActionCbb.TabIndex = 118
+        '
         'Programs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label1)
         Me.ForeColor = System.Drawing.Color.Coral
         Me.Name = "Programs"
         Me.Size = New System.Drawing.Size(1319, 860)
         Me.Panel2.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -659,7 +816,11 @@ Partial Class Programs
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -673,7 +834,6 @@ Partial Class Programs
     Friend WithEvents Panel3 As Panel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Searchtxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents AccountIDtxt As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label14 As Label
@@ -699,4 +859,16 @@ Partial Class Programs
     Friend WithEvents Subsectoridtxt As Label
     Friend WithEvents progidlbl As Label
     Friend WithEvents Programlbl As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents ActionCbb As ComboBox
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents BunifuMetroTextbox2 As Bunifu.Framework.UI.BunifuMetroTextbox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

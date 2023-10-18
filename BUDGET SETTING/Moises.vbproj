@@ -137,6 +137,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="views\Form\SubForm\AddProgram.Designer.vb">
+      <DependentUpon>AddProgram.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\SubForm\AddProgram.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="views\UCForm\Programs.Designer.vb">
       <DependentUpon>Programs.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="views\Form\SubForm\AddProgram.resx">
+      <DependentUpon>AddProgram.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\Programs.resx">
       <DependentUpon>Programs.vb</DependentUpon>
     </EmbeddedResource>
