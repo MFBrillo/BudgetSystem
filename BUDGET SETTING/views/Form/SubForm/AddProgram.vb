@@ -13,7 +13,7 @@
         Dim SqlLoad As New MySQLCore
         'MsgBox(accountcode)
         ProgramDT = SqlLoad.MySql_SelectString("*", "gl_spcprogramslists")
-
+        VIOfficeDT = SqlLoad.MySql_SelectString("*", "vi_moises_offices")
         If Programs.progid IsNot Nothing Then
             sectorlbl.Text = sectorid
             subsectoridlbl.Text = subsectorid
@@ -31,7 +31,6 @@
             Form1.Activate()
         End If
     End Sub
-
     Private Sub Cancelbtn_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
         OpaquePrompt.Close()
         Me.Close()
@@ -43,7 +42,6 @@
         Dim cols() = {"ID", "TYPE", "BUDGET CODE", "ACCT. CODE", "DESCRIPTION", "ACCRONYM"}
         Datagrid_HideColumn(DataGridView2, cols)
     End Sub
-
     Private Sub Nametxt_OnValueChanged(sender As Object, e As EventArgs) Handles Officenametxt.OnValueChanged
         DataGridView2.Visible = True
         Custom_Load2()
@@ -57,7 +55,7 @@
             })
                 Dim filteredDataTable1 As DataTable = Linq_Query(VIOfficeDT, conditions)
                 DataGridView2.DataSource = filteredDataTable1
-                Officenametxt.Text = filteredDataTable1.Rows(0).Item("ID").ToString
+                'Officenametxt.Text = filteredDataTable1.Rows(0).Item("ID").ToString
             End If
         Catch ex As Exception
             'MsgBox("Data Not Find",, "Input Error")
@@ -66,19 +64,9 @@
         End Try
         Descriptiontxt.Text = Programnametxt.Text + " - " + Officenametxt.Text
     End Sub
-
     Private Sub Officenametxt_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles Officenametxt.MouseDoubleClick
         'Descriptiontxt.Text = Programnametxt.Text + "-" + Officenametxt.Text
     End Sub
-
-    Private Sub Programnametxt_OnValueChanged(sender As Object, e As EventArgs) Handles Programnametxt.OnValueChanged
-
-    End Sub
-
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
-
-    End Sub
-
     Private Sub DataGridView2_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
         Dim searchrow As String
         searchrow = DataGridView2.Rows(e.RowIndex).Cells("NAME").Value.ToString()

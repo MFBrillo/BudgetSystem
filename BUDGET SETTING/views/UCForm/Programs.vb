@@ -234,6 +234,10 @@
         'accountcode2 = accountname.Rows(0).Item("code").ToString
         'MsgBox(accountcode2)
     End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
     'Public AddOffice As Boolean = 0
     'Sub SelectAction(ByVal sender As String)
     '    Select Case sender     'Get BunifuFlatButton Text Property
