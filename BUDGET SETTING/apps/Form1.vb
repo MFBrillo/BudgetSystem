@@ -81,24 +81,21 @@
             Case "Chartbtn"
                 Dim uc = New ChartofAccounts
                 ShowUserControl(uc)
-
             Case "Settingbtn"
                 Dim uc = New ChartAccountSettingUC
                 ShowUserControl(uc)
             Case "Officebtn"
                 Dim form = New Office
                 ShowForm(form)
-            Case "Programbtn"
-                Dim uc = New Programs
-                ShowUserControl(uc)
+
         End Select
     End Sub
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click, Programbtn.Click
+    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
 
-    Private Sub Verifybtn_Click(sender As Object, e As EventArgs) Handles Verifybtn.Click
+    Private Sub Verifybtn_Click(sender As Object, e As EventArgs)
         'Me.Enabled = False
         'OpaquePrompt.Show()
         Verify.ShowDialog()
@@ -108,11 +105,15 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PCNamelbl.Text = my_pcName
         InitializeTables.Main()
-        InitializeTables.Is_Login()
+        'InitializeTables.Is_Login()
         InitializeTables.sectorguide()
         Datelbl.Text = formattedDate
         UpdateTime()
         Timer1.Start()
+
+        Dim uc = New ChartofAccounts
+        ShowUserControl(uc)
+
     End Sub
     Private Sub Statuslbl_TextChanged(sender As Object, e As EventArgs) Handles Statuslbl.TextChanged
         If Statuslbl.Text = "Online" Then
@@ -128,12 +129,12 @@
 
     End Sub
 
-    Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainPanel.CellContentClick
+    Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 
 
-    Private Sub BunifuThinButton21_Click_1(sender As Object, e As EventArgs) Handles Closebtn.Click
+    Private Sub BunifuThinButton21_Click_1(sender As Object, e As EventArgs)
         Me.Dispose()
     End Sub
 
@@ -156,7 +157,9 @@
         Timelbl.Text = formattedTime
     End Sub
 
-    Private Sub Programbtn_Click(sender As Object, e As EventArgs) Handles Programbtn.Click
 
+
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Closebtn.Click
+        Me.Dispose()
     End Sub
 End Class

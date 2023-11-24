@@ -92,6 +92,28 @@
 
     End Sub
 
+    Friend Sub Add_GridImageButton(ByVal grid As DataGridView, ByVal header As String, ByVal Imgbtn As Image, ByVal ImgName As String, ByVal displayedIndex As Integer, Optional Imgwidth As Integer = 80)
+        Dim imgColumn As New DataGridViewImageColumn With {
+        .HeaderText = header,
+        .Image = Imgbtn,
+        .Name = ImgName,
+        .Width = Imgwidth
+    }
+
+        If grid.Columns.Contains(ImgName) = False Then
+            grid.Columns.Add(imgColumn)
+        End If
+
+        Try
+            grid.Columns(ImgName).DisplayIndex = displayedIndex
+            AddHandler grid.RowPostPaint, Sub(s, e)
+                                              imgColumn.Width = Imgwidth
+                                          End Sub
+        Catch ex As Exception
+            CustomMsg("Error found!", Err.Description)
+        End Try
+    End Sub
+
     Friend Sub Add_GridText(ByVal DataGridViewName As DataGridView, ByVal ColumnControl As List(Of DataGridViewColumn))
         For i = 0 To ColumnControl.Count - 1
             DataGridViewName.Columns.Add(ColumnControl(i))

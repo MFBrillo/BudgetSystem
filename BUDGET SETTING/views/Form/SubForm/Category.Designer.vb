@@ -40,7 +40,7 @@ Partial Class Category
         '
         'AssetIDtxt
         '
-        Me.AssetIDtxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AssetIDtxt.BackColor = System.Drawing.Color.White
         Me.AssetIDtxt.BorderColorFocused = System.Drawing.Color.White
         Me.AssetIDtxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.AssetIDtxt.BorderColorMouseHover = System.Drawing.Color.White
@@ -49,7 +49,7 @@ Partial Class Category
         Me.AssetIDtxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.AssetIDtxt.Enabled = False
         Me.AssetIDtxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.AssetIDtxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.AssetIDtxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.AssetIDtxt.isPassword = False
         Me.AssetIDtxt.Location = New System.Drawing.Point(218, 76)
         Me.AssetIDtxt.Margin = New System.Windows.Forms.Padding(4)
@@ -85,7 +85,7 @@ Partial Class Category
         '
         'Categorycodetxt
         '
-        Me.Categorycodetxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Categorycodetxt.BackColor = System.Drawing.Color.White
         Me.Categorycodetxt.BorderColorFocused = System.Drawing.Color.White
         Me.Categorycodetxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Categorycodetxt.BorderColorMouseHover = System.Drawing.Color.White
@@ -94,7 +94,7 @@ Partial Class Category
         Me.Categorycodetxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Categorycodetxt.Enabled = False
         Me.Categorycodetxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Categorycodetxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Categorycodetxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Categorycodetxt.isPassword = False
         Me.Categorycodetxt.Location = New System.Drawing.Point(218, 137)
         Me.Categorycodetxt.Margin = New System.Windows.Forms.Padding(4)
@@ -128,7 +128,7 @@ Partial Class Category
         '
         'Categorynametxt
         '
-        Me.Categorynametxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Categorynametxt.BackColor = System.Drawing.Color.White
         Me.Categorynametxt.BorderColorFocused = System.Drawing.Color.White
         Me.Categorynametxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Categorynametxt.BorderColorMouseHover = System.Drawing.Color.White
@@ -136,7 +136,7 @@ Partial Class Category
         Me.Categorynametxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Categorynametxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Categorynametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Categorynametxt.ForeColor = System.Drawing.Color.White
+        Me.Categorynametxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Categorynametxt.isPassword = False
         Me.Categorynametxt.Location = New System.Drawing.Point(218, 209)
         Me.Categorynametxt.Margin = New System.Windows.Forms.Padding(4)
@@ -193,7 +193,7 @@ Partial Class Category
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
@@ -214,10 +214,10 @@ Partial Class Category
         '
         'CategoryDestxt
         '
-        Me.CategoryDestxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.CategoryDestxt.BackColor = System.Drawing.Color.White
         Me.CategoryDestxt.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CategoryDestxt.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CategoryDestxt.ForeColor = System.Drawing.Color.White
+        Me.CategoryDestxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.CategoryDestxt.Location = New System.Drawing.Point(218, 277)
         Me.CategoryDestxt.Multiline = True
         Me.CategoryDestxt.Name = "CategoryDestxt"
@@ -228,7 +228,7 @@ Partial Class Category
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(107, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(580, 501)
         Me.ControlBox = False
         Me.Controls.Add(Me.CategoryDestxt)

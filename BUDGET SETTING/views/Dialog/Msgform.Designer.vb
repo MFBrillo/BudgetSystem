@@ -77,10 +77,10 @@ Partial Class Msgform
         Me.BunifuGradientPanel2.Controls.Add(Me.CloseNow)
         Me.BunifuGradientPanel2.Controls.Add(Me.MsgText)
         Me.BunifuGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.BunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.Teal
-        Me.BunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.BunifuGradientPanel2.GradientTopRight = System.Drawing.Color.Teal
+        Me.BunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.BunifuGradientPanel2.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.BunifuGradientPanel2.Location = New System.Drawing.Point(206, 0)
         Me.BunifuGradientPanel2.Name = "BunifuGradientPanel2"
         Me.BunifuGradientPanel2.Quality = 10

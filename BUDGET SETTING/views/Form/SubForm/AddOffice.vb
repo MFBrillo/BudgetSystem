@@ -2,6 +2,7 @@
 Public Class AddOffice
     Public OfficeTypeDT As DataTable
     Public OfficeDT As DataTable
+    Public OfficeLastDT As DataTable
     Public Saveupdate As Integer
     Public officeid
     Public title As String
@@ -14,18 +15,18 @@ Public Class AddOffice
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         Dim SqlLoad As New MySQLCore
         If Saveupdate = 1 Then
-            'OfficeDT = SqlLoad.MySql_SelectString("officeid", "gl_offices", Nothing, Nothing, "order by id desc", "limit 1")
-            'Dim lastofficeid As Integer = Convert.ToInt32(OfficeDT.Rows(0)("officeid"))
-            'Dim newofficeid As Integer
-            'newofficeid = lastofficeid + 1
             OpaquePrompt.Show()
             CustomYesNoPrompt("Save Entries", "Do you want to save changes")
             If YesNoPrompt.YesOption = True Then
                 Try
                     Dim mySql As New MySQLCore
+                    OfficeLastDT = mySql.MySql_SelectString("id", "gl_offices", Nothing, Nothing, "order by id desc", "limit 1")
+                    Dim lastofficeid As Integer = Convert.ToInt32(OfficeLastDT.Rows(0)("id"))
+                    Dim newofficeid As Integer
+                    newofficeid = lastofficeid + 1
                     Dim columnValues As New Dictionary(Of String, String)
                     'columnValues.Add("id", newofficeid)
-                    'columnValues.Add("officeid", newofficeid)
+                    columnValues.Add("officeid", newofficeid)
                     columnValues.Add("officetypeid", officetypeid)
                     columnValues.Add("officecode_pbo", $"'{PBOCodetxt.Text}'")
                     columnValues.Add("mandatory_aipcode", $"'{AIPCodetxt.Text}'")
@@ -33,7 +34,7 @@ Public Class AddOffice
                     columnValues.Add("officeaccronym", $"'{Accronymtxt.Text}'")
                     columnValues.Add("officename", $"'{Nametxt.Text}'")
                     columnValues.Add("officedescription", $"'{Descriptiontxt.Text}'")
-                    mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, Nothing, 1)
+                    MySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
@@ -41,16 +42,12 @@ Public Class AddOffice
             OpaquePrompt.Close()
             Form1.Activate()
         ElseIf Saveupdate = 2 Then
-            'OfficeDT = SqlLoad.MySql_SelectString("officeid", "gl_offices",, "where")
             OpaquePrompt.Show()
             CustomYesNoPrompt("Update Data", "Do you want to save changes")
-
             If YesNoPrompt.YesOption = True Then
-
                 Try
                     Dim mySql As New MySQLCore
                     Dim columnValues As New Dictionary(Of String, String)
-
                     columnValues.Add("id", officeid)
                     columnValues.Add("officeid", officeid)
                     columnValues.Add("officetypeid", officetypeid)
@@ -60,8 +57,7 @@ Public Class AddOffice
                     columnValues.Add("officeaccronym", $"'{Accronymtxt.Text}'")
                     columnValues.Add("officename", $"'{Nametxt.Text}'")
                     columnValues.Add("officedescription", $"'{Descriptiontxt.Text}'")
-                    columnValues.Add("update1", update1)
-                    mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
                     'mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, $"id={officeid}", 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
@@ -75,7 +71,7 @@ Public Class AddOffice
         Dim SqlLoad As New MySQLCore
         OfficeTypeDT = SqlLoad.MySql_SelectString("*", "vi_moises_office_type")
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
-        Label1.Text = officeid
+
     End Sub
     Public Shared assetidOfficeTypeid
     Public numbertoletter

@@ -3,16 +3,16 @@ Public Class Verify
 
 
     Public Sub ShowForm(ByVal form As Form)                      'Clear panel and add form projects/modules
-        Submain.Controls.Clear()
+        Programlbl.Controls.Clear()
         form.TopLevel = False
-        Submain.Controls.Add(form)
-        form.Size = Submain.Size
+        Programlbl.Controls.Add(form)
+        form.Size = Programlbl.Size
         form.Show()
     End Sub
     Public Sub ShowUserControl(ByVal uc As UserControl)                      'Clear panel and add form projects/modules
-        Submain.Controls.Clear()
-        Submain.Controls.Add(uc)
-        uc.Size = Submain.Size
+        Programlbl.Controls.Clear()
+        Programlbl.Controls.Add(uc)
+        uc.Size = Programlbl.Size
         uc.Show()
     End Sub
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
@@ -26,30 +26,9 @@ Public Class Verify
 #Region "Sub SelectMenu"
     Public form As Form
     Public Shared budgetAppropriation As Integer = 0
-    Sub SelectMenu(ByVal sender As String)
-        Select Case sender     'Get BunifuFlatButton Text Property
-            Case "Accountbtn"
-                Dim uc = New AccountUC
-                ShowUserControl(uc)
-            Case "Officebtn"
-                Dim uc = New OfficeUC
-                ShowUserControl(uc)
-            Case "AccountGroupbtn"
-                Dim uc = New AccountGroup
-                ShowUserControl(uc)
-            Case "Majorbtn"
-                Dim uc = New MajorGroup
-                ShowUserControl(uc)
-            Case "SubMajorbtn"
-                Dim uc = New SubMajorGroup
-                ShowUserControl(uc)
-        End Select
-    End Sub
+
 #End Region
-    Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Accountbtn.Click, Officebtn.Click, AccountGroupbtn.Click, Majorbtn.Click, SubMajorbtn.Click
-        SelectMenu(sender.Name)
-    End Sub
-    Private Sub Submain_Paint(sender As Object, e As PaintEventArgs) Handles Submain.Paint
+    Private Sub Submain_Paint(sender As Object, e As PaintEventArgs) Handles Programlbl.Paint
     End Sub
     Private Sub Verify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dashboard()
@@ -101,11 +80,4 @@ Public Class Verify
         Return MyBase.ProcessCmdKey(msg, keyData)
     End Function
 
-    Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles AccountGroupbtn.Click
-
-    End Sub
-
-    Private Sub BunifuFlatButton2_Click(sender As Object, e As EventArgs) Handles Majorbtn.Click
-
-    End Sub
 End Class

@@ -1,4 +1,5 @@
-﻿Public Class ChartofAccounts
+﻿Imports System.Windows.Forms
+Public Class ChartofAccounts
     Public AccountDT As DataTable
     Public VIAccountDT As DataTable
     Public AssetsDT As DataTable
@@ -7,12 +8,42 @@
     Public Shared assetCBB As ComboBox
     Public Shared categoryCBB As ComboBox
     Public Shared subcategoryCBB As ComboBox
+
+    Private WithEvents dgvContextMenu As New ContextMenuStrip()
     Private Sub RegularAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SqlLoad As New MySQLCore
         Custom_Load()
+        Custom_LoadAccounts()
         Custom_ComboBoxDatasource(AssetIDTxt, AssetsDT, "asset", "asset")
-        'Custom_Accounts()
-        DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
+        ' DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
+
+    End Sub
+    Sub Custom_Load()
+        Dim SqlLoad As New MySQLCore
+        AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
+        CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
+        'VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
+        SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
+    End Sub
+    Sub Custom_LoadAccounts()
+        Dim SqlLoad As New MySQLCore
+        AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
+        DataGridView1.DataSource = AccountDT
+        Dim oldcolumns() = {"accountname", "accountdescription"}
+        Dim columns() = {"Account", "Description"}
+        Dim cols() = {"id", "accountcode", "registryid", "registrycode", "assetid", "categoryid", "subcategoryid", "accountid", "usetemplate", "logdate"}
+        Datagrid_HideColumn(DataGridView1, cols)
+        Datagrid_RenameColumn(DataGridView1, oldcolumns, columns)
+
+        Dim myImage As Image = My.Resources.pencil
+        Dim myImageadd As Image = My.Resources.add
+        Add_GridImageButton(DataGridView1, "Edit", myImage, "ImgDGBtn1", 12, 100)
+        Add_GridImageButton(DataGridView1, "Add Description", myImageadd, "ImgDGBtn2", 13, 100)
+        AddHandler DataGridView1.CellContentClick, AddressOf DataGridView1_CellContentClick
+    End Sub
+    Private Sub AddItemClick(sender As Object, e As EventArgs)
+        ' Code to handle the "Add" menu item click
+        ' Perform the add operation here
     End Sub
     Public Shared assetid
     Private Sub AssetIDTxt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AssetIDTxt.SelectedIndexChanged
@@ -109,13 +140,7 @@
             End Try
         End If
     End Sub
-    Sub Custom_Load()
-        Dim SqlLoad As New MySQLCore
-        AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
-        CategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_category")
-        VIAccountDT = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
-        SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory")
-    End Sub
+
     Sub Custom_Accounts()
         Dim SqlLoad As New MySQLCore
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
@@ -145,7 +170,7 @@
                     columnValues.Add("accountid", $"'{AccountIDtxt.Text}'")
                     columnValues.Add("accountdescription", $"'{Decriptiontxt.Text}'")
                     columnValues.Add("accountcode", $"'{AccountCodetxt.Text}'")
-                    mySql.MySql_ExecuteNonQueryString("wap_accounts_temp", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
@@ -156,6 +181,7 @@
             Custom_ComboBoxDatasource(CategoryIDtxt, CategoryDT, "category", "category")
             SubcategoryDT = SqlLoad.MySql_SelectString("*", "gl_assets_subcategory",, $"where categoryid ='{categoryid}'")
             Custom_ComboBoxDatasource(SubcategoryIDtxt, SubcategoryDT, "subcategory", "subcategory")
+            DataGridView1.DataSource = SqlLoad.MySql_SelectString("*", "vi_moises_accounts")
             cleartext1()
             Form1.Activate()
             Custom_Load()
@@ -229,63 +255,99 @@
     Friend Shared accountcode2
     Friend Shared accountname2
     Friend Shared accountdescription2
-    Private Sub Descriptionbtn_Click(sender As Object, e As EventArgs) Handles Descriptionbtn.Click
-        OpaquePrompt.Show()
-        'AccountDescription.Nametxt.Text = accountdescriptiontxt
-        AccountDescription.ShowDialog()
-    End Sub
+
     Private Sub Searchtxt_OnValueChanged(sender As Object, e As EventArgs) Handles Searchtxt.OnValueChanged
         Try
-            If VIAccountDT IsNot Nothing Then
+            If AccountDT.Rows.Count > 0 AndAlso DataGridView1.Rows.Count > 0 Then
+
                 Dim conditions As New List(Of LinQCondition)()
                 conditions.Add(New LinQCondition With {
-                .Column = "Account",
+                .Column = "accountname",
                 .Value = Searchtxt.Text,
                 .ComparisonType = ComparisonTypeEnum.Like_enum
             })
-                Dim filteredDataTable As DataTable = Linq_Query(VIAccountDT, conditions)
+                Dim filteredDataTable As DataTable = Linq_Query(AccountDT, conditions)
                 DataGridView1.DataSource = filteredDataTable
-                Custom_Load()
 
-                accountdescription2 = filteredDataTable.Rows(0).Item("Account").ToString
-                accountcode2 = filteredDataTable.Rows(0).Item("code").ToString
+
+                'accountdescription2 = filteredDataTable.Rows(0).Item("accountname").ToString
+                'accountcode2 = filteredDataTable.Rows(0).Item("code").ToString
+                'accountid2 = filteredDataTable.Rows(0).Item("id").ToString
                 'msgbox(accountcode2)
+            ElseIf Searchtxt.Text = "" Then
+                Custom_LoadAccounts()
             End If
         Catch ex As Exception
         End Try
     End Sub
     Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
-        Dim searchrow As String
-        searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
-        Custom_Load()
-        Dim conditions As New List(Of LinQCondition) From {
-        New LinQCondition With {
-                             .Column = "Account",
-                             .Value = searchrow,
-                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
-     }
-        Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
-        accountdescription2 = accountname.Rows(0).Item("Account").ToString
-        OpaquePrompt.Show()
-        AccountDescription.ShowDialog()
+        'Dim searchrow As String
+        'searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
+        'Custom_Load()
+        'Dim conditions As New List(Of LinQCondition) From {
+        'New LinQCondition With {
+        '                     .Column = "Account",
+        '                     .Value = searchrow,
+        '                     .ComparisonType = ComparisonTypeEnum.Equal_enum}
+        '}
+        'Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
+        'accountdescription2 = accountname.Rows(0).Item("Account").ToString
+        'accountid2 = accountname.Rows(0).Item("id").ToString
+        'OpaquePrompt.Show()
+        'AccountDescription.ShowDialog()
     End Sub
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim searchrow As String
-        searchrow = DataGridView1.Rows(e.RowIndex).Cells("Account").Value.ToString()
+        Dim mySql As New MySQLCore
+        Dim searchrowid As String
         Custom_Load()
+        'Custom_LoadAccounts()
+        searchrowid = DataGridView1.Rows(e.RowIndex).Cells("id").Value.ToString()
         Dim conditions As New List(Of LinQCondition) From {
         New LinQCondition With {
-                             .Column = "Account",
-                             .Value = searchrow,
+                             .Column = "id",
+                             .Value = searchrowid,
                              .ComparisonType = ComparisonTypeEnum.Equal_enum}
-     }
-        Dim accountname As DataTable = Linq_Query(VIAccountDT, conditions)
-        accountdescription2 = accountname.Rows(0).Item("Account").ToString
-        accountcode2 = accountname.Rows(0).Item("code").ToString
+        }
+        Dim accountname As DataTable = Linq_Query(AccountDT, conditions)
+        accountdescription2 = accountname.Rows(0).Item("accountname").ToString
+        accountcode2 = accountname.Rows(0).Item("accountcode").ToString
+        accountid2 = accountname.Rows(0).Item("id").ToString
+        'MsgBox(accountdescription2)
         'MsgBox(accountcode2)
+        'MsgBox(accountid2)
+        'MsgBox(accountid2)
     End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        OpaquePrompt.Show()
+        'AccountDescription.Nametxt.Text = accountdescriptiontxt
+        EditAccounts.ShowDialog()
+    End Sub
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+        Dim mySql As New MySQLCore
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            Dim columnName As String = DataGridView1.Columns(e.ColumnIndex).Name
+            If columnName = "ImgDGBtn1" Then
+                OpaquePrompt.Show()
+                CustomYesNoPrompt("Update Data", "Do you want to Update Data")
+                If YesNoPrompt.YesOption = True Then
+                    Dim id As String = DataGridView1.Rows(e.RowIndex).Cells("id").Value.ToString
+                    Dim accountname As String = DataGridView1.Rows(e.RowIndex).Cells("accountname").Value.ToString
+                    Dim accountdescription As String = DataGridView1.Rows(e.RowIndex).Cells("accountdescription").Value.ToString
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+                    Dim columnValues As New Dictionary(Of String, String)
+                    columnValues.Add("id", id)
+                    columnValues.Add("accountname", $"'{accountname}'")
+                    columnValues.Add("accountdescription", $"'{accountdescription}'")
+                    mySql.MySql_ExecuteNonQueryString("gl_accounts", columnValues, $"id={id}", 2)
+                    CustomMsg("Update ", "Update Successful")
+                End If
+                Form1.Activate()
 
+            ElseIf columnName = "ImgDGBtn2" Then
+                OpaquePrompt.Show()
+                'AccountDescription.Nametxt.Text = accountdescriptiontxt
+                AccountDescription.ShowDialog()
+            End If
+        End If
     End Sub
 End Class

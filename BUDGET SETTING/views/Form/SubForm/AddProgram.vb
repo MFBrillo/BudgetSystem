@@ -23,7 +23,6 @@
             updatelbl.Text = update1
             programnamelbl.Text = programname
             Programnametxt.Text = programname
-
         Else
             MsgBox("Please Choose Account to Edit")
             OpaquePrompt.Close()
@@ -81,6 +80,14 @@
         officename = office.Rows(0).Item("NAME").ToString
         officeid = office.Rows(0).Item("ID").ToString
         Officenametxt.Text = officename
+        officeidlbl.Text = officeid
         DataGridView2.Visible = False
+    End Sub
+    Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
     End Sub
 End Class

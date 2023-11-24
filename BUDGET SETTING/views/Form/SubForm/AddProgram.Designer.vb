@@ -45,6 +45,7 @@ Partial Class AddProgram
         Me.updatelbl = New System.Windows.Forms.Label()
         Me.programnamelbl = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.officeidlbl = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,7 +73,7 @@ Partial Class AddProgram
         Me.Officenametxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Officenametxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Officenametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Officenametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Officenametxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Officenametxt.isPassword = False
         Me.Officenametxt.Location = New System.Drawing.Point(48, 164)
         Me.Officenametxt.Margin = New System.Windows.Forms.Padding(4)
@@ -104,7 +105,7 @@ Partial Class AddProgram
         Me.Descriptiontxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Descriptiontxt.Enabled = False
         Me.Descriptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Descriptiontxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Descriptiontxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Descriptiontxt.isPassword = False
         Me.Descriptiontxt.Location = New System.Drawing.Point(48, 233)
         Me.Descriptiontxt.Margin = New System.Windows.Forms.Padding(4)
@@ -140,7 +141,7 @@ Partial Class AddProgram
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.Titletxt)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -166,9 +167,9 @@ Partial Class AddProgram
         Me.Titletxt.ForeColor = System.Drawing.Color.White
         Me.Titletxt.Location = New System.Drawing.Point(12, 11)
         Me.Titletxt.Name = "Titletxt"
-        Me.Titletxt.Size = New System.Drawing.Size(142, 19)
+        Me.Titletxt.Size = New System.Drawing.Size(120, 19)
         Me.Titletxt.TabIndex = 125
-        Me.Titletxt.Text = "ADD Description"
+        Me.Titletxt.Text = "ADD Program"
         '
         'Programnametxt
         '
@@ -181,7 +182,7 @@ Partial Class AddProgram
         Me.Programnametxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Programnametxt.Enabled = False
         Me.Programnametxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Programnametxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Programnametxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Programnametxt.isPassword = False
         Me.Programnametxt.Location = New System.Drawing.Point(48, 94)
         Me.Programnametxt.Margin = New System.Windows.Forms.Padding(4)
@@ -246,7 +247,7 @@ Partial Class AddProgram
         '
         Me.sectorguidedlbl.AutoSize = True
         Me.sectorguidedlbl.ForeColor = System.Drawing.Color.DarkOrange
-        Me.sectorguidedlbl.Location = New System.Drawing.Point(323, 383)
+        Me.sectorguidedlbl.Location = New System.Drawing.Point(332, 361)
         Me.sectorguidedlbl.Name = "sectorguidedlbl"
         Me.sectorguidedlbl.Size = New System.Drawing.Size(68, 13)
         Me.sectorguidedlbl.TabIndex = 127
@@ -256,7 +257,7 @@ Partial Class AddProgram
         '
         Me.updatelbl.AutoSize = True
         Me.updatelbl.ForeColor = System.Drawing.Color.DarkOrange
-        Me.updatelbl.Location = New System.Drawing.Point(323, 429)
+        Me.updatelbl.Location = New System.Drawing.Point(332, 405)
         Me.updatelbl.Name = "updatelbl"
         Me.updatelbl.Size = New System.Drawing.Size(46, 13)
         Me.updatelbl.TabIndex = 126
@@ -303,7 +304,7 @@ Partial Class AddProgram
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.EnableHeadersVisualStyles = False
-        Me.DataGridView2.Location = New System.Drawing.Point(66, 421)
+        Me.DataGridView2.Location = New System.Drawing.Point(50, 120)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -326,11 +327,21 @@ Partial Class AddProgram
         Me.DataGridView2.TabIndex = 131
         Me.DataGridView2.Visible = False
         '
+        'officeidlbl
+        '
+        Me.officeidlbl.AutoSize = True
+        Me.officeidlbl.ForeColor = System.Drawing.Color.DarkOrange
+        Me.officeidlbl.Location = New System.Drawing.Point(136, 405)
+        Me.officeidlbl.Name = "officeidlbl"
+        Me.officeidlbl.Size = New System.Drawing.Size(41, 13)
+        Me.officeidlbl.TabIndex = 132
+        Me.officeidlbl.Text = "officeid"
+        '
         'AddProgram
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(107, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(528, 594)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.programnamelbl)
@@ -349,8 +360,10 @@ Partial Class AddProgram
         Me.Controls.Add(Me.Descriptiontxt)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Savebtn)
+        Me.Controls.Add(Me.officeidlbl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AddProgram"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AddProgram"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -379,4 +392,5 @@ Partial Class AddProgram
     Friend WithEvents updatelbl As Label
     Friend WithEvents programnamelbl As Label
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents officeidlbl As Label
 End Class

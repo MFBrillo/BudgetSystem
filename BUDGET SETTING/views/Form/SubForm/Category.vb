@@ -52,8 +52,6 @@
             End Try
         End If
     End Sub
-
-
     Private Sub AddCategorybtn_Click(sender As Object, e As EventArgs) Handles AddCategorybtn.Click
         Dim mySql As New MySQLCore
         Try
@@ -71,8 +69,6 @@
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets_category", ColumnValues, Nothing, 1)
-
-
                 'Asset.ref()
             End If
         Catch ex As Exception
@@ -88,7 +84,6 @@
         Custom_ComboBoxDatasource(ChartofAccounts.categoryCBB, CategoryDT, "category", "category")
         ChartofAccounts.categoryCBB.SelectedIndex = ChartofAccounts.categoryCBB.Items.Count - 1
     End Sub
-
     Private Sub CategoryIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.OnValueChanged
         Dim input As String = CategoryIDtxt.Text
 
@@ -103,15 +98,10 @@
         End If
     End Sub
     Public Sub PopulateTextBox(categoryname As String, categoryDes As String, assetID As String, categoryID As String, categorycode As String)
-
         Categorynametxt.Text = categoryname
         CategoryDestxt.Text = categoryDes
         AssetIDtxt.Text = assetID
         CategoryIDtxt.Text = categoryID
         Categorycodetxt.Text = categorycode
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
-
     End Sub
 End Class

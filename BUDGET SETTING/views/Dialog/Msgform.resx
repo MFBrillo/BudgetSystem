@@ -132,10 +132,8 @@
   <data name="BunifuGradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAChSURBVChTfc5HFoJAEATQYZgBr4tIBhcmUMzpumW32j4M
-        uKjdf1WlBsEVfnCBPzzDD4/wRgfKHjbawcZb2GQDk6yhBHnh6QuZJzJpS/CFqC36QOkDudmKoMwR8uLO
-        HKOspSzh5g1U3ydpYuTmNcN/iNtq6GIB1feJkS6aO9LlnGAX0ac3VFIbIaeaEezMyXGZY6QJOdUU6tdx
-        QdzEyBlPcAMRdcqLoapKcgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAXSURBVChTY5CSs/5PDB5ViBdTW6H1fwA5Z5CJ2mTxEgAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

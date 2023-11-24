@@ -143,16 +143,16 @@
     <Compile Include="views\Form\SubForm\AddProgram.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="views\Form\SubForm\EditAccounts.Designer.vb">
+      <DependentUpon>EditAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Form\SubForm\EditAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="views\UCForm\Programs.Designer.vb">
       <DependentUpon>Programs.vb</DependentUpon>
     </Compile>
     <Compile Include="views\UCForm\Programs.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\AccountGroup.Designer.vb">
-      <DependentUpon>AccountGroup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\AccountGroup.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -230,12 +230,6 @@
     <Compile Include="views\Form\SubForm\Category.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Form\Dashboard.Designer.vb">
-      <DependentUpon>Dashboard.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\Form\Dashboard.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="views\Form\Office.Designer.vb">
       <DependentUpon>Office.vb</DependentUpon>
     </Compile>
@@ -246,12 +240,6 @@
       <DependentUpon>Subcategory.vb</DependentUpon>
     </Compile>
     <Compile Include="views\Form\SubForm\Subcategory.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\Form\SubForm\Registry.Designer.vb">
-      <DependentUpon>Registry.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\Form\SubForm\Registry.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\Form\Verify.Designer.vb">
@@ -272,40 +260,16 @@
     <Compile Include="views\UCForm\ChartofAccounts.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\UCForm\SubUCForm\AccountUC.Designer.vb">
-      <DependentUpon>AccountUC.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\AccountUC.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\MajorGroup.Designer.vb">
-      <DependentUpon>MajorGroup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\MajorGroup.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\OfficeUC.Designer.vb">
-      <DependentUpon>OfficeUC.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\OfficeUC.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\SubMajorGroup.Designer.vb">
-      <DependentUpon>SubMajorGroup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\SubUCForm\SubMajorGroup.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="views\Form\SubForm\AddProgram.resx">
       <DependentUpon>AddProgram.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\Form\SubForm\EditAccounts.resx">
+      <DependentUpon>EditAccounts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\Programs.resx">
       <DependentUpon>Programs.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\SubUCForm\AccountGroup.resx">
-      <DependentUpon>AccountGroup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apps\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -337,17 +301,11 @@
     <EmbeddedResource Include="views\Form\SubForm\Category.resx">
       <DependentUpon>Category.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Form\Dashboard.resx">
-      <DependentUpon>Dashboard.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Office.resx">
       <DependentUpon>Office.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\SubForm\Subcategory.resx">
       <DependentUpon>Subcategory.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\Form\SubForm\Registry.resx">
-      <DependentUpon>Registry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\Verify.resx">
       <DependentUpon>Verify.vb</DependentUpon>
@@ -357,18 +315,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\ChartofAccounts.resx">
       <DependentUpon>ChartofAccounts.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\SubUCForm\AccountUC.resx">
-      <DependentUpon>AccountUC.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\SubUCForm\MajorGroup.resx">
-      <DependentUpon>MajorGroup.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\SubUCForm\OfficeUC.resx">
-      <DependentUpon>OfficeUC.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\SubUCForm\SubMajorGroup.resx">
-      <DependentUpon>SubMajorGroup.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -397,6 +343,8 @@
     <None Include="resources\search %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\pencil.png" />
+    <None Include="resources\add.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -48,7 +48,7 @@ Partial Class Asset
         '
         'Assettxt
         '
-        Me.Assettxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Assettxt.BackColor = System.Drawing.Color.White
         Me.Assettxt.BorderColorFocused = System.Drawing.Color.White
         Me.Assettxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Assettxt.BorderColorMouseHover = System.Drawing.Color.White
@@ -56,7 +56,7 @@ Partial Class Asset
         Me.Assettxt.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Assettxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Assettxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Assettxt.ForeColor = System.Drawing.Color.White
+        Me.Assettxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Assettxt.isPassword = False
         Me.Assettxt.Location = New System.Drawing.Point(205, 75)
         Me.Assettxt.Margin = New System.Windows.Forms.Padding(4)
@@ -103,7 +103,7 @@ Partial Class Asset
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
@@ -124,10 +124,10 @@ Partial Class Asset
         '
         'AssetDescrptiontxt
         '
-        Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.White
         Me.AssetDescrptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.AssetDescrptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.AssetDescrptiontxt.ForeColor = System.Drawing.Color.White
+        Me.AssetDescrptiontxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.AssetDescrptiontxt.Location = New System.Drawing.Point(205, 153)
         Me.AssetDescrptiontxt.Multiline = True
         Me.AssetDescrptiontxt.Name = "AssetDescrptiontxt"
@@ -138,7 +138,7 @@ Partial Class Asset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(107, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(580, 362)
         Me.Controls.Add(Me.AssetDescrptiontxt)
         Me.Controls.Add(Me.Panel2)

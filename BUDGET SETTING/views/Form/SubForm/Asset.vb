@@ -40,7 +40,6 @@
         OpaquePrompt.Close()
         Me.Close()
         Form1.Activate()
-
     End Sub
 
     Sub lastindex()

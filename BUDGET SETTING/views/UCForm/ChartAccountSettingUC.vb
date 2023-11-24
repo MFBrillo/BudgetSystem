@@ -5,9 +5,19 @@
     Public assetheader As Boolean
     Public categoryheader As Boolean
     Private Sub ChartAccountSettingUC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Custom_LoadCategory()
+        'Custom_LoadCategory()
         Custom_LoadAsset()
+        Custom_LoadCategory()
+        Custom_LoadSubcategory()
         DataGridView1.AllowUserToOrderColumns = False
+        'Add_GridButton(DataGridView2, "Update", "Update", "ApproveDGBtn", 7, 100)
+        Dim myImage As Image = My.Resources.pencil
+        Add_GridImageButton(DataGridView1, "Edit", myImage, "ImgDGBtn1", 4, 100)
+        Add_GridImageButton(DataGridView2, "Edit", myImage, "ImgDGBtn2", 7, 100)
+        Add_GridImageButton(DataGridView3, "Edit", myImage, "ImgDGBtn3", 7, 100)
+        AddHandler DataGridView1.CellContentClick, AddressOf DataGridView1_CellContentClick
+        AddHandler DataGridView2.CellContentClick, AddressOf DataGridView2_CellContentClick
+        AddHandler DataGridView3.CellContentClick, AddressOf DataGridView3_CellContentClick
     End Sub
     Sub Custom_LoadAsset()
         Dim SqlLoad As New MySQLCore
@@ -39,59 +49,26 @@
         Datagrid_HideColumn(DataGridView3, cols)
         Datagrid_RenameColumn(DataGridView3, oldcolumns, newcolumns)
     End Sub
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-
-
-
-
-    End Sub
-    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
-
-        Dim categoryid As String
-        categoryid = DataGridView2.Rows(e.RowIndex).Cells("categoryid").Value.ToString()
-        Custom_LoadSubcategory()
-        Dim conditions As New List(Of LinQCondition) From {
-        New LinQCondition With {
-                             .Column = "categoryid",
-                             .Value = categoryid,
-                             .ComparisonType = ComparisonTypeEnum.Equal_enum}
-     }
-        Dim subcategory = Linq_Query(SubcategoryDT, conditions)
-        DataGridView3.DataSource = subcategory
-    End Sub
     Sub assetupdate()
         Dim SqlLoad As New MySQLCore
         For Each row As DataRow In AssetsDT.Rows
             Dim cols As New Dictionary(Of String, String)
             cols("id") = $"'{row.Item("id").ToString}'"
-            cols("assetid") = $"'{row.Item("assetid").ToString}'"
             cols("asset") = $"'{row.Item("asset").ToString}'"
+            cols("description") = $"'{row.Item("description").ToString}'"
             SqlLoad.MySql_ExecuteNonQueryString("gl_assets", cols, $"id={cols("id")}", 2)
         Next
     End Sub
     Sub categoryupdate()
-
         Dim SqlLoad As New MySQLCore
         For Each row As DataRow In CategoryDT.Rows
             Dim cols As New Dictionary(Of String, String)
             cols("id") = $"'{row.Item("id").ToString}'"
-            'cols("category")=
+            cols("assetid") = $"'{row.Item("assetid").ToString}'"
+            cols("categoryid") = $"'{row.Item("categoryid").ToString}'"
             cols("code") = $"'{row.Item("code").ToString}'"
             cols("category") = $"'{row.Item("category").ToString}'"
             cols("description") = $"'{row.Item("description").ToString}'"
-
-            Dim code = row.Item("code").ToString  ' Get the value from the "code" column
-            Dim input As String = code
-            Dim parts() As String = input.Split("-"c)  ' Split the value by the hyphen '-' delimiter
-
-            If parts.Length >= 2 Then  ' Check if there are at least two parts
-                Dim result As String = parts(1)  ' Assign the second part to the result variable
-                'Label5.Text = result  ' Display the result in a Label control
-                cols("categoryid") = result
-            Else
-                Console.WriteLine("Invalid input format.")
-            End If
-
             SqlLoad.MySql_ExecuteNonQueryString("gl_assets_category", cols, $"id={cols("id")}", 2)
         Next
     End Sub
@@ -103,72 +80,181 @@
             cols("code") = $"'{row.Item("code").ToString}'"
             cols("subcategory") = $"'{row.Item("subcategory").ToString}'"
             cols("description") = $"'{row.Item("description").ToString}'"
-
-            Dim code As String = $"'{row.Item("code").ToString}'"
-            Dim parts() As String = code.Split("-"c)
-
-            If parts.Length >= 3 Then
-                Dim result1 As String = parts(0) & parts(1) & parts(2)
-                Dim result2 As String = result1.Substring(0, 3)
-                cols("subcategoryid") = result1
-                cols("categoryid") = result2
-                'Label5.Text = result2
-            End If
             SqlLoad.MySql_ExecuteNonQueryString("gl_assets_subcategory", cols, $"id={cols("id")}", 2)
         Next
-    End Sub
-
-    Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
-        OpaquePrompt.Show()
-        CustomYesNoPrompt("Save Entries", "Do you want to save changes")
-        If YesNoPrompt.YesOption = True Then
-            assetupdate()
-            categoryupdate()
-            subcategoryupdate()
-        End If
-        Form1.Activate()
-    End Sub
-
-
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-        If assetheader = False Then
-            Dim assetid As String
-            assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
-            Custom_LoadCategory()
-            'Custom_LoadSubcategory()
-            Dim conditions As New List(Of LinQCondition) From {
-        New LinQCondition With {
-                .Column = "assetid",
-                .Value = assetid,
-                .ComparisonType = ComparisonTypeEnum.Equal_enum}
-     }
-            Dim category = Linq_Query(CategoryDT, conditions)
-            DataGridView2.DataSource = category
-
-            Try
-                Dim categoryid As String
-                categoryid = DataGridView2.Rows(e.RowIndex).Cells("categoryid").Value.ToString()
-                Custom_LoadSubcategory()
-                Dim conditions1 As New List(Of LinQCondition) From {
-            New LinQCondition With {
-                                 .Column = "categoryid",
-                                 .Value = categoryid,
-                                 .ComparisonType = ComparisonTypeEnum.Equal_enum}
-         }
-                Dim subcategory = Linq_Query(SubcategoryDT, conditions1)
-                DataGridView3.DataSource = subcategory
-
-            Catch ex As Exception
-                ClearDGV(DataGridView3)
-            End Try
-
-        End If
     End Sub
 
     Private Sub DataGridView1_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.ColumnHeaderMouseClick
         ' Prevent sorting when header is clicked
         assetheader = True
+    End Sub
+    Public categoryid As String
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        Dim mySql As New MySQLCore
+        Custom_LoadSubcategory()
+        categoryid = DataGridView2.Rows(e.RowIndex).Cells("categoryid").Value.ToString
+        Try
+            If SubcategoryDT.Rows.Count > 0 AndAlso e.RowIndex < DataGridView3.Rows.Count Then
+                Dim conditions As New List(Of LinQCondition) From {
+                    New LinQCondition With {
+                        .Column = "categoryid",
+                        .Value = categoryid,
+                        .ComparisonType = ComparisonTypeEnum.Equal_enum
+                    }
+                }
+                Dim subcategory = Linq_Query(SubcategoryDT, conditions)
+                Dim subcategoryid = DataGridView3.Rows(e.RowIndex).Cells("subcategoryid").Value.ToString
+                ' Check the content of subcategory
+                'MsgBox(subcategoryid)
+                DataGridView3.DataSource = subcategory
+            Else
+                ClearDGV(DataGridView3)
+            End If
+        Catch ex As Exception
+            ' Handle any exceptions here (e.g., show an error message or log the error)
+            MsgBox("ERROR" & ex.Message)
+        End Try
+    End Sub
+    Sub categoryfilter()
+        Custom_LoadCategory()
+        If CategoryDT.Rows.Count > 0 AndAlso DataGridView2.Rows.Count > 0 Then
+            Dim conditions As New List(Of LinQCondition) From {
+                New LinQCondition With {
+                    .Column = "assetid",
+                    .Value = assetid,
+                    .ComparisonType = ComparisonTypeEnum.Equal_enum
+                }
+            }
+            Dim category = Linq_Query(CategoryDT, conditions)
+            If category.Rows.Count > 0 Then
+                DataGridView2.DataSource = category
+                categoryid = DataGridView2.Rows(0).Cells("categoryid").Value.ToString()
+                Try
+                    Custom_LoadSubcategory()
+                    Dim conditions1 As New List(Of LinQCondition) From {
+                        New LinQCondition With {
+                            .Column = "categoryid",
+                            .Value = categoryid,
+                            .ComparisonType = ComparisonTypeEnum.Equal_enum
+                        }
+                    }
+                    Dim subcategory = Linq_Query(SubcategoryDT, conditions1)
+                    If subcategory.Rows.Count > 0 Then
+                        DataGridView3.DataSource = subcategory
+                    Else
+                        ClearDGV(DataGridView3)
+                    End If
+                Catch ex As Exception
+                    ClearDGV(DataGridView3)
+                End Try
+            End If
+        End If
+    End Sub
+    Public assetid As String
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        If assetheader = False Then
+
+            assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
+            Dim asset = DataGridView1.Rows(e.RowIndex).Cells("asset").Value.ToString()
+            Dim id = DataGridView1.Rows(e.RowIndex).Cells("id").Value.ToString()
+            Dim description = DataGridView1.Rows(e.RowIndex).Cells("description").Value.ToString()
+            categoryfilter()
+            'MsgBox(id)
+            'MsgBox(asset)
+            'MsgBox(description)
+        End If
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+        Dim mySql As New MySQLCore
+
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            Dim columnName As String = DataGridView2.Columns(e.ColumnIndex).Name
+
+            If columnName = "ImgDGBtn2" Then
+                OpaquePrompt.Show()
+                CustomYesNoPrompt("Update Data", "Do you want to Update Data")
+                If YesNoPrompt.YesOption = True Then
+                    Dim id As String = DataGridView2.Rows(e.RowIndex).Cells("id").Value.ToString
+                    Dim category As String = DataGridView2.Rows(e.RowIndex).Cells("category").Value.ToString
+                    Dim description As String = DataGridView2.Rows(e.RowIndex).Cells("description").Value.ToString
+                    Dim columnValues As New Dictionary(Of String, String)
+                    columnValues.Add("id", id)
+                    columnValues.Add("category", $"'{category}'")
+                    columnValues.Add("description", $"'{description}'")
+                    mySql.MySql_ExecuteNonQueryString("gl_assets_category", columnValues, $"id={id}", 2)
+
+                    CustomMsg("Update ", "Update Successful")
+                    'MsgBox("Update successful.")
+                Else
+                    MsgBox("error successful.")
+                End If
+                Form1.Activate()
+            End If
+        End If
+    End Sub
+    Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+        Dim mySql As New MySQLCore
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            Dim columnName As String = DataGridView3.Columns(e.ColumnIndex).Name
+            If columnName = "ImgDGBtn3" Then
+                OpaquePrompt.Show()
+                CustomYesNoPrompt("Update Data", "Do you want to Update Data")
+                If YesNoPrompt.YesOption = True Then
+                    Dim id As String = DataGridView3.Rows(e.RowIndex).Cells("id").Value.ToString
+
+                    Dim subcategory As String = DataGridView3.Rows(e.RowIndex).Cells("subcategory").Value.ToString
+                    Dim description As String = DataGridView3.Rows(e.RowIndex).Cells("description").Value.ToString
+
+                    Dim columnValues As New Dictionary(Of String, String)
+                    columnValues.Add("id", id)
+                    columnValues.Add("subcategory", $"'{subcategory}'")
+                    columnValues.Add("description", $"'{description}'")
+                    mySql.MySql_ExecuteNonQueryString("gl_assets_subcategory", columnValues, $"id={id}", 2)
+
+                    CustomMsg("Update ", "Update Successful")
+                    'MsgBox("Update successful.")
+                End If
+                Form1.Activate()
+            End If
+        End If
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+        Dim mySql As New MySQLCore
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            Dim columnName As String = DataGridView1.Columns(e.ColumnIndex).Name
+            If columnName = "ImgDGBtn1" Then
+                OpaquePrompt.Show()
+                CustomYesNoPrompt("Update Data", "Do you want to Update Data")
+                If YesNoPrompt.YesOption = True Then
+                    Dim id As String = DataGridView1.Rows(e.RowIndex).Cells("id").Value.ToString
+                    assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
+                    Dim asset As String = DataGridView1.Rows(e.RowIndex).Cells("asset").Value.ToString
+                    Dim description As String = DataGridView1.Rows(e.RowIndex).Cells("description").Value.ToString
+
+                    Dim columnValues As New Dictionary(Of String, String)
+
+                    columnValues.Add("id", id)
+                    columnValues.Add("assetid", assetid)
+                    columnValues.Add("asset", $"'{asset}'")
+                    columnValues.Add("description", $"'{description}'")
+                    mySql.MySql_ExecuteNonQueryString("gl_assets", columnValues, $"id={id}", 2)
+
+                    CustomMsg("Update ", "Update Successful")
+
+                End If
+                Form1.Activate()
+            End If
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class
