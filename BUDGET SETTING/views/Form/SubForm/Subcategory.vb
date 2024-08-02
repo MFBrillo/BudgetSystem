@@ -70,7 +70,6 @@
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets_subcategory", ColumnValues, Nothing, 1)
-                'Asset.ref()
             End If
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
@@ -96,13 +95,5 @@
             Dim thirdPard As String = input.Substring(3) ' Extract the rest of the string
             SubcategoryCodetxt.Text = $"{firstPart}-{secondPart}-{thirdPard}"
         End If
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
     End Sub
 End Class

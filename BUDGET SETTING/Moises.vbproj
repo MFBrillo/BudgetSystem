@@ -137,10 +137,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="views\Form\SubForm\AddProgram.Designer.vb">
-      <DependentUpon>AddProgram.vb</DependentUpon>
+    <Compile Include="views\Dialog\ConnectionForm.Designer.vb">
+      <DependentUpon>ConnectionForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="views\Form\SubForm\AddProgram.vb">
+    <Compile Include="views\Dialog\ConnectionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Dialog\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="views\Dialog\Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\Form\SubForm\EditAccounts.Designer.vb">
@@ -148,12 +154,6 @@
     </Compile>
     <Compile Include="views\Form\SubForm\EditAccounts.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\UCForm\Programs.Designer.vb">
-      <DependentUpon>Programs.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\UCForm\Programs.vb">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="apps\Form1.vb">
@@ -242,12 +242,6 @@
     <Compile Include="views\Form\SubForm\Subcategory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Form\Verify.Designer.vb">
-      <DependentUpon>Verify.vb</DependentUpon>
-    </Compile>
-    <Compile Include="views\Form\Verify.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="views\UCForm\ChartAccountSettingUC.Designer.vb">
       <DependentUpon>ChartAccountSettingUC.vb</DependentUpon>
     </Compile>
@@ -262,14 +256,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="views\Form\SubForm\AddProgram.resx">
-      <DependentUpon>AddProgram.vb</DependentUpon>
+    <EmbeddedResource Include="views\Dialog\ConnectionForm.resx">
+      <DependentUpon>ConnectionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Dialog\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form\SubForm\EditAccounts.resx">
       <DependentUpon>EditAccounts.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\UCForm\Programs.resx">
-      <DependentUpon>Programs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apps\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -307,9 +301,6 @@
     <EmbeddedResource Include="views\Form\SubForm\Subcategory.resx">
       <DependentUpon>Subcategory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Form\Verify.resx">
-      <DependentUpon>Verify.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\UCForm\ChartAccountSettingUC.resx">
       <DependentUpon>ChartAccountSettingUC.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +336,11 @@
   <ItemGroup>
     <None Include="resources\pencil.png" />
     <None Include="resources\add.png" />
+    <None Include="resources\database-management.png" />
+    <None Include="resources\data.png" />
+    <None Include="resources\save.png" />
+    <None Include="resources\disk.png" />
+    <None Include="resources\ProvLogo.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

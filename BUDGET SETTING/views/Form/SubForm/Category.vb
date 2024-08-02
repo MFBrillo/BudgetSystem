@@ -64,12 +64,10 @@
             Dim dt = mySql.MySql_SelectString("categoryid", "gl_assets_category", $"WHERE category = '{Categorynametxt.Text}'")
             If dt.Rows.Count > 0 Then
                 ' Data already exists
-                'mySql.MySql_ExecuteNonQueryString("gl_assets_category", columnValues, Nothing, 2)
                 MsgBox("Already exists")
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets_category", ColumnValues, Nothing, 1)
-                'Asset.ref()
             End If
         Catch ex As Exception
             MsgBox("ERROR" & ex.Message)
@@ -86,14 +84,12 @@
     End Sub
     Private Sub CategoryIDtxt_OnValueChanged(sender As Object, e As EventArgs) Handles CategoryIDtxt.OnValueChanged
         Dim input As String = CategoryIDtxt.Text
-
         ' Assuming the input string contains only digits
         If input.Length <= 1 Then
             Categorycodetxt.Text = input ' Return as it is if it's a single digit
         Else
             Dim firstPart As String = input.Substring(0, 1) ' Extract the first digit
             Dim secondPart As String = input.Substring(1) ' Extract the rest of the string
-
             Categorycodetxt.Text = $"{firstPart}-{secondPart}"
         End If
     End Sub

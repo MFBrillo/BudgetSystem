@@ -3,6 +3,7 @@
     Friend colapsed_width As Integer
     Public formattedDate As String = currentDate.ToString("MMMM d, yyyy")
     Dim formattedTime As String = currentDate.ToString("hh:mm:ss tt")
+    Public is_login As Boolean = False
 #Region "MenuSize()"   'Set Form Size
     Public Sub MenuSize(ByVal menuwidth As Integer, colapsedwidth As Integer, ByVal form As Form)
         form.Bounds = Screen.GetWorkingArea(form.Bounds)
@@ -87,79 +88,27 @@
             Case "Officebtn"
                 Dim form = New Office
                 ShowForm(form)
-
         End Select
     End Sub
 #End Region
     Private Sub Buttons_Click(sender As Object, e As EventArgs) Handles Settingbtn.Click, Officebtn.Click, Chartbtn.Click
         SelectMenu(sender.Name)
     End Sub
-
-    Private Sub Verifybtn_Click(sender As Object, e As EventArgs)
-        'Me.Enabled = False
-        'OpaquePrompt.Show()
-        Verify.ShowDialog()
-        Verify.Focus()
-    End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PCNamelbl.Text = my_pcName
-        InitializeTables.Main()
-        'InitializeTables.Is_Login()
-        InitializeTables.sectorguide()
-        Datelbl.Text = formattedDate
-        UpdateTime()
-        Timer1.Start()
-
-        Dim uc = New ChartofAccounts
-        ShowUserControl(uc)
-
+        OpaquePrompt.Show()
+        Login.ShowDialog()
+        islogin()
     End Sub
-    Private Sub Statuslbl_TextChanged(sender As Object, e As EventArgs) Handles Statuslbl.TextChanged
-        If Statuslbl.Text = "Online" Then
-            Statuslbl.ForeColor = Color.Green
-        Else
-            Statuslbl.ForeColor = Color.Red
+
+
+    Sub islogin()
+        If is_login = True Then
+            InitializeTables.sectorguide()
+            Dim uc = New ChartofAccounts
+            ShowUserControl(uc)
         End If
     End Sub
-
-
-
-    Private Sub MenuController_Paint(sender As Object, e As PaintEventArgs) Handles MenuController.Paint
-
-    End Sub
-
-    Private Sub MainPanel_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-
-    Private Sub BunifuThinButton21_Click_1(sender As Object, e As EventArgs)
-        Me.Dispose()
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        UpdateTime()
-    End Sub
-
-
-
-    Private Sub UpdateTime()
-        ' Get the current time and format it
-        Dim currentTime As DateTime = DateTime.Now
-        Dim formattedTime As String = currentTime.ToString("hh:mm:ss tt")
-
-        ' Update the label text with the formatted time
-        Timelbl.Text = formattedTime
-    End Sub
-
-
-
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Closebtn.Click
-        Me.Dispose()
+        End
     End Sub
 End Class

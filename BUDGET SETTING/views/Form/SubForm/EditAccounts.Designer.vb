@@ -47,7 +47,7 @@ Partial Class EditAccounts
         '
         'Savebtn
         '
-        Me.Savebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Savebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.Savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Savebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Savebtn.ForeColor = System.Drawing.Color.White
@@ -72,7 +72,7 @@ Partial Class EditAccounts
         '
         'AddSubcategorybtn
         '
-        Me.AddSubcategorybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.AddSubcategorybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.AddSubcategorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddSubcategorybtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AddSubcategorybtn.ForeColor = System.Drawing.Color.White
@@ -85,7 +85,7 @@ Partial Class EditAccounts
         '
         'AddCategorybtn
         '
-        Me.AddCategorybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.AddCategorybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.AddCategorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddCategorybtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AddCategorybtn.ForeColor = System.Drawing.Color.White
@@ -111,7 +111,7 @@ Partial Class EditAccounts
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
@@ -278,7 +278,7 @@ Partial Class EditAccounts
         '
         'Cancelbtn
         '
-        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White

@@ -12,6 +12,9 @@ Public Class AddOffice
         Me.Close()
         Form1.Activate()
     End Sub
+
+    Dim transnumber As Integer = 0
+    Dim budgetyear As Integer = 2024
     Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
         Dim SqlLoad As New MySQLCore
         If Saveupdate = 1 Then
@@ -32,13 +35,26 @@ Public Class AddOffice
                     columnValues.Add("mandatory_aipcode", $"'{AIPCodetxt.Text}'")
                     columnValues.Add("officecode_acctg", $"'{AccountingCodeTxt.Text}'")
                     columnValues.Add("officeaccronym", $"'{Accronymtxt.Text}'")
-                    columnValues.Add("officename", $"'{Nametxt.Text}'")
+                    columnValues.Add("officename", $"""{Nametxt.Text}""")
+                    columnValues.Add("officeheadpersonnel", $"'{Headtxt.Text}'")
+                    columnValues.Add("officeheadpos", $"'{Positiontxt.Text}'")
                     columnValues.Add("officedescription", $"'{Descriptiontxt.Text}'")
-                    MySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
+                    mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
+
+                    Dim columnValues1 As New Dictionary(Of String, String)
+                    columnValues1.Add("officeid", newofficeid)
+                    columnValues1.Add("transnumber", transnumber)
+                    columnValues1.Add("budgetyear", budgetyear)
+                    mySql.MySql_ExecuteNonQueryString("pbo_officetrans", columnValues1, Nothing, 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
             End If
+
+
+
+            Dim form = New Office
+            Form1.ShowForm(form)
             OpaquePrompt.Close()
             Form1.Activate()
         ElseIf Saveupdate = 2 Then
@@ -58,7 +74,6 @@ Public Class AddOffice
                     columnValues.Add("officename", $"'{Nametxt.Text}'")
                     columnValues.Add("officedescription", $"'{Descriptiontxt.Text}'")
                     mySql.MySql_ExecuteNonQueryString("gl_offices", columnValues, Nothing, 1)
-                    'mySql.MySql_ExecuteNonQueryString("wap_offices_temp", columnValues, $"id={officeid}", 1)
                 Catch ex As Exception
                     MsgBox("ERROR" & ex.Message)
                 End Try
@@ -67,9 +82,22 @@ Public Class AddOffice
             End If
         End If
     End Sub
+
+    Sub txtclear(txtclear As Boolean)
+        If txtclear = True Then
+            PBOCodetxt.Text = ""
+            AIPCodetxt.Text = ""
+            AccountingCodeTxt.Text = ""
+            Nametxt.Text = ""
+            Headtxt.Text = ""
+            Positiontxt.Text = ""
+            Accronymtxt.Text = ""
+            Descriptiontxt.Text = ""
+        End If
+    End Sub
     Sub Custom_Load()
         Dim SqlLoad As New MySQLCore
-        OfficeTypeDT = SqlLoad.MySql_SelectString("*", "vi_moises_office_type")
+        OfficeTypeDT = SqlLoad.MySql_SelectString("*", "gl_officetype")
         OfficeDT = SqlLoad.MySql_SelectString("*", "gl_offices")
 
     End Sub
@@ -77,6 +105,7 @@ Public Class AddOffice
     Public numbertoletter
     Private Sub AddOffice_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Custom_Load()
+        txtclear(True)
         Titletxt.Text = title
         Custom_ComboBoxDatasource(Officetypetxt, OfficeTypeDT, "officetype", "officetype")
 
@@ -103,9 +132,13 @@ Public Class AddOffice
     End Sub
 
     Private Function GetInitials(inputText As String) As String
+        If Nametxt.Text = "" Then
+            Return "" ' or any other action you want to take
+        End If
         Dim words As String() = Regex.Split(inputText, "\s+")
         Dim initials As String = String.Join("", words.Select(Function(word) word.Substring(0, 1)))
-        Return initials.ToUpper()
+            Return initials.ToUpper()
+
     End Function
     Sub lastnumber()
         Dim SqlLoad As New MySQLCore
@@ -130,5 +163,11 @@ Public Class AddOffice
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Cancelbtn_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
+        OpaquePrompt.Close()
+        Me.Close()
+        Form1.Activate()
     End Sub
 End Class

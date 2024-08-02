@@ -30,16 +30,18 @@ Partial Class Asset
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AssetDescrptiontxt = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Cancelbtn
         '
-        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.Cancelbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.Cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancelbtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Cancelbtn.ForeColor = System.Drawing.Color.White
-        Me.Cancelbtn.Location = New System.Drawing.Point(57, 302)
+        Me.Cancelbtn.Location = New System.Drawing.Point(48, 229)
         Me.Cancelbtn.Name = "Cancelbtn"
         Me.Cancelbtn.Size = New System.Drawing.Size(216, 29)
         Me.Cancelbtn.TabIndex = 79
@@ -48,7 +50,7 @@ Partial Class Asset
         '
         'Assettxt
         '
-        Me.Assettxt.BackColor = System.Drawing.Color.White
+        Me.Assettxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Assettxt.BorderColorFocused = System.Drawing.Color.White
         Me.Assettxt.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.Assettxt.BorderColorMouseHover = System.Drawing.Color.White
@@ -58,7 +60,7 @@ Partial Class Asset
         Me.Assettxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.Assettxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
         Me.Assettxt.isPassword = False
-        Me.Assettxt.Location = New System.Drawing.Point(205, 75)
+        Me.Assettxt.Location = New System.Drawing.Point(196, 29)
         Me.Assettxt.Margin = New System.Windows.Forms.Padding(4)
         Me.Assettxt.MaxLength = 32767
         Me.Assettxt.Name = "Assettxt"
@@ -70,8 +72,8 @@ Partial Class Asset
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(56, 89)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(47, 43)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 69
@@ -81,8 +83,8 @@ Partial Class Asset
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(56, 156)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(47, 110)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 16)
         Me.Label3.TabIndex = 71
@@ -90,11 +92,11 @@ Partial Class Asset
         '
         'AssetSavebtn
         '
-        Me.AssetSavebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(143, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(222, Byte), Integer))
+        Me.AssetSavebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.AssetSavebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AssetSavebtn.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetSavebtn.ForeColor = System.Drawing.Color.White
-        Me.AssetSavebtn.Location = New System.Drawing.Point(302, 302)
+        Me.AssetSavebtn.Location = New System.Drawing.Point(293, 229)
         Me.AssetSavebtn.Name = "AssetSavebtn"
         Me.AssetSavebtn.Size = New System.Drawing.Size(216, 29)
         Me.AssetSavebtn.TabIndex = 70
@@ -103,7 +105,7 @@ Partial Class Asset
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
@@ -115,7 +117,7 @@ Partial Class Asset
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(113, 19)
@@ -124,37 +126,47 @@ Partial Class Asset
         '
         'AssetDescrptiontxt
         '
-        Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.White
+        Me.AssetDescrptiontxt.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.AssetDescrptiontxt.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.AssetDescrptiontxt.Font = New System.Drawing.Font("Tahoma", 9.75!)
         Me.AssetDescrptiontxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.AssetDescrptiontxt.Location = New System.Drawing.Point(205, 153)
+        Me.AssetDescrptiontxt.Location = New System.Drawing.Point(196, 107)
         Me.AssetDescrptiontxt.Multiline = True
         Me.AssetDescrptiontxt.Name = "AssetDescrptiontxt"
         Me.AssetDescrptiontxt.Size = New System.Drawing.Size(313, 91)
         Me.AssetDescrptiontxt.TabIndex = 120
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.AssetDescrptiontxt)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Cancelbtn)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.AssetSavebtn)
+        Me.Panel1.Controls.Add(Me.Assettxt)
+        Me.Panel1.Location = New System.Drawing.Point(11, 51)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(557, 299)
+        Me.Panel1.TabIndex = 121
+        '
         'Asset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(246, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(580, 362)
-        Me.Controls.Add(Me.AssetDescrptiontxt)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Cancelbtn)
-        Me.Controls.Add(Me.AssetSavebtn)
-        Me.Controls.Add(Me.Assettxt)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Asset"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asset"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Cancelbtn As Button
@@ -165,4 +177,5 @@ Partial Class Asset
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents AssetDescrptiontxt As TextBox
+    Friend WithEvents Panel1 As Panel
 End Class

@@ -12,4 +12,8 @@
         AccountDT = SqlLoad.MySql_SelectString("*", "gl_accounts")
         IDlbl.Text = accountid
     End Sub
+
+    Private Sub Savebtn_Click(sender As Object, e As EventArgs) Handles Savebtn.Click
+
+    End Sub
 End Class

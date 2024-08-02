@@ -154,8 +154,6 @@ Public Class MySQLCore
                     For i As Integer = 0 To columnvalues.Count - 1
                         cmd.Parameters.AddWithValue(params(i), columnvalues.Values.ElementAt(i))
                     Next
-
-                    'SELECT sqlnonquery type (INSERT/UPDATE)
                     Dim SqlNonQuery As String = Nothing
 
                     If usersqltype = 1 Then
@@ -169,14 +167,12 @@ Public Class MySQLCore
                             fields(i) = $"{columnvalues.Keys.ElementAt(i)} = {columnvalues.Values.ElementAt(i)}"
                         Next
                         SqlNonQuery = $"UPDATE {tablename} SET {String.Join(", ", fields)} WHERE {whereClause}"
-                        MsgBox(SqlNonQuery)
                     Else
                         MsgBox(SqlNonQuery & vbCrLf & vbCrLf & " INVALID usersql:: " & usersqltype)
                         cmd.Dispose()
                         Conn.Close()
                         Exit Sub
                     End If
-
                     .Connection = Conn
                     .CommandType = CommandType.Text
                     .CommandText = SqlNonQuery
@@ -198,12 +194,6 @@ Public Class MySQLCore
             sqlvalues As String = Nothing,
             sqlfields(columnvalues.Count - 1) As String,
             params(columnvalues.Count - 1) As String
-
-        'For i As Integer = 0 To columnvalues.Count - 1
-        '    cmd.Parameters.AddWithValue(params(i), columnvalues.Values.ElementAt(i))
-        'Next
-
-        'SELECT sqlnonquery type (INSERT/UPDATE)
         Dim SqlNonQuery As String = Nothing
         If usersqltype = 1 Then
             Dim columns As String = String.Join(",", columnvalues.Select(Function(cols) $"{cols.Key}").ToArray())
@@ -247,8 +237,6 @@ Public Class MySQLCore
             End Try
         End Using
     End Function
-
-    'SELECT MYSQL to Textbox
     Public Function MySql_Select(ByVal SqlString As String,
                                 Optional ReturnColumn As String = Nothing,
                                 Optional ObjectName() As TextBox = Nothing,
@@ -295,8 +283,6 @@ Public Class MySQLCore
         End Try
         Return 0
     End Function
-
-    'SELECT MYSQL to Combobox
     Public Function Mysql_to_Combobox(ByVal columns As String,
                                        ByVal tablename As String,
                                        ByVal ComboboxName() As ComboBox,
@@ -355,7 +341,6 @@ Public Class MySQLCore
         End Try
         Return 0
     End Function
-
     Friend Function MySql_Delete(ByVal tablename As String,
                              ByVal whereclause As String,
                              Optional reviewsql As Integer = 0) As Boolean
@@ -374,17 +359,12 @@ Public Class MySQLCore
                     .CommandType = CommandType.Text
                     .CommandText = SQL
                 End With
-
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
-
                 cmd.Dispose()
                 Conn.Close()
-
                 Return rowsAffected > 0
-
             Catch ex As Exception
                 CustomMsg(Err.Description, "Server not found")
-                'Err.Clear()
                 cmd.Dispose()
                 Conn.Close()
                 Return False

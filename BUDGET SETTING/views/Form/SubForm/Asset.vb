@@ -1,6 +1,5 @@
 ﻿Public Class Asset
     Public AssetsDT As DataTable
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Cancelbtn.Click
         OpaquePrompt.Close()
         Me.Close()
@@ -27,7 +26,6 @@
             If dt1.Rows.Count > 0 Then
                 ' Data already exists
                 MsgBox("Already exists")
-                'mySql.MySql_ExecuteNonQueryString("gl_assets", columnValues, Nothing, 2)
             Else
                 ' Data does not exist, insert the new row
                 mySql.MySql_ExecuteNonQueryString("gl_assets", ColumnValues, Nothing, 1)
@@ -55,17 +53,11 @@
         AssetDescrptiontxt.Text = ""
     End Sub
     Public Sub PopulateTextBox(asset As String, description As String)
-        'TextBox1.Text = dataToDisplay
         Assettxt.Text = asset
         AssetDescrptiontxt.Text = description
-        'AssetDescrptiontxt.Text = description
     End Sub
     Public exists As Boolean = False
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         exists = True
     End Sub
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
 End Class

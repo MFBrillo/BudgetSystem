@@ -5,26 +5,38 @@
     Public assetheader As Boolean
     Public categoryheader As Boolean
     Private Sub ChartAccountSettingUC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Custom_LoadCategory()
         Custom_LoadAsset()
         Custom_LoadCategory()
         Custom_LoadSubcategory()
         DataGridView1.AllowUserToOrderColumns = False
-        'Add_GridButton(DataGridView2, "Update", "Update", "ApproveDGBtn", 7, 100)
-        Dim myImage As Image = My.Resources.pencil
-        Add_GridImageButton(DataGridView1, "Edit", myImage, "ImgDGBtn1", 4, 100)
-        Add_GridImageButton(DataGridView2, "Edit", myImage, "ImgDGBtn2", 7, 100)
-        Add_GridImageButton(DataGridView3, "Edit", myImage, "ImgDGBtn3", 7, 100)
+        Dim myImage As Image = My.Resources.save
+        Add_GridImageButton(DataGridView1, "Save", myImage, "ImgDGBtn1", 4, 100)
+        Add_GridImageButton(DataGridView2, "Save", myImage, "ImgDGBtn2", 7, 100)
+        Add_GridImageButton(DataGridView3, "Save", myImage, "ImgDGBtn3", 7, 100)
         AddHandler DataGridView1.CellContentClick, AddressOf DataGridView1_CellContentClick
         AddHandler DataGridView2.CellContentClick, AddressOf DataGridView2_CellContentClick
         AddHandler DataGridView3.CellContentClick, AddressOf DataGridView3_CellContentClick
+
+        Dim columns1() = {"description"}
+        disable_datagridcol(DataGridView1, columns1)
+        Dim columns2() = {"code"}
+        disable_datagridcol(DataGridView2, columns2)
+        Dim columns3() = {"code"}
+        disable_datagridcol(DataGridView3, columns3)
+
+    End Sub
+
+    Sub disable_datagridcol(datagrid As DataGridView, cols() As String)
+        For Each St As String In cols
+            datagrid.Columns(St).ReadOnly = True
+        Next
     End Sub
     Sub Custom_LoadAsset()
         Dim SqlLoad As New MySQLCore
         AssetsDT = SqlLoad.MySql_SelectString("*", "gl_assets")
         DataGridView1.DataSource = AssetsDT
         Dim oldcolumns() = {"asset", "description"}
-        Dim columns() = {"Asset Name", "Asset Description"}
+        Dim columns() = {"Name", "Description"}
         Dim cols() = {"id", "assetid", "logdate"}
         Datagrid_HideColumn(DataGridView1, cols)
         Datagrid_RenameColumn(DataGridView1, oldcolumns, columns)
@@ -84,12 +96,13 @@
         Next
     End Sub
 
-    Private Sub DataGridView1_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.ColumnHeaderMouseClick
+    Private Sub DataGridView1_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs)
         ' Prevent sorting when header is clicked
         assetheader = True
     End Sub
     Public categoryid As String
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+
         Dim mySql As New MySQLCore
         Custom_LoadSubcategory()
         categoryid = DataGridView2.Rows(e.RowIndex).Cells("categoryid").Value.ToString
@@ -104,8 +117,6 @@
                 }
                 Dim subcategory = Linq_Query(SubcategoryDT, conditions)
                 Dim subcategoryid = DataGridView3.Rows(e.RowIndex).Cells("subcategoryid").Value.ToString
-                ' Check the content of subcategory
-                'MsgBox(subcategoryid)
                 DataGridView3.DataSource = subcategory
             Else
                 ClearDGV(DataGridView3)
@@ -151,21 +162,6 @@
         End If
     End Sub
     Public assetid As String
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        If assetheader = False Then
-
-            assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
-            Dim asset = DataGridView1.Rows(e.RowIndex).Cells("asset").Value.ToString()
-            Dim id = DataGridView1.Rows(e.RowIndex).Cells("id").Value.ToString()
-            Dim description = DataGridView1.Rows(e.RowIndex).Cells("description").Value.ToString()
-            categoryfilter()
-            'MsgBox(id)
-            'MsgBox(asset)
-            'MsgBox(description)
-        End If
-
-    End Sub
-
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim mySql As New MySQLCore
 
@@ -186,14 +182,16 @@
                     mySql.MySql_ExecuteNonQueryString("gl_assets_category", columnValues, $"id={id}", 2)
 
                     CustomMsg("Update ", "Update Successful")
-                    'MsgBox("Update successful.")
                 Else
-                    MsgBox("error successful.")
+                    Dim uc = New ChartAccountSettingUC
+                    Form1.ShowUserControl(uc)
                 End If
                 Form1.Activate()
             End If
+
         End If
     End Sub
+
     Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim mySql As New MySQLCore
         If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
@@ -214,13 +212,14 @@
                     mySql.MySql_ExecuteNonQueryString("gl_assets_subcategory", columnValues, $"id={id}", 2)
 
                     CustomMsg("Update ", "Update Successful")
-                    'MsgBox("Update successful.")
+                Else
+                    Dim uc = New ChartAccountSettingUC
+                    Form1.ShowUserControl(uc)
                 End If
                 Form1.Activate()
             End If
         End If
     End Sub
-
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim mySql As New MySQLCore
         If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
@@ -243,18 +242,25 @@
                     mySql.MySql_ExecuteNonQueryString("gl_assets", columnValues, $"id={id}", 2)
 
                     CustomMsg("Update ", "Update Successful")
-
+                Else
+                    Dim uc = New ChartAccountSettingUC
+                    Form1.ShowUserControl(uc)
                 End If
                 Form1.Activate()
             End If
         End If
     End Sub
-
-    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
-
+    Private Sub DataGridView1_CellClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        If assetheader = False Then
+            assetid = DataGridView1.Rows(e.RowIndex).Cells("assetid").Value.ToString()
+            Dim asset = DataGridView1.Rows(e.RowIndex).Cells("asset").Value.ToString()
+            Dim id = DataGridView1.Rows(e.RowIndex).Cells("id").Value.ToString()
+            Dim description = DataGridView1.Rows(e.RowIndex).Cells("description").Value.ToString()
+            categoryfilter()
+        End If
     End Sub
 
-    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
     End Sub
 End Class

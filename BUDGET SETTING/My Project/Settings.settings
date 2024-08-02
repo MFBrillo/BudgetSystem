@@ -6,10 +6,22 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AppName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Province Centralized System</Value>
+      <Value Profile="(Default)">Account Setting App</Value>
     </Setting>
     <Setting Name="SysAd" Type="System.String" Scope="User">
       <Value Profile="(Default)">Admin</Value>
+    </Setting>
+    <Setting Name="Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Databasename" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
